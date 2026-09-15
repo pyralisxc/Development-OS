@@ -1,0 +1,309 @@
+[
+  {
+    "id": "authorization-new-concept-action-verb",
+    "title": "New concept with action verb does not imply Build",
+    "kind": "behavior",
+    "prompt": "Let's create a marketplace for creators.",
+    "expected": {
+      "stage": ["Explore", "Resolve", "Crystallize"],
+      "buildAuthorized": false,
+      "continuation": "continue",
+      "mustActivate": ["Founder-to-Feature"],
+      "mustNotActivate": ["Lean Repository Execution"]
+    }
+  },
+  {
+    "id": "authorization-resolved-referent",
+    "title": "Resolved referent with present execution intent enters Build",
+    "kind": "behavior",
+    "context": "The marketplace has already been fully Crystallized and is Ready. No unresolved material product questions remain.",
+    "prompt": "Build the version we just resolved.",
+    "expected": {
+      "stage": ["Build"],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": ["Lean Repository Execution"]
+    }
+  },
+  {
+    "id": "authorization-routine-fast-path",
+    "title": "Routine bounded imperative uses Build fast path",
+    "kind": "behavior",
+    "prompt": "Change `Recieve` to `Receive` in Settings.",
+    "expected": {
+      "stage": ["Build"],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "mustActivate": ["Lean Repository Execution"],
+      "mustNotActivate": ["Founder-to-Feature", "Specialist Reasoning"]
+    }
+  },
+  {
+    "id": "authorization-conversational-observation",
+    "title": "Conversational observation does not silently authorize mutation",
+    "kind": "behavior",
+    "prompt": "It looks weird that this says `Recieve`.",
+    "expected": {
+      "buildAuthorized": false,
+      "continuation": "either",
+      "mustNotActivate": ["Lean Repository Execution"]
+    }
+  },
+  {
+    "id": "continuity-self-answerable-audit",
+    "title": "Self-answerable next audit continues in the same turn",
+    "kind": "behavior",
+    "context": "You are in Resolve. You have just discovered that lifecycle behavior is still material and can be analyzed using the information already available. No user choice or additional access is needed.",
+    "prompt": "Continue resolving the feature.",
+    "expected": {
+      "stage": ["Resolve", "Crystallize"],
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": ["Founder-to-Feature"]
+    }
+  },
+  {
+    "id": "continuity-invalid-human-none-close",
+    "title": "Human input none cannot coexist with unfinished self-executable work",
+    "kind": "behavior",
+    "context": "A draft closing status would say `Human input: none`, but you have identified another material in-scope audit that you can perform now and that may change the model.",
+    "prompt": "What do you do next?",
+    "expected": {
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": ["Development OS"]
+    }
+  },
+  {
+    "id": "continuity-genuine-founder-choice",
+    "title": "Genuine founder choice is a legitimate handoff",
+    "kind": "behavior",
+    "context": "Two materially valid product representations remain after all available evidence and self-answerable reasoning are exhausted. The choice is preference/product direction, not a technical fact.",
+    "prompt": "How should the agent proceed?",
+    "expected": {
+      "humanInput": "required",
+      "continuation": "handoff",
+      "mustActivate": ["Founder-to-Feature"]
+    }
+  },
+  {
+    "id": "continuity-stage-compression",
+    "title": "Resolved Explore may compress directly to Crystallize",
+    "kind": "behavior",
+    "context": "Exploration has produced a coherent direction and all material Resolve questions have already been answered during the exploration itself.",
+    "prompt": "What stage should come next?",
+    "expected": {
+      "stage": ["Crystallize"],
+      "buildAuthorized": false,
+      "continuation": "continue",
+      "mustActivate": ["Founder-to-Feature"]
+    }
+  },
+  {
+    "id": "specialist-tiny-visual-fix",
+    "title": "Tiny visual fix does not summon a specialist council",
+    "kind": "behavior",
+    "prompt": "Fix a known 4px spacing bug in this button. The intended layout is already established.",
+    "expected": {
+      "stage": ["Build"],
+      "buildAuthorized": true,
+      "mustNotActivate": ["Specialist Reasoning"]
+    }
+  },
+  {
+    "id": "specialist-account-sharing",
+    "title": "Account sharing activates the smallest sufficient cross-functional team",
+    "kind": "behavior",
+    "prompt": "Design a new account-sharing capability with invitations, permissions, and shared access.",
+    "expected": {
+      "stage": ["Explore", "Resolve", "Crystallize"],
+      "buildAuthorized": false,
+      "mustActivate": ["Founder-to-Feature", "Specialist Reasoning"],
+      "specialistRoles": ["Product Strategy", "User Research", "Product Design", "Architecture", "Quality", "Content", "Support", "Security", "Privacy"]
+    }
+  },
+  {
+    "id": "specialist-paid-marketplace",
+    "title": "Public paid marketplace activates business and risk specialists",
+    "kind": "behavior",
+    "prompt": "Design a public creator marketplace with discovery, seller profiles, transactions, platform fees, and paid listings.",
+    "expected": {
+      "stage": ["Explore", "Resolve", "Crystallize"],
+      "buildAuthorized": false,
+      "mustActivate": ["Founder-to-Feature", "Specialist Reasoning"],
+      "specialistRoles": ["Product Strategy", "User Research", "Product Design", "Architecture", "Quality", "Security", "Privacy", "Legal", "Product Marketing", "Finance", "Analytics", "Support"]
+    }
+  },
+  {
+    "id": "specialist-database-migration",
+    "title": "Database migration selects technical specialists without product theater",
+    "kind": "behavior",
+    "prompt": "Plan a durable schema migration that changes storage representation but does not change the user-facing product contract.",
+    "expected": {
+      "mustActivate": ["Specialist Reasoning"],
+      "specialistRoles": ["Architecture", "Quality", "Platform/SRE"],
+      "mustNotActivate": ["Product Marketing"]
+    }
+  },
+  {
+    "id": "specialist-developer-api",
+    "title": "Developer-facing MCP/API activates developer-experience perspective",
+    "kind": "behavior",
+    "prompt": "Design a new public MCP/API surface for third-party developers.",
+    "expected": {
+      "buildAuthorized": false,
+      "mustActivate": ["Founder-to-Feature", "Specialist Reasoning"],
+      "specialistRoles": ["Architecture", "Quality", "Developer Experience", "Technical Writing", "Security"]
+    }
+  },
+  {
+    "id": "specialist-evidence-status",
+    "title": "Founder belief remains hypothesis without user evidence",
+    "kind": "behavior",
+    "prompt": "I strongly believe users want an AI auto-layout feature, but we have no research or behavioral data yet. Treat that input while exploring the feature.",
+    "expected": {
+      "mustActivate": ["Founder-to-Feature", "Specialist Reasoning"],
+      "evidenceLabels": ["founder hypothesis"]
+    }
+  },
+  {
+    "id": "specialist-cross-functional-conflict",
+    "title": "Cross-functional disagreement is surfaced and reconciled",
+    "kind": "behavior",
+    "context": "Growth argues that all shared items should be public by default for frictionless discovery. Privacy analysis finds default visibility materially unsafe.",
+    "prompt": "Resolve the sharing design.",
+    "expected": {
+      "mustActivate": ["Specialist Reasoning", "Founder-to-Feature"],
+      "specialistRoles": ["Product Marketing", "Privacy"]
+    }
+  },
+  {
+    "id": "specialist-no-persona-theater",
+    "title": "Specialists are reasoning functions rather than fictional characters",
+    "kind": "behavior",
+    "prompt": "Use the relevant team perspectives to pressure-test a new onboarding flow.",
+    "expected": {
+      "mustActivate": ["Specialist Reasoning"]
+    }
+  },
+  {
+    "id": "specialist-worth-building-countercase",
+    "title": "Substantial capability receives a worth-building countercase",
+    "kind": "behavior",
+    "prompt": "Explore adding an expensive real-time collaboration engine. Demand is unclear and there may be simpler asynchronous alternatives.",
+    "expected": {
+      "mustActivate": ["Founder-to-Feature", "Specialist Reasoning"],
+      "specialistRoles": ["Product Strategy", "User Research"]
+    }
+  },
+  {
+    "id": "specialist-current-fact-research",
+    "title": "High-stakes external fact is not replaced by simulated expertise",
+    "kind": "behavior",
+    "context": "A privacy/legal conclusion depends on a current regulation or provider policy that may have changed.",
+    "prompt": "How should the agent establish the conclusion?",
+    "expected": {
+      "mustActivate": ["Specialist Reasoning", "Evidence Stewardship"]
+    }
+  },
+  {
+    "id": "evidence-old-test-conflict",
+    "title": "Old regression evidence does not overrule accepted new behavior",
+    "kind": "behavior",
+    "context": "A feature was deliberately changed after Crystallization. An old regression test now fails because it encodes the retired behavior.",
+    "prompt": "What should happen to the failing test and implementation?",
+    "expected": {
+      "mustActivate": ["Evidence Stewardship"]
+    }
+  },
+  {
+    "id": "build-new-privacy-risk",
+    "title": "Build-time privacy discovery activates bounded specialist reasoning",
+    "kind": "behavior",
+    "context": "Build is authorized. During implementation, a previously unseen privacy risk appears in one data-sharing boundary. The rest of the feature contract remains resolved.",
+    "prompt": "Continue the work.",
+    "expected": {
+      "stage": ["Build", "Resolve", "Crystallize"],
+      "buildAuthorized": true,
+      "mustActivate": ["Lean Repository Execution", "Specialist Reasoning"],
+      "specialistRoles": ["Privacy"]
+    }
+  },
+  {
+    "id": "build-authorized-debugging-chain",
+    "title": "Authorized debugging continues through self-answerable steps",
+    "kind": "behavior",
+    "context": "Build is already authorized. A failing test reveals a caller, then an external provider boundary, then a focused proof step. All steps are reversible, in scope, and available.",
+    "prompt": "Proceed with debugging.",
+    "expected": {
+      "stage": ["Build"],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": ["Lean Repository Execution", "Evidence Stewardship"]
+    }
+  },
+  {
+    "id": "ready-without-build-authorization",
+    "title": "Ready state does not imply mutation permission",
+    "kind": "behavior",
+    "context": "Crystallization is complete and the concept is Ready. The user has not yet committed the resolved referent to execution.",
+    "prompt": "What happens now?",
+    "expected": {
+      "stage": ["Ready"],
+      "buildAuthorized": false,
+      "humanInput": "required",
+      "continuation": "handoff",
+      "mustNotActivate": ["Lean Repository Execution"]
+    }
+  },
+  {
+    "id": "scope-adjacent-marketing-idea",
+    "title": "Interesting adjacent specialist idea does not expand scope",
+    "kind": "behavior",
+    "context": "During a bounded Settings fix, Product Marketing notices an unrelated launch opportunity.",
+    "prompt": "Continue the Settings fix.",
+    "expected": {
+      "stage": ["Build"],
+      "buildAuthorized": true,
+      "mustActivate": ["Lean Repository Execution"],
+      "mustNotActivate": ["Product Marketing"]
+    }
+  },
+  {
+    "id": "specialist-saturation",
+    "title": "Specialist selection stops when more perspectives add no material value",
+    "kind": "behavior",
+    "context": "The relevant disciplines have completed independent passes. Additional professions are unlikely to change the objective and repeated passes are producing no new findings.",
+    "prompt": "Should more specialists be activated?",
+    "expected": {
+      "continuation": "either",
+      "mustActivate": ["Specialist Reasoning"]
+    }
+  },
+  {
+    "id": "crystal-exposes-implementation-shape",
+    "title": "Crystallization surfaces material implementation assumptions",
+    "kind": "behavior",
+    "context": "A substantial new internal service has been semantically resolved, but the prior synthesis did not state runtime, repository ownership, persistence, hosting, CI, or provider dependencies. These choices would materially change the build.",
+    "prompt": "Crystallize the concept before asking for Build authorization.",
+    "expected": {
+      "stage": ["Crystallize", "Ready"],
+      "buildAuthorized": false,
+      "mustActivate": ["Founder-to-Feature"]
+    }
+  },
+  {
+    "id": "crystal-human-verifiable-synthesis",
+    "title": "Ready synthesis is complete enough for technical human verification",
+    "kind": "behavior",
+    "context": "Internal reasoning is complete, but several architecture choices are currently only implicit in the agent's private reasoning.",
+    "prompt": "Prepare the final Crystallized synthesis.",
+    "expected": {
+      "stage": ["Crystallize", "Ready"],
+      "buildAuthorized": false,
+      "mustActivate": ["Development OS", "Founder-to-Feature"]
+    }
+  }
+]
