@@ -59,7 +59,7 @@ Read the relevant reference only when needed:
 
 Do not load every reference by default.
 
-## Indepenent-first reasoning
+## Independent-first reasoning
 
 Do not blend all disciplines into one generic checklist.
 
