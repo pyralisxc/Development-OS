@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Development OS productive eval scenario",
+  "type": "object",
+  "required": ["id", "title", "kind", "enabled", "target", "valueIntent", "prompt", "sourcePolicy"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "kind": { "const": "productive" },
+    "enabled": { "type": "boolean" },
+    "target": { "type": "string", "minLength": 1 },
+    "valueIntent": { "type": "string", "minLength": 1 },
+    "prompt": { "type": "string", "minLength": 1 },
+    "sourcePolicy": { "enum": ["read-only", "isolated-workspace"] }
+  },
+  "additionalProperties": false
+}

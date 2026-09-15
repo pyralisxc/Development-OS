@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "skillVersion": "3.5.0",
+  "status": "unmeasured",
+  "scenarioSetSha256": "9a0817f78005d760aaadf070a7d1fa3d55f2326821537cefbfe662abf067bd35",
+  "acceptedAt": null,
+  "provider": null,
+  "model": null,
+  "summary": {
+    "passed": null,
+    "failed": null,
+    "total": 26
+  },
+  "note": "Initial v3.5 baseline. Live behavioral measurements have not yet been accepted. Raw eval traces remain temporary workflow artifacts."
+}
