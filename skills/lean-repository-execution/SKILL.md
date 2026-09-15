@@ -156,7 +156,7 @@ If implementation exposes a genuinely new product question:
 When a project exposes trusted machine-readable current-state intelligence:
 - use it for orientation and impact understanding;
 - compare temporary development state to the relevant baseline when useful;
-- follow project-local requirements for final graphs/maps/heat-maps/checks;
+- follow project-local requirements for final graphs/maps/heat maps/checks;
 - do not recreate equivalent intelligence manually;
 - do not treat generated projections as authoritative unless the project says they are.
 
