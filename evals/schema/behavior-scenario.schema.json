@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Development OS behavior scenario",
+  "type": "object",
+  "required": ["id", "title", "kind", "prompt", "expected"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "kind": { "const": "behavior" },
+    "context": { "type": "string" },
+    "prompt": { "type": "string", "minLength": 1 },
+    "expected": {
+      "type": "object",
+      "properties": {
+        "stage": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "buildAuthorized": { "type": "boolean" },
+        "humanInput": { "enum": ["none", "required"] },
+        "continuation": { "enum": ["continue", "handoff", "either"] },
+        "mustActivate": { "type": "array", "items": { "type": "string" } },
+        "mustNotActivate": { "type": "array", "items": { "type": "string" } },
+        "specialistRoles": { "type": "array", "items": { "type": "string" } },
+        "evidenceLabels": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
