@@ -1,0 +1,28 @@
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run verify
+      - run: npm run package:release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: development-os-v3.5-candidate
+          path: artifacts/release/*.zip
+          if-no-files-found: error
+          retention-days: 7
