@@ -46,14 +46,14 @@ When a context handoff is genuinely needed, the outgoing agent may emit a compac
 
 ## Evaluation model
 
-Three levels remain intentionally separate:
+Four layers remain intentionally separate:
 
 - **Harness tests** — cheap deterministic checks of the harness and scenario contracts.
 - **Behavioral evals** — one-shot agent runs for bounded rules and routing.
 - **Trajectory evals** — cumulative multi-turn simulations for standing authorization, stage invalidation, audit continuity, retired-direction protection, and liveness.
 - **Productive evals** — substantial real work whose useful output belongs to the target project/content/business surface while raw eval traces remain temporary.
 
-Trajectory evals deliberately pass the prior transcript back into each turn. They test the methodology's state-reconciliation behavior; they do not pretend to reproduce every host product's context-management internals.
+Trajectory evals deliberately pass the standing scenario objective plus prior transcript back into each turn. They test the methodology's state-reconciliation behavior; they do not pretend to reproduce every host product's context-management internals.
 
 Commercial usefulness never overrides methodology compliance. A valuable artifact can still be an eval failure.
 
