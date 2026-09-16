@@ -8,7 +8,7 @@ on:
         required: true
         type: choice
         default: behavior
-        options: [behavior, productive]
+        options: [behavior, trajectory, productive]
       scenario:
         description: Optional scenario id; blank means all eligible scenarios
         required: false
