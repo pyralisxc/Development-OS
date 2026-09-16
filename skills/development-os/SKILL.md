@@ -1,6 +1,6 @@
 ---
 name: development-os
-description: Automatically use for software and digital-product development work: brainstorming, product design, feature changes, architecture, coding, debugging, testing, refactoring, provider/framework decisions, repository review, release work, and technical audits. Route product meaning to Founder-to-Feature, multidisciplinary perspective to Specialist Reasoning, proof to Evidence Stewardship, and execution to Lean Repository Execution. Keep reasoning and authorized execution continuous until a genuine interaction boundary. The user should not need to name these skills.
+description: "Automatically use for software and digital-product development work: brainstorming, product design, feature changes, architecture, coding, debugging, testing, refactoring, provider/framework decisions, repository review, release work, and technical audits. Route product meaning to Founder-to-Feature, multidisciplinary perspective to Specialist Reasoning, proof to Evidence Stewardship, and execution to Lean Repository Execution. Keep reasoning and authorized execution continuous until a genuine interaction boundary. The user should not need to name these skills."
 ---
 
 # Development OS
