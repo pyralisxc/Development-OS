@@ -11,6 +11,7 @@
     "validate": "node dist/src/cli.js validate",
     "verify": "npm run build && npm run test && npm run validate",
     "eval:behavior": "node dist/src/cli.js run behavior --provider openai",
+    "eval:trajectory": "node dist/src/cli.js run trajectory --provider openai",
     "eval:productive": "node dist/src/cli.js run productive --provider openai",
     "package:release": "node dist/scripts/package-release.js"
   },
