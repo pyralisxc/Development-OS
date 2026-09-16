@@ -1,12 +1,12 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { OpenAIAgentAdapter } from '../adapters/openai.js';
-import { gradeBehavior } from '../graders/behavior.js';
+import { gradeBehavior, gradeExpectation } from '../graders/behavior.js';
 import { parseEvalEnvelope } from './envelope.js';
-import { behaviorInput, behaviorInstructions, productiveInput, productiveInstructions } from './prompt.js';
-import { loadBehaviorScenarios, loadProductiveScenarios } from './scenarios.js';
+import { behaviorInput, behaviorInstructions, EVAL_END, EVAL_START, productiveInput, productiveInstructions, trajectoryInput, type TrajectoryHistoryTurn } from './prompt.js';
+import { loadBehaviorScenarios, loadProductiveScenarios, loadTrajectoryScenarios } from './scenarios.js';
 import { loadSkillInstructions } from './skills.js';
-import type { AgentAdapter, ScenarioResult } from '../types.js';
+import type { AgentAdapter, AgentRunOutput, ScenarioResult, TrajectoryScenarioResult, TrajectoryTurnResult } from '../types.js';
 
 function adapter(name: string): AgentAdapter {
   if (name === 'openai') return new OpenAIAgentAdapter();
@@ -23,6 +23,22 @@ async function outputDir(kind: string): Promise<string> {
   return directory;
 }
 
+function stripEvalBlock(text: string): string {
+  const start = text.lastIndexOf(EVAL_START);
+  const end = text.lastIndexOf(EVAL_END);
+  if (start < 0 || end < 0 || end <= start) return text.trim();
+  return `${text.slice(0, start)}${text.slice(end + EVAL_END.length)}`.trim();
+}
+
+function addUsage(target: AgentRunOutput['usage'], next: AgentRunOutput['usage']): AgentRunOutput['usage'] {
+  if (!target && !next) return undefined;
+  return {
+    inputTokens: (target?.inputTokens ?? 0) + (next?.inputTokens ?? 0),
+    outputTokens: (target?.outputTokens ?? 0) + (next?.outputTokens ?? 0),
+    totalTokens: (target?.totalTokens ?? 0) + (next?.totalTokens ?? 0),
+  };
+}
+
 export async function runBehavior(provider: string, scenarioId?: string): Promise<{ passed: boolean; results: ScenarioResult[]; directory: string }> {
   const scenarios = await loadBehaviorScenarios();
   const selected = scenarioId ? scenarios.filter(item => item.id === scenarioId) : scenarios;
@@ -36,7 +52,7 @@ export async function runBehavior(provider: string, scenarioId?: string): Promis
     const result = await runner.run({
       instructions: behaviorInstructions(skills),
       input: behaviorInput(scenario),
-      metadata: { scenario: scenario.id, skill_version: '3.5.0' },
+      metadata: { scenario: scenario.id, skill_version: '3.5.0', eval_kind: 'behavior' },
     });
     let graded: ScenarioResult;
     try {
@@ -53,6 +69,69 @@ export async function runBehavior(provider: string, scenarioId?: string): Promis
     }
     results.push(graded);
     await fs.writeFile(path.join(directory, `${scenario.id}.json`), JSON.stringify(graded, null, 2));
+  }
+
+  const summary = {
+    skillVersion: '3.5.0',
+    provider: runner.name,
+    model: process.env.DEVOS_OPENAI_MODEL ?? null,
+    createdAt: new Date().toISOString(),
+    passed: results.filter(result => result.passed).length,
+    failed: results.filter(result => !result.passed).length,
+    total: results.length,
+  };
+  await fs.writeFile(path.join(directory, 'summary.json'), JSON.stringify(summary, null, 2));
+  return { passed: summary.failed === 0, results, directory };
+}
+
+export async function runTrajectory(provider: string, scenarioId?: string): Promise<{ passed: boolean; results: TrajectoryScenarioResult[]; directory: string }> {
+  const scenarios = await loadTrajectoryScenarios();
+  const selected = scenarioId ? scenarios.filter(item => item.id === scenarioId) : scenarios;
+  if (!selected.length) throw new Error(`no trajectory scenario matched ${scenarioId ?? '<all>'}`);
+  const skills = await loadSkillInstructions(true);
+  const runner = adapter(provider);
+  const directory = await outputDir('trajectory');
+  const results: TrajectoryScenarioResult[] = [];
+
+  for (const scenario of selected) {
+    const history: TrajectoryHistoryTurn[] = [];
+    const turnResults: TrajectoryTurnResult[] = [];
+    let usage: AgentRunOutput['usage'];
+
+    for (let index = 0; index < scenario.turns.length; index += 1) {
+      const turn = scenario.turns[index]!;
+      const result = await runner.run({
+        instructions: behaviorInstructions(skills),
+        input: trajectoryInput(scenario, index, history),
+        metadata: { scenario: scenario.id, turn: String(index + 1), skill_version: '3.5.0', eval_kind: 'trajectory' },
+      });
+      usage = addUsage(usage, result.usage);
+      let graded: TrajectoryTurnResult;
+      try {
+        const base = gradeExpectation(`${scenario.id}#${index + 1}`, turn.expected, parseEvalEnvelope(result.text), result.text);
+        graded = { ...base, turn: index + 1, prompt: turn.prompt, usage: result.usage };
+      } catch (error) {
+        graded = {
+          scenarioId: `${scenario.id}#${index + 1}`,
+          turn: index + 1,
+          prompt: turn.prompt,
+          passed: false,
+          checks: [{ key: 'parse', passed: false, message: error instanceof Error ? error.message : String(error) }],
+          responseText: result.text,
+          usage: result.usage,
+        };
+      }
+      turnResults.push(graded);
+      history.push({ user: turn.prompt, assistant: stripEvalBlock(result.text) });
+    }
+
+    const scenarioResult: TrajectoryScenarioResult = {
+      scenarioId: scenario.id,
+      passed: turnResults.every(turn => turn.passed),
+      turns: turnResults,
+    };
+    results.push(scenarioResult);
+    await fs.writeFile(path.join(directory, `${scenario.id}.json`), JSON.stringify({ ...scenarioResult, usage }, null, 2));
   }
 
   const summary = {
