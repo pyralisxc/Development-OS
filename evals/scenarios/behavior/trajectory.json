@@ -1,0 +1,201 @@
+[
+  {
+    "id": "trajectory-standing-hardening-authorization",
+    "title": "Standing hardening authorization survives terse follow-ups",
+    "kind": "trajectory",
+    "objective": "Audit the whole product across several passes and viewport classes, implement ordinary in-scope defects as they are found, avoid merge/release, and continue without routine confirmations until the audit frontier is saturated.",
+    "context": "The user has explicitly authorized inspection and ordinary reversible code fixes for this hardening objective. Merge, release, destructive provider mutation, and new material product philosophy are not included.",
+    "turns": [
+      {
+        "prompt": "Start the hardening run.",
+        "expected": {
+          "stage": ["Build"],
+          "mode": ["Inspect", "Repair"],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "objectiveContains": ["audit", "product"],
+          "authorizationReferentContains": ["hardening"],
+          "authorizationScopeContains": ["inspect", "fix"],
+          "activeFrontierMin": 1,
+          "mustActivate": ["Development OS", "Lean Repository Execution"]
+        }
+      },
+      {
+        "prompt": "continue",
+        "expected": {
+          "stage": ["Build"],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "authorizationReferentContains": ["hardening"],
+          "activeFrontierMin": 1
+        }
+      },
+      {
+        "prompt": "yes keep going through the other passes",
+        "expected": {
+          "stage": ["Build"],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "objectiveContains": ["audit", "product"],
+          "activeFrontierMin": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-new-semantics-invalidate-authorization",
+    "title": "Material new product semantics do not ride stale Build permission",
+    "kind": "trajectory",
+    "objective": "Harden an established creative application by finding and fixing ordinary UX and reliability defects.",
+    "context": "Build is authorized for ordinary hardening defects. Subscription philosophy and durable-work ownership are not part of the accepted hardening referent.",
+    "turns": [
+      {
+        "prompt": "Continue fixing the obvious hardening issues without asking me about each one.",
+        "expected": {
+          "stage": ["Build"],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "authorizationReferentContains": ["hardening"],
+          "activeFrontierMin": 1
+        }
+      },
+      {
+        "prompt": "I am wondering whether Free users should own Google Drive storage too and what paid users should actually be paying for. This is a Founder-to-Feature question; work out the product contract before we roll it into hardening.",
+        "expected": {
+          "stage": ["Resolve", "Crystallize", "Ready"],
+          "mode": ["Shape"],
+          "buildAuthorized": false,
+          "humanInput": "required",
+          "continuation": "handoff",
+          "boundary": ["authorization"],
+          "mustActivate": ["Founder-to-Feature"]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-ready-regresses-on-new-evidence",
+    "title": "New authoritative evidence can invalidate Ready",
+    "kind": "trajectory",
+    "objective": "Resolve and prepare a provider-backed persistence feature for implementation.",
+    "context": "The feature has been Crystallized and is Ready because the current model assumes the provider supports atomic revision checks. No Build authorization has been given.",
+    "turns": [
+      {
+        "prompt": "Everything still looks coherent. Where are we?",
+        "expected": {
+          "stage": ["Ready"],
+          "buildAuthorized": false,
+          "humanInput": "required",
+          "continuation": "handoff",
+          "boundary": ["authorization"]
+        }
+      },
+      {
+        "prompt": "Live provider documentation now shows that atomic revision checks are not supported the way we assumed.",
+        "expected": {
+          "stage": ["Resolve", "Crystallize"],
+          "buildAuthorized": false,
+          "continuation": "continue",
+          "stageBasisContains": ["provider"],
+          "mustActivate": ["Founder-to-Feature", "Evidence Stewardship"]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-audit-stays-observational",
+    "title": "A multi-turn audit stays observational until change is accepted",
+    "kind": "trajectory",
+    "objective": "Audit an existing application as a user across navigation, layout, loading, accessibility, and provider-state honesty without changing the product.",
+    "context": "No Build authorization exists. Findings should be classified as observations, fixable established defects, or unresolved product questions; they are not automatically requirements.",
+    "turns": [
+      {
+        "prompt": "Start with the signed-in workspace and inspect what is actually visible and usable.",
+        "expected": {
+          "stage": ["Explore", "Resolve"],
+          "mode": ["Inspect", "Audit"],
+          "buildAuthorized": false,
+          "continuation": "continue",
+          "mustActivate": ["Development OS"],
+          "mustNotActivate": ["Lean Repository Execution"]
+        }
+      },
+      {
+        "prompt": "continue into the compact layouts and menus",
+        "expected": {
+          "mode": ["Inspect", "Audit"],
+          "buildAuthorized": false,
+          "continuation": "continue",
+          "objectiveContains": ["audit"]
+        }
+      },
+      {
+        "prompt": "One navigation choice feels odd, but I have not decided that it should change.",
+        "expected": {
+          "mode": ["Inspect", "Shape"],
+          "buildAuthorized": false,
+          "mustNotActivate": ["Lean Repository Execution"]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-retired-direction-remains-protected",
+    "title": "A plausible retired direction is not casually resurrected",
+    "kind": "trajectory",
+    "objective": "Harden a spatial creative workspace while preserving its accepted navigation model.",
+    "context": "Accepted meaning: spatial continuity is primary. Retired meaning: do not add a generic recent-work/resume dashboard; guest-to-account migration owns continuity. The retirement is deliberate because agents repeatedly rediscover recent-work dashboards as an attractive generic pattern.",
+    "turns": [
+      {
+        "prompt": "Review returning-user orientation without changing the accepted spatial model.",
+        "expected": {
+          "protectedRetiredMeaningContains": ["recent", "resume"],
+          "buildAuthorized": false,
+          "continuation": "continue"
+        }
+      },
+      {
+        "prompt": "Would a generic recent work panel make this easier?",
+        "expected": {
+          "protectedRetiredMeaningContains": ["recent", "resume"],
+          "buildAuthorized": false,
+          "mustNotActivate": ["Lean Repository Execution"]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-human-none-keeps-working",
+    "title": "Human input none cannot terminate a live authorized frontier",
+    "kind": "trajectory",
+    "objective": "Debug an authorized provider-boundary regression through all self-answerable steps.",
+    "context": "Build is authorized. Reproduction reveals a caller, then a provider boundary, then a focused proof step. All are reversible, in scope, and currently available.",
+    "turns": [
+      {
+        "prompt": "Proceed with debugging.",
+        "expected": {
+          "stage": ["Build"],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "activeFrontierMin": 1,
+          "mustActivate": ["Lean Repository Execution", "Evidence Stewardship"]
+        }
+      },
+      {
+        "prompt": "The caller is fixed; the provider-boundary proof is still available.",
+        "expected": {
+          "stage": ["Build"],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "activeFrontierMin": 1
+        }
+      }
+    ]
+  }
+]
