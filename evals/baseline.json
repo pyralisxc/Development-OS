@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "skillVersion": "3.5.0",
   "status": "unmeasured",
-  "scenarioSetSha256": "9a0817f78005d760aaadf070a7d1fa3d55f2326821537cefbfe662abf067bd35",
+  "scenarioSetSha256": "cb7d74a5bb0d3907f3e07f07d38331cf1badef669e3d12ea8a66e71a3409706a",
   "acceptedAt": null,
   "provider": null,
   "model": null,
   "summary": {
     "passed": null,
     "failed": null,
-    "total": 26
+    "total": 32
   },
-  "note": "Initial v3.5 baseline. Live behavioral measurements have not yet been accepted. Raw eval traces remain temporary workflow artifacts."
+  "note": "Revised v3.5 baseline: 26 one-shot behavior scenarios plus 6 trajectory scenarios. Live behavioral measurements have not yet been accepted; raw eval traces remain temporary workflow artifacts."
 }
