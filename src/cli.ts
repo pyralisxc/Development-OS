@@ -1,4 +1,4 @@
-import { runBehavior, runProductive } from './harness/run.js';
+import { runBehavior, runProductive, runTrajectory } from './harness/run.js';
 import { validateRepository } from './validate.js';
 
 function arg(name: string): string | undefined {
@@ -19,12 +19,18 @@ async function main() {
     process.exitCode = result.passed ? 0 : 1;
     return;
   }
+  if (command === 'run' && kind === 'trajectory') {
+    const result = await runTrajectory(arg('--provider') ?? 'openai', arg('--scenario'));
+    console.log(JSON.stringify({ passed: result.passed, total: result.results.length, directory: result.directory }, null, 2));
+    process.exitCode = result.passed ? 0 : 1;
+    return;
+  }
   if (command === 'run' && kind === 'productive') {
     const result = await runProductive(arg('--provider') ?? 'openai', arg('--scenario'));
     console.log(JSON.stringify(result, null, 2));
     return;
   }
-  throw new Error('usage: devos <validate | run behavior|productive [--provider openai] [--scenario id]>');
+  throw new Error('usage: devos <validate | run behavior|trajectory|productive [--provider openai] [--scenario id]>');
 }
 
 main().catch(error => {

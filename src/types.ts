@@ -1,12 +1,20 @@
-export type EvalKind = 'behavior' | 'productive';
+export type EvalKind = 'behavior' | 'trajectory' | 'productive';
 export type HumanInput = 'none' | 'required';
 export type Continuation = 'continue' | 'handoff' | 'either';
 
 export interface BehaviorExpectation {
   stage?: string[];
+  mode?: string[];
   buildAuthorized?: boolean;
   humanInput?: HumanInput;
   continuation?: Continuation;
+  boundary?: string[];
+  objectiveContains?: string[];
+  stageBasisContains?: string[];
+  authorizationReferentContains?: string[];
+  authorizationScopeContains?: string[];
+  activeFrontierMin?: number;
+  protectedRetiredMeaningContains?: string[];
   mustActivate?: string[];
   mustNotActivate?: string[];
   specialistRoles?: string[];
@@ -22,6 +30,22 @@ export interface BehaviorScenario {
   expected: BehaviorExpectation;
 }
 
+export interface TrajectoryTurn {
+  prompt: string;
+  expected: BehaviorExpectation;
+}
+
+export interface TrajectoryScenario {
+  id: string;
+  title: string;
+  kind: 'trajectory';
+  objective: string;
+  context?: string;
+  turns: TrajectoryTurn[];
+}
+
+export type DevelopmentScenario = BehaviorScenario | TrajectoryScenario;
+
 export interface ProductiveScenario {
   id: string;
   title: string;
@@ -35,9 +59,17 @@ export interface ProductiveScenario {
 
 export interface EvalEnvelope {
   stage?: string;
+  mode?: string;
+  objective?: string;
+  stageBasis?: string;
   buildAuthorized?: boolean;
+  authorizationReferent?: string;
+  authorizationScope?: string[];
   humanInput?: HumanInput;
   continuation?: 'continue' | 'handoff';
+  boundary?: string;
+  activeFrontier?: string[];
+  protectedRetiredMeaning?: string[];
   activeCapabilities?: string[];
   specialistRoles?: string[];
   evidenceLabels?: string[];
@@ -81,4 +113,15 @@ export interface ScenarioResult {
   envelope?: EvalEnvelope;
   responseText: string;
   usage?: AgentRunOutput['usage'];
+}
+
+export interface TrajectoryTurnResult extends ScenarioResult {
+  turn: number;
+  prompt: string;
+}
+
+export interface TrajectoryScenarioResult {
+  scenarioId: string;
+  passed: boolean;
+  turns: TrajectoryTurnResult[];
 }
