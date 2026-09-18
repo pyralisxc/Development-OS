@@ -26,8 +26,8 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
   }
 
   const founder = await fs.readFile(path.join(skillsRoot, 'founder-to-feature', 'SKILL.md'), 'utf8');
-  if (!founder.includes('**Implementation shape**')) throw new Error('Founder-to-Feature v3.5 must expose Implementation shape in the crystal');
-  if (!founder.includes('## Authorization reconciliation')) throw new Error('Founder-to-Feature v3.5 must reconcile changed semantic referents with Development OS authorization');
+  if (!founder.includes('**Implementation shape**')) throw new Error('Founder-to-Feature compatibility contract must expose Implementation shape in the crystal');
+  if (!founder.includes('## Authorization reconciliation')) throw new Error('Founder-to-Feature compatibility contract must reconcile changed semantic referents with Development OS authorization');
 
   const os = await fs.readFile(path.join(skillsRoot, 'development-os', 'SKILL.md'), 'utf8');
   for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
@@ -44,7 +44,7 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
   if (!evidence.includes('level of proof to the level of the claim')) throw new Error('Evidence Stewardship v4.0 must align proof level with claim level');
 
   const lean = await fs.readFile(path.join(skillsRoot, 'lean-repository-execution', 'SKILL.md'), 'utf8');
-  if (!lean.includes('## Mutation integrity and recovery')) throw new Error('Lean v3.5 must define mutation integrity and recovery');
+  if (!lean.includes('## Mutation integrity and recovery')) throw new Error('Lean compatibility contract must define mutation integrity and recovery');
 
   const development = await loadDevelopmentScenarios();
   const behavior = await loadBehaviorScenarios();
