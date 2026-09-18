@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "skillVersion": "3.5.0",
+  "skillVersion": "4.0.0",
   "status": "unmeasured",
-  "scenarioSetSha256": "cb7d74a5bb0d3907f3e07f07d38331cf1badef669e3d12ea8a66e71a3409706a",
+  "scenarioSetSha256": "1ee3fcd4174a1ebd85d5fbf842ebd1734ddafcf1944c13b9a1166d50b36b0540",
   "acceptedAt": null,
   "provider": null,
   "model": null,
   "summary": {
     "passed": null,
     "failed": null,
-    "total": 32
+    "total": 40
   },
-  "note": "Revised v3.5 baseline: 26 one-shot behavior scenarios plus 6 trajectory scenarios. Live behavioral measurements have not yet been accepted; raw eval traces remain temporary workflow artifacts."
+  "note": "DevOS 4.0 baseline: all 32 v3.5 regression scenarios are preserved as a compatibility floor, plus 8 scenarios for Discovery Explore, Ambition continuity, representation challenge, objective-level proof, and Evidence Appetite. Live behavioral measurements have not yet been accepted; raw eval traces remain temporary workflow artifacts."
 }
