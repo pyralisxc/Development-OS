@@ -3,7 +3,7 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { repoRoot, skillsRoot } from '../src/harness/paths.js';
 
-const version = '3.5';
+const version = '4.0';
 const output = path.join(repoRoot, 'artifacts', 'release');
 const skills = ['development-os', 'founder-to-feature', 'specialist-reasoning', 'evidence-stewardship', 'lean-repository-execution'];
 
