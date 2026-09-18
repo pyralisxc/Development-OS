@@ -31,8 +31,17 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
 
   const os = await fs.readFile(path.join(skillsRoot, 'development-os', 'SKILL.md'), 'utf8');
   for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
-    if (!os.includes(required)) throw new Error(`Development OS v3.5 must contain ${required}`);
+    if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
   }
+  for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '## Independent meta-audit']) {
+    if (!os.includes(required)) throw new Error(`Development OS v4.0 must contain ${required}`);
+  }
+
+  const specialist = await fs.readFile(path.join(skillsRoot, 'specialist-reasoning', 'SKILL.md'), 'utf8');
+  if (!specialist.includes('## Transformative synthesis')) throw new Error('Specialist Reasoning v4.0 must define Transformative synthesis');
+
+  const evidence = await fs.readFile(path.join(skillsRoot, 'evidence-stewardship', 'SKILL.md'), 'utf8');
+  if (!evidence.includes('level of proof to the level of the claim')) throw new Error('Evidence Stewardship v4.0 must align proof level with claim level');
 
   const lean = await fs.readFile(path.join(skillsRoot, 'lean-repository-execution', 'SKILL.md'), 'utf8');
   if (!lean.includes('## Mutation integrity and recovery')) throw new Error('Lean v3.5 must define mutation integrity and recovery');
@@ -45,7 +54,15 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
   const scenarioSetSha256 = crypto.createHash('sha256').update(canonical).digest('hex');
 
   const packageJson = JSON.parse(await fs.readFile(path.join(repoRoot, 'package.json'), 'utf8')) as { version?: string };
-  if (packageJson.version !== '3.5.0') throw new Error('package version must be 3.5.0');
+  if (packageJson.version !== '4.0.0') throw new Error('package version must be 4.0.0');
+
+  const compatibilityPath = path.join(evalsRoot, 'compatibility', 'v3.5.json');
+  const compatibility = JSON.parse(await fs.readFile(compatibilityPath, 'utf8')) as { scenarioIds?: string[] };
+  const currentIds = new Set(development.map(scenario => scenario.id));
+  const missingCompatibility = (compatibility.scenarioIds ?? []).filter(id => !currentIds.has(id));
+  if (missingCompatibility.length) {
+    throw new Error(`v3.5 compatibility scenarios missing: ${missingCompatibility.join(', ')}`);
+  }
 
   const baselinePath = path.join(evalsRoot, 'baseline.json');
   if (await fs.stat(baselinePath).then(() => true, () => false)) {
