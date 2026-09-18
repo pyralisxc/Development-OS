@@ -16,6 +16,17 @@ The five runtime skills are orthogonal:
 
 Do not move responsibilities between them casually. Prefer reducing overlap over adding doctrine.
 
+## Capacity-preserving evolution
+
+Methodology releases must treat already-proven behavior as a compatibility surface.
+
+- Add new capacity without weakening existing authorization, liveness, stage reversal, audit neutrality, evidence, or fresh-context guarantees unless a later decision explicitly retires one.
+- `evals/compatibility/v3.5.json` is the v4.0 compatibility floor; repository validation must continue to require those scenarios.
+- Prefer extending the existing skill owner over creating a new skill when the responsibility still fits.
+- A major version may represent a major capability expansion without implying intentional behavioral breakage.
+- New evals must prove the new behavior; existing evals must continue proving the old behavior.
+
+
 ## Non-negotiable context rules
 
 - Forget by default; promote deliberately.
