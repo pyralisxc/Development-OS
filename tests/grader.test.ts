@@ -68,3 +68,22 @@ test('liveness invariant rejects handoff while self-executable frontier remains'
   assert.ok(result.checks.some(check => check.key === 'liveness' && !check.passed));
   assert.ok(result.checks.some(check => check.key === 'handoff-boundary' && !check.passed));
 });
+
+
+test('v4 grader scores ambition, discovery entry, evidence appetite, and representation assumptions', () => {
+  const result = gradeExpectation('v4-runtime', {
+    ambitionContains: ['spatial', 'creator'],
+    exploreEntry: 'discovery',
+    evidenceAppetite: 'representative',
+    materialAssumptionsContains: ['Studio'],
+  }, {
+    ambition: 'Preserve spatial orientation and creator-content dominance',
+    exploreEntry: 'discovery',
+    evidenceAppetite: 'representative',
+    materialAssumptions: ['Current Studio placement is inherited rather than accepted'],
+    humanInput: 'required',
+    continuation: 'handoff',
+    boundary: 'founder judgment',
+  }, 'response');
+  assert.equal(result.passed, true);
+});
