@@ -39,6 +39,9 @@ export function gradeExpectation(scenarioId: string, expected: BehaviorExpectati
   if (expected.continuation && expected.continuation !== 'either') checks.push({ key: 'continuation', passed: envelope.continuation === expected.continuation, expected: expected.continuation, actual: envelope.continuation });
   if (expected.boundary) checks.push({ key: 'boundary', passed: !!envelope.boundary && expected.boundary.some(value => textContains(envelope.boundary, value)), expected: expected.boundary, actual: envelope.boundary });
   if (expected.objectiveContains) checks.push({ key: 'objective', passed: textContainsAll(envelope.objective, expected.objectiveContains), expected: expected.objectiveContains, actual: envelope.objective });
+  if (expected.ambitionContains) checks.push({ key: 'ambition', passed: textContainsAll(envelope.ambition, expected.ambitionContains), expected: expected.ambitionContains, actual: envelope.ambition });
+  if (expected.exploreEntry) checks.push({ key: 'exploreEntry', passed: envelope.exploreEntry === expected.exploreEntry, expected: expected.exploreEntry, actual: envelope.exploreEntry });
+  if (expected.evidenceAppetite) checks.push({ key: 'evidenceAppetite', passed: envelope.evidenceAppetite === expected.evidenceAppetite, expected: expected.evidenceAppetite, actual: envelope.evidenceAppetite });
   if (expected.stageBasisContains) checks.push({ key: 'stageBasis', passed: textContainsAll(envelope.stageBasis, expected.stageBasisContains), expected: expected.stageBasisContains, actual: envelope.stageBasis });
   if (expected.authorizationReferentContains) checks.push({ key: 'authorizationReferent', passed: textContainsAll(envelope.authorizationReferent, expected.authorizationReferentContains), expected: expected.authorizationReferentContains, actual: envelope.authorizationReferent });
   if (expected.authorizationScopeContains) checks.push({ key: 'authorizationScope', passed: expected.authorizationScopeContains.every(value => containsApprox(envelope.authorizationScope, value)), expected: expected.authorizationScopeContains, actual: envelope.authorizationScope });
@@ -59,6 +62,7 @@ export function gradeExpectation(scenarioId: string, expected: BehaviorExpectati
   for (const label of expected.evidenceLabels ?? []) {
     checks.push({ key: `evidence:${label}`, passed: containsApprox(envelope.evidenceLabels, label), expected: label, actual: envelope.evidenceLabels });
   }
+  if (expected.materialAssumptionsContains) checks.push({ key: 'materialAssumptions', passed: expected.materialAssumptionsContains.every(value => containsApprox(envelope.materialAssumptions, value)), expected: expected.materialAssumptionsContains, actual: envelope.materialAssumptions });
 
   const frontier = envelope.activeFrontier?.length ?? 0;
   if (frontier > 0 && envelope.humanInput === 'none') {
