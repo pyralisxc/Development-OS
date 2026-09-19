@@ -6,6 +6,7 @@
     "name": "Development OS"
   },
   "skills": "./skills/",
+  "apps": "./.app.json",
   "interface": {
     "displayName": "Development OS",
     "shortDescription": "Reason, inspect, build, verify, and govern software work.",
