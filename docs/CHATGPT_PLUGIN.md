@@ -24,25 +24,16 @@ The repository root is the plugin package.
 
 Do **not** add `mcp.json` or `.mcp.json` to this package for the hosted Development Intelligence or Conductor services. ChatGPT currently treats imported plugins that declare MCP servers directly as desktop-only. Web-compatible composition references already-created ChatGPT apps instead.
 
-## Bind the apps
+## Bound apps
 
-ChatGPT custom apps must exist before the plugin can reference them.
+The v4 candidate is bound to the owner's existing ChatGPT custom apps:
 
-After Development Intelligence and Conductor have each been created as ChatGPT custom apps:
+- Development Intelligence — `asdk_app_6aab8ddca30c819183d9c5f36ddc3223`
+- Conductor — `asdk_app_6aae34a2a7188191a9fe5554ad611fd32`
 
-1. Copy `docs/app-bindings.example.json` to `.app.json`.
-2. Replace each placeholder with the app ID from ChatGPT.
-3. In `.codex-plugin/plugin.json`, add:
+The active bindings live in `.app.json`, and `.codex-plugin/plugin.json` references that file through `"apps": "./.app.json"`.
 
-```json
-"apps": "./.app.json"
-```
-
-at the top level.
-4. Run `npm run verify`.
-5. Sync/reimport the Development OS marketplace in ChatGPT.
-
-Use app IDs such as `asdk_app_...`, `connector_...`, or `templated_apps_...`. Do not put a `plugin_...` ID in `.app.json`.
+The app IDs are identifiers, not credentials. Authentication and permissions remain owned by the underlying ChatGPT apps and their OAuth connections.
 
 ## Development Intelligence app
 
