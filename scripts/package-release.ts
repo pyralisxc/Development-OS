@@ -37,7 +37,6 @@ async function main() {
   await fs.cp(skillsRoot, path.join(pluginRoot, 'skills'), { recursive: true });
   await fs.mkdir(path.join(pluginRoot, 'docs'), { recursive: true });
   await fs.copyFile(path.join(repoRoot, 'docs', 'CHATGPT_PLUGIN.md'), path.join(pluginRoot, 'docs', 'CHATGPT_PLUGIN.md'));
-  await fs.copyFile(path.join(repoRoot, 'docs', 'app-bindings.example.json'), path.join(pluginRoot, 'docs', 'app-bindings.example.json'));
   await run('zip', ['-qr', path.join(output, `development-os-plugin-v${version}.zip`), path.basename(pluginRoot)], output);
   console.log(output);
 }
