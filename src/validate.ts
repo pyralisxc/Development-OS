@@ -68,11 +68,27 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
     version?: string;
     skills?: string;
     mcpServers?: string;
+    apps?: string;
   };
   if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');
   if (codexPlugin.version !== packageJson.version) throw new Error('ChatGPT/Codex plugin version must match package version');
   if (codexPlugin.skills !== './skills/') throw new Error('Development OS plugin must package canonical ./skills/');
+  if (codexPlugin.apps !== './.app.json') throw new Error('Development OS plugin must reference the bound ./.app.json');
   if (codexPlugin.mcpServers) throw new Error('web plugin must reference ChatGPT apps rather than embedded MCP server declarations');
+
+  const appBindings = JSON.parse(await fs.readFile(path.join(repoRoot, '.app.json'), 'utf8')) as {
+    apps?: Record<string, { id?: string; required?: boolean }>;
+  };
+  const requiredApps = {
+    'development-intelligence': 'asdk_app_6aab8ddca30c819183d9c5f36ddc3223',
+    conductor: 'asdk_app_6aae34a2a7188191a9fe5554ad611fd32',
+  } as const;
+  for (const [name, id] of Object.entries(requiredApps)) {
+    const binding = appBindings.apps?.[name];
+    if (!binding) throw new Error(`Development OS plugin is missing required app binding: ${name}`);
+    if (binding.id !== id) throw new Error(`Development OS plugin app binding drifted for ${name}`);
+    if (binding.required !== true) throw new Error(`Development OS plugin app binding must require ${name}`);
+  }
 
   for (const filename of ['mcp.json', '.mcp.json']) {
     const exists = await fs.stat(path.join(repoRoot, filename)).then(() => true, () => false);
