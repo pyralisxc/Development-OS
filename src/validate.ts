@@ -67,16 +67,18 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
     name?: string;
     version?: string;
     skills?: string;
+    apps?: string;
     mcpServers?: string;
   };
   if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');
   if (codexPlugin.version !== packageJson.version) throw new Error('ChatGPT/Codex plugin version must match package version');
   if (codexPlugin.skills !== './skills/') throw new Error('Development OS plugin must package canonical ./skills/');
-  if (codexPlugin.mcpServers) throw new Error('web plugin must reference ChatGPT apps rather than embedded MCP server declarations');
+  if (codexPlugin.apps) throw new Error('Development OS v4 plugin must remain lightweight and must not bind ChatGPT apps');
+  if (codexPlugin.mcpServers) throw new Error('Development OS v4 plugin must not embed MCP server declarations');
 
-  for (const filename of ['mcp.json', '.mcp.json']) {
+  for (const filename of ['.app.json', 'mcp.json', '.mcp.json']) {
     const exists = await fs.stat(path.join(repoRoot, filename)).then(() => true, () => false);
-    if (exists) throw new Error(`${filename} would make the imported Development OS plugin desktop-only; bind hosted MCP services as ChatGPT apps instead`);
+    if (exists) throw new Error(`${filename} is outside the lightweight Development OS v4 plugin boundary`);
   }
 
   const marketplace = JSON.parse(await fs.readFile(path.join(repoRoot, '.agents', 'plugins', 'marketplace.json'), 'utf8')) as {
