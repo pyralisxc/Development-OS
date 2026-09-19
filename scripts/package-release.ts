@@ -32,6 +32,7 @@ async function main() {
   const pluginRoot = path.join(output, `development-os-plugin-v${version}`);
   await fs.mkdir(pluginRoot, { recursive: true });
   await fs.copyFile(path.join(repoRoot, 'plugin.json'), path.join(pluginRoot, 'plugin.json'));
+  await fs.copyFile(path.join(repoRoot, '.app.json'), path.join(pluginRoot, '.app.json'));
   await fs.cp(path.join(repoRoot, '.codex-plugin'), path.join(pluginRoot, '.codex-plugin'), { recursive: true });
   await fs.cp(path.join(repoRoot, '.agents'), path.join(pluginRoot, '.agents'), { recursive: true });
   await fs.cp(skillsRoot, path.join(pluginRoot, 'skills'), { recursive: true });
