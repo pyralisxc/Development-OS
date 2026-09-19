@@ -1,0 +1,15 @@
+{
+  "name": "development-os",
+  "interface": {
+    "displayName": "Development OS"
+  },
+  "plugins": [
+    {
+      "name": "development-os",
+      "source": {
+        "source": "local",
+        "path": "./"
+      }
+    }
+  ]
+}

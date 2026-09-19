@@ -56,6 +56,38 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
   const packageJson = JSON.parse(await fs.readFile(path.join(repoRoot, 'package.json'), 'utf8')) as { version?: string };
   if (packageJson.version !== '4.0.0') throw new Error('package version must be 4.0.0');
 
+  const portablePlugin = JSON.parse(await fs.readFile(path.join(repoRoot, 'plugin.json'), 'utf8')) as {
+    name?: string;
+    version?: string;
+  };
+  if (portablePlugin.name !== 'development-os') throw new Error('portable plugin name must be development-os');
+  if (portablePlugin.version !== packageJson.version) throw new Error('portable plugin version must match package version');
+
+  const codexPlugin = JSON.parse(await fs.readFile(path.join(repoRoot, '.codex-plugin', 'plugin.json'), 'utf8')) as {
+    name?: string;
+    version?: string;
+    skills?: string;
+    mcpServers?: string;
+  };
+  if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');
+  if (codexPlugin.version !== packageJson.version) throw new Error('ChatGPT/Codex plugin version must match package version');
+  if (codexPlugin.skills !== './skills/') throw new Error('Development OS plugin must package canonical ./skills/');
+  if (codexPlugin.mcpServers) throw new Error('web plugin must reference ChatGPT apps rather than embedded MCP server declarations');
+
+  for (const filename of ['mcp.json', '.mcp.json']) {
+    const exists = await fs.stat(path.join(repoRoot, filename)).then(() => true, () => false);
+    if (exists) throw new Error(`${filename} would make the imported Development OS plugin desktop-only; bind hosted MCP services as ChatGPT apps instead`);
+  }
+
+  const marketplace = JSON.parse(await fs.readFile(path.join(repoRoot, '.agents', 'plugins', 'marketplace.json'), 'utf8')) as {
+    plugins?: Array<{ name?: string; source?: { source?: string; path?: string } }>;
+  };
+  const marketplacePlugin = marketplace.plugins?.find(item => item.name === 'development-os');
+  if (!marketplacePlugin) throw new Error('plugin marketplace must include development-os');
+  if (marketplacePlugin.source?.source !== 'local' || marketplacePlugin.source.path !== './') {
+    throw new Error('Development OS marketplace entry must reference the repository-root plugin package');
+  }
+
   const compatibilityPath = path.join(evalsRoot, 'compatibility', 'v3.5.json');
   const compatibility = JSON.parse(await fs.readFile(compatibilityPath, 'utf8')) as { scenarioIds?: string[] };
   const currentIds = new Set(development.map(scenario => scenario.id));

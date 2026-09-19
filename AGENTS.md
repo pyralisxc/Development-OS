@@ -57,6 +57,19 @@ Development Intelligence is optional technical evidence. Development OS must wor
 
 Provider adapters belong in the harness. Runtime skills stay provider-neutral.
 
+## Runtime composition
+
+Development OS may be distributed as one plugin that packages the canonical skills and references independently deployed specialist apps.
+
+Composition is not ownership transfer:
+
+- Development Intelligence owns evidence and project intelligence.
+- Conductor owns execution/orchestration.
+- AI Systems Control owns owner-facing governance and control-plane state.
+- Development OS owns reasoning methodology and the ChatGPT-facing development composition.
+
+Do not proxy or reimplement a specialist service merely to make the plugin look unified. Prefer app references over embedded remote MCP declarations for the ChatGPT web package. Do not commit placeholder or fabricated app IDs into the active plugin manifest.
+
 ## Stack discipline
 
 Current accepted shape:
