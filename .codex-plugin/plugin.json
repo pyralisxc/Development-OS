@@ -1,0 +1,19 @@
+{
+  "name": "development-os",
+  "version": "4.0.0",
+  "description": "One Development OS front door for development reasoning and approved specialist apps.",
+  "author": {
+    "name": "Development OS"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Development OS",
+    "shortDescription": "Reason, inspect, build, verify, and govern software work.",
+    "longDescription": "Development OS provides the five Development OS reasoning skills and composes approved specialist apps such as Development Intelligence and Conductor without absorbing their domain ownership.",
+    "developerName": "Development OS",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ]
+  }
+}
