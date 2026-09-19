@@ -2,18 +2,34 @@
 
 ## Purpose
 
-Development OS is the single ChatGPT-facing development package.
+Development OS is the lightweight ChatGPT-facing methodology package.
 
-The plugin composes:
+It packages the five canonical Development OS skills:
 
-- the five Development OS skills for reasoning and workflow;
-- Development Intelligence as the evidence/intelligence app;
-- Conductor as the execution/runtime app;
-- AI Systems Control later, when ASC exposes a distinct agent-facing governance contract.
+- Development OS
+- Founder-to-Feature
+- Specialist Reasoning
+- Evidence Stewardship
+- Lean Repository Execution
 
-Composition does not transfer ownership. Development Intelligence still owns technical evidence, Conductor still owns execution/orchestration, ASC still owns owner-facing governance, and Development OS still owns development reasoning.
+That is the entire v4 plugin boundary.
 
-## Web-compatible packaging
+## Connected apps stay independent
+
+Development Intelligence and Conductor are already useful as independently connected ChatGPT apps. AI Systems Control may also expose an app later when it has a distinct agent-facing governance contract.
+
+The Development OS plugin does **not** bind those apps by ID and does not embed their MCP endpoints.
+
+This is intentional:
+
+- Development Intelligence keeps its own OAuth, deployment, MCP contract, and evidence authority.
+- Conductor keeps its own OAuth, deployment, MCP contract, and execution authority.
+- AI Systems Control keeps owner-facing governance and control-plane authority.
+- Development OS remains portable reasoning/workflow methodology.
+
+A ChatGPT account may have all of them enabled at the same time. Development OS provides the reasoning frame; connected apps provide capabilities when available.
+
+## Packaging
 
 The repository root is the plugin package.
 
@@ -22,97 +38,36 @@ The repository root is the plugin package.
 - `skills/` is the canonical skill source and is packaged directly.
 - `.agents/plugins/marketplace.json` lets a workspace import/sync this repository as a plugin marketplace.
 
-Do **not** add `mcp.json` or `.mcp.json` to this package for the hosted Development Intelligence or Conductor services. ChatGPT currently treats imported plugins that declare MCP servers directly as desktop-only. Web-compatible composition references already-created ChatGPT apps instead.
+The active package intentionally has:
 
-## Bind the apps
+- no `.app.json`;
+- no app IDs;
+- no `mcp.json`;
+- no `.mcp.json`.
 
-ChatGPT custom apps must exist before the plugin can reference them.
+The plugin can therefore evolve independently of whichever apps are connected to a particular ChatGPT account.
 
-After Development Intelligence and Conductor have each been created as ChatGPT custom apps:
+## Runtime relationship
 
-1. Copy `docs/app-bindings.example.json` to `.app.json`.
-2. Replace each placeholder with the app ID from ChatGPT.
-3. In `.codex-plugin/plugin.json`, add:
+In an account where the apps are connected, the intended conceptual ownership remains:
 
-```json
-"apps": "./.app.json"
-```
+- **Development OS** — reasoning, stages, authorization, Ambition, Evidence Appetite, routing, and liveness.
+- **Development Intelligence** — evidence-backed project reality.
+- **Conductor** — capability discovery and execution/orchestration.
+- **AI Systems Control** — owner-facing governance and control-plane state.
 
-at the top level.
-4. Run `npm run verify`.
-5. Sync/reimport the Development OS marketplace in ChatGPT.
+The plugin does not need to declare those relationships as hard dependencies for the methodology to use available capabilities appropriately.
 
-Use app IDs such as `asdk_app_...`, `connector_...`, or `templated_apps_...`. Do not put a `plugin_...` ID in `.app.json`.
+## Acceptance
 
-## Development Intelligence app
+A fresh ChatGPT conversation with the Development OS plugin installed should:
 
-The hosted Development Intelligence service already exposes an OAuth-protected MCP endpoint:
-
-```text
-https://devint.cardforges.com/mcp
-```
-
-Create or reuse a ChatGPT custom app for that endpoint. If creating it:
-
-1. Enable ChatGPT developer mode.
-2. Open Apps → Create.
-3. Enter the MCP endpoint above.
-4. Use OAuth authentication.
-5. Scan tools and complete the Development Intelligence owner authorization flow.
-6. Create the app.
-7. Copy its technical app ID from the ChatGPT app URL for the plugin binding.
-
-The plugin should reference the app rather than embedding the MCP URL.
-
-## Conductor app
-
-Conductor's MCP transport is implemented on its `preview` branch but must be deployed before ChatGPT can connect.
-
-The deployment needs:
-
-- a stable public HTTPS origin;
-- `CONDUCTOR_PUBLIC_URL`;
-- `CONDUCTOR_OAUTH_ISSUER`;
-- `CONDUCTOR_OAUTH_JWKS_URL`;
-- `CONDUCTOR_PROJECTS_JSON`;
-- `GITHUB_TOKEN`;
-- the service port supplied by the host.
-
-Conductor exposes:
-
-- `GET /health`;
-- OAuth protected-resource metadata;
-- `POST /mcp`;
-- `capabilities`;
-- `preflight_project`.
-
-The current Conductor transport is an OAuth resource server, not an authorization server. Its issuer must therefore provide the authorization flow, PKCE-compatible client behavior, JWT signing/JWKS, refresh-token support as required by the ChatGPT connection, the exact Conductor MCP audience, and the `conductor.read` scope.
-
-For a single-owner deployment, the smallest operational simplification is to give Conductor a proven small owner OAuth path (for example by adapting the already-working Development Intelligence pattern) rather than introducing a large identity platform solely for these two read-only tools. That change belongs to Conductor, not Development OS.
-
-After Conductor has a public endpoint and working OAuth:
-
-1. Create a ChatGPT custom app using `https://<conductor-origin>/mcp`.
-2. Complete OAuth and tool scanning.
-3. Verify the app exposes exactly `capabilities` and `preflight_project` for Runtime v0.
-4. Copy the technical app ID.
-5. Bind it in Development OS `.app.json`.
-
-## First acceptance test
-
-In a fresh ChatGPT web conversation with the Development OS plugin installed:
-
-1. Development OS skills should activate for development work.
-2. Call Conductor `capabilities`.
-3. Call Conductor `preflight_project` for an allowlisted project.
-4. Ask Development Intelligence for current project reality.
-5. Confirm the agent distinguishes:
-   - reasoning authority: Development OS;
-   - evidence authority: Development Intelligence;
-   - execution capability: Conductor.
-
-Runtime v0 is still read-only. A later Conductor execution slice is required before the unified plugin can replace direct GitHub/shell mutation tools.
+1. activate the relevant Development OS skills for development work;
+2. use connected specialist apps when they are available and relevant;
+3. remain functional when one or more external apps are absent;
+4. never claim a connected capability exists without checking current tool reality;
+5. preserve the ownership boundaries above.
 
 ## Mobile boundary
 
-Custom MCP apps are currently a ChatGPT web capability. The plugin package may remain portable, but its MCP-backed DI/Conductor app actions should not be treated as mobile-parity functionality until ChatGPT supports custom MCP apps there.
+The Development OS skills package is independent of custom MCP support. Custom MCP-backed apps may have different availability across ChatGPT surfaces; that does not change the plugin's methodology boundary.
