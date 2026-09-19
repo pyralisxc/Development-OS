@@ -118,6 +118,12 @@ Then prove it there.
 
 Never claim provider/production reality from a mock.
 
+Also match the **level of proof to the level of the claim**.
+
+> **Do not close an objective using evidence collected below the level of that objective.**
+
+Local assertions may prove local properties without proving that a complete workflow is professionally coherent, usable, resilient, or otherwise satisfies a broader product claim.
+
 ## Four evidence classes
 
 Use these mentally. Do not create taxonomy files.
@@ -171,6 +177,9 @@ Proof in the environment where uncertainty exists.
 
 Examples:
 - physical browser/device interaction;
+- continuous workflow/journey observation;
+- temporal interaction behavior such as entry/exit, interruption, focus changes, resize/reflow, pan/zoom, drag-vs-click/touch arbitration, loading, recovery, and return paths;
+- compositional behavior across several states, not only isolated screenshots;
 - visual usability;
 - real auth/provider behavior;
 - staging/production configuration;
@@ -196,6 +205,7 @@ If those answers are weak, keep the evidence temporary.
 
 When a Crystallized feature exists, derive proof from it:
 
+- **Ambition** — which qualitative properties materially distinguish success from merely functioning?
 - **Changes** — what new behavior needs evidence?
 - **Preserved** — what important existing truths must not regress?
 - **Retired** — which old tests/proof may now be obsolete?
@@ -203,7 +213,7 @@ When a Crystallized feature exists, derive proof from it:
 - **System shape** — what technical boundaries deserve contract/guardrail protection?
 - **Lifecycle** — what scale/migration/recovery/compatibility evidence matters?
 - **Ecosystem choice** — what provider/native boundary must be proven in reality?
-- **Acceptance meaning** — what observable outcome establishes success?
+- **Acceptance meaning** — what observable outcome establishes success at the same level as the claim?
 
 Do not invent additional product requirements while designing proof.
 
@@ -221,7 +231,9 @@ Experiment freely, learn desired behavior, then promote only the durable guarant
 Create a reproduction, fix the canonical owner, verify accepted behavior, then delete the probe when permanence is not justified.
 
 ### Physical acceptance
-Use real browser/device/provider/output evidence when uncertainty is inherently physical, visual, operational, or external.
+Use real browser/device/provider/output evidence when uncertainty is inherently physical, visual, operational, experiential, compositional, or external.
+
+For interactive objectives, prefer observing the complete journey when quality lives between states. A set of individually green assertions does not automatically prove choreography, orientation, interaction confidence, or whole-workflow coherence.
 
 The proof method serves the truth.
 
@@ -326,8 +338,8 @@ Before evidence-related work is considered complete:
 - remove temporary probes unless they earned permanence;
 - consolidate durable protection;
 - retire proof for intentionally retired behavior;
-- distinguish automated proof from physical/provider acceptance;
-- state what important behavior was actually proven and what remains unproven.
+- distinguish automated proof from physical/provider/experiential acceptance;
+- state what important behavior was actually proven, at what claim level, and what remains unproven.
 
 Do not report “all tests pass” as equivalent to “the product is correct.”
 
@@ -351,6 +363,7 @@ Do not:
 - require TDD for every change;
 - add one permanent regression for every bug;
 - equate green CI with product correctness;
+- promote component-level proof into a workflow-level or product-quality claim without matching evidence;
 - treat historical tests as unquestionable authority;
 - delete hard tests without identifying their protected guarantee;
 - use implementation snapshots where stable behavior can be proven;
@@ -358,8 +371,9 @@ Do not:
 - claim external reality from mocks;
 - add a new verification framework when current tools suffice;
 - create evidence ledgers/testing diaries by default;
-- make Evidence Stewardship a new mandatory phase.
+- make Evidence Stewardship a new mandatory phase;
+- automate unstable taste judgments merely to create the appearance of objective proof.
 
 ## Governing maxim
 
-> **Preserve guarantees, not tests. Prove reality at the boundary where it exists. Keep only the evidence worth carrying forward.**
+> **Preserve guarantees, not tests. Prove reality at the boundary and claim level where it exists. Keep only the evidence worth carrying forward.**

@@ -9,37 +9,62 @@
       {
         "prompt": "Start the hardening run.",
         "expected": {
-          "stage": ["Build"],
-          "mode": ["Inspect", "Repair"],
+          "stage": [
+            "Build"
+          ],
+          "mode": [
+            "Inspect",
+            "Repair"
+          ],
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "continue",
-          "objectiveContains": ["audit", "product"],
-          "authorizationReferentContains": ["hardening"],
-          "authorizationScopeContains": ["inspect", "fix"],
+          "objectiveContains": [
+            "audit",
+            "product"
+          ],
+          "authorizationReferentContains": [
+            "hardening"
+          ],
+          "authorizationScopeContains": [
+            "inspect",
+            "fix"
+          ],
           "activeFrontierMin": 1,
-          "mustActivate": ["Development OS", "Lean Repository Execution"]
+          "mustActivate": [
+            "Development OS",
+            "Lean Repository Execution"
+          ]
         }
       },
       {
         "prompt": "continue",
         "expected": {
-          "stage": ["Build"],
+          "stage": [
+            "Build"
+          ],
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "continue",
-          "authorizationReferentContains": ["hardening"],
+          "authorizationReferentContains": [
+            "hardening"
+          ],
           "activeFrontierMin": 1
         }
       },
       {
         "prompt": "yes keep going through the other passes",
         "expected": {
-          "stage": ["Build"],
+          "stage": [
+            "Build"
+          ],
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "continue",
-          "objectiveContains": ["audit", "product"],
+          "objectiveContains": [
+            "audit",
+            "product"
+          ],
           "activeFrontierMin": 1
         }
       }
@@ -55,24 +80,38 @@
       {
         "prompt": "Continue fixing the obvious hardening issues without asking me about each one.",
         "expected": {
-          "stage": ["Build"],
+          "stage": [
+            "Build"
+          ],
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "continue",
-          "authorizationReferentContains": ["hardening"],
+          "authorizationReferentContains": [
+            "hardening"
+          ],
           "activeFrontierMin": 1
         }
       },
       {
         "prompt": "I am wondering whether Free users should own Google Drive storage too and what paid users should actually be paying for. This is a Founder-to-Feature question; work out the product contract before we roll it into hardening.",
         "expected": {
-          "stage": ["Resolve", "Crystallize", "Ready"],
-          "mode": ["Shape"],
+          "stage": [
+            "Resolve",
+            "Crystallize",
+            "Ready"
+          ],
+          "mode": [
+            "Shape"
+          ],
           "buildAuthorized": false,
           "humanInput": "required",
           "continuation": "handoff",
-          "boundary": ["authorization"],
-          "mustActivate": ["Founder-to-Feature"]
+          "boundary": [
+            "authorization"
+          ],
+          "mustActivate": [
+            "Founder-to-Feature"
+          ]
         }
       }
     ]
@@ -87,21 +126,33 @@
       {
         "prompt": "Everything still looks coherent. Where are we?",
         "expected": {
-          "stage": ["Ready"],
+          "stage": [
+            "Ready"
+          ],
           "buildAuthorized": false,
           "humanInput": "required",
           "continuation": "handoff",
-          "boundary": ["authorization"]
+          "boundary": [
+            "authorization"
+          ]
         }
       },
       {
         "prompt": "Live provider documentation now shows that atomic revision checks are not supported the way we assumed.",
         "expected": {
-          "stage": ["Resolve", "Crystallize"],
+          "stage": [
+            "Resolve",
+            "Crystallize"
+          ],
           "buildAuthorized": false,
           "continuation": "continue",
-          "stageBasisContains": ["provider"],
-          "mustActivate": ["Founder-to-Feature", "Evidence Stewardship"]
+          "stageBasisContains": [
+            "provider"
+          ],
+          "mustActivate": [
+            "Founder-to-Feature",
+            "Evidence Stewardship"
+          ]
         }
       }
     ]
@@ -116,29 +167,49 @@
       {
         "prompt": "Start with the signed-in workspace and inspect what is actually visible and usable.",
         "expected": {
-          "stage": ["Explore", "Resolve"],
-          "mode": ["Inspect", "Audit"],
+          "stage": [
+            "Explore",
+            "Resolve"
+          ],
+          "mode": [
+            "Inspect",
+            "Audit"
+          ],
           "buildAuthorized": false,
           "continuation": "continue",
-          "mustActivate": ["Development OS"],
-          "mustNotActivate": ["Lean Repository Execution"]
+          "mustActivate": [
+            "Development OS"
+          ],
+          "mustNotActivate": [
+            "Lean Repository Execution"
+          ]
         }
       },
       {
         "prompt": "continue into the compact layouts and menus",
         "expected": {
-          "mode": ["Inspect", "Audit"],
+          "mode": [
+            "Inspect",
+            "Audit"
+          ],
           "buildAuthorized": false,
           "continuation": "continue",
-          "objectiveContains": ["audit"]
+          "objectiveContains": [
+            "audit"
+          ]
         }
       },
       {
         "prompt": "One navigation choice feels odd, but I have not decided that it should change.",
         "expected": {
-          "mode": ["Inspect", "Shape"],
+          "mode": [
+            "Inspect",
+            "Shape"
+          ],
           "buildAuthorized": false,
-          "mustNotActivate": ["Lean Repository Execution"]
+          "mustNotActivate": [
+            "Lean Repository Execution"
+          ]
         }
       }
     ]
@@ -153,7 +224,10 @@
       {
         "prompt": "Review returning-user orientation without changing the accepted spatial model.",
         "expected": {
-          "protectedRetiredMeaningContains": ["recent", "resume"],
+          "protectedRetiredMeaningContains": [
+            "recent",
+            "resume"
+          ],
           "buildAuthorized": false,
           "continuation": "continue"
         }
@@ -161,9 +235,14 @@
       {
         "prompt": "Would a generic recent work panel make this easier?",
         "expected": {
-          "protectedRetiredMeaningContains": ["recent", "resume"],
+          "protectedRetiredMeaningContains": [
+            "recent",
+            "resume"
+          ],
           "buildAuthorized": false,
-          "mustNotActivate": ["Lean Repository Execution"]
+          "mustNotActivate": [
+            "Lean Repository Execution"
+          ]
         }
       }
     ]
@@ -178,22 +257,147 @@
       {
         "prompt": "Proceed with debugging.",
         "expected": {
-          "stage": ["Build"],
+          "stage": [
+            "Build"
+          ],
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "continue",
           "activeFrontierMin": 1,
-          "mustActivate": ["Lean Repository Execution", "Evidence Stewardship"]
+          "mustActivate": [
+            "Lean Repository Execution",
+            "Evidence Stewardship"
+          ]
         }
       },
       {
         "prompt": "The caller is fixed; the provider-boundary proof is still available.",
         "expected": {
-          "stage": ["Build"],
+          "stage": [
+            "Build"
+          ],
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "continue",
           "activeFrontierMin": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-ambition-survives-build-transition",
+    "title": "Ambition survives Ready to Build and terse continuation",
+    "kind": "trajectory",
+    "objective": "Create a focused spatial Artifact editing workflow while preserving spatial orientation and creator-content dominance.",
+    "context": "The product semantics are resolved enough to Crystallize. Build is not authorized at the start.",
+    "turns": [
+      {
+        "prompt": "Crystallize the version we have.",
+        "expected": {
+          "stage": [
+            "Crystallize",
+            "Ready"
+          ],
+          "buildAuthorized": false,
+          "humanInput": "required",
+          "continuation": "handoff",
+          "ambitionContains": [
+            "spatial",
+            "creator"
+          ],
+          "mustActivate": [
+            "Founder-to-Feature"
+          ]
+        }
+      },
+      {
+        "prompt": "Build that version.",
+        "expected": {
+          "stage": [
+            "Build"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "ambitionContains": [
+            "spatial",
+            "creator"
+          ],
+          "mustActivate": [
+            "Lean Repository Execution"
+          ]
+        }
+      },
+      {
+        "prompt": "continue",
+        "expected": {
+          "stage": [
+            "Build"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "ambitionContains": [
+            "spatial",
+            "creator"
+          ],
+          "activeFrontierMin": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-discovery-reconciles-founder-interpretation",
+    "title": "Discovery Explore preserves independent orientation then reconciles founder interpretation",
+    "kind": "trajectory",
+    "objective": "Independently audit a spatial creator workspace, then reconcile the findings with founder context before selecting a product change.",
+    "context": "Authoritative project facts are available, but the founder intentionally withholds their current diagnosis during the first pass. No Build authorization exists.",
+    "turns": [
+      {
+        "prompt": "Start the independent audit. Do not ask me for my theory yet.",
+        "expected": {
+          "stage": [
+            "Explore"
+          ],
+          "mode": [
+            "Inspect",
+            "Audit"
+          ],
+          "buildAuthorized": false,
+          "humanInput": "none",
+          "continuation": "continue",
+          "exploreEntry": "discovery",
+          "evidenceAppetite": "representative",
+          "activeFrontierMin": 1,
+          "mustActivate": [
+            "Development OS",
+            "Specialist Reasoning"
+          ],
+          "mustNotActivate": [
+            "Founder-to-Feature"
+          ]
+        }
+      },
+      {
+        "prompt": "My theory is that Artifact editing and Template design have been conflated. Compare that against what you found and pursue it if the evidence supports it.",
+        "expected": {
+          "stage": [
+            "Explore",
+            "Resolve",
+            "Crystallize"
+          ],
+          "mode": [
+            "Shape",
+            "Inspect"
+          ],
+          "buildAuthorized": false,
+          "continuation": "continue",
+          "exploreEntry": "discovery",
+          "evidenceAppetite": "targeted",
+          "mustActivate": [
+            "Founder-to-Feature",
+            "Specialist Reasoning"
+          ]
         }
       }
     ]

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "development-os",
+  "version": "4.0.0",
+  "description": "Development OS packages the canonical reasoning skills used to shape, build, verify, and govern software work.",
+  "author": {
+    "name": "Development OS"
+  },
+  "repository": "https://github.com/pyralisxc/Development-OS",
+  "keywords": [
+    "software-development",
+    "development-os",
+    "reasoning",
+    "evidence",
+    "execution"
+  ]
+}

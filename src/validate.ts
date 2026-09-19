@@ -26,16 +26,25 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
   }
 
   const founder = await fs.readFile(path.join(skillsRoot, 'founder-to-feature', 'SKILL.md'), 'utf8');
-  if (!founder.includes('**Implementation shape**')) throw new Error('Founder-to-Feature v3.5 must expose Implementation shape in the crystal');
-  if (!founder.includes('## Authorization reconciliation')) throw new Error('Founder-to-Feature v3.5 must reconcile changed semantic referents with Development OS authorization');
+  if (!founder.includes('**Implementation shape**')) throw new Error('Founder-to-Feature compatibility contract must expose Implementation shape in the crystal');
+  if (!founder.includes('## Authorization reconciliation')) throw new Error('Founder-to-Feature compatibility contract must reconcile changed semantic referents with Development OS authorization');
 
   const os = await fs.readFile(path.join(skillsRoot, 'development-os', 'SKILL.md'), 'utf8');
   for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
-    if (!os.includes(required)) throw new Error(`Development OS v3.5 must contain ${required}`);
+    if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
+  }
+  for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '## Independent meta-audit']) {
+    if (!os.includes(required)) throw new Error(`Development OS v4.0 must contain ${required}`);
   }
 
+  const specialist = await fs.readFile(path.join(skillsRoot, 'specialist-reasoning', 'SKILL.md'), 'utf8');
+  if (!specialist.includes('## Transformative synthesis')) throw new Error('Specialist Reasoning v4.0 must define Transformative synthesis');
+
+  const evidence = await fs.readFile(path.join(skillsRoot, 'evidence-stewardship', 'SKILL.md'), 'utf8');
+  if (!evidence.includes('level of proof to the level of the claim')) throw new Error('Evidence Stewardship v4.0 must align proof level with claim level');
+
   const lean = await fs.readFile(path.join(skillsRoot, 'lean-repository-execution', 'SKILL.md'), 'utf8');
-  if (!lean.includes('## Mutation integrity and recovery')) throw new Error('Lean v3.5 must define mutation integrity and recovery');
+  if (!lean.includes('## Mutation integrity and recovery')) throw new Error('Lean compatibility contract must define mutation integrity and recovery');
 
   const development = await loadDevelopmentScenarios();
   const behavior = await loadBehaviorScenarios();
@@ -45,7 +54,49 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
   const scenarioSetSha256 = crypto.createHash('sha256').update(canonical).digest('hex');
 
   const packageJson = JSON.parse(await fs.readFile(path.join(repoRoot, 'package.json'), 'utf8')) as { version?: string };
-  if (packageJson.version !== '3.5.0') throw new Error('package version must be 3.5.0');
+  if (packageJson.version !== '4.0.0') throw new Error('package version must be 4.0.0');
+
+  const portablePlugin = JSON.parse(await fs.readFile(path.join(repoRoot, 'plugin.json'), 'utf8')) as {
+    name?: string;
+    version?: string;
+  };
+  if (portablePlugin.name !== 'development-os') throw new Error('portable plugin name must be development-os');
+  if (portablePlugin.version !== packageJson.version) throw new Error('portable plugin version must match package version');
+
+  const codexPlugin = JSON.parse(await fs.readFile(path.join(repoRoot, '.codex-plugin', 'plugin.json'), 'utf8')) as {
+    name?: string;
+    version?: string;
+    skills?: string;
+    apps?: string;
+    mcpServers?: string;
+  };
+  if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');
+  if (codexPlugin.version !== packageJson.version) throw new Error('ChatGPT/Codex plugin version must match package version');
+  if (codexPlugin.skills !== './skills/') throw new Error('Development OS plugin must package canonical ./skills/');
+  if (codexPlugin.apps) throw new Error('Development OS v4 plugin must remain lightweight and must not bind ChatGPT apps');
+  if (codexPlugin.mcpServers) throw new Error('Development OS v4 plugin must not embed MCP server declarations');
+
+  for (const filename of ['.app.json', 'mcp.json', '.mcp.json']) {
+    const exists = await fs.stat(path.join(repoRoot, filename)).then(() => true, () => false);
+    if (exists) throw new Error(`${filename} is outside the lightweight Development OS v4 plugin boundary`);
+  }
+
+  const marketplace = JSON.parse(await fs.readFile(path.join(repoRoot, '.agents', 'plugins', 'marketplace.json'), 'utf8')) as {
+    plugins?: Array<{ name?: string; source?: { source?: string; path?: string } }>;
+  };
+  const marketplacePlugin = marketplace.plugins?.find(item => item.name === 'development-os');
+  if (!marketplacePlugin) throw new Error('plugin marketplace must include development-os');
+  if (marketplacePlugin.source?.source !== 'local' || marketplacePlugin.source.path !== './') {
+    throw new Error('Development OS marketplace entry must reference the repository-root plugin package');
+  }
+
+  const compatibilityPath = path.join(evalsRoot, 'compatibility', 'v3.5.json');
+  const compatibility = JSON.parse(await fs.readFile(compatibilityPath, 'utf8')) as { scenarioIds?: string[] };
+  const currentIds = new Set(development.map(scenario => scenario.id));
+  const missingCompatibility = (compatibility.scenarioIds ?? []).filter(id => !currentIds.has(id));
+  if (missingCompatibility.length) {
+    throw new Error(`v3.5 compatibility scenarios missing: ${missingCompatibility.join(', ')}`);
+  }
 
   const baselinePath = path.join(evalsRoot, 'baseline.json');
   if (await fs.stat(baselinePath).then(() => true, () => false)) {

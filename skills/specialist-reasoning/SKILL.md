@@ -150,12 +150,40 @@ Do not spawn one permanent agent per profession or fan out by default.
 
 Specialists operate inside the accepted objective.
 
+> **The accepted objective is not automatically the accepted representation.**
+
+Do not treat the current framing, decomposition, workflow, interface, feature boundary, or architectural abstraction as settled merely because it already exists. Challenge those representations when doing so could materially improve the accepted objective or its Ambition.
+
 Classify discoveries:
 - **Required for the objective** — analyze and feed back now.
 - **Adjacent but nonessential** — note only when useful; do not expand scope automatically.
 - **Would materially redefine the objective** — surface through the owning workflow as a genuine founder/product choice.
 
 Do not let Marketing invent a launch program during a settings fix, Legal redefine unrelated policy, or Architecture redesign the platform because a local feature exposed an interesting possibility.
+
+Representation challenge must remain referent-bound: it may improve how the accepted objective is realized, but materially different product intent still belongs to Founder-to-Feature.
+
+## Transformative synthesis
+
+For substantial Explore or Crystallize work, add a second synthesis only when the current representation itself may be limiting the outcome.
+
+Ask:
+
+- What is every current specialist implicitly assuming?
+- Which apparent constraint may only be historical?
+- What could disappear rather than be improved?
+- What existing project capability is being underused?
+- Which apparently separate problems become simpler when modeled together?
+- What would amplify something uniquely strong in this project rather than merely reproduce a conventional solution?
+- What would make the result substantially better rather than merely correct?
+- If the current solution did not exist, would we invent it this way?
+- Are we improving an abstraction because it deserves to exist or because it already exists?
+
+This is **Innovative Caretaking behavior**, not a separate skill in v4.0.
+
+Return the strongest representation challenges as hypotheses to the owning workflow. Do not silently turn them into accepted product meaning or implementation scope.
+
+Use established professional practice as a baseline, then deliberately ask what the project uniquely enables beyond that baseline. Generic professionalism should prevent avoidable amateurism without erasing project-native strengths.
 
 ## Output to the owning workflow
 
@@ -166,6 +194,7 @@ Return a compact synthesis, not a stack of specialist reports:
 - **Unsupported assumptions** — with evidence/hypothesis/inference status when useful.
 - **Cross-functional conflicts** — only unresolved or contract-changing disagreements.
 - **Contract implications** — what product/technical meaning should change.
+- **Representation challenges** — only serious alternatives or simplifications likely to change the quality of realization.
 - **Founder decisions** — only irreducible choices.
 
 Founder-to-Feature should absorb accepted findings into the normal product contract. Do not create a parallel permanent specialist specification by default.
@@ -184,7 +213,7 @@ Stop specialist expansion when:
 - the smallest sufficient team has covered the material risks/opportunities;
 - additional disciplines are unlikely to change the objective;
 - repeated passes produce no materially new information;
-- remaining uncertainty belongs to unavailable evidence, a founder decision, or bounded implementation freedom.
+- remaining uncertainty belongs to unavailable evidence, a founder decision, bounded implementation freedom, or human taste after serious representation alternatives have been considered.
 
 Do not activate more professions merely to appear comprehensive.
 
@@ -199,8 +228,11 @@ Do not:
 - treat simulated expertise as authoritative external fact;
 - create permanent specialist reports by default;
 - let specialist reasoning own development stages or implementation;
-- expand scope because an expert perspective surfaced an interesting adjacent idea.
+- expand scope because an expert perspective surfaced an interesting adjacent idea;
+- confuse the current implementation shape with the accepted objective;
+- invoke Transformative Synthesis mechanically when the representation is already settled or the task is routine;
+- use innovation as permission to ignore authoritative project constraints or founder intent.
 
 ## Governing maxim
 
-> **Use the smallest team that can reveal what the primary reasoning is likely to miss. Think independently first, synthesize second, and return only what materially changes the work.**
+> **Use the smallest team that can reveal what the primary reasoning is likely to miss. Think independently first, challenge the representation when it may suppress the objective, synthesize second, and return only what materially changes the work.**

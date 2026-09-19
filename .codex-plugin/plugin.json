@@ -1,0 +1,19 @@
+{
+  "name": "development-os",
+  "version": "4.0.0",
+  "description": "One Development OS front door for development reasoning and workflow.",
+  "author": {
+    "name": "Development OS"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Development OS",
+    "shortDescription": "Reason, inspect, build, verify, and govern software work.",
+    "longDescription": "Development OS provides the five canonical Development OS reasoning skills as one lightweight workflow package. Connected apps such as Development Intelligence and Conductor remain independently installed and authenticated.",
+    "developerName": "Development OS",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ]
+  }
+}

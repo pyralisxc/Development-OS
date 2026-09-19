@@ -22,7 +22,7 @@ jobs:
       - run: npm run package:release
       - uses: actions/upload-artifact@v4
         with:
-          name: development-os-v3.5-candidate
+          name: development-os-v4.0-candidate
           path: artifacts/release/*.zip
           if-no-files-found: error
           retention-days: 7

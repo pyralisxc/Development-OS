@@ -10,6 +10,32 @@ Development OS is a private, portable development reasoning system for working w
 - **Evidence Stewardship — Proof:** what establishes accepted truth, and what evidence deserves permanence?
 - **Lean Repository Execution — Execute:** how do we make the approved change coherently and efficiently?
 
+## v4.0
+
+v4.0 is a **capacity-preserving expansion** of the v3.5 active-session runtime.
+
+The release keeps the five-skill architecture and every v3.5 regression scenario while adding a second dimension to reliable development: not only keeping work coherent, but preserving the ambition and independent discovery needed to find a stronger representation before implementation locks it in.
+
+New first-class behavior includes:
+
+- **Objective + Ambition** — substantial product work can preserve the qualities that distinguish an excellent realization from a merely correct one.
+- **Directed Explore + Discovery Explore** — known feature questions and open-ended audits now have distinct entry contracts.
+- **Independent orientation** — Discovery Explore loads authoritative project truth while allowing speculative founder interpretation to be delayed when fresh perspective is part of the objective.
+- **Representation challenge** — Specialist Reasoning may challenge inherited workflows, abstractions, and interface/architecture representations without escaping accepted founder intent.
+- **Transformative Synthesis** — substantial Explore/Crystallize work can ask what could disappear, combine, or better express project-native strengths.
+- **Best-form challenge** — Crystallization deliberately considers a serious alternative representation before Ready when design quality materially matters.
+- **Claim-level proof** — local green checks may no longer be silently promoted into proof of a broader workflow/product-quality objective.
+- **Temporal/compositional acceptance** — interactive quality may require continuous journey evidence, not only static assertions or screenshots.
+- **Evidence Appetite** — Representative, Targeted, and Exhaustive postures bound investigation according to risk and uncertainty.
+- **Progress-sensitive liveness** — agents still continue through self-answerable work, but stop low-yield investigative lanes and batch predictable mechanical checks.
+- **DevOS Inspector** — post-hoc audits classify trajectory, truth, reasoning, frame, quality/proof, execution-economics, and founder-rescue failures as R&D evidence.
+
+### Compatibility guarantee
+
+v4.0 treats v3.5 as a compatibility contract rather than a draft to replace.
+
+`evals/compatibility/v3.5.json` freezes the 32 v3.5 behavior/trajectory scenarios as a minimum regression floor. Repository validation fails if one disappears. New capacity is expected to be additive unless an older guarantee is explicitly retired by a future methodology decision.
+
 ## v3.5
 
 v3.5 keeps the five-skill architecture but reworks Development OS around an **active development-session runtime**.
@@ -61,7 +87,7 @@ Raw live-eval output is temporary evidence. The repository keeps only a compact 
 
 ## Stack
 
-Development OS v3.5 intentionally uses a small GitHub-native stack:
+Development OS v4.0 intentionally keeps the small GitHub-native stack:
 
 - GitHub repository as canonical source/history;
 - five Markdown runtime skills;
@@ -81,6 +107,16 @@ Development Intelligence may be supplied as optional technical-evidence tooling.
 GitHub is the canonical source. ChatGPT and Codex are separate runtime deployments of the same five skills; they should not be assumed to auto-sync.
 
 Project-specific skills may specialize Development OS locally, but global Development OS must not hard-code CardForge, Development Intelligence, or another project.
+
+### Development OS plugin
+
+The repository is also the source package for the **Development OS** plugin: one lightweight installable front door that packages the five canonical reasoning skills.
+
+Development Intelligence, Conductor, AI Systems Control, GitHub, Vercel, and other connected systems remain independent ChatGPT apps/services. The plugin does not bind, proxy, duplicate, or authenticate those apps. ChatGPT may use them alongside Development OS when they are already connected in the user's account.
+
+This keeps the Development OS package portable and prevents the methodology layer from becoming an integration gateway.
+
+See `docs/CHATGPT_PLUGIN.md` for the lightweight packaging boundary.
 
 ## Local verification
 

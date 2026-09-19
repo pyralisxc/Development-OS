@@ -16,6 +16,17 @@ The five runtime skills are orthogonal:
 
 Do not move responsibilities between them casually. Prefer reducing overlap over adding doctrine.
 
+## Capacity-preserving evolution
+
+Methodology releases must treat already-proven behavior as a compatibility surface.
+
+- Add new capacity without weakening existing authorization, liveness, stage reversal, audit neutrality, evidence, or fresh-context guarantees unless a later decision explicitly retires one.
+- `evals/compatibility/v3.5.json` is the v4.0 compatibility floor; repository validation must continue to require those scenarios.
+- Prefer extending the existing skill owner over creating a new skill when the responsibility still fits.
+- A major version may represent a major capability expansion without implying intentional behavioral breakage.
+- New evals must prove the new behavior; existing evals must continue proving the old behavior.
+
+
 ## Non-negotiable context rules
 
 - Forget by default; promote deliberately.
@@ -45,6 +56,19 @@ Productive eval outputs belong to their target project/content surface, not this
 Development Intelligence is optional technical evidence. Development OS must work without it. Never couple either product so one requires the other's schema, stages, or lifecycle.
 
 Provider adapters belong in the harness. Runtime skills stay provider-neutral.
+
+## Runtime composition
+
+Development OS is distributed as a lightweight plugin that packages only the canonical skills.
+
+Connected specialist systems remain independent:
+
+- Development Intelligence owns evidence and project intelligence.
+- Conductor owns execution/orchestration.
+- AI Systems Control owns owner-facing governance and control-plane state.
+- Development OS owns reasoning methodology and workflow.
+
+Do not bind, proxy, copy, or reimplement specialist apps merely to make the plugin look unified. Do not add app IDs, `mcp.json`, or `.mcp.json` to the active Development OS plugin package. External apps are connected and authenticated independently by the ChatGPT account.
 
 ## Stack discipline
 

@@ -1,6 +1,8 @@
 export type EvalKind = 'behavior' | 'trajectory' | 'productive';
 export type HumanInput = 'none' | 'required';
 export type Continuation = 'continue' | 'handoff' | 'either';
+export type EvidenceAppetite = 'representative' | 'targeted' | 'exhaustive';
+export type ExploreEntry = 'directed' | 'discovery';
 
 export interface BehaviorExpectation {
   stage?: string[];
@@ -10,6 +12,9 @@ export interface BehaviorExpectation {
   continuation?: Continuation;
   boundary?: string[];
   objectiveContains?: string[];
+  ambitionContains?: string[];
+  exploreEntry?: ExploreEntry;
+  evidenceAppetite?: EvidenceAppetite;
   stageBasisContains?: string[];
   authorizationReferentContains?: string[];
   authorizationScopeContains?: string[];
@@ -19,6 +24,7 @@ export interface BehaviorExpectation {
   mustNotActivate?: string[];
   specialistRoles?: string[];
   evidenceLabels?: string[];
+  materialAssumptionsContains?: string[];
 }
 
 export interface BehaviorScenario {
@@ -61,6 +67,9 @@ export interface EvalEnvelope {
   stage?: string;
   mode?: string;
   objective?: string;
+  ambition?: string;
+  exploreEntry?: ExploreEntry;
+  evidenceAppetite?: EvidenceAppetite;
   stageBasis?: string;
   buildAuthorized?: boolean;
   authorizationReferent?: string;

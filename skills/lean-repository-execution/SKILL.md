@@ -165,11 +165,21 @@ Evidence Stewardship owns what proof is appropriate and what deserves permanence
 
 Use focused proof appropriate to the actual uncertainty. Possible proof includes deterministic tests, temporary reproductions, static/type/schema checks, architecture/security guardrails, browser/device acceptance, provider-backed acceptance, generated project-intelligence checks, artifact inspection, and operational checks.
 
+Honor Development OS **Evidence Appetite**:
+
+- **Representative** — sample enough to support a credible model; do not enumerate the repository merely because tools make it possible.
+- **Targeted** — pursue the bounded evidence path needed for the concrete question.
+- **Exhaustive** — reconcile materially relevant paths inside the agreed boundary when omission is high-consequence.
+
+Do not silently escalate appetite merely because another query can be run.
+
 Rerun only after relevant code/evidence change, a failure requiring diagnosis, or changed provider/environment state that materially affects the result.
 
 Use the project's final/full gate once on the coherent candidate when required.
 
 Do not repeatedly run expensive suites without new information.
+
+When a known sequence of checks is deterministic, prefer batching or one coherent verification workflow over repeated model → tool → model crossings that add no decision value.
 
 ## Evidence permanence
 
@@ -185,9 +195,9 @@ Do not force evidence into permanence because it happened to be useful while cod
 
 ## Loop breaker
 
-Stop repeated checking when the same command/query/proof is about to run again without relevant intervening change or repeated checks produce no new evidence.
+Stop repeated checking when the same command/query/proof is about to run again without relevant intervening change, repeated checks produce no new evidence, or the next result is unlikely to change the decision, implementation, proof level, or confidence.
 
-State what is known, identify the unanswered question, and take the smallest action that can answer it. If that action is authorized, in scope, and available, perform it before returning control.
+State what is known, identify the unanswered question, and take the smallest action that can answer it. If that action is authorized, in scope, and available, perform it before returning control. If several predictable actions are required to answer the same question, group them when tooling permits rather than reasoning between each mechanical step.
 
 ## Debugging
 
@@ -231,7 +241,9 @@ Review for:
 - duplicate ownership or unsafe destructive/failure behavior;
 - concurrency/idempotency/provider-boundary mistakes;
 - evidence that freezes implementation rather than durable truth;
-- needless complexity, leftover legacy, or maintainability regression.
+- needless complexity, leftover legacy, or maintainability regression;
+- local verification that is being overclaimed as proof of the whole objective;
+- new methodology-driven ceremony that reduces an established fast path without adding decision value.
 
 Do not turn implementation review into a fresh product workshop unless new evidence actually invalidates meaning.
 
@@ -277,6 +289,7 @@ Do not:
 - treat an intermediate commit/artifact as authoritative publication;
 - blindly retry ambiguous destructive/provider operations;
 - keep checking unchanged state;
+- use a live frontier as justification for low-yield tool activity;
 - equate tests with product authority;
 - reopen settled product meaning without new evidence.
 

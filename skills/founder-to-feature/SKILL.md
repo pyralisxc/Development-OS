@@ -37,7 +37,7 @@ Activate when one or more of these are true:
 - an audit finding cannot be evaluated without deciding what the product should mean;
 - the user accepts an observation as a material change to pursue and its semantics are not already established.
 
-Do **not** activate merely because an audit, inspection, repository review, or UX walkthrough exists. Observation asks what is true now; Founder-to-Feature activates when product meaning must change or be resolved.
+Do **not** activate merely because an audit, inspection, repository review, UX walkthrough, or Development OS Discovery Explore exists. Observation asks what is true now; Founder-to-Feature activates when a discovered frontier crosses into what the product should mean, what quality bar should govern it, or which material change should be accepted.
 
 ## Semantic stages
 
@@ -56,6 +56,7 @@ Use while the direction itself is moving.
 Goals:
 
 - understand the desired outcome and problem;
+- capture material **Ambition**: the qualities that distinguish an excellent realization from a merely correct one;
 - compare materially different directions;
 - expose hidden assumptions;
 - inspect relevant current product reality;
@@ -63,6 +64,8 @@ Goals:
 - preserve creative freedom without inventing premature implementation obligations.
 
 Do not silently treat enthusiasm or an initiating action verb as Build authorization.
+
+Ambition is not a score and should not become endless polish. Preserve it only when losing those qualities would make an otherwise correct result fail the founder's actual intent.
 
 ### Resolve
 
@@ -101,7 +104,26 @@ Retired meaning matters when an apparently attractive alternative is likely to b
 
 Do not preserve every rejected brainstorm.
 
+Preserve a rejected model when it is attractive enough that a fresh agent is likely to propose it again, its rejection reveals an important product principle, or reconstructing the reason later would be expensive.
+
 For new products, describe accepted behavior without inventing speculative future architecture.
+
+## Founder correction synthesis
+
+When the founder rejects, redirects, or materially improves a concrete proposal, do not treat the correction only as a local patch.
+
+Ask:
+
+> **Does this correction reveal a more general invariant, Ambition, anti-goal, ownership rule, or quality principle?**
+
+Promote the higher-order meaning only when it is genuinely durable and project-relevant.
+
+Examples of the pattern:
+
+- “Use the real neighboring objects, not decorative substitutes” may imply that creator-owned content constitutes the environment.
+- “These objects must move with the workspace” may imply a shared spatial coordinate-system invariant.
+
+Do not manufacture broad doctrine from every preference. The point is to preserve recurring meaning that would otherwise need to be rediscovered.
 
 ## Whole-product reasoning: Depth × Breadth × Time
 
@@ -239,6 +261,17 @@ If work simply inherits an established project stack unchanged, state that compa
 ### Challenge scope
 Ask whether the problem could be materially simpler, whether multiple concepts are really one, whether an abstraction is premature, whether adjacent behavior is actually required, whether legacy behavior lacks obligation, or whether commodity capability should remain external.
 
+### Best-form challenge
+For substantial design-sensitive work, ask once before Ready:
+
+> **Why is this the chosen representation?**
+
+and:
+
+> **What serious alternative would we consider if the current implementation did not already exist?**
+
+This is a deliberate counterfactual, not permission to restart Explore indefinitely. If it reveals a materially stronger representation, return only that affected lane to Explore/Resolve. If serious alternatives have been considered and remaining differences are primarily taste or future experimentation, realization saturation is sufficient.
+
 ### Preview-five-minutes test
 Ask what obvious question the founder is likely to ask within five minutes of physically using the result that has not been answered yet.
 
@@ -253,6 +286,7 @@ Read the concept as if seeing it for the first time. Look for contradictions, un
 When Crystallization passes, compress the referent into:
 
 - **Outcome** — what the user ultimately gains.
+- **Ambition** — when material, the qualities an excellent realization must preserve.
 - **Changes** — what becomes newly true.
 - **Preserved** — what remains intentionally true.
 - **Retired** — what intentionally goes away, with rationale when recurrence risk matters.
@@ -261,7 +295,7 @@ When Crystallization passes, compress the referent into:
 - **Implementation shape** — material stack/runtime/repository/persistence/provider/deployment/automation/distribution choices, including intentional absence.
 - **Lifecycle** — scale, evolution, migration, recovery, maintainability, retirement.
 - **Ecosystem choice** — what we own vs integrate/hybridize and why.
-- **Acceptance meaning** — what must be observably true.
+- **Acceptance meaning** — what must be observably true at the level of the actual product claim, including experiential/temporal behavior when material.
 - **Known constraints** — only meaningful bounded limitations, risks, specialist obligations, or founder decisions.
 
 The crystal is working context by default, not a new permanent document.
@@ -295,11 +329,13 @@ If implementation exposes another real unresolved product question, return only 
 
 Do not:
 
-- take over generic observation/audit work;
+- take over generic observation/audit or Discovery Explore work before a product-semantic frontier exists;
 - turn audits into requirements automatically;
 - make every ambiguity a founder question;
 - treat simulated specialist judgment as external evidence;
 - preserve every rejected idea as durable state;
+- collapse Ambition into a vague quality adjective with no bearing on acceptance;
+- treat the existing solution representation as product intent merely because it already exists;
 - let implementation/test shape decide unresolved product meaning;
 - treat Crystallization as a ceremonial summary;
 - treat Ready as Build authorization;
@@ -307,4 +343,4 @@ Do not:
 
 ## Governing maxim
 
-> **Resolve what should become true deeply enough that implementation cannot invent the product, then return the exact changed referent to Development OS for authorization and execution.**
+> **Resolve what should become true and what an excellent realization must preserve deeply enough that implementation cannot invent the product, challenge the representation once before commitment, then return the exact changed referent to Development OS for authorization and execution.**

@@ -1,6 +1,6 @@
 ---
 name: development-os
-description: "Automatically use for software and digital-product development work: brainstorming, product design, feature changes, architecture, coding, debugging, testing, refactoring, provider/framework decisions, repository review, release work, and technical audits. Maintain the active development objective and constraints, route meaning to Founder-to-Feature, perspective to Specialist Reasoning, proof to Evidence Stewardship, and execution to Lean Repository Execution. Keep authorized work continuous until a genuine interaction boundary."
+description: "Automatically use for software and digital-product development work: brainstorming, discovery, product design, feature changes, architecture, coding, debugging, testing, refactoring, provider/framework decisions, repository review, release work, and technical audits. Maintain the active development objective, ambition, constraints, frontier, and evidence appetite; route meaning to Founder-to-Feature, perspective to Specialist Reasoning, proof to Evidence Stewardship, and execution to Lean Repository Execution. Keep authorized work continuous until a genuine interaction boundary while preserving proven prior capacity."
 ---
 
 # Development OS
@@ -26,6 +26,7 @@ Keep these invariants more salient than lower-level process detail:
 5. **Stages are reversible.** A stage remains valid only while its justification remains true. New evidence may move work backward.
 6. **Continue while the frontier is live.** Known material, in-scope, self-answerable work must continue when evidence/tools are available and mutation is authorized where required.
 7. **Expose a steering surface.** Private reasoning may stay compressed, but material discoveries, accepted meaning, assumptions, and boundaries must remain visible enough for the user to redirect the work.
+8. **Preserve proven capacity.** New methodology capability is additive unless an older behavior is explicitly retired with evidence. Do not improve one reasoning path by weakening authorization continuity, stage reversal, audit neutrality, liveness, fresh-context reconstruction, or another established guarantee.
 
 ## Core ownership
 
@@ -44,6 +45,7 @@ Maintain a compact working model while a development objective is active. This i
 Track only what is materially needed:
 
 - **Objective** — the whole outcome being pursued.
+- **Ambition** — when material, the qualities that distinguish an excellent realization from a merely correct one; keep this separate from generic constraints.
 - **Objective constraints** — instructions that govern how the outcome must be pursued.
 - **Work mode** — the kind of work happening now.
 - **Stage + validity** — the commitment state and why it is currently justified.
@@ -52,6 +54,8 @@ Track only what is materially needed:
 - **Authority** — the current sources that establish project/provider reality.
 - **Authorization scope + referent** — what exact mutation classes and understood change are authorized.
 - **Active frontier** — known material self-executable work that remains.
+- **Evidence appetite** — for nontrivial work, the current proof/investigation posture: Representative, Targeted, or Exhaustive.
+- **Exploration state** — during substantial Explore work, maintain Frontier always and Known / Emerging / Open / Parked only when they materially aid orientation.
 - **Boundary** — the actual reason execution must hand off, if one exists.
 
 Do not turn every brainstorm, rejected idea, intermediate inference, or tool result into session state.
@@ -95,6 +99,53 @@ Use the smallest mode that describes the active work:
 A Build session may alternate Inspect → Repair → Inspect without leaving Build when the findings are ordinary defects inside the authorized objective.
 
 A finding that introduces materially new product meaning reopens only the affected semantic lane.
+
+## Explore entry modes
+
+Development OS owns how exploration begins.
+
+### Directed Explore
+
+Use when the user already supplies a feature, problem, behavior, proposed change, product question, suspected defect, or known workflow concern.
+
+Route product meaning to Founder-to-Feature as soon as meaning is material.
+
+### Discovery Explore
+
+Use when the user supplies a system, area, repository, workflow, product surface, development history, or other territory to inspect without prescribing the important findings.
+
+The purpose is:
+
+> **Find your own feet before inheriting the founder's interpretation.**
+
+Fresh perspective must not mean ignorance. Distinguish:
+
+- **Authoritative context** — accepted project semantics, invariants, architecture truth, constraints, canonical documentation, provider/revision reality, and project-local operating instructions. Load these when relevant.
+- **Interpretive context** — the founder's current diagnosis, preferred fix, suspected cause, speculative theory, or redesign idea. This may be deliberately delayed during independent orientation.
+
+Default Discovery Explore shape:
+
+1. **Independent orientation** — model what the system appears to be and where authoritative evidence lives before prescribing.
+2. **Baseline audit** — compare against established professional expectations where relevant instead of rediscovering accepted fundamentals.
+3. **Native discovery** — identify unusual strengths, underexpressed potential, generic abstractions suppressing project-native capability, and opportunities created by the project's actual structure.
+4. **Provisional model** — form evidence-backed hypotheses without turning every observation into a requirement.
+5. **Founder interpretation** — introduce the developer's interpretation after an independent view exists when that independence is part of the objective.
+6. **Perspective reconciliation** — compare project evidence, baseline practice, independent findings, and founder interpretation without automatically erasing disagreements.
+7. **Frontier formation** — identify the material problem/opportunity worth pursuing. Founder-to-Feature takes semantic ownership when the frontier becomes a product-change question.
+
+Audits should model the thing before prescribing fixes. A successful audit may discover latent strengths as important as defects.
+
+## Evidence appetite
+
+For nontrivial work, use the lightest posture that can resolve the real uncertainty:
+
+- **Representative** — sample enough evidence to build a credible model. Default for Discovery Explore, broad audits, and early opportunity finding.
+- **Targeted** — follow specific evidence paths far enough to answer a concrete question reliably. Default for scoped feature investigation and ordinary diagnosis.
+- **Exhaustive** — reconcile all materially relevant evidence inside the agreed boundary. Reserve for high-consequence production, security/authorization, irreversible mutation, release-critical verification, or similarly costly omission.
+
+The agent normally infers the posture from objective, risk, and uncertainty. It may escalate or de-escalate as evidence changes.
+
+When useful, pair Evidence Appetite with a plain-language stopping condition. Do not turn it into a planning ceremony.
 
 ## Automatic routing
 
@@ -233,6 +284,12 @@ A valid handoff requires one of:
 
 `Human input: none` plus a non-empty self-executable frontier is an invalid close.
 
+### Progress sensitivity
+
+Liveness does not mean infinite investigation.
+
+Continue while expected information or progress gain remains material. Before extending a repeated investigative lane, ask whether the result could materially change the decision, implementation, proof, or confidence. If not, stop that lane. If yes but the next operations are predictable and mechanical, batch or automate them rather than repeatedly returning to model reasoning.
+
 ## Visible working synthesis
 
 The user steers through the visible synthesis, not the agent's private chain-of-thought.
@@ -240,6 +297,7 @@ The user steers through the visible synthesis, not the agent's private chain-of-
 Expose enough of the current model to make correction possible:
 
 - material discoveries and evidence shifts;
+- the active Ambition when quality of realization materially governs the objective;
 - accepted decisions and important consequences;
 - assumptions that remain assumptions;
 - protected retired directions when they are likely to recur;
@@ -250,7 +308,7 @@ Do not dump scratch reasoning, every rejected alternative, or tool-by-tool activ
 
 ### Stage-specific synthesis target
 
-- **Explore:** expose the discovery space and emerging shape without pretending it is accepted truth.
+- **Explore:** expose the discovery space and emerging shape without pretending it is accepted truth. During substantial Explore, keep a lightweight Exploration Ledger: Frontier always; Known / Emerging / Open / Parked only when material. Refresh it at meaningful frontier changes, orientation loss, Resolve transition, explicit status requests, or handoff—not every turn.
 - **Resolve:** increasingly separate accepted meaning, derived consequences, rejected directions, and true unresolved choices.
 - **Crystallize:** expose a whole human-verifiable concept, including material implementation shape.
 - **Build:** report meaningful implementation/proof changes and contradictions; do not replay resolved product discovery.
@@ -287,14 +345,16 @@ Before substantial work becomes Ready, Founder-to-Feature's crystal and the Deve
 
 At minimum surface material:
 
+- objective and material Ambition;
 - decisions and ownership boundaries;
 - dependencies/provider choices;
 - implementation/deployment shape when it could change the build;
 - assumptions and bounded unknowns;
 - intentional omissions/retired scope;
-- genuine unresolved human choices.
+- genuine unresolved human choices;
+- for substantial design-sensitive work, the result of a **best-form challenge**: why this representation was chosen and what serious alternative would be considered if the current implementation did not already exist.
 
-Private reasoning may remain compressed. Material architecture assumptions may not remain hidden.
+If that challenge reveals a materially stronger representation, move the affected lane backward before Ready. Private reasoning may remain compressed. Material architecture assumptions may not remain hidden.
 
 ## Fresh-context transfer
 
@@ -303,6 +363,7 @@ Conversation history is not durable project truth.
 When a development objective genuinely moves to a fresh chat/agent/context, produce a compact transfer crystal containing only non-derivable working state that the next agent needs:
 
 - objective + governing constraints;
+- material Ambition when it governs acceptance;
 - stage + why it is valid;
 - accepted material meaning;
 - protected material retirements;
@@ -328,6 +389,20 @@ Project-local contracts and source remain authoritative for project truth.
 
 Do not continuously rewrite the skill system while executing unrelated project work. Skill improvement should normally use a separate audit/review context after real evidence accumulates.
 
+When operating as a Development OS Inspector, classify evidence before proposing methodology changes:
+
+- **Trajectory failures** — objective loss, constraint drift, stage confusion, authorization drift, premature handoff.
+- **Truth failures** — stale/wrong evidence, insufficient project legibility, or excessive source/graph excavation.
+- **Reasoning failures** — adequate evidence existed but an important implication was missed.
+- **Frame failures** — the current representation was optimized until the developer supplied a materially stronger representation.
+- **Quality/proof failures** — local evidence was correct but insufficient for the objective-level claim.
+- **Execution-economics failures** — large model/tool mediation produced little incremental progress.
+- **Founder-rescue moments** — developer intervention supplied a material conceptual improvement the system plausibly could have discovered.
+
+Then determine whether the pattern is isolated, project-specific, tool-specific, skill-specific, or systemic. Prefer changing DevOS only for repeated or strongly evidenced systemic failures.
+
+For meaningful founder-rescue moments, ask what reasoning behavior would have made the insight discoverable earlier. Treat repeated rescue patterns as R&D telemetry, not merely feature history.
+
 ## Anti-patterns
 
 Do not:
@@ -343,8 +418,12 @@ Do not:
 - preserve every rejected idea as durable memory;
 - end with `Human input: none` while material self-executable work remains;
 - use a closing line as a promise to do work the agent could perform before closing;
-- create workflow ledgers, status files, or memory infrastructure merely to imitate continuity.
+- create workflow ledgers, status files, or memory infrastructure merely to imitate continuity;
+- confuse more tool activity with more progress;
+- let Discovery Explore become uninformed speculation by withholding authoritative project truth;
+- let baseline professional practice become a ceiling that suppresses project-native strengths;
+- add new methodology capacity by silently weakening an established v3.5 guarantee.
 
 ## Governing maxim
 
-> **Maintain one coherent active objective, reconcile every new fact into its state, keep authorization scoped to the accepted referent, and do not hand the work back until a real boundary exists.**
+> **Maintain one coherent active objective and its ambition, challenge representations without losing intent, spend evidence effort where it changes outcomes, preserve proven capacity, and do not hand the work back until a real boundary exists.**
