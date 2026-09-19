@@ -110,16 +110,13 @@ Project-specific skills may specialize Development OS locally, but global Develo
 
 ### Development OS plugin
 
-The repository is also the source package for the **Development OS** plugin: one installable development front door that packages the five reasoning skills and may reference approved specialist apps without absorbing their ownership.
+The repository is also the source package for the **Development OS** plugin: one lightweight installable front door that packages the five canonical reasoning skills.
 
-- Development Intelligence remains the evidence/intelligence authority.
-- Conductor remains the execution/orchestration authority.
-- AI Systems Control remains the owner-facing governance/control plane.
-- Development OS remains the reasoning methodology and composition boundary.
+Development Intelligence, Conductor, AI Systems Control, GitHub, Vercel, and other connected systems remain independent ChatGPT apps/services. The plugin does not bind, proxy, duplicate, or authenticate those apps. ChatGPT may use them alongside Development OS when they are already connected in the user's account.
 
-The web-compatible plugin does not embed remote MCP servers directly. Hosted MCP services are first registered as ChatGPT apps, then referenced by app ID from the plugin. This keeps the specialist services independently deployable and avoids making Development OS a gateway service.
+This keeps the Development OS package portable and prevents the methodology layer from becoming an integration gateway.
 
-See `docs/CHATGPT_PLUGIN.md` for packaging, app binding, and Conductor connection instructions.
+See `docs/CHATGPT_PLUGIN.md` for the lightweight packaging boundary.
 
 ## Local verification
 

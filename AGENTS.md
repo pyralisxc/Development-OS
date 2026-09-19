@@ -59,16 +59,16 @@ Provider adapters belong in the harness. Runtime skills stay provider-neutral.
 
 ## Runtime composition
 
-Development OS may be distributed as one plugin that packages the canonical skills and references independently deployed specialist apps.
+Development OS is distributed as a lightweight plugin that packages only the canonical skills.
 
-Composition is not ownership transfer:
+Connected specialist systems remain independent:
 
 - Development Intelligence owns evidence and project intelligence.
 - Conductor owns execution/orchestration.
 - AI Systems Control owns owner-facing governance and control-plane state.
-- Development OS owns reasoning methodology and the ChatGPT-facing development composition.
+- Development OS owns reasoning methodology and workflow.
 
-Do not proxy or reimplement a specialist service merely to make the plugin look unified. Prefer app references over embedded remote MCP declarations for the ChatGPT web package. Do not commit placeholder or fabricated app IDs into the active plugin manifest.
+Do not bind, proxy, copy, or reimplement specialist apps merely to make the plugin look unified. Do not add app IDs, `mcp.json`, or `.mcp.json` to the active Development OS plugin package. External apps are connected and authenticated independently by the ChatGPT account.
 
 ## Stack discipline
 
