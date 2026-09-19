@@ -108,6 +108,19 @@ GitHub is the canonical source. ChatGPT and Codex are separate runtime deploymen
 
 Project-specific skills may specialize Development OS locally, but global Development OS must not hard-code CardForge, Development Intelligence, or another project.
 
+### Development OS plugin
+
+The repository is also the source package for the **Development OS** plugin: one installable development front door that packages the five reasoning skills and may reference approved specialist apps without absorbing their ownership.
+
+- Development Intelligence remains the evidence/intelligence authority.
+- Conductor remains the execution/orchestration authority.
+- AI Systems Control remains the owner-facing governance/control plane.
+- Development OS remains the reasoning methodology and composition boundary.
+
+The web-compatible plugin does not embed remote MCP servers directly. Hosted MCP services are first registered as ChatGPT apps, then referenced by app ID from the plugin. This keeps the specialist services independently deployable and avoids making Development OS a gateway service.
+
+See `docs/CHATGPT_PLUGIN.md` for packaging, app binding, and Conductor connection instructions.
+
 ## Local verification
 
 ```bash
