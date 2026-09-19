@@ -1,0 +1,12 @@
+{
+  "apps": {
+    "development-intelligence": {
+      "id": "asdk_app_6aab8ddca30c819183d9c5f36ddc3223",
+      "required": true
+    },
+    "conductor": {
+      "id": "asdk_app_6aae34a2a7188191a9fe5554ad611fd32",
+      "required": true
+    }
+  }
+}
