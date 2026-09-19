@@ -28,6 +28,17 @@ async function main() {
   for (const skill of skills) await fs.cp(path.join(skillsRoot, skill), path.join(bundleRoot, skill), { recursive: true });
   await fs.copyFile(path.join(repoRoot, 'README.md'), path.join(bundleRoot, 'README.md'));
   await run('zip', ['-qr', path.join(output, `agent-development-skills-v${version}.zip`), path.basename(bundleRoot)], output);
+
+  const pluginRoot = path.join(output, `development-os-plugin-v${version}`);
+  await fs.mkdir(pluginRoot, { recursive: true });
+  await fs.copyFile(path.join(repoRoot, 'plugin.json'), path.join(pluginRoot, 'plugin.json'));
+  await fs.cp(path.join(repoRoot, '.codex-plugin'), path.join(pluginRoot, '.codex-plugin'), { recursive: true });
+  await fs.cp(path.join(repoRoot, '.agents'), path.join(pluginRoot, '.agents'), { recursive: true });
+  await fs.cp(skillsRoot, path.join(pluginRoot, 'skills'), { recursive: true });
+  await fs.mkdir(path.join(pluginRoot, 'docs'), { recursive: true });
+  await fs.copyFile(path.join(repoRoot, 'docs', 'CHATGPT_PLUGIN.md'), path.join(pluginRoot, 'docs', 'CHATGPT_PLUGIN.md'));
+  await fs.copyFile(path.join(repoRoot, 'docs', 'app-bindings.example.json'), path.join(pluginRoot, 'docs', 'app-bindings.example.json'));
+  await run('zip', ['-qr', path.join(output, `development-os-plugin-v${version}.zip`), path.basename(pluginRoot)], output);
   console.log(output);
 }
 
