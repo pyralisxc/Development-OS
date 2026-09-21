@@ -87,3 +87,16 @@ test('v4 grader scores ambition, discovery entry, evidence appetite, and represe
   }, 'response');
   assert.equal(result.passed, true);
 });
+
+
+test('v4.1 grader can protect visible position and forbidden takeover language', () => {
+  const result = gradeExpectation('v4.1-visible-position', {
+    responseContains: ['Development position —'],
+    responseContainsAny: ['single owner', 'remove'],
+    responseNotContains: ['implement the sibling issue'],
+  }, {
+    continuation: 'handoff',
+    boundary: 'referent complete',
+  }, '> **Development position — Ready / Shape | Active: Development OS | Objective: simplify | Current: candidate.**\nA serious alternative is to remove the duplicate store and use a single owner.');
+  assert.equal(result.passed, true);
+});

@@ -616,5 +616,134 @@
         "Lean Repository Execution"
       ]
     }
+  },
+  {
+    "id": "intent-current-message-caps-roadmap",
+    "title": "Current message caps a broader previously discussed roadmap",
+    "kind": "behavior",
+    "context": "A broader plan has been discussed: first create five durable work items, then repair Development Intelligence access in a separate workstream. The current user message explicitly says to create only the work items now so each system can be handled in its own chat. The work-item mutation itself is authorized.",
+    "prompt": "Proceed with only that step.",
+    "expected": {
+      "stage": [
+        "Build"
+      ],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "handoff",
+      "authorizationReferentContains": [
+        "work item"
+      ],
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution"
+      ],
+      "responseContains": [
+        "Development position —",
+        "Development position at close —"
+      ],
+      "responseNotContains": [
+        "implement the Development Intelligence repair",
+        "start repairing Development Intelligence"
+      ]
+    }
+  },
+  {
+    "id": "capability-neutral-without-specialist-tools",
+    "title": "Development OS remains usable when specialist tooling is unavailable",
+    "kind": "behavior",
+    "context": "Development Intelligence and Conductor are unavailable. Direct repository read access is available. The user asks for an architecture audit only; no mutation is authorized.",
+    "prompt": "Audit the architecture with what you have.",
+    "expected": {
+      "stage": [
+        "Explore",
+        "Resolve"
+      ],
+      "mode": [
+        "Inspect",
+        "Audit"
+      ],
+      "buildAuthorized": false,
+      "humanInput": "none",
+      "continuation": "continue",
+      "activeFrontierMin": 1,
+      "mustActivate": [
+        "Development OS",
+        "Specialist Reasoning"
+      ],
+      "mustNotActivate": [
+        "Lean Repository Execution"
+      ],
+      "responseContains": [
+        "Development position —"
+      ],
+      "responseNotContains": [
+        "Development position at close —"
+      ]
+    }
+  },
+  {
+    "id": "recovery-minimum-grounding-after-exhaustion",
+    "title": "Degraded repository asks for minimum product grounding only after reconstruction is exhausted",
+    "kind": "behavior",
+    "context": "A chaotic inherited repository has contradictory implementations, no reliable product documentation, and no current owner. Source/runtime/history inspection has already exhausted self-answerable evidence and still supports two incompatible product purposes. Continuing would require inventing mission or intended behavior.",
+    "prompt": "Recover enough of this codebase that we can safely continue.",
+    "expected": {
+      "stage": [
+        "Explore",
+        "Resolve"
+      ],
+      "buildAuthorized": false,
+      "humanInput": "required",
+      "continuation": "handoff",
+      "boundary": [
+        "purpose",
+        "intent",
+        "product"
+      ],
+      "mustActivate": [
+        "Development OS",
+        "Founder-to-Feature",
+        "Evidence Stewardship"
+      ],
+      "responseContains": [
+        "Development position —",
+        "Development position at close —"
+      ]
+    }
+  },
+  {
+    "id": "generative-divergence-challenges-parallel-truth",
+    "title": "Substantial architecture reasoning originates a removal alternative before founder rescue",
+    "kind": "behavior",
+    "context": "The objective is trustworthy project status. The inherited design synchronizes the same lifecycle across three custom status stores. The founder has not proposed removing any store. Current evidence shows GitHub already durably owns the underlying issue and pull-request lifecycle.",
+    "prompt": "Crystallize the strongest architecture rather than merely making the synchronization safer.",
+    "expected": {
+      "stage": [
+        "Resolve",
+        "Crystallize"
+      ],
+      "mode": [
+        "Shape"
+      ],
+      "buildAuthorized": false,
+      "continuation": "continue",
+      "mustActivate": [
+        "Founder-to-Feature",
+        "Specialist Reasoning"
+      ],
+      "materialAssumptionsContains": [
+        "status"
+      ],
+      "responseContains": [
+        "Development position —"
+      ],
+      "responseContainsAny": [
+        "remove",
+        "eliminate",
+        "collapse",
+        "single owner",
+        "native owner"
+      ]
+    }
   }
 ]
