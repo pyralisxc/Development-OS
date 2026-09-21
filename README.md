@@ -1,131 +1,74 @@
 # Development OS
 
-Development OS is a private, portable development reasoning system for working with software and digital-product agents without turning the methodology into a project-specific dependency.
+Development OS is a private, portable development reasoning system for software and digital-product agents. It is designed to improve reasoning, continuity, human control, and development quality without becoming project truth or requiring a particular tool stack.
 
 ## Runtime skills
 
-- **Development OS — Session/orchestration:** what objective is active, what constraints govern it, what stage/mode is valid, what is authorized, may work continue, and where is the real human boundary?
-- **Founder-to-Feature — Meaning:** what should become true, and is the product contract coherent enough to become Ready?
-- **Specialist Reasoning — Perspective:** what are we failing to see, and which professional disciplines can materially improve or challenge the work?
-- **Evidence Stewardship — Proof:** what establishes accepted truth, and what evidence deserves permanence?
-- **Lean Repository Execution — Execute:** how do we make the approved change coherently and efficiently?
+- **Development OS — Orchestration:** present intent, stable objective/constraints, stage/mode, authority, authorization, referent-scoped liveness, capability routing, stewardship, and handoff.
+- **Founder-to-Feature — Meaning:** what should become true and whether the product contract is coherent enough to become Ready.
+- **Specialist Reasoning — Perspective:** professional rigor plus deliberate generative divergence and representation challenge.
+- **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
+- **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
 
-## v4.0
+## v4.1
 
-v4.0 is a **capacity-preserving expansion** of the v3.5 active-session runtime.
+v4.1 is a **compression and resilience release**.
 
-The release keeps the five-skill architecture and every v3.5 regression scenario while adding a second dimension to reliable development: not only keeping work coherent, but preserving the ambition and independent discovery needed to find a stronger representation before implementation locks it in.
+It preserves the five-skill architecture and the established v3.5/v4.0 compatibility surface while making the highest-value runtime rules harder to lose under long, tool-heavy, multi-repository, or fresh-context work.
 
-New first-class behavior includes:
+First-class 4.1 behavior includes:
 
-- **Objective + Ambition** — substantial product work can preserve the qualities that distinguish an excellent realization from a merely correct one.
-- **Directed Explore + Discovery Explore** — known feature questions and open-ended audits now have distinct entry contracts.
-- **Independent orientation** — Discovery Explore loads authoritative project truth while allowing speculative founder interpretation to be delayed when fresh perspective is part of the objective.
-- **Representation challenge** — Specialist Reasoning may challenge inherited workflows, abstractions, and interface/architecture representations without escaping accepted founder intent.
-- **Transformative Synthesis** — substantial Explore/Crystallize work can ask what could disappear, combine, or better express project-native strengths.
-- **Best-form challenge** — Crystallization deliberately considers a serious alternative representation before Ready when design quality materially matters.
-- **Claim-level proof** — local green checks may no longer be silently promoted into proof of a broader workflow/product-quality objective.
-- **Temporal/compositional acceptance** — interactive quality may require continuous journey evidence, not only static assertions or screenshots.
-- **Evidence Appetite** — Representative, Targeted, and Exhaustive postures bound investigation according to risk and uncertainty.
-- **Progress-sensitive liveness** — agents still continue through self-answerable work, but stop low-yield investigative lanes and batch predictable mechanical checks.
-- **DevOS Inspector** — post-hoc audits classify trajectory, truth, reasoning, frame, quality/proof, execution-economics, and founder-rescue failures as R&D evidence.
+- **Fresh intent, continuous state** — every new user message establishes present action intent; prior plans remain context rather than automatic permission to execute later steps.
+- **Referent-scoped liveness** — continue all material self-answerable work inside the current referent, but do not consume the rest of a known roadmap.
+- **Exact visible position** — opening position is a runtime invariant; closing position is emitted only at a genuine handoff.
+- **Earned authority** — repository artifacts are evidence until their authority is established; degraded repositories recover truth before structure.
+- **Minimum grounding** — infer mechanics but never invent mission when product purpose or intended behavior is genuinely non-derivable.
+- **Tool-independent composition** — Development OS requires no external specialist system while exploiting the strongest available capabilities when useful.
+- **Routing without takeover** — creating/routing durable work neither changes the active objective nor authorizes executing sibling work.
+- **Native artifacts + selective persistence** — reason richly, persist selectively, and place durable obligations/meaning in natural project owners.
+- **Professional floor + generative divergence** — professional specialist reasoning is preserved while substantial conceptual work deliberately generates materially different representations before convergence.
+- **Scope elasticity** — leave the current frame when necessary to discover a better representation or real systemic cause, but remain anchored to the accepted objective.
+- **Architectural runway** — prepare cheap neutral seams for probable expensive future migrations without prematurely implementing future systems.
+- **Repository recovery** — messy/no-doc/over-documented projects can reconstruct a trustworthy canonical spine without a new Recovery skill or mandatory documentation suite.
+- **Lower human burden** — restatement burden and founder-rescue burden are explicit R&D quality signals.
 
 ### Compatibility guarantee
 
-v4.0 treats v3.5 as a compatibility contract rather than a draft to replace.
+v4.1 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json`. New scenarios protect the field failures and founder-rescue patterns discovered during 4.0 usage.
 
-`evals/compatibility/v3.5.json` freezes the 32 v3.5 behavior/trajectory scenarios as a minimum regression floor. Repository validation fails if one disappears. New capacity is expected to be additive unless an older guarantee is explicitly retired by a future methodology decision.
+## Design principles
 
-## v3.5
+> **State is sticky. Intent is fresh.**
 
-v3.5 keeps the five-skill architecture but reworks Development OS around an **active development-session runtime**.
+> **Methodology stands alone; capability composes opportunistically.**
 
-The change is grounded in real v3.4 ChatGPT usage and a pre-release v3.5a Codex trajectory. Those runs showed that many individual rules were correct while long sessions still lost standing authorization, objective constraints, process-position fidelity, retired product meaning, stage validity, or liveness.
+> **Reason richly; persist selectively.**
 
-The revised runtime therefore makes the following first-class:
+> **Recover truth before structure.**
 
-- one stable session objective plus governing constraints;
-- stage and work mode as separate axes;
-- stage validity that can move backward when evidence changes;
-- authorization scoped to the accepted semantic referent rather than a context-free Boolean;
-- standing authorization that survives ordinary progress reports and terse follow-ups;
-- a hard liveness predicate: self-answerable authorized work continues until a real boundary;
-- observational audit routing that does not automatically become product design or Build scope;
-- visible working synthesis as the human steering surface;
-- compact fresh-context transfer that preserves non-derivable accepted meaning while rechecking live project truth.
+> **Infer mechanics; never invent mission.**
 
-Founder-to-Feature keeps product meaning and Crystallization. Specialist Reasoning keeps perspective. Evidence Stewardship keeps proof. Lean keeps implementation and mutation integrity.
+> **Bad hypotheses are allowed during divergence; bad conclusions are not.**
 
-## Context philosophy: selective durability
+> **Leave the frame when needed; do not lose the objective.**
 
-> **Forget by default. Promote deliberately. Reconstruct from project truth.**
+## Evaluation
 
-Conversation is working context, not automatic durable truth. Development OS should not become a memory database.
+The repository contains:
 
-Three layers matter:
+- behavioral evals for single-turn guarantees;
+- trajectory evals for context/authorization/liveness behavior across turns;
+- productive eval plumbing for output usefulness separate from methodology compliance;
+- compatibility validation preserving proven older behavior.
 
-1. **Project truth** — durable source/contracts/provider state owned by the project and reconstructible by a fresh agent.
-2. **Working development state** — temporary objective/constraints/stage/authorization/meaning needed while an objective is active.
-3. **Conversational exhaust** — discarded alternatives, intermediate guesses, and path-dependent reasoning that should disappear.
-
-When a context handoff is genuinely needed, the outgoing agent may emit a compact transfer crystal containing only non-derivable working state. The receiving agent must still re-inspect authoritative project reality.
-
-## Evaluation model
-
-Four layers remain intentionally separate:
-
-- **Harness tests** — cheap deterministic checks of the harness and scenario contracts.
-- **Behavioral evals** — one-shot agent runs for bounded rules and routing.
-- **Trajectory evals** — cumulative multi-turn simulations for standing authorization, stage invalidation, audit continuity, retired-direction protection, and liveness.
-- **Productive evals** — substantial real work whose useful output belongs to the target project/content/business surface while raw eval traces remain temporary.
-
-Trajectory evals deliberately pass the standing scenario objective plus prior transcript back into each turn. They test the methodology's state-reconciliation behavior; they do not pretend to reproduce every host product's context-management internals.
-
-Commercial usefulness never overrides methodology compliance. A valuable artifact can still be an eval failure.
-
-Raw live-eval output is temporary evidence. The repository keeps only a compact accepted baseline; prior baselines live in Git history.
-
-## Stack
-
-Development OS v4.0 intentionally keeps the small GitHub-native stack:
-
-- GitHub repository as canonical source/history;
-- five Markdown runtime skills;
-- TypeScript on Node.js 22 for the harness;
-- npm and the built-in Node test runner;
-- GitHub Actions for verification, optional live evals, and release packaging;
-- no database;
-- no Vercel/web app;
-- no central memory service;
-- no Jarvis dependency;
-- no Development Intelligence dependency.
-
-Development Intelligence may be supplied as optional technical-evidence tooling. It remains independent of Development OS.
-
-## ChatGPT and Codex deployment
-
-GitHub is the canonical source. ChatGPT and Codex are separate runtime deployments of the same five skills; they should not be assumed to auto-sync.
-
-Project-specific skills may specialize Development OS locally, but global Development OS must not hard-code CardForge, Development Intelligence, or another project.
-
-### Development OS plugin
-
-The repository is also the source package for the **Development OS** plugin: one lightweight installable front door that packages the five canonical reasoning skills.
-
-Development Intelligence, Conductor, AI Systems Control, GitHub, Vercel, and other connected systems remain independent ChatGPT apps/services. The plugin does not bind, proxy, duplicate, or authenticate those apps. ChatGPT may use them alongside Development OS when they are already connected in the user's account.
-
-This keeps the Development OS package portable and prevents the methodology layer from becoming an integration gateway.
-
-See `docs/CHATGPT_PLUGIN.md` for the lightweight packaging boundary.
-
-## Local verification
+Run:
 
 ```bash
 npm install
 npm run verify
 ```
 
-Optional live evals additionally require an OpenAI API key/model:
+Optional live evals require an OpenAI API key/model:
 
 ```bash
 export OPENAI_API_KEY=...
@@ -134,7 +77,13 @@ npm run eval:behavior
 npm run eval:trajectory
 ```
 
-Continuous live evaluation is not required for normal solo use. Real project work plus deliberate regression runs before meaningful methodology releases is a valid evidence model.
+Live eval traces are temporary evidence unless a durable guarantee earns promotion.
+
+## Distribution
+
+Development OS is packaged as a lightweight plugin containing the canonical skills. Connected tools/apps remain independent and are discovered/configured by the host environment.
+
+See `docs/CHATGPT_PLUGIN.md` for the packaging boundary.
 
 ## Repository truth
 
