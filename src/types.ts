@@ -25,6 +25,9 @@ export interface BehaviorExpectation {
   specialistRoles?: string[];
   evidenceLabels?: string[];
   materialAssumptionsContains?: string[];
+  responseContains?: string[];
+  responseContainsAny?: string[];
+  responseNotContains?: string[];
 }
 
 export interface BehaviorScenario {

@@ -63,6 +63,9 @@ export function gradeExpectation(scenarioId: string, expected: BehaviorExpectati
     checks.push({ key: `evidence:${label}`, passed: containsApprox(envelope.evidenceLabels, label), expected: label, actual: envelope.evidenceLabels });
   }
   if (expected.materialAssumptionsContains) checks.push({ key: 'materialAssumptions', passed: expected.materialAssumptionsContains.every(value => containsApprox(envelope.materialAssumptions, value)), expected: expected.materialAssumptionsContains, actual: envelope.materialAssumptions });
+  if (expected.responseContains) checks.push({ key: 'responseContains', passed: expected.responseContains.every(value => textContains(responseText, value)), expected: expected.responseContains, actual: responseText });
+  if (expected.responseContainsAny) checks.push({ key: 'responseContainsAny', passed: expected.responseContainsAny.some(value => textContains(responseText, value)), expected: expected.responseContainsAny, actual: responseText });
+  if (expected.responseNotContains) checks.push({ key: 'responseNotContains', passed: expected.responseNotContains.every(value => !textContains(responseText, value)), expected: expected.responseNotContains, actual: responseText });
 
   const frontier = envelope.activeFrontier?.length ?? 0;
   if (frontier > 0 && envelope.humanInput === 'none') {

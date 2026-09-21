@@ -401,5 +401,233 @@
         }
       }
     ]
+  },
+  {
+    "id": "trajectory-fresh-intent-narrows-standing-authorization",
+    "title": "Fresh message intent can narrow a standing Build authorization without erasing it",
+    "kind": "trajectory",
+    "objective": "Harden an application across several passes while fixing ordinary reversible defects under standing Build authorization.",
+    "context": "The broader hardening objective is authorized. The user may temporarily narrow one message to inspection/reporting only without revoking the standing authorization for later continuation.",
+    "turns": [
+      {
+        "prompt": "Start the hardening run and fix ordinary defects as you find them.",
+        "expected": {
+          "stage": [
+            "Build"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "mustActivate": [
+            "Lean Repository Execution"
+          ]
+        }
+      },
+      {
+        "prompt": "For this pass only, inspect the compact layout and report what you find. Do not fix anything yet.",
+        "expected": {
+          "stage": [
+            "Build"
+          ],
+          "mode": [
+            "Inspect",
+            "Audit"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "handoff",
+          "responseContains": [
+            "Development position —",
+            "Development position at close —"
+          ],
+          "responseNotContains": [
+            "I fixed",
+            "I changed",
+            "implemented the fix"
+          ]
+        }
+      },
+      {
+        "prompt": "Continue the normal hardening run.",
+        "expected": {
+          "stage": [
+            "Build"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "mustActivate": [
+            "Lean Repository Execution"
+          ],
+          "responseContains": [
+            "Development position —"
+          ],
+          "responseNotContains": [
+            "Development position at close —"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-routing-does-not-take-over",
+    "title": "Routing sibling-system work does not transfer the active session objective",
+    "kind": "trajectory",
+    "objective": "Audit Development OS and route systemic findings to their owning systems without leaving the Development OS audit.",
+    "context": "The audit discovers a Development Intelligence access problem that deserves a durable issue. Creating the issue is allowed, but implementing DI is not part of this session objective.",
+    "turns": [
+      {
+        "prompt": "Record the DI access problem as a durable work item, then keep this chat focused on the Dev OS audit.",
+        "expected": {
+          "stage": [
+            "Build",
+            "Explore",
+            "Resolve"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "objectiveContains": [
+            "Development OS",
+            "audit"
+          ],
+          "responseNotContains": [
+            "implement the DI repair",
+            "switching to Development Intelligence implementation"
+          ]
+        }
+      },
+      {
+        "prompt": "The issue is recorded. Continue the Dev OS audit.",
+        "expected": {
+          "stage": [
+            "Explore",
+            "Resolve",
+            "Crystallize"
+          ],
+          "buildAuthorized": false,
+          "humanInput": "none",
+          "continuation": "continue",
+          "objectiveContains": [
+            "Development OS",
+            "audit"
+          ],
+          "mustActivate": [
+            "Development OS"
+          ],
+          "responseContains": [
+            "Development position —"
+          ],
+          "responseNotContains": [
+            "implement the DI repair"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-process-position-survives-saturation",
+    "title": "Visible process position survives a long continuing objective and closes only at a real boundary",
+    "kind": "trajectory",
+    "objective": "Resolve a substantial architecture change through professional and generative review, then stop at the Build authorization boundary.",
+    "context": "No Build authorization exists. Several self-answerable conceptual passes remain before Ready.",
+    "turns": [
+      {
+        "prompt": "Start the architecture pass.",
+        "expected": {
+          "stage": [
+            "Explore",
+            "Resolve"
+          ],
+          "humanInput": "none",
+          "continuation": "continue",
+          "responseContains": [
+            "Development position —"
+          ],
+          "responseNotContains": [
+            "Development position at close —"
+          ]
+        }
+      },
+      {
+        "prompt": "Continue through the simplifier and maintainer perspectives.",
+        "expected": {
+          "stage": [
+            "Resolve",
+            "Crystallize"
+          ],
+          "humanInput": "none",
+          "continuation": "continue",
+          "mustActivate": [
+            "Specialist Reasoning"
+          ],
+          "responseContains": [
+            "Development position —"
+          ],
+          "responseNotContains": [
+            "Development position at close —"
+          ]
+        }
+      },
+      {
+        "prompt": "The concept is now fully resolved. Crystallize it and stop before implementation.",
+        "expected": {
+          "stage": [
+            "Crystallize",
+            "Ready"
+          ],
+          "buildAuthorized": false,
+          "humanInput": "required",
+          "continuation": "handoff",
+          "responseContains": [
+            "Development position —",
+            "Development position at close —"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-recovery-radius-follows-objective",
+    "title": "Messy repository recovery expands far enough to find the real cause without becoming total cleanup",
+    "kind": "trajectory",
+    "objective": "Fix an established Settings state bug in a chaotic repository without authorizing repository-wide cleanup.",
+    "context": "Build is authorized for the bug. The repository has duplicated services and stale docs, but broad recovery is not the objective.",
+    "turns": [
+      {
+        "prompt": "Find the actual owner of the Settings state and fix the bug.",
+        "expected": {
+          "stage": [
+            "Build"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "mustActivate": [
+            "Lean Repository Execution",
+            "Evidence Stewardship"
+          ]
+        }
+      },
+      {
+        "prompt": "The local caller points to two competing shared state services. Follow that far enough to determine the real cause.",
+        "expected": {
+          "stage": [
+            "Build"
+          ],
+          "buildAuthorized": true,
+          "humanInput": "none",
+          "continuation": "continue",
+          "responseContains": [
+            "Development position —"
+          ],
+          "responseNotContains": [
+            "clean the entire repository",
+            "rewrite all documentation",
+            "repository-wide cleanup"
+          ]
+        }
+      }
+    ]
   }
 ]

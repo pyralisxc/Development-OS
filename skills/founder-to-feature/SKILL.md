@@ -1,6 +1,6 @@
 ---
 name: founder-to-feature
-description: "Automatically use for substantial software/product ideas, feature changes, architecture-affecting behavior, workflow redesigns, or audit findings that require unresolved product meaning. Own product meaning through Explore → Resolve → Crystallize → Ready across purpose, placement, experience, system, lifecycle, and ecosystem. Do not own generic observation, session state, proof strategy, or implementation mechanics."
+description: "Automatically use when development work contains unresolved product meaning: substantial feature ideas, architecture-affecting behavior, workflow redesign, or audit findings that require deciding what should become true. Own Explore → Resolve → Crystallize → Ready for the semantic referent; do not own session state, proof permanence, or implementation mechanics."
 ---
 
 # Founder to Feature
@@ -11,79 +11,41 @@ Founder-to-Feature owns **product meaning**:
 
 > **What should become true?**
 
-Translate natural founder/creator input into implementation-ready product meaning without requiring the user to formulate a technical product contract.
-
-The user may communicate through analogy, intuition, frustration, visual feedback, incomplete ideas, examples, short approvals, or direct correction. Treat that as valid product input.
+Translate natural creator input into implementation-ready meaning without requiring the user to write a PRD or technical contract.
 
 ## Ownership boundaries
 
-- **Development OS** owns the active development session, routing, stage validity, authorization scope, liveness, and context transfer.
-- **Founder-to-Feature** owns unresolved product meaning and the final Crystallized behavioral contract.
-- **Specialist Reasoning** owns adaptive multidisciplinary perspective and assumption challenge.
-- **Evidence Stewardship** owns proof strategy and evidence permanence.
-- **Lean Repository Execution** owns implementation cadence and delivery mechanics.
-
-The current project supplies truth. This skill supplies semantic reasoning method.
-
-Do not create a parallel permanent specification merely because this skill is active.
+- Development OS owns present intent, session state, stage validity, authorization, liveness, and handoff.
+- Founder-to-Feature owns unresolved product meaning and the Crystallized behavioral contract.
+- Specialist Reasoning supplies professional and generative perspective.
+- Evidence Stewardship owns proof/permanence.
+- Lean Repository Execution owns implementation/delivery.
 
 ## Activation
 
-Activate when one or more of these are true:
+Activate when a materially unresolved decision can change user expectation, product philosophy, ownership, identity, permissions, lifecycle, placement/mental model, ecosystem ownership, or another durable rule.
 
-- a substantial feature, workflow, journey, architecture meaning, ownership rule, lifecycle rule, permission model, economic rule, or user expectation is proposed or materially changed;
-- two competent implementers could reasonably encode different user-visible or durable behavior;
-- implementation/audit evidence exposes a genuinely unresolved product question;
-- an audit finding cannot be evaluated without deciding what the product should mean;
-- the user accepts an observation as a material change to pursue and its semantics are not already established.
-
-Do **not** activate merely because an audit, inspection, repository review, UX walkthrough, or Development OS Discovery Explore exists. Observation asks what is true now; Founder-to-Feature activates when a discovered frontier crosses into what the product should mean, what quality bar should govern it, or which material change should be accepted.
+Do not take over generic observation, known bugs with established behavior, or routine implementation.
 
 ## Semantic stages
 
-Substantial meaning moves through:
-
-> **Explore → Resolve → Crystallize → Ready**
-
-These are semantic states, not mandatory separate turns or documents.
-
-Development OS owns the overall session stage and may combine semantic work with inspection, diagnosis, or execution. Founder-to-Feature reports when the affected semantic lane is Explore, Resolve, Crystallize, or Ready.
-
 ### Explore
 
-Use while the direction itself is moving.
-
-Goals:
-
-- understand the desired outcome and problem;
-- capture material **Ambition**: the qualities that distinguish an excellent realization from a merely correct one;
-- compare materially different directions;
-- expose hidden assumptions;
-- inspect relevant current product reality;
-- separate product choices from engineering consequences;
-- preserve creative freedom without inventing premature implementation obligations.
-
-Do not silently treat enthusiasm or an initiating action verb as Build authorization.
-
-Ambition is not a score and should not become endless polish. Preserve it only when losing those qualities would make an otherwise correct result fail the founder's actual intent.
+Discover the problem space, desired outcome, Ambition, constraints, and serious representations without prematurely accepting one.
 
 ### Resolve
 
-Use once a direction is accepted enough to settle important meaning and technical consequences.
-
-Resolve the material decisions deeply. Produce a compact behavioral delta rather than a giant PRD.
+Settle material semantic and technical consequences. Derive engineering implications from accepted product rules instead of asking the user to decide derivable mechanics.
 
 ### Crystallize
 
-Use automatically when Resolve appears complete.
+Reassemble the referent as one coherent product, reconcile specialists, expose material implementation shape, challenge the representation, and compress the result.
 
-Reconstruct the concept as one coherent product, challenge scope, sweep breadth/lifecycle/ecosystem, expose material implementation shape, reconcile specialist findings, and compress the result.
-
-If Crystallize finds a material contradiction, return only that affected issue to Resolve and continue when self-answerable.
+If a material contradiction appears, return only the affected lane to Resolve.
 
 ### Ready
 
-Ready means the Crystallized referent is coherent enough that competent implementers should not invent conflicting product behavior and no known self-answerable semantic uncertainty is likely to materially change product meaning, ownership, architecture, lifecycle, or user expectation.
+Ready means the Crystallized referent is coherent enough that competent implementers should not invent conflicting product behavior and no known self-answerable semantic uncertainty is likely to materially change meaning, ownership, architecture, lifecycle, or user expectation.
 
 Ready is semantic confidence, not Build authorization.
 
@@ -91,256 +53,127 @@ Ready is semantic confidence, not Build authorization.
 
 For established products, distinguish:
 
-### Changes
-What becomes newly true?
+- **Changes** — what becomes newly true.
+- **Preserved** — important behavior, philosophy, ownership, identity, or invariants that intentionally remain.
+- **Retired** — behavior, assumptions, workflows, or attractive alternative models that intentionally stop being true.
 
-### Preserved
-What important existing behavior, product philosophy, ownership, identity, or invariant intentionally remains true?
-
-### Retired
-What prior behavior, assumption, workflow, path, product model, or plausible direction intentionally stops being true?
-
-Retired meaning matters when an apparently attractive alternative is likely to be rediscovered by a fresh agent or later specialist pass. Preserve the **reason** for retirement when it materially prevents regression.
-
-Do not preserve every rejected brainstorm.
-
-Preserve a rejected model when it is attractive enough that a fresh agent is likely to propose it again, its rejection reveals an important product principle, or reconstructing the reason later would be expensive.
-
-For new products, describe accepted behavior without inventing speculative future architecture.
+Preserve a retirement reason only when a fresh agent is likely to rediscover the direction or reconstructing the decision later would be expensive.
 
 ## Founder correction synthesis
 
-When the founder rejects, redirects, or materially improves a concrete proposal, do not treat the correction only as a local patch.
+When the founder materially corrects a concrete proposal, ask whether the correction reveals a durable invariant, Ambition, anti-goal, ownership rule, or quality principle.
 
-Ask:
-
-> **Does this correction reveal a more general invariant, Ambition, anti-goal, ownership rule, or quality principle?**
-
-Promote the higher-order meaning only when it is genuinely durable and project-relevant.
-
-Examples of the pattern:
-
-- “Use the real neighboring objects, not decorative substitutes” may imply that creator-owned content constitutes the environment.
-- “These objects must move with the workspace” may imply a shared spatial coordinate-system invariant.
-
-Do not manufacture broad doctrine from every preference. The point is to preserve recurring meaning that would otherwise need to be rediscovered.
+Promote only genuinely reusable meaning. Do not turn every preference into doctrine.
 
 ## Whole-product reasoning: Depth × Breadth × Time
 
-Founder-to-Feature must reason across three dimensions.
+Resolve only dimensions that can materially change the referent:
 
-### Depth
+- **Purpose / Placement / Experience** — outcome, representation, discoverability, journey, empty/failure/recovery states.
+- **System** — canonical owners, identity, durable state, permissions/trust, persistence/data safety, concurrency, performance/scale, provider boundaries, operational cost.
+- **Lifecycle** — creation, revision, collaboration, migration, recovery, extension, maintenance, archival/deletion, provider evolution, retirement.
+- **Ecosystem** — build vs integrate vs hybrid where it changes burden or product control.
 
-Resolve material identity, ownership, invariants, transitions, permissions, persistence, concurrency, destructive/failure semantics, recovery, and acceptance meaning.
-
-### Breadth
-
-Understand purpose, placement, representation, discoverability, end-to-end journey, neighboring concepts, public/product truth, operations, and external boundaries.
-
-When accessibility, security/privacy, content, analytics, support, business, legal, growth, domain expertise, or another professional perspective could materially change the contract, activate Specialist Reasoning rather than embedding every specialist methodology here.
-
-### Time
-
-Resolve creation, daily use, growth/scale, revision, collaboration, migration/compatibility, recovery, archival/deletion, maintenance cost, provider evolution, extension, and retirement where materially relevant.
-
-Do not call something resolved merely because a local state machine is coherent.
-
-## Six product lenses
-
-Before substantial work can Crystallize, materially relevant questions across these lenses must have answers or bounded unknowns.
-
-### Purpose
-
-- What outcome is this solving for?
-- Is the scope the correct size?
-- Is this product-defining, supporting, or commodity capability?
-- What evidence/countercase changes whether it deserves complexity?
-
-### Placement
-
-- Where does this live?
-- How is it discovered and represented?
-- What is the product noun?
-- What sits beside it?
-- What opens it and what does it return to?
-- Are we inventing a duplicate mental model?
-
-Placement is product semantics, not cosmetic polish.
-
-### Experience
-
-- What is the real end-to-end journey?
-- What does everyday use look like after onboarding?
-- What happens in empty, loading, unavailable, stale, partial, and failure states?
-- What changes across relevant devices, inputs, and inclusive-access requirements?
-- Does the product visibly express the intended model?
-
-### System
-
-Resolve material canonical owners, identities, durable state, projections/caches, permissions/trust boundaries, persistence/data safety, concurrency/idempotency, performance/scale, provider/framework boundaries, operational ownership, and material cost.
-
-Prefer one native owner. Do not add parallel authorities merely for convenience.
-
-### Lifecycle
-
-Ask how the capability is created, revised, migrated, recovered, scaled, extended, maintained, and retired. Longevity and maintainability are product concerns when they change future user/developer expectations.
-
-### Ecosystem
-
-Decide build vs integrate vs hybrid only where external capability can materially change burden or outcome.
-
-> **Own what makes the product meaningfully ours. Borrow mature commodity capability when it creates leverage without surrendering an important product boundary.**
+Activate Specialist Reasoning rather than embedding every professional discipline here.
 
 ## Local authority
 
-Use the smallest relevant set of current project truth: repository/project instructions, living contracts, source owners, providers, project intelligence, current terminology, and established workflows.
+Use the smallest relevant current project truth. History is evidence; current owned project truth is specification.
 
-> **History is evidence. Current project truth is specification.**
-
-Do not reconstruct current requirements primarily from old chats or historical PRs.
+When authority is degraded, let Development OS reconstruct mechanics first. If product purpose or intended behavior remains non-derivable, ask the founder for minimum grounding rather than inferring mission from code shape.
 
 ## Deep semantic resolution
 
-### Owners
-Identify canonical owners for important durable state and classify extra representations only when relevant: authority, projection, cache, ephemeral working state, provider-owned, derived.
+Resolve only material:
 
-### Identity
-Identify relevant user/account/object/document/project/revision/provider/workspace/session/location identities. Do not conflate identity with presentation or storage unless the product actually does.
+- **Owners** — canonical owners and any necessary projections/caches/provider-owned state.
+- **Identity** — which users/accounts/objects/projects/revisions/sessions are actually the same or different thing.
+- **Invariants** — the few truths that must survive implementation changes.
+- **Transitions** — state changes capable of changing user expectation.
+- **Failure/destructive semantics** — partial success, retry, recovery, irreversibility.
+- **Acceptance meaning** — what must observably be true at the product-claim level.
 
-### Invariants
-Extract the few durable truths that must survive implementation changes.
-
-### Transitions
-Model only transitions capable of changing user expectation or system meaning: first/existing use, signed out/in, local/durable, connected/disconnected, clean/dirty, current/stale, single/concurrent client, success/failure/partial success, retry/cancel/reload/restart/offline, permission changes, and meaningful device/input shifts.
-
-### Failure semantics
-For material boundaries determine what failed, what the user understands, what may change, what must not change, what remains recoverable, whether retry is safe, and what partial success means.
-
-### Destructive semantics
-For delete/overwrite/replace/move/revoke/disconnect/migration determine irreversibility, prerequisite proof, recovery, and partial-execution behavior.
-
-### Acceptance meaning
-Define what must be observably true. Evidence Stewardship chooses how to prove it and what proof deserves permanence.
+Prefer one native owner. Do not add parallel authorities for convenience.
 
 ## Founder decision vs engineering consequence
 
-Surface a founder/product decision only when it materially changes product philosophy, user expectation, identity, ownership, permission, destructive behavior, economic model, placement/mental model, ecosystem ownership, or another durable product rule.
+Ask the founder only for non-derivable product choices. Derive engineering consequences from accepted meaning.
 
-Derive engineering consequences from accepted rules without burdening the user.
+Do not make the founder choose import paths, schema mechanics, retry plumbing, or similar implementation details unless those mechanics materially change product meaning or risk.
 
 ## Adversarial reasoning
 
-Challenge materially different assumptions or transitions capable of changing meaning, safety, ownership, or lifecycle. Stop when additional cases produce no materially new information.
-
-Examples include provider timeout after success, durable data already existing, permission changes, another client writing first, destructive follow-up failure, provider unavailability vs emptiness, identity changes, retry/reload, or scale invalidating representation.
+Challenge transitions and assumptions that can materially change meaning, safety, ownership, lifecycle, or recoverability. Stop when additional cases produce no materially new information.
 
 ## Crystallization pass
 
-Crystallization is a fresh-eye whole-concept audit, not another requirements phase.
+Before Ready:
 
-### Reassemble the whole
-Review Purpose, Placement, Experience, System, Lifecycle, Ecosystem, the behavioral delta, and material Specialist Reasoning findings.
+1. **Reassemble the whole.** Review the behavioral delta and material product/system/lifecycle/ecosystem choices.
+2. **Expose implementation shape.** Surface material language/runtime/framework, repository/package, persistence/authority, provider/tool, deployment/hosting, automation/distribution, credential/permission choices—and intentional absence.
+3. **Challenge scope.** Ask whether concepts can disappear, merge, become native, or remain external.
+4. **Require serious alternatives when design-sensitive.** Reconcile at least one materially different representation generated independently by Specialist Reasoning when such divergence could improve the outcome.
+5. **Future-maintainer test.** What will a capable maintainer wish had been decided now?
+6. **Fresh-outsider test.** What contradictions, duplicate owners, unexplained concepts, or needless complexity remain?
 
-### Expose implementation shape
-Crystallization must make material implementation assumptions visible enough for a technically capable founder to validate the concept without guessing.
-
-Resolve or bound when material:
-
-- language/runtime/framework choices;
-- repository/package boundaries;
-- authored vs generated state;
-- persistence and authority;
-- provider/tool dependencies;
-- deployment/hosting shape;
-- CI, scheduling, automation, release/distribution paths;
-- credential/permission boundaries;
-- what is intentionally absent.
-
-If work simply inherits an established project stack unchanged, state that compactly rather than re-documenting it.
-
-### Challenge scope
-Ask whether the problem could be materially simpler, whether multiple concepts are really one, whether an abstraction is premature, whether adjacent behavior is actually required, whether legacy behavior lacks obligation, or whether commodity capability should remain external.
-
-### Best-form challenge
-For substantial design-sensitive work, ask once before Ready:
-
-> **Why is this the chosen representation?**
-
-and:
-
-> **What serious alternative would we consider if the current implementation did not already exist?**
-
-This is a deliberate counterfactual, not permission to restart Explore indefinitely. If it reveals a materially stronger representation, return only that affected lane to Explore/Resolve. If serious alternatives have been considered and remaining differences are primarily taste or future experimentation, realization saturation is sufficient.
-
-### Preview-five-minutes test
-Ask what obvious question the founder is likely to ask within five minutes of physically using the result that has not been answered yet.
-
-### Future-maintainer test
-Ask what a capable future developer will wish had been decided now, especially around ownership, migration, compatibility, provider exit, observability, scale, and retirement.
-
-### Fresh-outsider test
-Read the concept as if seeing it for the first time. Look for contradictions, unexplained concepts, duplicate owners, missing representation, unsupported assumptions, and needless complexity.
+The goal is not novelty for novelty's sake. Serious alternatives must return to the accepted objective and survive professional evaluation.
 
 ## The crystal
 
 When Crystallization passes, compress the referent into:
 
-- **Outcome** — what the user ultimately gains.
-- **Ambition** — when material, the qualities an excellent realization must preserve.
-- **Changes** — what becomes newly true.
-- **Preserved** — what remains intentionally true.
-- **Retired** — what intentionally goes away, with rationale when recurrence risk matters.
-- **Product shape** — placement, representation, discoverability, primary journey.
-- **System shape** — canonical owners, identities, key invariants, important technical boundaries.
-- **Implementation shape** — material stack/runtime/repository/persistence/provider/deployment/automation/distribution choices, including intentional absence.
-- **Lifecycle** — scale, evolution, migration, recovery, maintainability, retirement.
-- **Ecosystem choice** — what we own vs integrate/hybridize and why.
-- **Acceptance meaning** — what must be observably true at the level of the actual product claim, including experiential/temporal behavior when material.
-- **Known constraints** — only meaningful bounded limitations, risks, specialist obligations, or founder decisions.
+- **Outcome**
+- **Ambition** when material
+- **Changes**
+- **Preserved**
+- **Retired**
+- **Product shape**
+- **System shape**
+- **Implementation shape**
+- **Lifecycle**
+- **Ecosystem choice**
+- **Acceptance meaning**
+- **Known constraints / bounded unknowns**
 
 The crystal is working context by default, not a new permanent document.
 
 ## Authorization reconciliation
 
-Founder-to-Feature never assumes that semantic resolution itself authorizes implementation.
+Founder-to-Feature never assumes semantic resolution authorizes mutation.
 
-When product meaning materially changes during an already-authorized Build session:
+When meaning materially changes inside an authorized Build session:
 
-1. resolve/crystallize only the affected semantic lane;
-2. identify the changed referent explicitly;
-3. return that changed referent to Development OS;
-4. let Development OS decide whether standing authorization clearly covers it;
-5. if not, require current commitment before Lean implements the new meaning.
-
-Do not implement a new material economic, ownership, permission, identity, placement, or product-philosophy decision merely because the surrounding hardening/refactor session is already in Build.
+1. resolve/crystallize only the affected lane;
+2. identify the changed referent;
+3. return it to Development OS;
+4. let Development OS reconcile present intent and standing authorization;
+5. obtain current commitment when the changed referent is not clearly covered.
 
 ## Build handoff
 
-After Ready **and** valid scoped Build authorization:
+After Ready and valid scoped Build authorization:
 
-- hand the crystal/behavioral delta to Development OS + Lean;
-- carry forward material specialist obligations without replaying the entire virtual team;
-- let Evidence Stewardship choose proof as it becomes relevant;
-- preserve engineering freedom inside the accepted contract.
+- hand the behavioral delta/crystal to Development OS + Lean;
+- carry forward material specialist obligations;
+- let Evidence Stewardship choose proof;
+- preserve implementation freedom inside the accepted contract.
 
-If implementation exposes another real unresolved product question, return only that affected question to Founder-to-Feature.
+If Build exposes a genuinely unresolved product question, return only that question.
 
 ## Anti-patterns
 
 Do not:
 
-- take over generic observation/audit or Discovery Explore work before a product-semantic frontier exists;
-- turn audits into requirements automatically;
+- convert audits into requirements automatically;
 - make every ambiguity a founder question;
-- treat simulated specialist judgment as external evidence;
-- preserve every rejected idea as durable state;
-- collapse Ambition into a vague quality adjective with no bearing on acceptance;
-- treat the existing solution representation as product intent merely because it already exists;
-- let implementation/test shape decide unresolved product meaning;
-- treat Crystallization as a ceremonial summary;
+- treat existing implementation representation as product intent;
+- let tests decide unresolved meaning;
+- preserve every brainstorm or rejected idea;
+- use professional convention as a ceiling on project-native opportunity;
+- treat Crystallization as ceremonial summary;
 - treat Ready as Build authorization;
-- implement materially changed meaning under stale authorization.
+- implement changed meaning under stale authorization.
 
 ## Governing maxim
 
-> **Resolve what should become true and what an excellent realization must preserve deeply enough that implementation cannot invent the product, challenge the representation once before commitment, then return the exact changed referent to Development OS for authorization and execution.**
+> **Resolve what should become true deeply enough that implementation cannot invent the product, while deliberately considering stronger representations before commitment.**

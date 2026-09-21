@@ -1,6 +1,6 @@
 ---
 name: specialist-reasoning
-description: Automatically use during software/product work when a professional perspective could materially change product meaning, risk, feasibility, adoption, accessibility, trust, economics, operation, or acceptance. Assemble the smallest sufficient virtual team, run independent-first specialist passes, distinguish evidence from founder hypothesis and model inference, surface cross-functional disagreement, research high-stakes claims when needed, and return only material findings to the owning workflow. Cross-cutting skill; not a development stage.
+description: "Automatically use when professional perspective or materially different representations could improve software/product work. Select the smallest sufficient professional team, reason independently before synthesis, distinguish evidence from inference, deliberately diverge before convergence on substantial conceptual work, and return only findings that materially change the owning workflow."
 ---
 
 # Specialist Reasoning
@@ -9,230 +9,190 @@ description: Automatically use during software/product work when a professional 
 
 Specialist Reasoning owns **perspective**:
 
-> **What are we failing to see?**
+> **What are we failing to see, and what else could this be?**
 
-It gives a solo founder/developer access to the useful cognitive diversity of a multidisciplinary team without turning development into persona theater or a committee process.
-
-It is cross-cutting. It does not own development stages, the final product contract, proof permanence, implementation, or delivery.
+Its purpose is useful cognitive diversity without persona theater or committee process.
 
 ## Ownership boundaries
 
-- **Development OS** decides when Specialist Reasoning should activate and keeps the overall work moving.
-- **Founder-to-Feature** owns product meaning and reconciles material specialist findings into the Crystallized contract.
-- **Specialist Reasoning** owns professional perspective selection, independent analysis, assumption challenge, and cross-functional synthesis.
-- **Evidence Stewardship** owns how resulting obligations are proven and what proof deserves permanence.
-- **Lean Repository Execution** owns worker/tool coordination and implementation.
+- Development OS decides when perspective is needed and keeps the overall work anchored.
+- Founder-to-Feature owns product meaning.
+- Specialist Reasoning owns professional perspective, independent analysis, generative divergence, representation challenge, and synthesis.
+- Evidence Stewardship owns proof/permanence.
+- Lean owns worker/tool coordination during Build.
 
-Project-local truth and real domain evidence outrank simulated expertise.
+Real project/domain evidence outranks simulated expertise.
 
 ## Activation
 
-Do not activate for every task.
+Activate when perspective could materially change value, mental model, architecture, reliability, security/privacy, operations, economics, adoption, acceptance, or domain correctness.
 
-Activate when one or more professional perspectives could materially change:
-- user value or scope;
-- mental model, interaction, content, accessibility, or adoption;
-- architecture, reliability, security, privacy, trust, or operations;
-- provider/build/integrate choices;
-- cost, pricing, growth, legal/compliance, or business viability;
-- acceptance, supportability, or domain correctness.
+Routine bounded fixes usually need no virtual team.
 
-Routine copy fixes, known styling changes, trivial refactors, and other bounded work usually need no virtual team.
+## Smallest sufficient professional team
 
-## Smallest sufficient team
+Select only professional disciplines that can materially change the objective.
 
-Select only the disciplines that can materially change the current objective.
+Typical core perspectives when relevant:
 
-For substantial product work, begin with the core product perspectives when relevant:
-- Product strategy / product management;
-- User research / behavioral understanding;
-- Product / interaction design;
-- Technical architecture / staff engineering;
-- Quality / reliability.
+- Product strategy / management
+- User research / behavioral understanding
+- Product / interaction design
+- Technical architecture / staff engineering
+- Quality / reliability
 
-Add experience, risk, business, operations, developer-experience, or domain specialists only when the feature creates their trigger.
+Add experience, risk, business, operations, developer-experience, legal, or domain perspectives only on a real trigger.
 
-Read the relevant reference only when needed:
-- `references/product-core.md` — core product perspectives.
-- `references/experience.md` — content, accessibility, analytics, support, brand, localization.
-- `references/risk-business-domain.md` — security, privacy/trust, legal, marketing/growth, finance/pricing, SRE/operations, developer experience, domain specialists.
+> **Use the smallest sufficient professional team and the smallest useful diversity of thought.**
 
-Do not load every reference by default.
+Load specialist reference files only when they materially help.
 
 ## Independent-first reasoning
 
-Do not blend all disciplines into one generic checklist.
+Do not blend every discipline into a generic checklist.
 
-Give each activated function a short isolated pass before synthesis. For each, ask only what is material:
-- **Opportunity** — what does this discipline see that improves the concept?
-- **Risk** — what could make the concept meaningfully wrong or fragile?
-- **Assumption** — what are we treating as true without enough basis?
-- **Blocker / decision** — what could materially change the contract or require founder judgment?
-- **Success signal** — what would good look like from this discipline?
+Give each activated professional function a short independent pass over:
 
-A specialist may conclude that it has no material concern. Do not manufacture findings to justify activation.
+- opportunity;
+- risk;
+- unsupported assumption;
+- blocker/decision;
+- success signal.
+
+A professional perspective may conclude it has no material finding.
 
 ## Evidence, hypothesis, inference
 
-Keep epistemic status explicit when it matters:
-- **Known evidence** — supported by current users, project data, authoritative sources, live systems, or direct observation.
-- **Founder hypothesis** — a deliberate product belief or desired direction not yet established as user evidence.
-- **Agent inference** — a reasoned conclusion from available context, not independent evidence.
+Distinguish:
 
-Do not let professional-sounding reasoning silently upgrade a hypothesis into fact.
+- **Observed / externally supported**
+- **Project-derived**
+- **Founder hypothesis**
+- **Model inference**
+- **Generative hypothesis**
 
-User research reasoning does not substitute for actual user research when the distinction could change the decision.
+Professional reasoning is not evidence by itself. Research current authoritative sources when a high-stakes or changing external fact materially determines the conclusion.
 
 ## Cross-functional disagreement
 
-The value of a virtual team is not role coverage; it is productive disagreement.
+Surface only disagreements that materially change the objective or contract. Resolve internally when project truth/evidence is sufficient; ask the founder only when materially valid alternatives remain.
 
-After independent passes, identify only conflicts that materially affect the objective. Resolve internally when current evidence, accepted product philosophy, or established project truth is sufficient.
-
-Surface a founder decision only when materially valid alternatives remain and no stronger source can decide.
-
-Examples of useful conflict:
-- product scope vs architectural longevity;
-- elegant architecture vs comprehensible interaction;
-- growth/adoption vs privacy/trust;
-- feature power vs support/recovery burden;
-- pricing/business value vs provider/operational cost;
-- visual ambition vs accessibility or performance.
-
-Do not produce fake dialogue between named personas.
+Productive disagreement matters more than role count.
 
 ## Worth-building and countercase
 
-When Product Strategy is active for substantial new capability, pressure-test whether the feature deserves product complexity.
+For substantial new capability, pressure-test whether it deserves complexity:
 
-Ask only where relevant:
-- What need or outcome justifies this?
-- What evidence supports that need?
-- What expected user behavior should change?
-- What would adoption or continued usefulness look like?
-- What is the opportunity cost?
-- What simpler alternative could solve enough of the problem?
-- What evidence would argue that we should **not** build this?
+- What need/outcome justifies it?
+- What simpler alternative solves enough?
+- What opportunity cost does it create?
+- What evidence argues against building it?
 
-This is not mandatory market analysis for every internal feature.
+## Generative divergence
 
-## Research escalation
+Professional reasoning establishes the floor; it must not define the ceiling.
 
-A professional perspective is not evidence by itself.
+For substantial Explore or Crystallize work, before declaring saturation, deliberately generate a small set of materially different representations when doing so could improve the outcome.
 
-Use current authoritative research when a material conclusion depends on changing or high-stakes external facts, especially:
-- law/regulation/compliance;
-- security standards or known vulnerabilities;
-- provider/API behavior and pricing;
-- accessibility standards;
-- market/competitor claims;
-- domain-specific safety or professional rules.
+At least one serious alternative should originate independently of both the founder's proposed solution and the current implementation when the problem admits meaningful representation choice.
 
-Do not present simulated legal, medical, security, financial, or other licensed/professional judgment as authoritative merely because that perspective was activated.
+> **Bad hypotheses are allowed during divergence; bad conclusions are not.**
 
-## Internal vs multi-agent mode
+Useful lenses:
 
-### Internal mode
+- **Simplifier** — what can disappear, merge, become one owner, or become native?
+- **Enhancer** — what existing capability or small design change materially amplifies the same objective?
+- **Productive ignorance / naive outsider** — what obvious, dumb, category-confused, or seemingly impossible question exposes an assumption?
+- **Inversion** — what if ownership, flow, control, or responsibility ran the opposite direction?
+- **Analogy transfer** — how would a mature unrelated domain represent this shape of problem?
+- **Constraint experiment** — what does forbidding a database/dashboard/second owner/background system reveal?
+- **Architectural runway** — what probable future need has high later migration cost but a cheap neutral seam today?
 
-Default everywhere.
+These are reasoning lenses, not fictional professionals and not accepted meaning.
 
-Run deliberately separated specialist passes within the same reasoning process, then synthesize.
+## Scope discipline and elasticity
 
-### Multi-agent mode
+Specialists operate for the accepted objective, but the accepted objective is not automatically the accepted representation.
 
-Use only when the environment supports independent agents/subagents and the extra independence is worth its cost for substantial or high-consequence work.
+> **Leave the frame when needed; do not lose the objective.**
 
-Specialist Reasoning decides **which perspectives** need independence. Lean Repository Execution decides **how workers are coordinated** during Build.
-
-Do not spawn one permanent agent per profession or fan out by default.
-
-## Scope discipline
-
-Specialists operate inside the accepted objective.
-
-> **The accepted objective is not automatically the accepted representation.**
-
-Do not treat the current framing, decomposition, workflow, interface, feature boundary, or architectural abstraction as settled merely because it already exists. Challenge those representations when doing so could materially improve the accepted objective or its Ambition.
+A perspective may inspect beyond the current component, abstraction, or feature boundary when doing so can reveal the real cause or a materially better representation. It must return with demonstrated relevance.
 
 Classify discoveries:
-- **Required for the objective** — analyze and feed back now.
-- **Adjacent but nonessential** — note only when useful; do not expand scope automatically.
-- **Would materially redefine the objective** — surface through the owning workflow as a genuine founder/product choice.
 
-Do not let Marketing invent a launch program during a settings fix, Legal redefine unrelated policy, or Architecture redesign the platform because a local feature exposed an interesting possibility.
+- **Required for the objective** — analyze now.
+- **Adjacent but nonessential** — note/route without expanding the active referent.
+- **Systemic cause of the objective** — inspect far enough to establish it; route wider cleanup separately unless recovery itself is the objective.
+- **Would redefine product intent** — surface to Founder-to-Feature.
 
-Representation challenge must remain referent-bound: it may improve how the accepted objective is realized, but materially different product intent still belongs to Founder-to-Feature.
+Do not use scope discipline to suppress materially better architecture. Do not use innovation to justify unrelated redesign.
 
 ## Transformative synthesis
 
-For substantial Explore or Crystallize work, add a second synthesis only when the current representation itself may be limiting the outcome.
+After professional passes and divergence, synthesize only ideas that could materially improve the work.
 
-Ask:
+Ask especially:
 
-- What is every current specialist implicitly assuming?
-- Which apparent constraint may only be historical?
+- What is everyone assuming?
+- Which constraint is merely historical?
 - What could disappear rather than be improved?
-- What existing project capability is being underused?
-- Which apparently separate problems become simpler when modeled together?
-- What would amplify something uniquely strong in this project rather than merely reproduce a conventional solution?
-- What would make the result substantially better rather than merely correct?
+- Which separate problems become simpler when modeled together?
+- What project-native capability is underused?
 - If the current solution did not exist, would we invent it this way?
 - Are we improving an abstraction because it deserves to exist or because it already exists?
+- Is there a cheap seam now that avoids an expensive likely migration later?
 
-This is **Innovative Caretaking behavior**, not a separate skill in v4.0.
+Evaluate generated alternatives professionally before returning them to the owning workflow.
 
-Return the strongest representation challenges as hypotheses to the owning workflow. Do not silently turn them into accepted product meaning or implementation scope.
+## Internal vs multi-agent mode
 
-Use established professional practice as a baseline, then deliberately ask what the project uniquely enables beyond that baseline. Generic professionalism should prevent avoidable amateurism without erasing project-native strengths.
+Default to internal separated reasoning passes.
+
+Use independent agents/subagents only when real independence adds value for substantial or high-consequence work. Do not create permanent agents per profession.
 
 ## Output to the owning workflow
 
-Return a compact synthesis, not a stack of specialist reports:
-- **Relevant team** — only disciplines that materially mattered.
-- **Material opportunities** — improvements worth incorporating.
-- **Material risks** — issues that could make the concept wrong or fragile.
-- **Unsupported assumptions** — with evidence/hypothesis/inference status when useful.
-- **Cross-functional conflicts** — only unresolved or contract-changing disagreements.
-- **Contract implications** — what product/technical meaning should change.
-- **Representation challenges** — only serious alternatives or simplifications likely to change the quality of realization.
-- **Founder decisions** — only irreducible choices.
+Return a compact synthesis:
 
-Founder-to-Feature should absorb accepted findings into the normal product contract. Do not create a parallel permanent specialist specification by default.
+- relevant professional team;
+- material opportunities/risks;
+- unsupported assumptions and evidence status;
+- meaningful conflicts;
+- serious representation alternatives/simplifications;
+- contract implications;
+- irreducible founder decisions.
+
+Do not create permanent specialist reports by default.
 
 ## During Build
 
-Specialist Reasoning may reactivate when implementation reveals a professional/domain risk that was not previously material.
-
-It should answer the perspective question and return a bounded obligation. It does not take over execution.
-
-Do not reopen the entire virtual team for every implementation detail.
+Reactivate only when implementation reveals a newly material professional/domain risk or a representation problem that could invalidate the accepted referent. Return a bounded obligation; do not take over execution.
 
 ## Saturation
 
-Stop specialist expansion when:
-- the smallest sufficient team has covered the material risks/opportunities;
-- additional disciplines are unlikely to change the objective;
-- repeated passes produce no materially new information;
-- remaining uncertainty belongs to unavailable evidence, a founder decision, bounded implementation freedom, or human taste after serious representation alternatives have been considered.
+Stop when:
 
-Do not activate more professions merely to appear comprehensive.
+- the sufficient professional team covered material risk/opportunity;
+- serious generative alternatives were considered where representation mattered;
+- further perspectives/alternatives are unlikely to change the objective or quality;
+- remaining uncertainty belongs to evidence, founder decision, bounded implementation freedom, or human taste.
+
+Repeated founder rescue after saturation is evidence that divergence was too weak.
 
 ## Anti-patterns
 
 Do not:
-- turn roles into named-persona theater;
-- load every professional perspective on every task;
-- convert one blended checklist into a longer blended checklist;
-- send every specialist question to the user;
-- treat agent inference as user evidence;
-- treat simulated expertise as authoritative external fact;
-- create permanent specialist reports by default;
-- let specialist reasoning own development stages or implementation;
-- expand scope because an expert perspective surfaced an interesting adjacent idea;
-- confuse the current implementation shape with the accepted objective;
-- invoke Transformative Synthesis mechanically when the representation is already settled or the task is routine;
-- use innovation as permission to ignore authoritative project constraints or founder intent.
+
+- turn roles into personas;
+- load every profession;
+- manufacture findings;
+- treat inference as user/external evidence;
+- create permanent specialist specifications;
+- make scope so tight that the real cause/stronger representation cannot be discovered;
+- let generative hypotheses become conclusions without professional evaluation;
+- generate novelty merely to appear creative;
+- optimize inherited abstractions without asking whether they should exist.
 
 ## Governing maxim
 
-> **Use the smallest team that can reveal what the primary reasoning is likely to miss. Think independently first, challenge the representation when it may suppress the objective, synthesize second, and return only what materially changes the work.**
+> **Establish a professional floor, diverge enough to find what the founder and current implementation may be missing, then converge only on alternatives that survive relevance and professional scrutiny.**
