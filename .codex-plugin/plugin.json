@@ -9,11 +9,19 @@
   "interface": {
     "displayName": "Development OS",
     "shortDescription": "Reason, inspect, build, verify, and govern software work.",
-    "longDescription": "Development OS provides the five canonical Development OS reasoning skills as one lightweight workflow package. Connected apps such as Development Intelligence and Conductor remain independently installed and authenticated.",
+    "longDescription": "Development OS provides five coordinated reasoning skills for software and digital-product work while remaining independent of any specific repository, provider, or connected tool.",
     "developerName": "Development OS",
     "category": "Productivity",
     "capabilities": [
       "Read"
+    ],
+    "brandColor": "#0F172A",
+    "composerIcon": "./assets/composer-icon.svg",
+    "logo": "./assets/logo.svg",
+    "defaultPrompt": [
+      "Use Development OS to inspect this software project.",
+      "Use Development OS to shape this feature before implementation.",
+      "Use Development OS to audit and improve this codebase."
     ]
   }
 }

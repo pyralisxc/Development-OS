@@ -33,8 +33,9 @@ A ChatGPT account may have all of them enabled at the same time. Development OS 
 
 The repository root is the plugin package.
 
-- `plugin.json` is the portable Agent Plugins manifest.
+- `plugin.json` is the portable Agent Plugins manifest and canonical OpenAI-specific interface metadata source.
 - `.codex-plugin/plugin.json` is the ChatGPT/Codex compatibility manifest.
+- `assets/` contains required square OpenAI directory branding assets.
 - `skills/` is the canonical skill source and is packaged directly.
 - `.agents/plugins/marketplace.json` lets a workspace import/sync this repository as a plugin marketplace.
 
@@ -46,6 +47,8 @@ The active package intentionally has:
 - no `.mcp.json`.
 
 The plugin can therefore evolve independently of whichever apps are connected to a particular ChatGPT account.
+
+Directory submission requires both `interface.composerIcon` and `interface.logo` to reference readable square images. Repository validation protects those fields and the release packager includes the canonical assets.
 
 ## Runtime relationship
 

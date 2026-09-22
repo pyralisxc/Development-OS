@@ -23,6 +23,31 @@ function scenarioHash(values: unknown[]): string {
   return crypto.createHash('sha256').update(JSON.stringify(values)).digest('hex');
 }
 
+function squareSvgDimensions(text: string): { width: number; height: number } | null {
+  const width = text.match(/\bwidth=["']([0-9]+(?:\.[0-9]+)?)["']/i);
+  const height = text.match(/\bheight=["']([0-9]+(?:\.[0-9]+)?)["']/i);
+  if (width && height) return { width: Number(width[1]), height: Number(height[1]) };
+  const viewBox = text.match(/\bviewBox=["']\s*[-+]?\d+(?:\.\d+)?\s+[-+]?\d+(?:\.\d+)?\s+([0-9]+(?:\.\d+)?)\s+([0-9]+(?:\.\d+)?)\s*["']/i);
+  return viewBox ? { width: Number(viewBox[1]), height: Number(viewBox[2]) } : null;
+}
+
+async function validateSquareBrandAsset(relativePath: string | undefined, field: string): Promise<void> {
+  if (!relativePath) throw new Error(`${field} is required for OpenAI directory submission`);
+  if (!relativePath.startsWith('./assets/')) throw new Error(`${field} must reference ./assets/`);
+  const absolute = path.resolve(repoRoot, relativePath);
+  const assetsRoot = path.resolve(repoRoot, 'assets');
+  if (!absolute.startsWith(`${assetsRoot}${path.sep}`)) throw new Error(`${field} must remain inside assets/`);
+  const stat = await fs.stat(absolute).catch(() => null);
+  if (!stat?.isFile()) throw new Error(`${field} must reference an existing regular file`);
+  if (path.extname(absolute).toLowerCase() !== '.svg') throw new Error(`${field} must use the canonical SVG branding asset`);
+  const svg = await fs.readFile(absolute, 'utf8');
+  if (!/<svg\b/i.test(svg)) throw new Error(`${field} must contain a valid SVG root`);
+  const dimensions = squareSvgDimensions(svg);
+  if (!dimensions || dimensions.width !== dimensions.height || dimensions.width < 48) {
+    throw new Error(`${field} must reference a square SVG at least 48x48`);
+  }
+}
+
 export async function validateRepository(): Promise<{ version: string; behaviorCount: number; trajectoryCount: number; productiveCount: number; hostCount: number; scenarioSetSha256: string }> {
   for (const skill of REQUIRED_SKILLS) {
     const file = path.join(skillsRoot, skill, 'SKILL.md');
@@ -69,9 +94,20 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
   const portablePlugin = JSON.parse(await fs.readFile(path.join(repoRoot, 'plugin.json'), 'utf8')) as {
     name?: string;
     version?: string;
+    extensions?: {
+      'com.openai'?: {
+        interface?: {
+          composerIcon?: string;
+          logo?: string;
+        };
+      };
+    };
   };
   if (portablePlugin.name !== 'development-os') throw new Error('portable plugin name must be development-os');
   if (portablePlugin.version !== version) throw new Error('portable plugin version must match package version');
+  const openAiInterface = portablePlugin.extensions?.['com.openai']?.interface;
+  await validateSquareBrandAsset(openAiInterface?.composerIcon, 'plugin.json extensions.com.openai.interface.composerIcon');
+  await validateSquareBrandAsset(openAiInterface?.logo, 'plugin.json extensions.com.openai.interface.logo');
 
   const codexPlugin = JSON.parse(await fs.readFile(path.join(repoRoot, '.codex-plugin', 'plugin.json'), 'utf8')) as {
     name?: string;
@@ -79,12 +115,19 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
     skills?: string;
     apps?: string;
     mcpServers?: string;
+    interface?: {
+      composerIcon?: string;
+      logo?: string;
+    };
   };
   if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');
   if (codexPlugin.version !== version) throw new Error('ChatGPT/Codex plugin version must match package version');
   if (codexPlugin.skills !== './skills/') throw new Error('Development OS plugin must package canonical ./skills/');
   if (codexPlugin.apps) throw new Error('Development OS v4 plugin must remain lightweight and must not bind ChatGPT apps');
   if (codexPlugin.mcpServers) throw new Error('Development OS v4 plugin must not embed MCP server declarations');
+  if (codexPlugin.interface?.composerIcon !== openAiInterface?.composerIcon || codexPlugin.interface?.logo !== openAiInterface?.logo) {
+    throw new Error('OpenAI branding asset paths must match between portable and compatibility manifests');
+  }
 
   for (const filename of ['.app.json', 'mcp.json', '.mcp.json']) {
     const exists = await fs.stat(path.join(repoRoot, filename)).then(() => true, () => false);

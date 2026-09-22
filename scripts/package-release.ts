@@ -47,10 +47,12 @@ async function main() {
   await fs.copyFile(path.join(repoRoot, 'plugin.json'), path.join(pluginRoot, 'plugin.json'));
   await fs.cp(path.join(repoRoot, '.codex-plugin'), path.join(pluginRoot, '.codex-plugin'), { recursive: true });
   await fs.cp(path.join(repoRoot, '.agents'), path.join(pluginRoot, '.agents'), { recursive: true });
+  await fs.cp(path.join(repoRoot, 'assets'), path.join(pluginRoot, 'assets'), { recursive: true });
   await fs.cp(skillsRoot, path.join(pluginRoot, 'skills'), { recursive: true });
   await fs.mkdir(path.join(pluginRoot, 'docs'), { recursive: true });
   await fs.copyFile(path.join(repoRoot, 'docs', 'CHATGPT_PLUGIN.md'), path.join(pluginRoot, 'docs', 'CHATGPT_PLUGIN.md'));
   await zipDirectory(pluginRoot, path.join(output, `development-os-plugin-v${version}.zip`), path.basename(pluginRoot));
+
   console.log(output);
 }
 
