@@ -15,11 +15,17 @@ test('package version is the single release and plugin version authority', async
     version: string;
     interface?: { composerIcon?: string; logo?: string };
   };
+  const lockfile = JSON.parse(await fs.readFile(path.join(repoRoot, 'package-lock.json'), 'utf8')) as {
+    version?: string;
+    packages?: Record<string, { version?: string }>;
+  };
   const workflow = await fs.readFile(path.join(repoRoot, '.github', 'workflows', 'verify.yml'), 'utf8');
   const packager = await fs.readFile(path.join(repoRoot, 'scripts', 'package-release.ts'), 'utf8');
 
   assert.equal(portable.version, version);
   assert.equal(codex.version, version);
+  assert.equal(lockfile.version, version);
+  assert.equal(lockfile.packages?.['']?.version, version);
   assert.match(workflow, /steps\.package-version\.outputs\.version/);
   assert.match(packager, /const version = await packageVersion\(\)/);
   assert.doesNotMatch(packager, /const version\s*=\s*['"]/);
@@ -39,3 +45,4 @@ test('package version is the single release and plugin version authority', async
     assert.match(svg, /viewBox="0 0 512 512"/);
   }
 });
+

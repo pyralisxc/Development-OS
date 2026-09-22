@@ -45,6 +45,24 @@ Match the **level of proof to the level of the claim**.
 
 Do not fill evidence gaps with plausible model inference.
 
+## Battle-test hypotheses and durable findings
+
+Battle testing and broad observation deliberately generate possible weaknesses. They are not durable truth merely because they sound plausible.
+
+> **Battle testing generates hypotheses; persistence requires evidence.**
+
+For each material incidental finding, distinguish:
+
+- **supported obligation** — enough evidence exists to state a concrete unresolved problem;
+- **investigation** — the anomaly is material but correctness, intent, or root cause is unresolved;
+- **temporary hypothesis** — not yet strong enough to deserve durable routing.
+
+Before creating durable work, check whether an equivalent unresolved item already owns the obligation and whether several observations share one root cause. Preserve every warranted distinct obligation; do not cap issue count arbitrarily.
+
+The durable work system owns unresolved obligation, not final truth. When work resolves, reconcile accepted durable meaning into its natural living owner and close/retire the temporary obligation artifact.
+
+Respect information sensitivity and destination visibility. Evidence does not become safer to publish merely because an issue tracker is convenient.
+
 ## Development evidence is temporary by default
 
 Use temporary proof freely when it is the cheapest way to learn:
@@ -197,3 +215,4 @@ Do not:
 ## Governing maxim
 
 > **Move from uncertainty to justified confidence at the real claim boundary, then keep only the evidence worth carrying forward.**
+
