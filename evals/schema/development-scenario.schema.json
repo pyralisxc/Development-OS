@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Development OS behavioral or trajectory scenario",
+  "oneOf": [
+    { "$ref": "#/$defs/behavior" },
+    { "$ref": "#/$defs/trajectory" }
+  ],
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "stringList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyString" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "expectation": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "stage": { "$ref": "#/$defs/stringList" },
+        "mode": { "$ref": "#/$defs/stringList" },
+        "buildAuthorized": { "type": "boolean" },
+        "humanInput": { "enum": ["none", "required"] },
+        "continuation": { "enum": ["continue", "handoff", "either"] },
+        "boundary": { "$ref": "#/$defs/stringList" },
+        "objectiveContains": { "$ref": "#/$defs/stringList" },
+        "ambitionContains": { "$ref": "#/$defs/stringList" },
+        "exploreEntry": { "enum": ["directed", "discovery"] },
+        "evidenceAppetite": { "enum": ["representative", "targeted", "exhaustive"] },
+        "stageBasisContains": { "$ref": "#/$defs/stringList" },
+        "authorizationReferentContains": { "$ref": "#/$defs/stringList" },
+        "authorizationScopeContains": { "$ref": "#/$defs/stringList" },
+        "activeFrontierMin": { "type": "integer", "minimum": 0 },
+        "protectedRetiredMeaningContains": { "$ref": "#/$defs/stringList" },
+        "mustActivate": { "$ref": "#/$defs/stringList" },
+        "mustNotActivate": { "$ref": "#/$defs/stringList" },
+        "specialistRoles": { "$ref": "#/$defs/stringList" },
+        "evidenceLabels": { "$ref": "#/$defs/stringList" },
+        "materialAssumptionsContains": { "$ref": "#/$defs/stringList" },
+        "responseContains": { "$ref": "#/$defs/stringList" },
+        "responseContainsAny": { "$ref": "#/$defs/stringList" },
+        "responseNotContains": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": false
+    },
+    "behavior": {
+      "type": "object",
+      "required": ["id", "title", "kind", "prompt", "expected"],
+      "properties": {
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "kind": { "const": "behavior" },
+        "context": { "$ref": "#/$defs/nonEmptyString" },
+        "prompt": { "$ref": "#/$defs/nonEmptyString" },
+        "expected": { "$ref": "#/$defs/expectation" }
+      },
+      "additionalProperties": false
+    },
+    "trajectoryTurn": {
+      "type": "object",
+      "required": ["prompt", "expected"],
+      "properties": {
+        "prompt": { "$ref": "#/$defs/nonEmptyString" },
+        "expected": { "$ref": "#/$defs/expectation" }
+      },
+      "additionalProperties": false
+    },
+    "trajectory": {
+      "type": "object",
+      "required": ["id", "title", "kind", "objective", "turns"],
+      "properties": {
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "kind": { "const": "trajectory" },
+        "objective": { "$ref": "#/$defs/nonEmptyString" },
+        "context": { "$ref": "#/$defs/nonEmptyString" },
+        "turns": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/trajectoryTurn" },
+          "minItems": 2
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

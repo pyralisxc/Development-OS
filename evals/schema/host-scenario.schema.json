@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Development OS host acceptance scenario",
+  "type": "object",
+  "required": ["id", "title", "kind", "objective", "workspace", "requiredCapabilities", "turns"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "kind": { "const": "host" },
+    "objective": { "type": "string", "minLength": 1 },
+    "workspace": { "enum": ["isolated-fixture", "read-only-repository"] },
+    "requiredCapabilities": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "turns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["prompt", "requiredObservations", "forbiddenOutcomes"],
+        "properties": {
+          "prompt": { "type": "string", "minLength": 1 },
+          "requiredObservations": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "forbiddenOutcomes": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 4
+    }
+  },
+  "additionalProperties": false
+}

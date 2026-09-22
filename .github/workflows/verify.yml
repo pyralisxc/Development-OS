@@ -17,12 +17,16 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - run: npm install --no-audit --no-fund
+      - run: npm ci --no-audit --no-fund
       - run: npm run verify
       - run: npm run package:release
+      - name: Read package version
+        id: package-version
+        shell: bash
+        run: echo "version=$(node -p \"require('./package.json').version\")" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
         with:
-          name: development-os-v4.0-candidate
+          name: development-os-v${{ steps.package-version.outputs.version }}-candidate
           path: artifacts/release/*.zip
           if-no-files-found: error
           retention-days: 7

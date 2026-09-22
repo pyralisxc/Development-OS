@@ -47,6 +47,10 @@ Productive evals must separate methodology compliance from output usefulness/eco
 
 Productive eval outputs belong to their target project/content surface, not this repository.
 
+Host acceptance must exercise the installed plugin through real filesystem, Git, and shell capabilities. Text-only provider evals cannot satisfy that proof layer.
+
+Scenario JSON is validated fail-closed. Unknown fields are errors rather than silently ignored intent.
+
 ## External tools and capability composition
 
 Runtime skills are capability-neutral and provider-neutral.
@@ -85,3 +89,5 @@ Changing this shape is a product/architecture decision, not routine cleanup.
 Run `npm run verify` for every meaningful change.
 
 Permanent tests should protect harness contracts and durable methodology guarantees, not incidental implementation shape.
+
+Automated model evals are optional review tools, not release gates. The maintainer's hands-on grading is the qualitative acceptance authority; creating a version tag records explicit release sign-off. Do not tag until `npm run verify` passes and the candidate has been reviewed in a real host. `package.json` is the single version authority; plugin manifests and release artifacts must match it.

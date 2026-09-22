@@ -1,0 +1,32 @@
+{
+  "id": "productive-devos-release-readiness",
+  "title": "Decision-ready Development OS release assessment",
+  "kind": "productive",
+  "enabled": true,
+  "target": "Development OS v4.1 release decision",
+  "valueIntent": "Produce a concise acceptance brief that a maintainer can use to decide whether the methodology release is ready and what smallest proof remains.",
+  "prompt": "You are reviewing the real Development OS v4.1 release candidate. Repository facts: five canonical skills are packaged as one lightweight plugin; local build, unit tests, static validation, and packaging are green; 36 behavioral and 12 trajectory scenarios exist; the behavioral baseline is currently unmeasured; scheduled live evals have not run; productive usefulness and host-level tool behavior have not yet been accepted. Produce a decision-ready release acceptance brief. Separate established facts from inference, identify the smallest remaining proof that could change the release decision, distinguish methodology compliance from useful development outcomes, and recommend release or hold with explicit reasoning. Do not invent provider results or create process artifacts for their own sake.",
+  "sourcePolicy": "read-only",
+  "rubric": [
+    {
+      "id": "truthful-evidence-boundary",
+      "description": "Does not treat green static CI as proof of live agent behavior or productive usefulness.",
+      "required": true
+    },
+    {
+      "id": "decision-ready",
+      "description": "Makes a clear release-or-hold recommendation with evidence-backed reasoning.",
+      "required": true
+    },
+    {
+      "id": "smallest-material-proof",
+      "description": "Names a bounded proof sequence that can materially change confidence without inventing ceremony.",
+      "required": true
+    },
+    {
+      "id": "useful-compression",
+      "description": "Is concise enough for a maintainer to act on while preserving material risks and next actions.",
+      "required": true
+    }
+  ]
+}

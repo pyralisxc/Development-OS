@@ -1,5 +1,6 @@
 import { runBehavior, runProductive, runTrajectory } from './harness/run.js';
 import { validateRepository } from './validate.js';
+import { assertReleaseTag } from './version.js';
 
 function arg(name: string): string | undefined {
   const index = process.argv.indexOf(name);
@@ -9,7 +10,13 @@ function arg(name: string): string | undefined {
 async function main() {
   const [command, kind] = process.argv.slice(2);
   if (command === 'validate') {
+    const release = process.argv.includes('--release');
     const result = await validateRepository();
+    if (release) {
+      const tag = arg('--tag') ?? process.env.GITHUB_REF_NAME;
+      if (!tag) throw new Error('release validation requires --tag or GITHUB_REF_NAME');
+      assertReleaseTag(tag, result.version);
+    }
     console.log(JSON.stringify({ ok: true, ...result }, null, 2));
     return;
   }
@@ -30,7 +37,7 @@ async function main() {
     console.log(JSON.stringify(result, null, 2));
     return;
   }
-  throw new Error('usage: devos <validate | run behavior|trajectory|productive [--provider openai] [--scenario id]>');
+  throw new Error('usage: devos <validate [--release --tag vX.Y.Z] | run behavior|trajectory|productive [--provider openai] [--scenario id]>');
 }
 
 main().catch(error => {

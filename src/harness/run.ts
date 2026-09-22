@@ -6,6 +6,7 @@ import { parseEvalEnvelope } from './envelope.js';
 import { behaviorInput, behaviorInstructions, EVAL_END, EVAL_START, productiveInput, productiveInstructions, trajectoryInput, type TrajectoryHistoryTurn } from './prompt.js';
 import { loadBehaviorScenarios, loadProductiveScenarios, loadTrajectoryScenarios } from './scenarios.js';
 import { loadSkillInstructions } from './skills.js';
+import { packageVersion } from '../version.js';
 import type { AgentAdapter, AgentRunOutput, ScenarioResult, TrajectoryScenarioResult, TrajectoryTurnResult } from '../types.js';
 
 function adapter(name: string): AgentAdapter {
@@ -45,6 +46,7 @@ export async function runBehavior(provider: string, scenarioId?: string): Promis
   if (!selected.length) throw new Error(`no behavior scenario matched ${scenarioId ?? '<all>'}`);
   const skills = await loadSkillInstructions(true);
   const runner = adapter(provider);
+  const version = await packageVersion();
   const directory = await outputDir('behavior');
   const results: ScenarioResult[] = [];
 
@@ -52,7 +54,7 @@ export async function runBehavior(provider: string, scenarioId?: string): Promis
     const result = await runner.run({
       instructions: behaviorInstructions(skills),
       input: behaviorInput(scenario),
-      metadata: { scenario: scenario.id, skill_version: '3.5.0', eval_kind: 'behavior' },
+      metadata: { scenario: scenario.id, skill_version: version, eval_kind: 'behavior' },
     });
     let graded: ScenarioResult;
     try {
@@ -72,7 +74,7 @@ export async function runBehavior(provider: string, scenarioId?: string): Promis
   }
 
   const summary = {
-    skillVersion: '3.5.0',
+    skillVersion: version,
     provider: runner.name,
     model: process.env.DEVOS_OPENAI_MODEL ?? null,
     createdAt: new Date().toISOString(),
@@ -90,6 +92,7 @@ export async function runTrajectory(provider: string, scenarioId?: string): Prom
   if (!selected.length) throw new Error(`no trajectory scenario matched ${scenarioId ?? '<all>'}`);
   const skills = await loadSkillInstructions(true);
   const runner = adapter(provider);
+  const version = await packageVersion();
   const directory = await outputDir('trajectory');
   const results: TrajectoryScenarioResult[] = [];
 
@@ -103,7 +106,7 @@ export async function runTrajectory(provider: string, scenarioId?: string): Prom
       const result = await runner.run({
         instructions: behaviorInstructions(skills),
         input: trajectoryInput(scenario, index, history),
-        metadata: { scenario: scenario.id, turn: String(index + 1), skill_version: '3.5.0', eval_kind: 'trajectory' },
+        metadata: { scenario: scenario.id, turn: String(index + 1), skill_version: version, eval_kind: 'trajectory' },
       });
       usage = addUsage(usage, result.usage);
       let graded: TrajectoryTurnResult;
@@ -135,7 +138,7 @@ export async function runTrajectory(provider: string, scenarioId?: string): Prom
   }
 
   const summary = {
-    skillVersion: '3.5.0',
+    skillVersion: version,
     provider: runner.name,
     model: process.env.DEVOS_OPENAI_MODEL ?? null,
     createdAt: new Date().toISOString(),
@@ -152,16 +155,18 @@ export async function runProductive(provider: string, scenarioId?: string): Prom
   if (!scenarios.length) throw new Error('no enabled productive eval scenario matched; productive evals must be deliberately enabled');
   const skills = await loadSkillInstructions(true);
   const runner = adapter(provider);
+  const version = await packageVersion();
   const directory = await outputDir('productive');
 
   for (const scenario of scenarios) {
     const result = await runner.run({
       instructions: productiveInstructions(skills),
       input: productiveInput(scenario),
-      metadata: { scenario: scenario.id, skill_version: '3.5.0', eval_kind: 'productive' },
+      metadata: { scenario: scenario.id, skill_version: version, eval_kind: 'productive' },
     });
     await fs.writeFile(path.join(directory, `${scenario.id}.json`), JSON.stringify({
       scenario,
+      skillVersion: version,
       provider: runner.name,
       model: process.env.DEVOS_OPENAI_MODEL ?? null,
       usage: result.usage,

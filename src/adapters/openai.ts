@@ -15,18 +15,46 @@ interface ItemsResponse {
   data?: Array<Record<string, unknown>>;
 }
 
+interface TurnResponse {
+  status?: string;
+  error?: { code?: string; message?: string } | null;
+}
+
+interface TurnsResponse {
+  data?: TurnResponse[];
+}
+
 const API_BASE = process.env.OPENAI_API_BASE ?? 'https://api.openai.com/v1';
+
+export function agentApiHeaders(key: string, additional: HeadersInit = {}): HeadersInit {
+  return {
+    Authorization: `Bearer ${key}`,
+    'Content-Type': 'application/json',
+    'OpenAI-Beta': 'agents=v1',
+    ...additional,
+  };
+}
+
+export function agentSessionRequest(model: string, input: AgentRunInput): Record<string, unknown> {
+  return {
+    environment: { type: 'none' },
+    agent: {
+      model,
+      instructions: input.instructions,
+      multi_agent: { enabled: false },
+    },
+    input: input.input,
+    metadata: input.metadata ?? {},
+    stream: false,
+  };
+}
 
 async function api(path: string, init: RequestInit = {}): Promise<any> {
   const key = process.env.OPENAI_API_KEY;
   if (!key) throw new Error('OPENAI_API_KEY is required for live OpenAI evals');
   const response = await fetch(`${API_BASE}${path}`, {
     ...init,
-    headers: {
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-      ...(init.headers ?? {}),
-    },
+    headers: agentApiHeaders(key, init.headers),
   });
   const text = await response.text();
   const body = text ? JSON.parse(text) : undefined;
@@ -43,16 +71,28 @@ function messageText(item: Record<string, unknown>): string {
   }).filter(Boolean).join('\n');
 }
 
-async function waitForIdle(sessionId: string, timeoutMs = 180_000): Promise<SessionResponse> {
+export function failedTurnMessage(turns: TurnsResponse): string | undefined {
+  const failed = (turns.data ?? []).find(turn => turn.status === 'failed');
+  if (!failed) return undefined;
+  const code = failed.error?.code ? `${failed.error.code}: ` : '';
+  return `${code}${failed.error?.message ?? 'unknown turn failure'}`;
+}
+
+async function waitForOutput(sessionId: string, timeoutMs = 180_000): Promise<{ session: SessionResponse; text: string }> {
   const started = Date.now();
   while (Date.now() - started < timeoutMs) {
     const session = await api(`/agents/sessions/${encodeURIComponent(sessionId)}`) as SessionResponse;
-    if (session.status === 'idle') return session;
     if (session.status === 'failed') throw new Error(`OpenAI agent session failed: ${session.error ?? 'unknown error'}`);
     if (session.status === 'requires_action') throw new Error('OpenAI agent session requires an external action; v1 eval adapter is tool-free by design');
+    const turns = await api(`/agents/sessions/${encodeURIComponent(sessionId)}/turns?order=desc&limit=20`) as TurnsResponse;
+    const turnFailure = failedTurnMessage(turns);
+    if (turnFailure) throw new Error(`OpenAI agent turn failed: ${turnFailure}`);
+    const items = await api(`/agents/sessions/${encodeURIComponent(sessionId)}/items?order=asc&limit=100`) as ItemsResponse;
+    const text = (items.data ?? []).map(messageText).filter(Boolean).join('\n\n');
+    if (session.status === 'idle' && text) return { session, text };
     await new Promise(resolve => setTimeout(resolve, 1200));
   }
-  throw new Error(`OpenAI agent session timed out after ${timeoutMs}ms`);
+  throw new Error(`OpenAI agent session produced no assistant output after ${timeoutMs}ms`);
 }
 
 export class OpenAIAgentAdapter implements AgentAdapter {
@@ -64,23 +104,10 @@ export class OpenAIAgentAdapter implements AgentAdapter {
 
     const created = await api('/agents/sessions', {
       method: 'POST',
-      body: JSON.stringify({
-        environment: { type: 'none' },
-        agent: {
-          model,
-          instructions: input.instructions,
-          multi_agent: { enabled: false, max_concurrent_subagents: 1 },
-        },
-        input: input.input,
-        metadata: input.metadata ?? {},
-        stream: false,
-      }),
+      body: JSON.stringify(agentSessionRequest(model, input)),
     }) as SessionResponse;
 
-    const session = created.status === 'idle' ? created : await waitForIdle(created.id);
-    const items = await api(`/agents/sessions/${encodeURIComponent(created.id)}/items?order=asc&limit=100`) as ItemsResponse;
-    const text = (items.data ?? []).map(messageText).filter(Boolean).join('\n\n');
-    if (!text) throw new Error('OpenAI agent session returned no assistant message text');
+    const { session, text } = await waitForOutput(created.id);
 
     return {
       text,
