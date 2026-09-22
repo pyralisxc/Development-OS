@@ -63,21 +63,24 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
   for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
     if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
   }
-  for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.1 must contain ${required}`);
+  for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Slack stewardship', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
+    if (!os.includes(required)) throw new Error(`Development OS v4.1.5 must contain ${required}`);
   }
-  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Methodology stands alone; capability composes opportunistically.']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.1 runtime kernel must contain ${required}`);
+  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Bound **exploration cost and interference**, not discovery yield.']) {
+    if (!os.includes(required)) throw new Error(`Development OS v4.1.5 runtime kernel must contain ${required}`);
   }
 
   const specialist = await fs.readFile(path.join(skillsRoot, 'specialist-reasoning', 'SKILL.md'), 'utf8');
   if (!specialist.includes('## Transformative synthesis')) throw new Error('Specialist Reasoning v4.1 must define Transformative synthesis');
   if (!specialist.includes('## Generative divergence')) throw new Error('Specialist Reasoning v4.1 must define Generative divergence');
   if (!specialist.includes('Bad hypotheses are allowed during divergence; bad conclusions are not.')) throw new Error('Specialist Reasoning v4.1 must preserve safe divergence');
+  if (!specialist.includes('## Battle testing')) throw new Error('Specialist Reasoning v4.1.5 must define Battle testing');
+  if (!specialist.includes('Attack the result across the smallest sufficient set of consequence layers')) throw new Error('Specialist Reasoning v4.1.5 must preserve layered battle testing');
 
   const evidence = await fs.readFile(path.join(skillsRoot, 'evidence-stewardship', 'SKILL.md'), 'utf8');
   if (!evidence.includes('level of proof to the level of the claim')) throw new Error('Evidence Stewardship v4.1 must align proof level with claim level');
   if (!evidence.includes('## Degraded evidence and documentation')) throw new Error('Evidence Stewardship v4.1 must cover degraded evidence');
+  if (!evidence.includes('Battle testing generates hypotheses; persistence requires evidence.')) throw new Error('Evidence Stewardship v4.1.5 must gate battle-test persistence with evidence');
 
   const lean = await fs.readFile(path.join(skillsRoot, 'lean-repository-execution', 'SKILL.md'), 'utf8');
   if (!lean.includes('## Mutation integrity and recovery')) throw new Error('Lean compatibility contract must define mutation integrity and recovery');
@@ -153,3 +156,4 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
 
   return { version, behaviorCount: behavior.length, trajectoryCount: trajectory.length, productiveCount: productive.length, hostCount: host.length, scenarioSetSha256 };
 }
+

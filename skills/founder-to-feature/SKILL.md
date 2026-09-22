@@ -45,7 +45,7 @@ If a material contradiction appears, return only the affected lane to Resolve.
 
 ### Ready
 
-Ready means the Crystallized referent is coherent enough that competent implementers should not invent conflicting product behavior and no known self-answerable semantic uncertainty is likely to materially change meaning, ownership, architecture, lifecycle, or user expectation.
+Ready means the Crystallized referent is coherent enough that competent implementers should not invent conflicting product behavior, substantial referents have survived an appropriate Specialist Reasoning battle test, and no known self-answerable semantic uncertainty is likely to materially change meaning, ownership, architecture, lifecycle, or user expectation.
 
 Ready is semantic confidence, not Build authorization.
 
@@ -113,8 +113,9 @@ Before Ready:
 2. **Expose implementation shape.** Surface material language/runtime/framework, repository/package, persistence/authority, provider/tool, deployment/hosting, automation/distribution, credential/permission choices—and intentional absence.
 3. **Challenge scope.** Ask whether concepts can disappear, merge, become native, or remain external.
 4. **Require serious alternatives when design-sensitive.** Reconcile at least one materially different representation generated independently by Specialist Reasoning when such divergence could improve the outcome.
-5. **Future-maintainer test.** What will a capable maintainer wish had been decided now?
-6. **Fresh-outsider test.** What contradictions, duplicate owners, unexplained concepts, or needless complexity remain?
+5. **Battle-test completeness.** Ask Specialist Reasoning to attack the candidate across the smallest sufficient set of material consequence layers. Current-referent omissions return only the affected lane to Resolve; supported out-of-referent findings may be durably routed without takeover.
+6. **Future-maintainer test.** What will a capable maintainer wish had been decided now?
+7. **Fresh-outsider test.** What contradictions, duplicate owners, unexplained concepts, or needless complexity remain?
 
 The goal is not novelty for novelty's sake. Serious alternatives must return to the accepted objective and survive professional evaluation.
 
@@ -177,3 +178,4 @@ Do not:
 ## Governing maxim
 
 > **Resolve what should become true deeply enough that implementation cannot invent the product, while deliberately considering stronger representations before commitment.**
+

@@ -127,6 +127,40 @@ Classify discoveries:
 
 Do not use scope discipline to suppress materially better architecture. Do not use innovation to justify unrelated redesign.
 
+## Battle testing
+
+Battle testing is a deep adversarial completeness pass over a candidate conclusion, contract, architecture, document, or implementation.
+
+> **Attack the result across the smallest sufficient set of consequence layers until additional attacks stop revealing material omissions, contradictions, unsafe assumptions, or stronger representations.**
+
+Battle testing is not a generic checklist and not synonymous with exhaustive evidence. Select only layers capable of changing the result, such as:
+
+- meaning and reachable states;
+- representation and abstraction;
+- ownership and authority;
+- lifecycle, migration, deletion, and retirement;
+- failure, interruption, recovery, and rollback;
+- permissions, trust, identity, and external boundaries;
+- scale, time, cost, and operational burden;
+- human comprehension, misuse, recovery, and accessibility;
+- maintenance and fresh-context legibility;
+- external legal/provider/standards reality when materially relevant.
+
+Use materially different attack directions where useful:
+
+- **Omission** — what necessary dimension is absent?
+- **Contradiction** — what accepted statements cannot both remain true?
+- **Reachability** — what valid sequence reaches an unresolved state?
+- **Misuse/adversary** — what happens under error, abuse, or unexpected use?
+- **Change over time** — what breaks after migration, provider change, growth, or organizational change?
+- **Failure/recovery** — can partial or damaged states recover coherently?
+- **Authority/dependency** — what must be true externally, and are we merely assuming it?
+- **Fresh outsider** — what would a capable newcomer question that insiders stopped seeing?
+
+For substantial Crystallize work, battle-test before declaring Ready. For substantial or high-consequence implementation near acceptance, battle-test the built reality again because a strong contract does not prove the delivered system.
+
+Battle testing generates hypotheses and findings; Evidence Stewardship determines which are supported enough to affect the active referent or earn durable routing.
+
 ## Transformative synthesis
 
 After professional passes and divergence, synthesize only ideas that could materially improve the work.
@@ -157,7 +191,7 @@ Return a compact synthesis:
 - relevant professional team;
 - material opportunities/risks;
 - unsupported assumptions and evidence status;
-- meaningful conflicts;
+- meaningful conflicts and battle-test omissions;
 - serious representation alternatives/simplifications;
 - contract implications;
 - irreducible founder decisions.
@@ -166,7 +200,7 @@ Do not create permanent specialist reports by default.
 
 ## During Build
 
-Reactivate only when implementation reveals a newly material professional/domain risk or a representation problem that could invalidate the accepted referent. Return a bounded obligation; do not take over execution.
+Reactivate when implementation reveals a newly material professional/domain risk or representation problem that could invalidate the accepted referent, and for a pre-Accept battle test on substantial or high-consequence candidates. Return bounded findings; do not take over execution.
 
 ## Saturation
 
@@ -174,7 +208,8 @@ Stop when:
 
 - the sufficient professional team covered material risk/opportunity;
 - serious generative alternatives were considered where representation mattered;
-- further perspectives/alternatives are unlikely to change the objective or quality;
+- substantial candidates were battle-tested across the material consequence layers;
+- further perspectives/alternatives/attacks are unlikely to change the objective or quality;
 - remaining uncertainty belongs to evidence, founder decision, bounded implementation freedom, or human taste.
 
 Repeated founder rescue after saturation is evidence that divergence was too weak.
@@ -195,4 +230,5 @@ Do not:
 
 ## Governing maxim
 
-> **Establish a professional floor, diverge enough to find what the founder and current implementation may be missing, then converge only on alternatives that survive relevance and professional scrutiny.**
+> **Establish a professional floor, diverge beyond the inherited frame, battle-test the candidate across material consequence layers, and converge only on conclusions that survive relevance, evidence, and professional scrutiny.**
+

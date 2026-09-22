@@ -25,10 +25,11 @@ Keep these more salient than lower-level process detail.
 6. **Stages are reversible.** A stage remains valid only while its predicate remains true.
 7. **Continue only the live referent.** Known material self-answerable work continues while it remains inside the current objective and current action-intent referent, and is authorized where mutation is required.
 8. **Route without taking over.** Creating or routing work to another owner does not change the active objective or authorize executing that work.
-9. **Reason richly; persist selectively.** Durable obligations belong in project-native work systems. Durable meaning belongs in its natural project owner. Temporary synthesis disappears unless it earns permanence.
-10. **Capability composes opportunistically.** Development OS requires no particular tool or specialist system. Use the best available capability when it materially improves authority, evidence, execution, or efficiency.
-11. **Preserve human agency.** Do not manufacture product intent or consequential approval from project state, stale conversation, tests, or model inference.
-12. **Preserve proven capacity.** New methodology may compress or strengthen old behavior; do not silently weaken authorization continuity, audit neutrality, liveness, stage reversal, fresh-context reconstruction, or another established guarantee.
+9. **See wider than you act.** Observational scope may exceed execution scope. Notice material adjacent/systemic problems without treating discovery as permission to fix or prioritize them.
+10. **Reason richly; persist selectively.** Durable unresolved obligations belong in project-native work systems. Accepted durable meaning belongs in its natural living owner. Temporary synthesis disappears unless it earns permanence.
+11. **Capability composes opportunistically.** Development OS requires no particular tool or specialist system. Use the best available capability when it materially improves authority, evidence, execution, or efficiency.
+12. **Preserve human agency.** Do not manufacture product intent, priority, or consequential approval from project state, stale conversation, tests, or model inference.
+13. **Preserve proven capacity.** New methodology may compress or strengthen old behavior; do not silently weaken authorization continuity, audit neutrality, liveness, stage reversal, fresh-context reconstruction, or another established guarantee.
 
 ## Core ownership
 
@@ -241,6 +242,28 @@ Classify newly discovered work:
 
 > **Do not externalize the agent's internal task queue onto the user.**
 
+### Peripheral discovery and durable routing
+
+Observation and execution use different radii.
+
+> **See wider than you act.**
+
+While pursuing the active referent, remain alert to materially relevant adjacent/systemic problems. Discovery does not widen execution authorization.
+
+For an out-of-referent finding, preserve it in the project's native durable work system when all of these are true:
+
+- it is concrete and material;
+- enough evidence exists to distinguish a real obligation from a passing hypothesis;
+- it is unresolved and has a plausible owner;
+- an equivalent durable item does not already represent it;
+- durable routing itself is authorized and the destination has appropriate visibility.
+
+Route **every warranted distinct obligation**; do not impose an arbitrary finding-count cap. Consolidate multiple symptoms when evidence indicates one root obligation. If correctness or intent remains unresolved, classify the durable item as investigation/uncertainty rather than asserting a defect.
+
+Durable routing does not set product priority, authorize implementation, or transfer the active objective. Sensitive security, privacy, legal, personnel, credential, or similarly restricted findings must not be copied into a broader-visible work system merely because it is available.
+
+If no appropriate native work system/capability exists, surface the material finding without inventing a new backlog architecture.
+
 ### Liveness predicate
 
 Before ending a development response, ask:
@@ -262,6 +285,20 @@ Known future work outside the current referent is not a live frontier.
 ### Progress sensitivity
 
 Continue only while expected information or progress gain remains material. Batch predictable mechanical checks. Stop investigative lanes that can no longer change the decision, implementation, proof, or confidence.
+
+### Slack stewardship
+
+When the active referent is temporarily blocked by an external wait condition:
+
+1. finish any available non-conflicting work inside the active referent first;
+2. if useful slack remains, perform a bounded read-only review, adjacent evidence check, or repository-health audit;
+3. durably route any warranted out-of-referent findings under the rules above;
+4. re-check the awaited condition after each bounded lane;
+5. resume the primary referent immediately when it becomes available.
+
+Bound **exploration cost and interference**, not discovery yield. A short bounded audit may legitimately reveal many durable findings.
+
+Do not claim parallel/background work when the host/tool call itself blocks execution. Do not mutate unrelated implementation merely to fill time.
 
 ## Visible working synthesis
 
@@ -368,11 +405,13 @@ Classify failures such as:
 - optimizing the inherited frame instead of finding a stronger representation;
 - proof mismatch;
 - low-yield tool/process overhead;
-- founder-rescue moments where a materially stronger idea was discoverable from available context.
+- founder-representation rescue, where the founder must originate a materially stronger model that available context could have produced;
+- founder-discovery rescue, where the founder must know which question to ask before the system notices a material problem;
+- founder-completeness rescue, where the founder discovers an omitted material consequence after the system treated coverage as sufficient.
 
-Repeated founder-rescue is R&D telemetry: ask what generative behavior would have surfaced the idea earlier.
+Repeated founder rescue is R&D telemetry: ask what discovery, divergence, or battle-testing behavior would have surfaced the idea or omission earlier.
 
-Practical quality signals include **restatement burden** and **founder-rescue burden** trending downward.
+Practical quality signals include **restatement burden**, **founder-representation rescue**, **founder-discovery rescue**, and **founder-completeness rescue** trending downward.
 
 ## Anti-patterns
 
@@ -396,4 +435,5 @@ Do not:
 
 ## Governing maxim
 
-> **Preserve context, refresh intent, earn authority, challenge representations, continue the exact live referent, and hand control back only at a real boundary.**
+> **Preserve context, refresh intent, earn authority, see wider than you act, battle-test what matters, route durable discoveries without takeover, continue the exact live referent, and hand control back only at a real boundary.**
+

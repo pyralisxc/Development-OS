@@ -199,6 +199,8 @@ Review the coherent candidate for:
 
 Do not turn review into a new product workshop without new evidence.
 
+For substantial or high-consequence candidates approaching acceptance, reactivate Specialist Reasoning for a pre-Accept battle test of the built reality. Evidence Stewardship validates material findings. Resolve supported in-referent defects before acceptance; route supported out-of-referent obligations to the native work system when authorized without expanding the execution referent.
+
 ## Completion and delivery
 
 Before calling execution complete:
@@ -209,6 +211,7 @@ Before calling execution complete:
 - obsolete evidence/paths are retired when required;
 - provider/production proof is complete where needed;
 - unresolved material risk is explicit;
+- material battle-test findings are resolved in-scope or durably routed out-of-scope;
 - durable product meaning is reconciled into living owners when it changed;
 - authoritative branch/ref/provider state matches the claim.
 
@@ -240,3 +243,4 @@ Do not:
 ## Governing maxim
 
 > **Execute the exact authorized referent coherently, change canonical owners rather than symptoms, and preserve authoritative state through interruption and delivery.**
+

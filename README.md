@@ -10,13 +10,13 @@ Development OS is a public, portable development reasoning system for software a
 - **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
 - **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
 
-## v4.1
+## v4.1.5
 
-v4.1 is a **compression and resilience release**.
+v4.1.5 is a **discovery stewardship and battle-testing hardening release** built on the 4.1 compression/resilience kernel.
 
-It preserves the five-skill architecture and the established v3.5/v4.0 compatibility surface while making the highest-value runtime rules harder to lose under long, tool-heavy, multi-repository, or fresh-context work.
+It preserves the five-skill architecture and the established v3.5/v4.0/4.1 compatibility surface while strengthening peripheral awareness, durable routing, slack use, and completeness before Ready/Accept.
 
-First-class 4.1 behavior includes:
+First-class 4.1.5 behavior includes:
 
 - **Fresh intent, continuous state** — every new user message establishes present action intent; prior plans remain context rather than automatic permission to execute later steps.
 - **Referent-scoped liveness** — continue all material self-answerable work inside the current referent, but do not consume the rest of a known roadmap.
@@ -25,16 +25,19 @@ First-class 4.1 behavior includes:
 - **Minimum grounding** — infer mechanics but never invent mission when product purpose or intended behavior is genuinely non-derivable.
 - **Tool-independent composition** — Development OS requires no external specialist system while exploiting the strongest available capabilities when useful.
 - **Routing without takeover** — creating/routing durable work neither changes the active objective nor authorizes executing sibling work.
-- **Native artifacts + selective persistence** — reason richly, persist selectively, and place durable obligations/meaning in natural project owners.
+- **See wider than you act** — observational scope may exceed execution scope so material problems do not require the founder to know the right question first.
+- **Native artifacts + selective persistence** — every warranted distinct unresolved obligation may route to the project's native work system; accepted durable meaning reconciles into natural living owners.
+- **Slack stewardship** — externally blocked time can be used for bounded non-conflicting review/audit work, with exploration cost bounded rather than discovery yield.
+- **Layered battle testing** — substantial candidates are attacked across material consequence layers before Ready and again before high-consequence acceptance.
 - **Professional floor + generative divergence** — professional specialist reasoning is preserved while substantial conceptual work deliberately generates materially different representations before convergence.
 - **Scope elasticity** — leave the current frame when necessary to discover a better representation or real systemic cause, but remain anchored to the accepted objective.
 - **Architectural runway** — prepare cheap neutral seams for probable expensive future migrations without prematurely implementing future systems.
 - **Repository recovery** — messy/no-doc/over-documented projects can reconstruct a trustworthy canonical spine without a new Recovery skill or mandatory documentation suite.
-- **Lower human burden** — restatement burden and founder-rescue burden are explicit R&D quality signals.
+- **Lower human burden** — restatement burden plus founder-representation, founder-discovery, and founder-completeness rescue are explicit R&D quality signals.
 
 ### Compatibility guarantee
 
-v4.1 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json`. New scenarios protect the field failures and founder-rescue patterns discovered during 4.0 usage.
+v4.1.5 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and the 4.1 runtime kernel. New scenarios protect broad discovery/narrow execution, durable routing, slack stewardship, and layered battle testing.
 
 ## Design principles
 
@@ -43,6 +46,10 @@ v4.1 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json`. New s
 > **Methodology stands alone; capability composes opportunistically.**
 
 > **Reason richly; persist selectively.**
+
+> **See wider than you act.**
+
+> **Battle-test deeply; persist findings only when evidence earns it.**
 
 > **Recover truth before structure.**
 
@@ -117,3 +124,4 @@ See `docs/CHATGPT_PLUGIN.md` for the packaging boundary.
 - Git history is the archive.
 
 Do not add planning ledgers, conversation archives, session databases, or duplicate architecture documents by default.
+
