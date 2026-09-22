@@ -1,54 +1,70 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { Ajv2020, type ValidateFunction } from 'ajv/dist/2020.js';
 import { evalsRoot } from './paths.js';
-import type { BehaviorScenario, DevelopmentScenario, ProductiveScenario, TrajectoryScenario } from '../types.js';
+import type { BehaviorScenario, DevelopmentScenario, HostScenario, ProductiveScenario, TrajectoryScenario } from '../types.js';
 
-function assertNonEmpty(value: unknown, field: string): asserts value is string {
-  if (typeof value !== 'string' || !value.trim()) throw new Error(`${field} must be a non-empty string`);
+interface ScenarioValidators {
+  development: ValidateFunction<DevelopmentScenario>;
+  productive: ValidateFunction<ProductiveScenario>;
+  host: ValidateFunction<HostScenario>;
 }
 
-function assertExpected(value: unknown, field: string): void {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error(`${field} must be an object`);
+let validatorsPromise: Promise<ScenarioValidators> | undefined;
+
+async function readSchema(filename: string): Promise<Record<string, unknown>> {
+  return JSON.parse(await fs.readFile(path.join(evalsRoot, 'schema', filename), 'utf8')) as Record<string, unknown>;
 }
 
-export function validateBehaviorScenario(value: unknown): asserts value is BehaviorScenario {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('behavior scenario must be an object');
-  const record = value as Record<string, unknown>;
-  assertNonEmpty(record.id, 'id');
-  assertNonEmpty(record.title, 'title');
-  if (record.kind !== 'behavior') throw new Error(`${record.id}: kind must be behavior`);
-  assertNonEmpty(record.prompt, `${record.id}.prompt`);
-  assertExpected(record.expected, `${record.id}.expected`);
+async function scenarioValidators(): Promise<ScenarioValidators> {
+  if (!validatorsPromise) {
+    validatorsPromise = Promise.all([
+      readSchema('development-scenario.schema.json'),
+      readSchema('productive-scenario.schema.json'),
+      readSchema('host-scenario.schema.json'),
+    ]).then(([development, productive, host]) => {
+      const ajv = new Ajv2020({ allErrors: true, strict: true });
+      return {
+        development: ajv.compile<DevelopmentScenario>(development),
+        productive: ajv.compile<ProductiveScenario>(productive),
+        host: ajv.compile<HostScenario>(host),
+      };
+    });
+  }
+  return validatorsPromise;
 }
 
-export function validateTrajectoryScenario(value: unknown): asserts value is TrajectoryScenario {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('trajectory scenario must be an object');
-  const record = value as Record<string, unknown>;
-  assertNonEmpty(record.id, 'id');
-  assertNonEmpty(record.title, 'title');
-  if (record.kind !== 'trajectory') throw new Error(`${record.id}: kind must be trajectory`);
-  assertNonEmpty(record.objective, `${record.id}.objective`);
-  if (!Array.isArray(record.turns) || record.turns.length < 2) throw new Error(`${record.id}.turns must contain at least two turns`);
-  for (let index = 0; index < record.turns.length; index += 1) {
-    const turn = record.turns[index];
-    if (!turn || typeof turn !== 'object' || Array.isArray(turn)) throw new Error(`${record.id}.turns[${index}] must be an object`);
-    const turnRecord = turn as Record<string, unknown>;
-    assertNonEmpty(turnRecord.prompt, `${record.id}.turns[${index}].prompt`);
-    assertExpected(turnRecord.expected, `${record.id}.turns[${index}].expected`);
+function assertSchema<T>(validator: ValidateFunction<T>, value: unknown, label: string): asserts value is T {
+  if (!validator(value)) {
+    const details = validator.errors?.map(error => `${error.instancePath || '/'} ${error.message ?? 'is invalid'}`).join('; ');
+    throw new Error(`${label}: ${details ?? 'schema validation failed'}`);
   }
 }
 
-export function validateProductiveScenario(value: unknown): asserts value is ProductiveScenario {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('productive scenario must be an object');
-  const record = value as Record<string, unknown>;
-  assertNonEmpty(record.id, 'id');
-  assertNonEmpty(record.title, 'title');
-  if (record.kind !== 'productive') throw new Error(`${record.id}: kind must be productive`);
-  if (typeof record.enabled !== 'boolean') throw new Error(`${record.id}.enabled must be boolean`);
-  assertNonEmpty(record.target, `${record.id}.target`);
-  assertNonEmpty(record.valueIntent, `${record.id}.valueIntent`);
-  assertNonEmpty(record.prompt, `${record.id}.prompt`);
-  if (record.sourcePolicy !== 'read-only' && record.sourcePolicy !== 'isolated-workspace') throw new Error(`${record.id}.sourcePolicy is invalid`);
+export async function validateBehaviorScenario(value: unknown): Promise<BehaviorScenario> {
+  const { development } = await scenarioValidators();
+  assertSchema(development, value, String((value as { id?: unknown })?.id ?? 'behavior scenario'));
+  if (value.kind !== 'behavior') throw new Error(`${value.id}: kind must be behavior`);
+  return value;
+}
+
+export async function validateTrajectoryScenario(value: unknown): Promise<TrajectoryScenario> {
+  const { development } = await scenarioValidators();
+  assertSchema(development, value, String((value as { id?: unknown })?.id ?? 'trajectory scenario'));
+  if (value.kind !== 'trajectory') throw new Error(`${value.id}: kind must be trajectory`);
+  return value;
+}
+
+export async function validateProductiveScenario(value: unknown): Promise<ProductiveScenario> {
+  const { productive } = await scenarioValidators();
+  assertSchema(productive, value, String((value as { id?: unknown })?.id ?? 'productive scenario'));
+  return value;
+}
+
+export async function validateHostScenario(value: unknown): Promise<HostScenario> {
+  const { host } = await scenarioValidators();
+  assertSchema(host, value, String((value as { id?: unknown })?.id ?? 'host scenario'));
+  return value;
 }
 
 async function jsonFiles(directory: string): Promise<string[]> {
@@ -71,11 +87,9 @@ export async function loadDevelopmentScenarios(): Promise<DevelopmentScenario[]>
   for (const value of await developmentScenarioValues()) {
     const record = value as Record<string, unknown>;
     if (record?.kind === 'behavior') {
-      validateBehaviorScenario(value);
-      scenarios.push(value);
+      scenarios.push(await validateBehaviorScenario(value));
     } else if (record?.kind === 'trajectory') {
-      validateTrajectoryScenario(value);
-      scenarios.push(value);
+      scenarios.push(await validateTrajectoryScenario(value));
     } else {
       throw new Error(`${String(record?.id ?? '<unknown>')}: development scenario kind must be behavior or trajectory`);
     }
@@ -103,9 +117,26 @@ export async function loadProductiveScenarios(): Promise<ProductiveScenario[]> {
     const parsed = JSON.parse(await fs.readFile(file, 'utf8')) as unknown;
     const values = Array.isArray(parsed) ? parsed : [parsed];
     for (const value of values) {
-      validateProductiveScenario(value);
-      scenarios.push(value);
+      scenarios.push(await validateProductiveScenario(value));
     }
+  }
+  return scenarios;
+}
+
+export async function loadHostScenarios(): Promise<HostScenario[]> {
+  const directory = path.join(evalsRoot, 'scenarios', 'host');
+  const scenarios: HostScenario[] = [];
+  for (const file of await jsonFiles(directory)) {
+    const parsed = JSON.parse(await fs.readFile(file, 'utf8')) as unknown;
+    const values = Array.isArray(parsed) ? parsed : [parsed];
+    for (const value of values) {
+      scenarios.push(await validateHostScenario(value));
+    }
+  }
+  const ids = new Set<string>();
+  for (const scenario of scenarios) {
+    if (ids.has(scenario.id)) throw new Error(`duplicate host scenario id: ${scenario.id}`);
+    ids.add(scenario.id);
   }
   return scenarios;
 }

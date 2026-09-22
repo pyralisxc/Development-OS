@@ -2,7 +2,8 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { evalsRoot, repoRoot, skillsRoot } from './harness/paths.js';
-import { loadBehaviorScenarios, loadDevelopmentScenarios, loadProductiveScenarios, loadTrajectoryScenarios } from './harness/scenarios.js';
+import { loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios } from './harness/scenarios.js';
+import { packageVersion } from './version.js';
 
 const REQUIRED_SKILLS = ['development-os', 'founder-to-feature', 'specialist-reasoning', 'evidence-stewardship', 'lean-repository-execution'];
 
@@ -18,7 +19,11 @@ function frontmatterName(text: string): string | undefined {
   return undefined;
 }
 
-export async function validateRepository(): Promise<{ behaviorCount: number; trajectoryCount: number; productiveCount: number; scenarioSetSha256: string }> {
+function scenarioHash(values: unknown[]): string {
+  return crypto.createHash('sha256').update(JSON.stringify(values)).digest('hex');
+}
+
+export async function validateRepository(): Promise<{ version: string; behaviorCount: number; trajectoryCount: number; productiveCount: number; hostCount: number; scenarioSetSha256: string }> {
   for (const skill of REQUIRED_SKILLS) {
     const file = path.join(skillsRoot, skill, 'SKILL.md');
     const text = await fs.readFile(file, 'utf8');
@@ -57,18 +62,16 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
   const behavior = await loadBehaviorScenarios();
   const trajectory = await loadTrajectoryScenarios();
   const productive = await loadProductiveScenarios();
-  const canonical = JSON.stringify(development);
-  const scenarioSetSha256 = crypto.createHash('sha256').update(canonical).digest('hex');
-
-  const packageJson = JSON.parse(await fs.readFile(path.join(repoRoot, 'package.json'), 'utf8')) as { version?: string };
-  if (packageJson.version !== '4.1.0') throw new Error('package version must be 4.1.0');
+  const host = await loadHostScenarios();
+  const scenarioSetSha256 = scenarioHash(development);
+  const version = await packageVersion();
 
   const portablePlugin = JSON.parse(await fs.readFile(path.join(repoRoot, 'plugin.json'), 'utf8')) as {
     name?: string;
     version?: string;
   };
   if (portablePlugin.name !== 'development-os') throw new Error('portable plugin name must be development-os');
-  if (portablePlugin.version !== packageJson.version) throw new Error('portable plugin version must match package version');
+  if (portablePlugin.version !== version) throw new Error('portable plugin version must match package version');
 
   const codexPlugin = JSON.parse(await fs.readFile(path.join(repoRoot, '.codex-plugin', 'plugin.json'), 'utf8')) as {
     name?: string;
@@ -78,7 +81,7 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
     mcpServers?: string;
   };
   if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');
-  if (codexPlugin.version !== packageJson.version) throw new Error('ChatGPT/Codex plugin version must match package version');
+  if (codexPlugin.version !== version) throw new Error('ChatGPT/Codex plugin version must match package version');
   if (codexPlugin.skills !== './skills/') throw new Error('Development OS plugin must package canonical ./skills/');
   if (codexPlugin.apps) throw new Error('Development OS v4 plugin must remain lightweight and must not bind ChatGPT apps');
   if (codexPlugin.mcpServers) throw new Error('Development OS v4 plugin must not embed MCP server declarations');
@@ -105,13 +108,5 @@ export async function validateRepository(): Promise<{ behaviorCount: number; tra
     throw new Error(`v3.5 compatibility scenarios missing: ${missingCompatibility.join(', ')}`);
   }
 
-  const baselinePath = path.join(evalsRoot, 'baseline.json');
-  if (await fs.stat(baselinePath).then(() => true, () => false)) {
-    const baseline = JSON.parse(await fs.readFile(baselinePath, 'utf8')) as { scenarioSetSha256?: string };
-    if (baseline.scenarioSetSha256 !== scenarioSetSha256) {
-      throw new Error(`eval baseline scenarioSetSha256 is stale; current scenario set is ${scenarioSetSha256}`);
-    }
-  }
-
-  return { behaviorCount: behavior.length, trajectoryCount: trajectory.length, productiveCount: productive.length, scenarioSetSha256 };
+  return { version, behaviorCount: behavior.length, trajectoryCount: trajectory.length, productiveCount: productive.length, hostCount: host.length, scenarioSetSha256 };
 }

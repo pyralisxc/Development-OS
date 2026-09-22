@@ -1,6 +1,6 @@
 # Development OS
 
-Development OS is a private, portable development reasoning system for software and digital-product agents. It is designed to improve reasoning, continuity, human control, and development quality without becoming project truth or requiring a particular tool stack.
+Development OS is a public, portable development reasoning system for software and digital-product agents. It is designed to improve reasoning, continuity, human control, and development quality without becoming project truth or requiring a particular tool stack.
 
 ## Runtime skills
 
@@ -56,15 +56,16 @@ v4.1 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json`. New s
 
 The repository contains:
 
-- behavioral evals for single-turn guarantees;
-- trajectory evals for context/authorization/liveness behavior across turns;
-- productive eval plumbing for output usefulness separate from methodology compliance;
+- behavioral evals for single-turn methodology guarantees;
+- trajectory evals for context, authorization, and liveness across turns;
+- a real productive eval whose output is reviewed separately for methodology compliance and practical usefulness;
+- host acceptance journeys that exercise filesystem, Git, and shell behavior in an installed Codex plugin;
 - compatibility validation preserving proven older behavior.
 
 Run:
 
 ```bash
-npm install
+npm ci
 npm run verify
 ```
 
@@ -75,13 +76,35 @@ export OPENAI_API_KEY=...
 export DEVOS_OPENAI_MODEL=...
 npm run eval:behavior
 npm run eval:trajectory
+npm run eval:productive
 ```
 
-Live eval traces are temporary evidence unless a durable guarantee earns promotion.
+Behavioral, trajectory, productive, and host scenarios are optional review aids. They help a maintainer inspect methodology behavior, usefulness, and real host behavior, but automated model runs are not a release requirement. Release acceptance comes from the maintainer's hands-on review of the candidate; creating a version tag records that explicit sign-off.
+
+A release tag requires `npm run verify`, tag/package version parity, and a packaged candidate whose manifest versions match `package.json`.
 
 ## Distribution
 
 Development OS is packaged as a lightweight plugin containing the canonical skills. Connected tools/apps remain independent and are discovered/configured by the host environment.
+
+### Install from GitHub
+
+The public GitHub repository is the live marketplace source:
+
+```bash
+codex plugin marketplace add pyralisxc/Development-OS --ref main
+codex plugin add development-os@development-os
+```
+
+To refresh an existing installation from the latest `main`:
+
+```bash
+codex plugin marketplace upgrade development-os
+```
+
+Start a fresh Codex session after installation or refresh so the current skills are loaded. GitHub-backed marketplace users receive the current `main` when they refresh; updates are not silently pushed into active sessions.
+
+The universal ChatGPT/Codex Plugins Directory is a separate, reviewed distribution channel. Its skills are published snapshots, so directory updates require a new submitted plugin version rather than following GitHub `main` automatically.
 
 See `docs/CHATGPT_PLUGIN.md` for the packaging boundary.
 
@@ -89,7 +112,7 @@ See `docs/CHATGPT_PLUGIN.md` for the packaging boundary.
 
 - `skills/` is canonical methodology source.
 - `evals/scenarios/` is canonical eval intent.
-- `evals/baseline.json` is the compact accepted measurement snapshot, not a run archive.
+- `package.json` is the single release and plugin version authority.
 - workflow artifacts are temporary evidence.
 - Git history is the archive.
 

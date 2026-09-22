@@ -1,4 +1,4 @@
-export type EvalKind = 'behavior' | 'trajectory' | 'productive';
+export type EvalKind = 'behavior' | 'trajectory' | 'productive' | 'host';
 export type HumanInput = 'none' | 'required';
 export type Continuation = 'continue' | 'handoff' | 'either';
 export type EvidenceAppetite = 'representative' | 'targeted' | 'exhaustive';
@@ -64,6 +64,29 @@ export interface ProductiveScenario {
   valueIntent: string;
   prompt: string;
   sourcePolicy: 'read-only' | 'isolated-workspace';
+  rubric: ProductiveRubricCriterion[];
+}
+
+export interface ProductiveRubricCriterion {
+  id: string;
+  description: string;
+  required: boolean;
+}
+
+export interface HostScenario {
+  id: string;
+  title: string;
+  kind: 'host';
+  objective: string;
+  workspace: 'isolated-fixture' | 'read-only-repository';
+  requiredCapabilities: string[];
+  turns: HostScenarioTurn[];
+}
+
+export interface HostScenarioTurn {
+  prompt: string;
+  requiredObservations: string[];
+  forbiddenOutcomes: string[];
 }
 
 export interface EvalEnvelope {

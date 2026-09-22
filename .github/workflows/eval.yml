@@ -13,15 +13,11 @@ on:
         description: Optional scenario id; blank means all eligible scenarios
         required: false
         type: string
-  schedule:
-    - cron: '17 4,16 * * *'
-
 permissions:
   contents: read
 
 jobs:
-  live-eval:
-    if: github.event_name == 'workflow_dispatch' || vars.DEVOS_LIVE_EVALS_ENABLED == 'true'
+  optional-live-eval:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -33,17 +29,13 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - run: npm install --no-audit --no-fund
+      - run: npm ci --no-audit --no-fund
       - run: npm run build
       - name: Require explicit live-eval configuration
         run: |
           test -n "$OPENAI_API_KEY" || { echo "OPENAI_API_KEY secret is required"; exit 1; }
           test -n "$DEVOS_OPENAI_MODEL" || { echo "DEVOS_OPENAI_MODEL repository variable is required"; exit 1; }
-      - name: Run scheduled behavior evals
-        if: github.event_name == 'schedule'
-        run: node dist/src/cli.js run behavior --provider openai
       - name: Run requested eval
-        if: github.event_name == 'workflow_dispatch'
         shell: bash
         run: |
           args=(run "${{ inputs.kind }}" --provider openai)

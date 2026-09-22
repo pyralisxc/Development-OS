@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4 plugin boundary.
+That is the entire v4.1 plugin boundary.
 
 ## Connected apps stay independent
 
@@ -60,13 +60,23 @@ The plugin does not need to declare those relationships as hard dependencies for
 
 ## Acceptance
 
-A fresh ChatGPT conversation with the Development OS plugin installed should:
+A fresh supported host session with the Development OS plugin installed should:
 
 1. activate the relevant Development OS skills for development work;
 2. use connected specialist apps when they are available and relevant;
 3. remain functional when one or more external apps are absent;
 4. never claim a connected capability exists without checking current tool reality;
 5. preserve the ownership boundaries above.
+
+Release acceptance also includes bounded Codex host journeys with real filesystem, Git, and shell use. These journeys verify tool-time authorization, liveness, and fresh-intent behavior that API text evals cannot prove.
+
+These journeys are maintainer-reviewed. Automated provider evals are optional diagnostic tools, not a publication requirement.
+
+## Public distribution
+
+The GitHub repository is a public Codex marketplace source. Users can register `pyralisxc/Development-OS` at the `main` ref and refresh that marketplace to receive the latest plugin files from `main`.
+
+The universal ChatGPT/Codex Plugins Directory is separate. Directory-published skills are reviewed snapshots and require a new submitted version for updates; they do not follow GitHub `main` live.
 
 ## Mobile boundary
 

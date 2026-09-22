@@ -11,6 +11,7 @@
     "build": "tsc -p tsconfig.json",
     "test": "node --test dist/tests/*.test.js",
     "validate": "node dist/src/cli.js validate",
+    "validate:release": "node dist/src/cli.js validate --release",
     "verify": "npm run build && npm run test && npm run validate",
     "eval:behavior": "node dist/src/cli.js run behavior --provider openai",
     "eval:trajectory": "node dist/src/cli.js run trajectory --provider openai",
@@ -19,5 +20,9 @@
   },
   "devDependencies": {
     "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "fflate": "0.8.3"
   }
 }

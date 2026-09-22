@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadBehaviorScenarios, loadDevelopmentScenarios, loadProductiveScenarios, loadTrajectoryScenarios } from '../src/harness/scenarios.js';
+import { loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios, validateBehaviorScenario } from '../src/harness/scenarios.js';
 
 test('development scenarios are unique and include one-shot plus trajectory regressions', async () => {
   const all = await loadDevelopmentScenarios();
@@ -22,8 +22,30 @@ test('development scenarios are unique and include one-shot plus trajectory regr
   assert.ok(trajectory.some(item => item.id === 'trajectory-discovery-reconciles-founder-interpretation'));
 });
 
-test('productive eval template is disabled by default', async () => {
+test('productive eval is a real enabled scenario with an explicit usefulness rubric', async () => {
   const scenarios = await loadProductiveScenarios();
-  assert.ok(scenarios.length >= 1);
-  assert.ok(scenarios.every(item => !item.enabled));
+  assert.equal(scenarios.length, 1);
+  assert.equal(scenarios[0]?.enabled, true);
+  assert.ok((scenarios[0]?.rubric.length ?? 0) >= 3);
+  assert.ok(scenarios[0]?.rubric.every(item => item.required));
+});
+
+test('host acceptance scenarios require real capabilities and include a multi-turn intent case', async () => {
+  const scenarios = await loadHostScenarios();
+  assert.equal(scenarios.length, 3);
+  assert.ok(scenarios.every(item => item.requiredCapabilities.includes('shell')));
+  assert.ok(scenarios.some(item => item.turns.length > 1));
+});
+
+test('scenario validation fails closed on unknown expectation fields', async () => {
+  await assert.rejects(
+    validateBehaviorScenario({
+      id: 'typo',
+      title: 'typo',
+      kind: 'behavior',
+      prompt: 'test',
+      expected: { buildAuthorised: true },
+    }),
+    /additional properties/,
+  );
 });
