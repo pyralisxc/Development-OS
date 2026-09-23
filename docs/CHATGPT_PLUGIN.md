@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4.1.5 plugin boundary.
+That is the entire v4.1.6 plugin boundary.
 
 ## Connected apps stay independent
 
@@ -84,4 +84,5 @@ The universal ChatGPT/Codex Plugins Directory is separate. Directory-published s
 ## Mobile boundary
 
 The Development OS skills package is independent of custom MCP support. Custom MCP-backed apps may have different availability across ChatGPT surfaces; that does not change the plugin's methodology boundary.
+
 
