@@ -66,8 +66,8 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
   for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Slack stewardship', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
     if (!os.includes(required)) throw new Error(`Development OS v4.1.5 must contain ${required}`);
   }
-  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Bound **exploration cost and interference**, not discovery yield.']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.1.5 runtime kernel must contain ${required}`);
+  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Bound **exploration cost and interference**, not discovery yield.', 'Durable routing authorization', 'next safe atomic lane boundary', 'original primary referent', 'Do not create a persistent `SlackSession`']) {
+    if (!os.includes(required)) throw new Error(`Development OS v4.1.6 runtime kernel must contain ${required}`);
   }
 
   const specialist = await fs.readFile(path.join(skillsRoot, 'specialist-reasoning', 'SKILL.md'), 'utf8');
@@ -156,4 +156,5 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
 
   return { version, behaviorCount: behavior.length, trajectoryCount: trajectory.length, productiveCount: productive.length, hostCount: host.length, scenarioSetSha256 };
 }
+
 

@@ -189,7 +189,7 @@ For every material user message, tool result, provider observation, or implement
 9. route only materially useful capabilities;
 10. continue until the liveness predicate permits a handoff.
 
-Terse messages such as `yes`, `continue`, `go ahead`, or `that one` inherit context only to resolve their exact referent; they do not authorize the widest plausible interpretation.
+Terse messages such as `yes`, `continue`, `go ahead`, or `that one` inherit context only to resolve their exact referent; they do not authorize the widest plausible interpretation. After an externally blocked primary referent used Slack Stewardship, terse continuation resolves back to that primary referent rather than the most recent slack lane unless the user explicitly redirects.
 
 ## Stage validity and invalidation
 
@@ -209,8 +209,11 @@ Do not collapse these concepts:
 
 - **Capability** — can the environment perform an action?
 - **Provider permission** — will the external system allow it?
-- **Development authorization** — has the user authorized this class of mutation for this referent?
+- **Durable routing authorization** — may the current session mutate a destination's native work system to record or classify an unresolved obligation?
+- **Development authorization** — has the user authorized implementation/source mutation for this referent?
 - **Consequential approval** — does this exact release/merge/destructive/high-consequence action require current explicit commitment?
+
+Durable routing authorization may be narrower than development authorization. Permission to create/classify a work item does **not** authorize branch, source, PR, deployment, or other implementation mutation in that destination. Cross-project routing requires current authorization whose scope actually covers the destination.
 
 ### Standing authorization
 
@@ -256,11 +259,12 @@ For an out-of-referent finding, preserve it in the project's native durable work
 - enough evidence exists to distinguish a real obligation from a passing hypothesis;
 - it is unresolved and has a plausible owner;
 - an equivalent durable item does not already represent it;
-- durable routing itself is authorized and the destination has appropriate visibility.
+- **durable routing authorization** currently covers that destination/action;
+- the destination has appropriate visibility.
 
 Route **every warranted distinct obligation**; do not impose an arbitrary finding-count cap. Consolidate multiple symptoms when evidence indicates one root obligation. If correctness or intent remains unresolved, classify the durable item as investigation/uncertainty rather than asserting a defect.
 
-Durable routing does not set product priority, authorize implementation, or transfer the active objective. Sensitive security, privacy, legal, personnel, credential, or similarly restricted findings must not be copied into a broader-visible work system merely because it is available.
+Durable routing does not set product priority, authorize implementation, widen destination development authority, or transfer the active objective. A same-project or cross-project issue created under routing authority remains only a durable unresolved obligation. Sensitive security, privacy, legal, personnel, credential, or similarly restricted findings must not be copied into a broader-visible work system merely because it is available.
 
 If no appropriate native work system/capability exists, surface the material finding without inventing a new backlog architecture.
 
@@ -288,13 +292,24 @@ Continue only while expected information or progress gain remains material. Batc
 
 ### Slack stewardship
 
+A slack window is an **ephemeral derived condition of one externally blocked live referent**, not a second objective, session, or task stack. The original referent remains primary throughout the wait.
+
 When the active referent is temporarily blocked by an external wait condition:
 
-1. finish any available non-conflicting work inside the active referent first;
-2. if useful slack remains, perform a bounded read-only review, adjacent evidence check, or repository-health audit;
-3. durably route any warranted out-of-referent findings under the rules above;
-4. re-check the awaited condition after each bounded lane;
-5. resume the primary referent immediately when it becomes available.
+1. finish any available non-conflicting work inside the primary referent first;
+2. if useful slack remains, perform one bounded read-only review, adjacent evidence check, or repository-health lane;
+3. durably route any warranted out-of-referent findings only when separate durable routing authorization covers the destination/action;
+4. after each bounded lane, re-read or re-check the awaited provider/source condition when that evidence is available;
+5. if the primary condition became actionable, close the slack window at the **next safe atomic lane boundary** and restore the original primary referent before selecting more slack work;
+6. otherwise another bounded slack lane may begin only while expected information/progress gain remains material.
+
+A running tool/provider call cannot be magically interrupted by methodology. Safe resumption means: finish the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent. Do not begin another slack lane once resumption evidence is known.
+
+Terse continuation after a wait (for example `continue`, `go ahead`, or a recovery message after an interrupted/stopped run) resolves against the original primary referent unless the user explicitly redirects to a slack finding.
+
+Provider events/webhooks may be **wake hints**, but they do not become authority. Re-establish current provider/source truth before resuming. Whether an external event can actually re-enter or recreate an agent session belongs to the host/runtime; Development OS must not claim asynchronous continuation when the host cannot provide it.
+
+Do not create a persistent `SlackSession`, session stack, wait ledger, or parallel objective merely to model this behavior.
 
 Bound **exploration cost and interference**, not discovery yield. A short bounded audit may legitimately reveal many durable findings.
 
@@ -436,4 +451,5 @@ Do not:
 ## Governing maxim
 
 > **Preserve context, refresh intent, earn authority, see wider than you act, battle-test what matters, route durable discoveries without takeover, continue the exact live referent, and hand control back only at a real boundary.**
+
 
