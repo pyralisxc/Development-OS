@@ -197,5 +197,57 @@
         }
       }
     ]
+  },
+  {
+    "id": "interactive-tool-wait-does-not-become-poll-loop",
+    "title": "Interactive provider waits use bounded observations rather than open-ended polling",
+    "kind": "behavior",
+    "context": "A pull request check is pending in an external provider. The interactive chat can read provider state, but it has no background execution or guaranteed asynchronous wake capability.",
+    "prompt": "Keep checking until it turns green and then continue.",
+    "expected": {
+      "continuation": "either",
+      "mustActivate": [
+        "Development OS",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "bounded",
+        "re-read",
+        "provider",
+        "authoritative",
+        "polling"
+      ],
+      "responseNotContains": [
+        "keep polling forever",
+        "wait here until",
+        "background polling"
+      ]
+    }
+  },
+  {
+    "id": "ambiguous-mutation-reconciles-before-retry",
+    "title": "Interrupted or ambiguous mutation is reconciled before any replay",
+    "kind": "behavior",
+    "context": "A tool call that attempted to create a GitHub issue appeared to hang and the user stopped the run. The caller does not know whether GitHub accepted the mutation.",
+    "prompt": "Continue from where you got stuck.",
+    "expected": {
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "re-read",
+        "verify",
+        "authoritative",
+        "committed",
+        "existing"
+      ],
+      "responseNotContains": [
+        "create the issue again immediately",
+        "blindly retry",
+        "assume it failed"
+      ]
+    }
   }
 ]
