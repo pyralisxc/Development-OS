@@ -305,6 +305,8 @@ When the active referent is temporarily blocked by an external wait condition:
 
 A running tool/provider call cannot be magically interrupted by methodology. Safe resumption means: finish the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent. Do not begin another slack lane once resumption evidence is known.
 
+Interactive tool liveness is distinct from provider liveness. Do not create sleep loops, open-ended polling, or repeated status calls merely to keep an interactive turn alive. Treat each tool/provider observation as one bounded atomic call. If a call is stopped, fails, returns ambiguously, or the user restarts after an apparently indefinite host run, re-establish authoritative provider/source truth before continuing. **Never repeat a mutation until you have established whether the prior mutation committed.** Prefer bounded read-after-write verification and idempotent recovery over blind replay. For broad tool surfaces, keep retrieval and emitted tool results decision-relevant rather than dumping entire payloads into the active session.
+
 Terse continuation after a wait (for example `continue`, `go ahead`, or a recovery message after an interrupted/stopped run) resolves against the original primary referent unless the user explicitly redirects to a slack finding.
 
 Provider events/webhooks may be **wake hints**, but they do not become authority. Re-establish current provider/source truth before resuming. Whether an external event can actually re-enter or recreate an agent session belongs to the host/runtime; Development OS must not claim asynchronous continuation when the host cannot provide it.
@@ -446,6 +448,7 @@ Do not:
 - create memory/status/handoff infrastructure merely to imitate continuity;
 - make a connected specialist system a global dependency;
 - preserve every rejected idea or temporary artifact;
+- use open-ended polling or blind mutation replay as a substitute for authoritative recovery;
 - confuse more tool activity with more progress.
 
 ## Governing maxim
