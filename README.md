@@ -29,7 +29,7 @@ First-class 4.1.6 behavior includes:
 - **Native artifacts + selective persistence** — every warranted distinct unresolved obligation may route to the project's native work system; accepted durable meaning reconciles into natural living owners.
 - **Slack stewardship** — externally blocked time can be used for bounded non-conflicting review/audit work, with exploration cost bounded rather than discovery yield; the original primary referent remains primary and resumes at the next safe atomic lane boundary.
 - **Routing authorization isolation** — creating/classifying native work is a distinct bounded mutation from implementing the destination; routing never implies source/PR/deployment authority.
-- **Host-aware resumption** — provider events may wake/reconcile, but Dev OS re-establishes authoritative state and never invents asynchronous session re-entry that the host cannot provide.
+- **Host-aware resumption + tool liveness** — provider events may wake/reconcile, but Dev OS re-establishes authoritative state, avoids open-ended interactive polling, reconciles ambiguous writes before replay, and never invents asynchronous session re-entry that the host cannot provide.
 - **Layered battle testing** — substantial candidates are attacked across material consequence layers before Ready and again before high-consequence acceptance.
 - **Professional floor + generative divergence** — professional specialist reasoning is preserved while substantial conceptual work deliberately generates materially different representations before convergence.
 - **Scope elasticity** — leave the current frame when necessary to discover a better representation or real systemic cause, but remain anchored to the accepted objective.
