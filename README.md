@@ -10,13 +10,13 @@ Development OS is a public, portable development reasoning system for software a
 - **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
 - **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
 
-## v4.1.5
+## v4.1.6
 
-v4.1.5 is a **discovery stewardship and battle-testing hardening release** built on the 4.1 compression/resilience kernel.
+v4.1.6 is a **Slack Stewardship authorization and resumption hardening patch** built on the 4.1.5 discovery/battle-testing release.
 
-It preserves the five-skill architecture and the established v3.5/v4.0/4.1 compatibility surface while strengthening peripheral awareness, durable routing, slack use, and completeness before Ready/Accept.
+It preserves the five-skill architecture and the established v3.5/v4.0/4.1/4.1.5 compatibility surface while making durable-routing authority and safe primary restoration explicit.
 
-First-class 4.1.5 behavior includes:
+First-class 4.1.6 behavior includes:
 
 - **Fresh intent, continuous state** — every new user message establishes present action intent; prior plans remain context rather than automatic permission to execute later steps.
 - **Referent-scoped liveness** — continue all material self-answerable work inside the current referent, but do not consume the rest of a known roadmap.
@@ -27,7 +27,9 @@ First-class 4.1.5 behavior includes:
 - **Routing without takeover** — creating/routing durable work neither changes the active objective nor authorizes executing sibling work.
 - **See wider than you act** — observational scope may exceed execution scope so material problems do not require the founder to know the right question first.
 - **Native artifacts + selective persistence** — every warranted distinct unresolved obligation may route to the project's native work system; accepted durable meaning reconciles into natural living owners.
-- **Slack stewardship** — externally blocked time can be used for bounded non-conflicting review/audit work, with exploration cost bounded rather than discovery yield.
+- **Slack stewardship** — externally blocked time can be used for bounded non-conflicting review/audit work, with exploration cost bounded rather than discovery yield; the original primary referent remains primary and resumes at the next safe atomic lane boundary.
+- **Routing authorization isolation** — creating/classifying native work is a distinct bounded mutation from implementing the destination; routing never implies source/PR/deployment authority.
+- **Host-aware resumption + tool liveness** — provider events may wake/reconcile, but Dev OS re-establishes authoritative state, avoids open-ended interactive polling, reconciles ambiguous writes before replay, and never invents asynchronous session re-entry that the host cannot provide.
 - **Layered battle testing** — substantial candidates are attacked across material consequence layers before Ready and again before high-consequence acceptance.
 - **Professional floor + generative divergence** — professional specialist reasoning is preserved while substantial conceptual work deliberately generates materially different representations before convergence.
 - **Scope elasticity** — leave the current frame when necessary to discover a better representation or real systemic cause, but remain anchored to the accepted objective.
@@ -37,7 +39,7 @@ First-class 4.1.5 behavior includes:
 
 ### Compatibility guarantee
 
-v4.1.5 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and the 4.1 runtime kernel. New scenarios protect broad discovery/narrow execution, durable routing, slack stewardship, and layered battle testing.
+v4.1.6 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and the 4.1/4.1.5 runtime kernel. New scenarios protect route-only authorization, safe primary restoration, terse post-wait continuation, host-aware wake boundaries, and the absence of persistent slack-session state.
 
 ## Design principles
 
@@ -124,4 +126,5 @@ See `docs/CHATGPT_PLUGIN.md` for the packaging boundary.
 - Git history is the archive.
 
 Do not add planning ledgers, conversation archives, session databases, or duplicate architecture documents by default.
+
 
