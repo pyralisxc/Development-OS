@@ -189,7 +189,7 @@ For every material user message, tool result, provider observation, or implement
 9. route only materially useful capabilities;
 10. continue until the liveness predicate permits a handoff.
 
-Terse messages such as `yes`, `continue`, `go ahead`, or `that one` inherit context only to resolve their exact referent; they do not authorize the widest plausible interpretation. After an externally blocked primary referent used Slack Stewardship, terse continuation resolves back to that primary referent rather than the most recent slack lane unless the user explicitly redirects.
+Terse messages such as `yes`, `continue`, `go ahead`, or `that one` inherit context only to resolve their exact referent; they do not authorize the widest plausible interpretation. After an externally blocked primary referent used Wait Stewardship, terse continuation resolves back to that primary referent rather than the most recent wait-stewardship lane unless the user explicitly redirects.
 
 ## Stage validity and invalidation
 
@@ -212,6 +212,24 @@ Do not collapse these concepts:
 - **Durable routing authorization** — may the current session mutate a destination's native work system to record or classify an unresolved obligation?
 - **Development authorization** — has the user authorized implementation/source mutation for this referent?
 - **Consequential approval** — does this exact release/merge/destructive/high-consequence action require current explicit commitment?
+
+### Owner-gate presentation
+
+When a consequential boundary requires current owner approval, never reduce the handoff to a bare `permission required` or unexplained stop. Before asking for approval, make the gate self-describing in plain language:
+
+1. **Exact action** — what concrete operation is blocked now?
+2. **Why owner-gated** — why is this not routine agent work?
+3. **Protected concern** — what material risk, authority boundary, or irreversible consequence is the gate protecting?
+4. **Exact authorization** — what resource, candidate, repository set, environment, or scope would approval authorize?
+5. **Non-authorization** — what remains unchanged or explicitly outside the approval?
+6. **Established evidence** — what proof is already known so the owner is deciding from current reality rather than mystery?
+7. **After approval** — what exact execution step happens next?
+
+Do not add owner gates to routine reversible work merely for ceremony. When a provider/execution system returns a structured gate, preserve its exact candidate/resource identity and explain those fields rather than paraphrasing away the boundary.
+
+Natural-language approval in chat applies only to the exact gate that was described and remains current. The execution system should bind that intent to the exact candidate/scope and fail closed if the candidate changed, the gate expired, or the requested scope widened.
+
+Additional-repository development is one such scoped gate: preserve the current active repository/referent, name exact additional development destinations, keep the grant time-bounded, and keep issue routing distinct from source/deployment mutation authority. A future owner-facing authority plane such as ASC may supply or store the approval, but the semantic contract stays the same.
 
 Durable routing authorization may be narrower than development authorization. Permission to create/classify a work item does **not** authorize branch, source, PR, deployment, or other implementation mutation in that destination. Cross-project routing requires current authorization whose scope actually covers the destination.
 
@@ -290,28 +308,30 @@ Known future work outside the current referent is not a live frontier.
 
 Continue only while expected information or progress gain remains material. Batch predictable mechanical checks. Stop investigative lanes that can no longer change the decision, implementation, proof, or confidence.
 
-### Slack stewardship
+### Wait stewardship
 
-A slack window is an **ephemeral derived condition of one externally blocked live referent**, not a second objective, session, or task stack. The original referent remains primary throughout the wait.
+A wait window is an **ephemeral derived condition of one externally blocked live referent**, not a second objective, session, or task stack. The original referent remains primary throughout the wait.
+
+When an execution/provider surface explicitly reports an external wait, treat that as an **opportunity signal**, not an instruction to stop and not an instruction to manufacture activity. If a bounded, non-conflicting secondary lane is available and separately authorized, the agent may use Wait Stewardship. Otherwise hand control back normally.
 
 When the active referent is temporarily blocked by an external wait condition:
 
 1. finish any available non-conflicting work inside the primary referent first;
-2. if useful slack remains, perform one bounded read-only review, adjacent evidence check, or repository-health lane;
+2. if useful wait capacity remains, perform one bounded read-only review, adjacent evidence check, or repository-health lane;
 3. durably route any warranted out-of-referent findings only when separate durable routing authorization covers the destination/action;
 4. after each bounded lane, re-read or re-check the awaited provider/source condition when that evidence is available;
-5. if the primary condition became actionable, close the slack window at the **next safe atomic lane boundary** and restore the original primary referent before selecting more slack work;
-6. otherwise another bounded slack lane may begin only while expected information/progress gain remains material.
+5. if the primary condition became actionable, close the wait window at the **next safe atomic lane boundary** and restore the original primary referent before selecting more wait-stewardship work;
+6. otherwise another bounded wait-stewardship lane may begin only while expected information/progress gain remains material.
 
-A running tool/provider call cannot be magically interrupted by methodology. Safe resumption means: finish the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent. Do not begin another slack lane once resumption evidence is known.
+A running tool/provider call cannot be magically interrupted by methodology. Safe resumption means: finish the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent. Do not begin another wait-stewardship lane once resumption evidence is known.
 
 Interactive tool liveness is distinct from provider liveness. Do not create sleep loops, open-ended polling, or repeated status calls merely to keep an interactive turn alive. Treat each tool/provider observation as one bounded atomic call. If a call is stopped, fails, returns ambiguously, or the user restarts after an apparently indefinite host run, re-establish authoritative provider/source truth before continuing. **Never repeat a mutation until you have established whether the prior mutation committed.** Prefer bounded read-after-write verification and idempotent recovery over blind replay. For broad tool surfaces, keep retrieval and emitted tool results decision-relevant rather than dumping entire payloads into the active session.
 
-Terse continuation after a wait (for example `continue`, `go ahead`, or a recovery message after an interrupted/stopped run) resolves against the original primary referent unless the user explicitly redirects to a slack finding.
+Terse continuation after a wait (for example `continue`, `go ahead`, or a recovery message after an interrupted/stopped run) resolves against the original primary referent unless the user explicitly redirects to a wait-stewardship finding.
 
 Provider events/webhooks may be **wake hints**, but they do not become authority. Re-establish current provider/source truth before resuming. Whether an external event can actually re-enter or recreate an agent session belongs to the host/runtime; Development OS must not claim asynchronous continuation when the host cannot provide it.
 
-Do not create a persistent `SlackSession`, session stack, wait ledger, or parallel objective merely to model this behavior.
+Do not create a persistent `WaitSession`, session stack, wait ledger, or parallel objective merely to model this behavior.
 
 Bound **exploration cost and interference**, not discovery yield. A short bounded audit may legitimately reveal many durable findings.
 

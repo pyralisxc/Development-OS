@@ -63,10 +63,10 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
   for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
     if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
   }
-  for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Slack stewardship', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
+  for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Wait stewardship', '### Owner-gate presentation', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
     if (!os.includes(required)) throw new Error(`Development OS v4.1.6 must contain ${required}`);
   }
-  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Bound **exploration cost and interference**, not discovery yield.', 'Durable routing authorization', 'next safe atomic lane boundary', 'original primary referent', 'Do not create a persistent `SlackSession`', 'Never repeat a mutation until you have established whether the prior mutation committed.', 'Do not create sleep loops, open-ended polling']) {
+  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Bound **exploration cost and interference**, not discovery yield.', 'Durable routing authorization', 'next safe atomic lane boundary', 'original primary referent', 'Do not create a persistent `WaitSession`', 'Exact action', 'Protected concern', 'Non-authorization', 'After approval', 'Natural-language approval in chat applies only to the exact gate', 'Never repeat a mutation until you have established whether the prior mutation committed.', 'Do not create sleep loops, open-ended polling']) {
     if (!os.includes(required)) throw new Error(`Development OS v4.1.6 runtime kernel must contain ${required}`);
   }
 
