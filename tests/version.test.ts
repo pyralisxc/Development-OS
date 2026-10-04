@@ -36,7 +36,7 @@ test('package version is the single release and plugin version authority', async
   assert.equal(codex.interface?.composerIcon, portableInterface?.composerIcon);
   assert.equal(codex.interface?.logo, portableInterface?.logo);
   assert.equal(portableInterface?.shortDescription, 'Development reasoning system');
-  assert.ok((portableInterface?.shortDescription.length ?? 999) <= 30);
+  assert.ok((portableInterface?.shortDescription?.length ?? 999) <= 30);
   assert.equal(portableInterface?.category, 'Developer Tools');
   for (const field of ['websiteURL', 'supportURL', 'privacyPolicyURL', 'termsOfServiceURL'] as const) {
     assert.match(portableInterface?.[field] ?? '', /^https:\/\//);
