@@ -9,11 +9,11 @@ test('package version is the single release and plugin version authority', async
   const version = await packageVersion();
   const portable = JSON.parse(await fs.readFile(path.join(repoRoot, 'plugin.json'), 'utf8')) as {
     version: string;
-    extensions?: { 'com.openai'?: { interface?: { composerIcon?: string; logo?: string } } };
+    extensions?: { 'com.openai'?: { interface?: { shortDescription?: string; category?: string; websiteURL?: string; supportURL?: string; privacyPolicyURL?: string; termsOfServiceURL?: string; composerIcon?: string; logo?: string } } };
   };
   const codex = JSON.parse(await fs.readFile(path.join(repoRoot, '.codex-plugin', 'plugin.json'), 'utf8')) as {
     version: string;
-    interface?: { composerIcon?: string; logo?: string };
+    interface?: { shortDescription?: string; category?: string; websiteURL?: string; supportURL?: string; privacyPolicyURL?: string; termsOfServiceURL?: string; composerIcon?: string; logo?: string };
   };
   const lockfile = JSON.parse(await fs.readFile(path.join(repoRoot, 'package-lock.json'), 'utf8')) as {
     version?: string;
@@ -35,7 +35,15 @@ test('package version is the single release and plugin version authority', async
   assert.equal(portableInterface?.logo, './assets/logo.svg');
   assert.equal(codex.interface?.composerIcon, portableInterface?.composerIcon);
   assert.equal(codex.interface?.logo, portableInterface?.logo);
+  assert.equal(portableInterface?.shortDescription, 'Development reasoning system');
+  assert.ok((portableInterface?.shortDescription.length ?? 999) <= 30);
+  assert.equal(portableInterface?.category, 'Developer Tools');
+  for (const field of ['websiteURL', 'supportURL', 'privacyPolicyURL', 'termsOfServiceURL'] as const) {
+    assert.match(portableInterface?.[field] ?? '', /^https:\/\//);
+    assert.equal(codex.interface?.[field], portableInterface?.[field]);
+  }
   assert.match(packager, /fs\.cp\(path\.join\(repoRoot, 'assets'\)/);
+  assert.match(packager, /'PRIVACY\.md', 'TERMS\.md', 'SUPPORT\.md'/);
 
   for (const asset of ['composer-icon.svg', 'logo.svg']) {
     const svg = await fs.readFile(path.join(repoRoot, 'assets', asset), 'utf8');
