@@ -2,21 +2,30 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { evalsRoot, repoRoot, skillsRoot } from './harness/paths.js';
-import { loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios } from './harness/scenarios.js';
+import { loadActivationScenarios, loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios } from './harness/scenarios.js';
 import { packageVersion } from './version.js';
 
 const REQUIRED_SKILLS = ['development-os', 'founder-to-feature', 'specialist-reasoning', 'evidence-stewardship', 'lean-repository-execution'];
 
-function frontmatterName(text: string): string | undefined {
+function frontmatterField(text: string, field: string): string | undefined {
   const lines = text.split(/\r?\n/);
   if (lines[0]?.trim() !== '---') return undefined;
+  const prefix = `${field}:`;
   for (let index = 1; index < lines.length; index += 1) {
     const line = lines[index];
     if (line?.trim() === '---') break;
-    const match = line?.match(/^name:\s*(.+)$/);
-    if (match) return match[1]?.trim();
+    if (!line?.startsWith(prefix)) continue;
+    let value = line.slice(prefix.length).trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+    return value;
   }
   return undefined;
+}
+
+function frontmatterName(text: string): string | undefined {
+  return frontmatterField(text, 'name');
 }
 
 function scenarioHash(values: unknown[]): string {
@@ -48,50 +57,64 @@ async function validateSquareBrandAsset(relativePath: string | undefined, field:
   }
 }
 
-export async function validateRepository(): Promise<{ version: string; behaviorCount: number; trajectoryCount: number; productiveCount: number; hostCount: number; scenarioSetSha256: string }> {
+export async function validateRepository(): Promise<{ version: string; activationCount: number; behaviorCount: number; trajectoryCount: number; productiveCount: number; hostCount: number; scenarioSetSha256: string }> {
   for (const skill of REQUIRED_SKILLS) {
     const file = path.join(skillsRoot, skill, 'SKILL.md');
     const text = await fs.readFile(file, 'utf8');
     if (frontmatterName(text) !== skill) throw new Error(`${file}: frontmatter name must be ${skill}`);
   }
 
-  const founder = await fs.readFile(path.join(skillsRoot, 'founder-to-feature', 'SKILL.md'), 'utf8');
+  const skillTexts = new Map<string, string>();
+  for (const skill of REQUIRED_SKILLS) {
+    skillTexts.set(skill, await fs.readFile(path.join(skillsRoot, skill, 'SKILL.md'), 'utf8'));
+  }
+
+  const osDescription = frontmatterField(skillTexts.get('development-os') ?? '', 'description') ?? '';
+  if (!osDescription.includes('session kernel')) throw new Error('Development OS v4.1.9 description must identify the session kernel');
+  for (const child of ['founder-to-feature', 'specialist-reasoning', 'evidence-stewardship', 'lean-repository-execution']) {
+    const description = frontmatterField(skillTexts.get(child) ?? '', 'description') ?? '';
+    if (!description.startsWith('Use with Development OS')) throw new Error(`${child}: v4.1.9 child description must route through Development OS`);
+    if (!description.includes('session kernel')) throw new Error(`${child}: v4.1.9 child description must preserve Development OS session ownership`);
+  }
+
+  const founder = skillTexts.get('founder-to-feature') ?? '';
   if (!founder.includes('**Implementation shape**')) throw new Error('Founder-to-Feature compatibility contract must expose Implementation shape in the crystal');
   if (!founder.includes('## Authorization reconciliation')) throw new Error('Founder-to-Feature compatibility contract must reconcile changed semantic referents with Development OS authorization');
 
-  const os = await fs.readFile(path.join(skillsRoot, 'development-os', 'SKILL.md'), 'utf8');
+  const os = skillTexts.get('development-os') ?? '';
   for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
     if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
   }
-  for (const required of ['## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Slack stewardship', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.1.6 must contain ${required}`);
+  for (const required of ['## Activation resilience', '## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Wait stewardship', '### Provider-neutral wait contract', '### Progressive stewardship radius', '### Owner-gate presentation', '### Guided human handoff', '### Founder-burden gate', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
+    if (!os.includes(required)) throw new Error(`Development OS v4.1.9 must contain ${required}`);
   }
-  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Bound **exploration cost and interference**, not discovery yield.', 'Durable routing authorization', 'next safe atomic lane boundary', 'original primary referent', 'Do not create a persistent `SlackSession`', 'Never repeat a mutation until you have established whether the prior mutation committed.', 'Do not create sleep loops, open-ended polling']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.1.6 runtime kernel must contain ${required}`);
+  for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Development OS owns the session; specialists deepen the work.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Known obligation hardening', 'Wider portfolio', 'Assume no familiarity with the exact interface without assuming low intelligence.', 'native-capability check', 'Bound **exploration cost and interference**, not discovery yield.', 'Durable routing authorization', 'next safe atomic', 'Exact action', 'Protected concern', 'Non-authorization', 'After approval', 'Natural-language approval in chat applies only to the exact gate']) {
+    if (!os.includes(required)) throw new Error(`Development OS v4.1.9 runtime kernel must contain ${required}`);
   }
 
-  const specialist = await fs.readFile(path.join(skillsRoot, 'specialist-reasoning', 'SKILL.md'), 'utf8');
+  const specialist = skillTexts.get('specialist-reasoning') ?? '';
   if (!specialist.includes('## Transformative synthesis')) throw new Error('Specialist Reasoning v4.1 must define Transformative synthesis');
   if (!specialist.includes('## Generative divergence')) throw new Error('Specialist Reasoning v4.1 must define Generative divergence');
   if (!specialist.includes('Bad hypotheses are allowed during divergence; bad conclusions are not.')) throw new Error('Specialist Reasoning v4.1 must preserve safe divergence');
   if (!specialist.includes('## Battle testing')) throw new Error('Specialist Reasoning v4.1.5 must define Battle testing');
   if (!specialist.includes('Attack the result across the smallest sufficient set of consequence layers')) throw new Error('Specialist Reasoning v4.1.5 must preserve layered battle testing');
 
-  const evidence = await fs.readFile(path.join(skillsRoot, 'evidence-stewardship', 'SKILL.md'), 'utf8');
+  const evidence = skillTexts.get('evidence-stewardship') ?? '';
   if (!evidence.includes('level of proof to the level of the claim')) throw new Error('Evidence Stewardship v4.1 must align proof level with claim level');
   if (!evidence.includes('## Degraded evidence and documentation')) throw new Error('Evidence Stewardship v4.1 must cover degraded evidence');
   if (!evidence.includes('Battle testing generates hypotheses; persistence requires evidence.')) throw new Error('Evidence Stewardship v4.1.5 must gate battle-test persistence with evidence');
 
-  const lean = await fs.readFile(path.join(skillsRoot, 'lean-repository-execution', 'SKILL.md'), 'utf8');
+  const lean = skillTexts.get('lean-repository-execution') ?? '';
   if (!lean.includes('## Mutation integrity and recovery')) throw new Error('Lean compatibility contract must define mutation integrity and recovery');
   if (!lean.includes('### Repository recovery execution')) throw new Error('Lean v4.1 must define repository recovery execution');
 
+  const activation = await loadActivationScenarios();
   const development = await loadDevelopmentScenarios();
   const behavior = await loadBehaviorScenarios();
   const trajectory = await loadTrajectoryScenarios();
   const productive = await loadProductiveScenarios();
   const host = await loadHostScenarios();
-  const scenarioSetSha256 = scenarioHash(development);
+  const scenarioSetSha256 = scenarioHash([...activation, ...development]);
   const version = await packageVersion();
 
   const portablePlugin = JSON.parse(await fs.readFile(path.join(repoRoot, 'plugin.json'), 'utf8')) as {
@@ -154,7 +177,7 @@ export async function validateRepository(): Promise<{ version: string; behaviorC
     throw new Error(`v3.5 compatibility scenarios missing: ${missingCompatibility.join(', ')}`);
   }
 
-  return { version, behaviorCount: behavior.length, trajectoryCount: trajectory.length, productiveCount: productive.length, hostCount: host.length, scenarioSetSha256 };
+  return { version, activationCount: activation.length, behaviorCount: behavior.length, trajectoryCount: trajectory.length, productiveCount: productive.length, hostCount: host.length, scenarioSetSha256 };
 }
 
 

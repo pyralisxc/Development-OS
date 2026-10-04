@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4.1.6 plugin boundary.
+That is the entire v4.1.9 plugin boundary.
 
 ## Connected apps stay independent
 
@@ -52,6 +52,8 @@ Directory submission requires both `interface.composerIcon` and `interface.logo`
 
 ## Runtime relationship
 
+Development OS is the development-session kernel. Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, and Lean Repository Execution are subordinate specialist skills: their applicability adds them to Development OS rather than replacing the session owner.
+
 In an account where the apps are connected, the intended conceptual ownership remains:
 
 - **Development OS** — reasoning, stages, authorization, Ambition, Evidence Appetite, routing, and liveness.
@@ -65,11 +67,16 @@ The plugin does not need to declare those relationships as hard dependencies for
 
 A fresh supported host session with the Development OS plugin installed should:
 
-1. activate the relevant Development OS skills for development work;
-2. use connected specialist apps when they are available and relevant;
-3. remain functional when one or more external apps are absent;
-4. never claim a connected capability exists without checking current tool reality;
-5. preserve the ownership boundaries above.
+1. activate Development OS as the session kernel for ordinary development prompts;
+2. co-activate only the subordinate specialist skills that materially help;
+3. restore Development OS ownership after terse continuation, interruption, or provider wake/re-entry;
+4. avoid Development OS activation for clearly non-development requests;
+5. use connected specialist apps when they are available and relevant;
+6. remain functional when one or more external apps are absent;
+7. never claim a connected capability exists without checking current tool reality;
+8. preserve the ownership boundaries above.
+
+The activation-routing eval lane tests name/description selection without preloading skill bodies. v4.1.9 is intentionally the **field-validation bridge into v4.2.0**: repository verification is sufficient to publish this bridge, while real installed-host use supplies the activation/re-entry evidence that will be hardened before the 4.2.0 stabilization release.
 
 Release acceptance also includes bounded Codex host journeys with real filesystem, Git, and shell use. These journeys verify tool-time authorization, liveness, and fresh-intent behavior that API text evals cannot prove.
 

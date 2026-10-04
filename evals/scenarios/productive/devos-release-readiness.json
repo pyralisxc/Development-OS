@@ -1,11 +1,11 @@
 {
   "id": "productive-devos-release-readiness",
-  "title": "Decision-ready Development OS release assessment",
+  "title": "Decision-ready Development OS 4.1.9 field-validation release assessment",
   "kind": "productive",
   "enabled": true,
-  "target": "Development OS v4.1 release decision",
-  "valueIntent": "Produce a concise acceptance brief that a maintainer can use to decide whether the methodology release is ready and what smallest proof remains.",
-  "prompt": "You are reviewing the real Development OS v4.1 release candidate. Repository facts: five canonical skills are packaged as one lightweight plugin; local build, unit tests, static validation, and packaging are green; 36 behavioral and 12 trajectory scenarios exist; the behavioral baseline is currently unmeasured; scheduled live evals have not run; productive usefulness and host-level tool behavior have not yet been accepted. Produce a decision-ready release acceptance brief. Separate established facts from inference, identify the smallest remaining proof that could change the release decision, distinguish methodology compliance from useful development outcomes, and recommend release or hold with explicit reasoning. Do not invent provider results or create process artifacts for their own sake.",
+  "target": "Development OS v4.1.9 field-validation publication decision",
+  "valueIntent": "Decide whether the activation/liveness/autonomy-resilience candidate is safe to publish as the 4.1.9 field-validation bridge while preserving real installed-host activation evidence as input to 4.2.0 hardening.",
+  "prompt": "You are reviewing the real Development OS v4.1.9 field-validation release candidate. Repository facts: the five-skill architecture is preserved; Development OS is the session kernel and child skills are subordinate specialists; activation-routing scenarios evaluate skill selection from name/description metadata without preloading skill bodies; behavior/trajectory regressions cover founder-questionnaire avoidance, provider-neutral waits, progressive Wait Stewardship, guided human handoff, and native-capability discovery/restraint; host journeys cover fresh natural activation and long-session re-entry. The release is intentionally being published so real installed-host use can produce activation evidence before the 4.2.0 stabilization release. Produce a decision-ready publish-or-hold brief. Separate deterministic repository evidence from field evidence still to be gathered, and do not invent host results.",
   "sourcePolicy": "read-only",
   "rubric": [
     {
@@ -26,6 +26,11 @@
     {
       "id": "useful-compression",
       "description": "Is concise enough for a maintainer to act on while preserving material risks and next actions.",
+      "required": true
+    },
+    {
+      "id": "activation-boundary",
+      "description": "Distinguishes metadata routing evidence, post-activation behavior evidence, and real installed-host activation acceptance.",
       "required": true
     }
   ]

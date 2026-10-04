@@ -1,8 +1,22 @@
-export type EvalKind = 'behavior' | 'trajectory' | 'productive' | 'host';
+export type EvalKind = 'activation' | 'behavior' | 'trajectory' | 'productive' | 'host';
 export type HumanInput = 'none' | 'required';
 export type Continuation = 'continue' | 'handoff' | 'either';
 export type EvidenceAppetite = 'representative' | 'targeted' | 'exhaustive';
 export type ExploreEntry = 'directed' | 'discovery';
+
+export interface ActivationExpectation {
+  activate: string[];
+  notActivate?: string[];
+}
+
+export interface ActivationScenario {
+  id: string;
+  title: string;
+  kind: 'activation';
+  context?: string;
+  prompt: string;
+  expected: ActivationExpectation;
+}
 
 export interface BehaviorExpectation {
   stage?: string[];
@@ -87,6 +101,8 @@ export interface HostScenarioTurn {
   prompt: string;
   requiredObservations: string[];
   forbiddenOutcomes: string[];
+  requiredActivatedSkills?: string[];
+  forbiddenActivatedSkills?: string[];
 }
 
 export interface EvalEnvelope {
@@ -139,6 +155,15 @@ export interface CheckResult {
   expected?: unknown;
   actual?: unknown;
   message?: string;
+}
+
+export interface ActivationScenarioResult {
+  scenarioId: string;
+  passed: boolean;
+  checks: CheckResult[];
+  activated: string[];
+  responseText: string;
+  usage?: AgentRunOutput['usage'];
 }
 
 export interface ScenarioResult {

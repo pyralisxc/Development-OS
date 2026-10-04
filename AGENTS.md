@@ -41,7 +41,7 @@ Methodology releases treat proven behavior as a compatibility surface.
 
 Harness tests may be tiny and disposable.
 
-Behavioral/trajectory evals test Development OS behavior.
+Activation-routing evals test pre-body skill selection from skill metadata. Behavioral/trajectory evals test Development OS behavior after methodology activation.
 
 Productive evals must separate methodology compliance from output usefulness/economic value. A commercially useful output does not excuse a methodology violation.
 
@@ -69,6 +69,10 @@ Do not bind, proxy, copy, or reimplement specialist apps merely to make the plug
 ## Runtime composition
 
 Development OS is distributed as a lightweight plugin that packages only canonical skills. External apps authenticate/connect independently through the host environment.
+
+Development OS is the activation/session kernel for development work. Child skills are subordinate specialists: selection of Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, or Lean Repository Execution must preserve Development OS session ownership rather than creating competing front doors.
+
+Activation routing is a compatibility surface. Test metadata-only routing separately from post-activation behavior, and reserve real installed-host acceptance for claims about the host's actual skill selector.
 
 ## Stack discipline
 

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "activation-direct-implementation-keeps-kernel",
+    "title": "Direct implementation activates Development OS with Lean",
+    "kind": "activation",
+    "prompt": "Fix the release script bug, run the checks, and get the repository to a clean preview candidate.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "lean-repository-execution"
+      ],
+      "notActivate": [
+        "founder-to-feature"
+      ]
+    }
+  },
+  {
+    "id": "activation-proof-request-keeps-kernel",
+    "title": "Proof work activates Development OS with Evidence Stewardship",
+    "kind": "activation",
+    "prompt": "Audit whether this deployment is actually ready and tell me what evidence is still missing.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "evidence-stewardship"
+      ]
+    }
+  },
+  {
+    "id": "activation-architecture-keeps-kernel",
+    "title": "Architecture exploration activates Development OS with perspective",
+    "kind": "activation",
+    "prompt": "Rethink this architecture and challenge whether our current representation is the best one before we commit.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "specialist-reasoning"
+      ]
+    }
+  },
+  {
+    "id": "activation-product-meaning-keeps-kernel",
+    "title": "Unresolved product meaning activates Development OS with Founder-to-Feature",
+    "kind": "activation",
+    "prompt": "We need to decide whether published revisions should mean latest revision or the last integrated revision. Help me resolve it.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "founder-to-feature"
+      ]
+    }
+  },
+  {
+    "id": "activation-wait-stewardship-keeps-kernel",
+    "title": "External wait routes through the Development OS kernel",
+    "kind": "activation",
+    "context": "A development session is already active and the primary deployment is externally blocked.",
+    "prompt": "The provider is still building. Use the wait productively and continue when it becomes actionable.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "evidence-stewardship"
+      ]
+    }
+  },
+  {
+    "id": "activation-terse-reentry-restores-kernel",
+    "title": "Terse development re-entry restores Development OS",
+    "kind": "activation",
+    "context": "The prior turn was an authorized software-development session that was interrupted during provider work.",
+    "prompt": "continue",
+    "expected": {
+      "activate": [
+        "development-os"
+      ]
+    }
+  },
+  {
+    "id": "activation-nondevelopment-does-not-fire",
+    "title": "Ordinary non-development writing does not activate Development OS",
+    "kind": "activation",
+    "prompt": "Write a short birthday poem about autumn.",
+    "expected": {
+      "activate": [],
+      "notActivate": [
+        "development-os",
+        "founder-to-feature",
+        "specialist-reasoning",
+        "evidence-stewardship",
+        "lean-repository-execution"
+      ]
+    }
+  }
+]

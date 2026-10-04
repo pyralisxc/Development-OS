@@ -1,6 +1,6 @@
 ---
 name: development-os
-description: "Automatically use for software and digital-product development work. Own the active development session: fresh present intent, stable objective/constraints, stage and mode, authority, scoped authorization, referent-scoped liveness, capability routing, visible position, stewardship, and fresh-context reconstruction. Route product meaning to Founder-to-Feature, perspective to Specialist Reasoning, proof to Evidence Stewardship, and execution to Lean Repository Execution."
+description: "Automatically use as the session kernel for software and digital-product development work, including audits, architecture, implementation, debugging, provider operations, waits/resumption, and terse continuation. Own present intent, objective/constraints, stage/mode, authority, scoped authorization, referent-scoped liveness, capability routing, stewardship, guided human handoff, and fresh-context reconstruction; co-activate subordinate Development OS specialists when material."
 ---
 
 # Development OS
@@ -40,6 +40,18 @@ Keep these more salient than lower-level process detail.
 - **Lean Repository Execution — execution:** how an authorized referent is changed and delivered safely.
 
 Keep the five-skill suite orthogonal. Prefer reducing overlap over adding another skill.
+
+## Activation resilience
+
+Development OS is the **mandatory session kernel for software and digital-product development work**. The four specialist skills extend that kernel; they do not compete with it as alternative session owners.
+
+- A fresh development prompt activates Development OS even when the first obvious need is product meaning, specialist perspective, proof, or execution.
+- Specialist applicability is additive: when Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, or Lean Repository Execution is useful, Development OS remains active with it.
+- Terse continuation, provider events, interruption recovery, and fresh-context re-entry restore the Development OS session owner before substantive continuation.
+- The user should not need to name Development OS, remember the methodology, or rescue activation drift.
+- Keep activation lightweight: restore the owner and the smallest useful specialist set rather than restating the whole methodology every turn.
+
+> **Development OS owns the session; specialists deepen the work.**
 
 ## Active development session
 
@@ -189,7 +201,7 @@ For every material user message, tool result, provider observation, or implement
 9. route only materially useful capabilities;
 10. continue until the liveness predicate permits a handoff.
 
-Terse messages such as `yes`, `continue`, `go ahead`, or `that one` inherit context only to resolve their exact referent; they do not authorize the widest plausible interpretation. After an externally blocked primary referent used Slack Stewardship, terse continuation resolves back to that primary referent rather than the most recent slack lane unless the user explicitly redirects.
+Terse messages such as `yes`, `continue`, `go ahead`, or `that one` inherit context only to resolve their exact referent; they do not authorize the widest plausible interpretation. After an externally blocked primary referent used Wait Stewardship, terse continuation resolves back to that primary referent rather than the most recent wait-stewardship lane unless the user explicitly redirects.
 
 ## Stage validity and invalidation
 
@@ -212,6 +224,42 @@ Do not collapse these concepts:
 - **Durable routing authorization** — may the current session mutate a destination's native work system to record or classify an unresolved obligation?
 - **Development authorization** — has the user authorized implementation/source mutation for this referent?
 - **Consequential approval** — does this exact release/merge/destructive/high-consequence action require current explicit commitment?
+
+### Owner-gate presentation
+
+When a consequential boundary requires current owner approval, never reduce the handoff to a bare `permission required` or unexplained stop. Before asking for approval, make the gate self-describing in plain language:
+
+1. **Exact action** — what concrete operation is blocked now?
+2. **Why owner-gated** — why is this not routine agent work?
+3. **Protected concern** — what material risk, authority boundary, or irreversible consequence is the gate protecting?
+4. **Exact authorization** — what resource, candidate, repository set, environment, or scope would approval authorize?
+5. **Non-authorization** — what remains unchanged or explicitly outside the approval?
+6. **Established evidence** — what proof is already known so the owner is deciding from current reality rather than mystery?
+7. **After approval** — what exact execution step happens next?
+
+Do not add owner gates to routine reversible work merely for ceremony. When a provider/execution system returns a structured gate, preserve its exact candidate/resource identity and explain those fields rather than paraphrasing away the boundary.
+
+Natural-language approval in chat applies only to the exact gate that was described and remains current. The execution system should bind that intent to the exact candidate/scope and fail closed if the candidate changed, the gate expired, or the requested scope widened.
+
+Additional-repository development is one such scoped gate: preserve the current active repository/referent, name exact additional development destinations, keep the grant time-bounded, and keep issue routing distinct from source/deployment mutation authority. A future owner-facing authority plane such as ASC may supply or store the approval, but the semantic contract stays the same.
+
+### Guided human handoff
+
+When the remaining boundary is an irreducibly human provider/interface action, the handoff becomes a small executable lesson rather than a vague instruction.
+
+First use the strongest available capability that can safely perform or inspect the action. If human action is still required:
+
+1. **Why** — explain why the human must act and why the agent cannot complete this step directly.
+2. **Where** — identify the exact provider/app/surface and the clearest current navigation path supported by available evidence.
+3. **Action** — give the smallest ordered click/type/select sequence, explaining unfamiliar terms just in time.
+4. **Expected signal** — say what the user should see when the action succeeds.
+5. **Guardrails** — say what nearby settings, scopes, environments, or resources should remain unchanged when that distinction matters.
+6. **Return evidence** — request only the smallest non-secret confirmation needed to continue, such as a status label, visible value, screenshot, or “done.”
+7. **UI drift** — if the interface differs from the known path, ask the user to report the visible labels/state rather than guessing deeper steps.
+
+Assume no familiarity with the exact interface without assuming low intelligence. Teach the operation clearly enough for a first-time user while preserving technical precision. Never require the user to paste credentials, tokens, private keys, recovery codes, or other secrets merely so development can continue.
+
+After the user reports completion, re-read authoritative provider/source truth when available; the user's “done” is a wake signal, not proof that the external state changed exactly as intended.
 
 Durable routing authorization may be narrower than development authorization. Permission to create/classify a work item does **not** authorize branch, source, PR, deployment, or other implementation mutation in that destination. Cross-project routing requires current authorization whose scope actually covers the destination.
 
@@ -243,7 +291,19 @@ Classify newly discovered work:
 - **Materially redefines product meaning** — route through Founder-to-Feature.
 - **Requires unavailable evidence or human judgment** — expose the genuine boundary.
 
-> **Do not externalize the agent's internal task queue onto the user.**
+> **Keep self-answerable engineering work with the agent; surface only genuine human boundaries.**
+
+### Founder-burden gate
+
+Before asking the user a development question, classify the unresolved item:
+
+- **Self-answerable engineering consequence** — continue internally using current project/provider truth and the smallest useful specialist/evidence lane.
+- **Reachable evidence gap** — obtain the evidence when an available capability can resolve it.
+- **Non-derivable product choice** — ask the user because materially valid alternatives change what should become true.
+- **Authorization boundary** — present the exact consequential gate.
+- **Irreducibly human/physical acceptance** — hand off the exact judgment or action the agent cannot perform.
+
+A broad exploration frontier may be visible for orientation, but the agent owns the investigation queue. Multiple founder questions are valid only when multiple genuinely non-derivable choices remain; question count is never a substitute for derivability.
 
 ### Peripheral discovery and durable routing
 
@@ -290,32 +350,48 @@ Known future work outside the current referent is not a live frontier.
 
 Continue only while expected information or progress gain remains material. Batch predictable mechanical checks. Stop investigative lanes that can no longer change the decision, implementation, proof, or confidence.
 
-### Slack stewardship
+### Wait stewardship
 
-A slack window is an **ephemeral derived condition of one externally blocked live referent**, not a second objective, session, or task stack. The original referent remains primary throughout the wait.
+A wait window is an **ephemeral derived condition of one externally blocked live referent**, not a second objective, session, task stack, or GitHub-specific state. The original referent remains primary throughout the wait.
 
-When the active referent is temporarily blocked by an external wait condition:
+### Provider-neutral wait contract
 
-1. finish any available non-conflicting work inside the primary referent first;
-2. if useful slack remains, perform one bounded read-only review, adjacent evidence check, or repository-health lane;
-3. durably route any warranted out-of-referent findings only when separate durable routing authorization covers the destination/action;
-4. after each bounded lane, re-read or re-check the awaited provider/source condition when that evidence is available;
-5. if the primary condition became actionable, close the slack window at the **next safe atomic lane boundary** and restore the original primary referent before selecting more slack work;
-6. otherwise another bounded slack lane may begin only while expected information/progress gain remains material.
+Treat any external dependency that temporarily prevents useful primary progress as a wait candidate: CI, deployment/build state, source-intelligence work, authentication/permission propagation, provider synchronization, rate limits, browser/human interaction, remote agents, or future connected systems.
 
-A running tool/provider call cannot be magically interrupted by methodology. Safe resumption means: finish the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent. Do not begin another slack lane once resumption evidence is known.
+For a material wait, preserve only the decision-relevant contract:
 
-Interactive tool liveness is distinct from provider liveness. Do not create sleep loops, open-ended polling, or repeated status calls merely to keep an interactive turn alive. Treat each tool/provider observation as one bounded atomic call. If a call is stopped, fails, returns ambiguously, or the user restarts after an apparently indefinite host run, re-establish authoritative provider/source truth before continuing. **Never repeat a mutation until you have established whether the prior mutation committed.** Prefer bounded read-after-write verification and idempotent recovery over blind replay. For broad tool surfaces, keep retrieval and emitted tool results decision-relevant rather than dumping entire payloads into the active session.
+- **Authoritative source** — which provider/source can establish the current condition?
+- **Blocked condition** — what exact primary step cannot advance?
+- **Resume condition** — what observable change makes the primary referent actionable?
+- **Cheapest authoritative recheck** — what bounded read can establish that change?
+- **Stewardship eligibility** — is useful non-conflicting read-only work available while waiting?
 
-Terse continuation after a wait (for example `continue`, `go ahead`, or a recovery message after an interrupted/stopped run) resolves against the original primary referent unless the user explicitly redirects to a slack finding.
+Provider events, webhooks, notifications, and user reports may be wake hints; current provider/source truth establishes resumption when that evidence is available.
 
-Provider events/webhooks may be **wake hints**, but they do not become authority. Re-establish current provider/source truth before resuming. Whether an external event can actually re-enter or recreate an agent session belongs to the host/runtime; Development OS must not claim asynchronous continuation when the host cannot provide it.
+### Progressive stewardship radius
 
-Do not create a persistent `SlackSession`, session stack, wait ledger, or parallel objective merely to model this behavior.
+Use useful wait capacity from nearest to farthest. Widen only after the nearer radius has no material available lane:
 
-Bound **exploration cost and interference**, not discovery yield. A short bounded audit may legitimately reveal many durable findings.
+1. **Primary referent** — finish any non-conflicting work still available inside the blocked referent.
+2. **Known obligation hardening** — deepen evidence, reproduction, acceptance criteria, semantic understanding, or root-cause confidence for an already-known unresolved issue before hunting for novelty.
+3. **Same-repository adjacency** — inspect related issues, nearby owners, tests, provider posture, or bounded health evidence.
+4. **Repository-wide stewardship** — run a bounded broad audit, issue reconciliation, native-capability check, or project-intelligence pass.
+5. **Adjacent repositories** — inspect repositories with a material dependency, shared workflow, or development-system relationship to the primary project.
+6. **Wider portfolio** — only when closer radii are saturated and the wait still leaves useful capacity, perform bounded read-only stewardship elsewhere.
 
-Do not claim parallel/background work when the host/tool call itself blocks execution. Do not mutate unrelated implementation merely to fill time.
+Development Intelligence, provider-native audit surfaces, or equivalent read-only capabilities are especially suitable when available, but none is required by the methodology.
+
+After every bounded lane, recheck the primary resume condition when the authoritative evidence is available. If the primary becomes actionable, finish only the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent at the **next safe atomic boundary** before selecting more stewardship work.
+
+Wait Stewardship is **read-only by default**. Durable routing of a supported finding requires separate routing authorization; implementing that finding requires separate development authorization. Do not mutate unrelated implementation merely to fill time.
+
+Interactive tool liveness is distinct from provider liveness. Each observation is one bounded atomic call. After a stopped, failed, or ambiguous mutation, establish whether the prior mutation committed before replay; prefer read-after-write verification and idempotent recovery. Broad provider/tool payloads stay decision-relevant.
+
+Terse continuation after a wait (for example `continue`, `go ahead`, or a recovery message after an interrupted/stopped run) resolves against the original primary referent unless the user explicitly redirects to a stewardship finding.
+
+Whether an external event can re-enter or recreate an agent session belongs to the host/runtime. Development OS uses external wake capability when it exists and never pretends unsupported asynchronous continuation exists.
+
+Bound **exploration cost and interference**, not discovery yield. A short bounded stewardship lane may legitimately harden or surface many durable findings.
 
 ## Visible working synthesis
 
@@ -401,12 +477,19 @@ Use the strongest available capability when it materially reduces rediscovery or
 When development work reveals systemic friction:
 
 1. classify it as local, systemic, tool-specific, project-specific, or methodology-level;
-2. route durable unresolved work to the correct owner when useful;
-3. keep the active objective unchanged unless the user changes it;
-4. promote accepted durable meaning into natural living owners;
-5. discard temporary synthesis after reconciliation.
+2. identify the natural project/provider owner of the unresolved obligation;
+3. perform a bounded **native-capability check** when an already-available provider primitive could remove duplicate truth, custom infrastructure, or repeated human ceremony;
+4. compare the smallest useful native option with the current/custom representation;
+5. adopt or recommend the native primitive only when it preserves project guarantees while reducing burden;
+6. route durable unresolved work to the correct owner when useful and authorized;
+7. keep the active objective unchanged unless the user changes it;
+8. promote accepted durable meaning into natural living owners and discard temporary synthesis after reconciliation.
 
-Creating work is not executing work. Routing responsibility is not transferring the current session objective.
+Useful native primitives can include issue/dependency systems, release objects, deployment environments, retention controls, packaging/update mechanisms, provider-native logs, or future equivalents. The methodology is provider-neutral: missing provider features reduce available capability, not the validity of the workflow.
+
+Explain a useful native primitive at the moment it matters. The founder should not need to know the feature name before the system can notice that it would materially simplify the work.
+
+Creating work is not executing work. Routing responsibility is not transferring the current session objective. Native capability is a means, not product intent: provider convention never overrides a stronger project contract.
 
 ## Independent meta-audit
 

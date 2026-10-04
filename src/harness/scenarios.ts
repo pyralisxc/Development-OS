@@ -2,9 +2,10 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { Ajv2020, type ValidateFunction } from 'ajv/dist/2020.js';
 import { evalsRoot } from './paths.js';
-import type { BehaviorScenario, DevelopmentScenario, HostScenario, ProductiveScenario, TrajectoryScenario } from '../types.js';
+import type { ActivationScenario, BehaviorScenario, DevelopmentScenario, HostScenario, ProductiveScenario, TrajectoryScenario } from '../types.js';
 
 interface ScenarioValidators {
+  activation: ValidateFunction<ActivationScenario>;
   development: ValidateFunction<DevelopmentScenario>;
   productive: ValidateFunction<ProductiveScenario>;
   host: ValidateFunction<HostScenario>;
@@ -19,12 +20,14 @@ async function readSchema(filename: string): Promise<Record<string, unknown>> {
 async function scenarioValidators(): Promise<ScenarioValidators> {
   if (!validatorsPromise) {
     validatorsPromise = Promise.all([
+      readSchema('activation-scenario.schema.json'),
       readSchema('development-scenario.schema.json'),
       readSchema('productive-scenario.schema.json'),
       readSchema('host-scenario.schema.json'),
-    ]).then(([development, productive, host]) => {
+    ]).then(([activation, development, productive, host]) => {
       const ajv = new Ajv2020({ allErrors: true, strict: true });
       return {
+        activation: ajv.compile<ActivationScenario>(activation),
         development: ajv.compile<DevelopmentScenario>(development),
         productive: ajv.compile<ProductiveScenario>(productive),
         host: ajv.compile<HostScenario>(host),
@@ -39,6 +42,12 @@ function assertSchema<T>(validator: ValidateFunction<T>, value: unknown, label: 
     const details = validator.errors?.map(error => `${error.instancePath || '/'} ${error.message ?? 'is invalid'}`).join('; ');
     throw new Error(`${label}: ${details ?? 'schema validation failed'}`);
   }
+}
+
+export async function validateActivationScenario(value: unknown): Promise<ActivationScenario> {
+  const { activation } = await scenarioValidators();
+  assertSchema(activation, value, String((value as { id?: unknown })?.id ?? 'activation scenario'));
+  return value;
 }
 
 export async function validateBehaviorScenario(value: unknown): Promise<BehaviorScenario> {
@@ -80,6 +89,22 @@ async function developmentScenarioValues(): Promise<unknown[]> {
     values.push(...(Array.isArray(parsed) ? parsed : [parsed]));
   }
   return values;
+}
+
+export async function loadActivationScenarios(): Promise<ActivationScenario[]> {
+  const directory = path.join(evalsRoot, 'scenarios', 'activation');
+  const scenarios: ActivationScenario[] = [];
+  for (const file of await jsonFiles(directory)) {
+    const parsed = JSON.parse(await fs.readFile(file, 'utf8')) as unknown;
+    const values = Array.isArray(parsed) ? parsed : [parsed];
+    for (const value of values) scenarios.push(await validateActivationScenario(value));
+  }
+  const ids = new Set<string>();
+  for (const scenario of scenarios) {
+    if (ids.has(scenario.id)) throw new Error('duplicate activation scenario id: ' + scenario.id);
+    ids.add(scenario.id);
+  }
+  return scenarios;
 }
 
 export async function loadDevelopmentScenarios(): Promise<DevelopmentScenario[]> {

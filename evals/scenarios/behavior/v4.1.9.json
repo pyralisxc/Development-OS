@@ -1,0 +1,276 @@
+[
+  {
+    "id": "self-answerable-frontier-stays-agent-owned",
+    "title": "Self-answerable architecture frontier does not become a founder questionnaire",
+    "kind": "behavior",
+    "context": "The founder has already supplied the objective and product constraints. A broad cross-system exploration has produced many technical questions about storage, packaging, provider primitives, compatibility, runtime discovery, and implementation mechanics. Read-only repository/provider evidence is available and no consequential mutation is requested.",
+    "prompt": "Tell me what you still need from me before we can finish crystallizing this.",
+    "expected": {
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Specialist Reasoning",
+        "Evidence Stewardship"
+      ],
+      "activeFrontierMin": 1,
+      "responseContainsAny": [
+        "self-answerable",
+        "continue",
+        "investigate",
+        "evidence"
+      ],
+      "responseNotContains": [
+        "I need you to answer all of these",
+        "25 questions for you"
+      ]
+    }
+  },
+  {
+    "id": "provider-neutral-wait-contract",
+    "title": "Wait liveness is provider-neutral and anchored to exact resume evidence",
+    "kind": "behavior",
+    "context": "The primary release is blocked because a Vercel deployment is still BUILDING and a Development Intelligence scan is also processing. GitHub checks are already green.",
+    "prompt": "We're waiting again. What is live and what should happen next?",
+    "expected": {
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "authoritative",
+        "resume condition",
+        "Vercel",
+        "Development Intelligence",
+        "recheck"
+      ],
+      "responseNotContains": [
+        "GitHub Actions is the source of truth",
+        "this is a GitHub wait"
+      ]
+    }
+  },
+  {
+    "id": "wait-hardens-known-obligation-before-novelty",
+    "title": "Wait Stewardship hardens known work before hunting for novelty",
+    "kind": "behavior",
+    "context": "The primary deployment is externally blocked. A known same-repository issue has weak reproduction evidence and unclear acceptance criteria. A repository-wide discovery audit could also be run.",
+    "prompt": "Use the wait productively.",
+    "expected": {
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "harden",
+        "known",
+        "evidence",
+        "reproduction",
+        "acceptance"
+      ],
+      "responseNotContains": [
+        "start with unrelated repositories",
+        "hunt for a brand-new issue first"
+      ]
+    }
+  },
+  {
+    "id": "guided-human-handoff-teaches-manual-provider-action",
+    "title": "Irreducibly manual provider action becomes a guided human handoff",
+    "kind": "behavior",
+    "context": "The provider requires the account owner to complete an interactive permission/MFA step in its UI. No available tool can perform that interaction, and the agent has current provider documentation/state but must not request credentials or recovery codes.",
+    "prompt": "Okay, what exactly do I need to do?",
+    "expected": {
+      "humanInput": "required",
+      "continuation": "handoff",
+      "mustActivate": [
+        "Development OS",
+        "Evidence Stewardship"
+      ],
+      "responseContains": [
+        "why",
+        "where",
+        "expected"
+      ],
+      "responseContainsAny": [
+        "click",
+        "select",
+        "open",
+        "if the interface",
+        "if the UI"
+      ],
+      "responseNotContains": [
+        "paste your token",
+        "send me your password",
+        "give me your recovery code"
+      ]
+    }
+  },
+  {
+    "id": "native-capability-check-surfaces-provider-primitive",
+    "title": "Systemic manual friction triggers a bounded native-capability check",
+    "kind": "behavior",
+    "context": "The team is manually copying unresolved cross-repository obligations into Markdown so agents can rediscover them. The current provider already exposes durable issues and dependency/project projections.",
+    "prompt": "This manual tracking is getting annoying. What should we do?",
+    "expected": {
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution"
+      ],
+      "responseContainsAny": [
+        "native",
+        "issue",
+        "dependency",
+        "provider"
+      ],
+      "responseNotContains": [
+        "build a new task database first",
+        "create a second canonical backlog"
+      ]
+    }
+  },
+  {
+    "id": "native-capability-check-proves-restraint",
+    "title": "Native capability discovery does not add ceremony without value",
+    "kind": "behavior",
+    "context": "A small project already has one clear canonical release file and no coordination problem. The provider offers an optional project dashboard that would duplicate the same state.",
+    "prompt": "The provider has a dashboard feature. Should we adopt it just because it exists?",
+    "expected": {
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution"
+      ],
+      "responseContainsAny": [
+        "no",
+        "duplicate",
+        "ceremony",
+        "value"
+      ],
+      "responseNotContains": [
+        "yes, because it is native",
+        "provider features should always be adopted"
+      ]
+    }
+  },
+  {
+    "id": "trajectory-progressive-wait-radius",
+    "title": "Wait Stewardship widens only after nearer work saturates and then restores primary",
+    "kind": "trajectory",
+    "objective": "Deliver an externally blocked release while using wait capacity without losing the primary referent.",
+    "context": "The release remains the primary referent. Read-only stewardship is allowed; durable routing is separately authorized but unrelated implementation is not.",
+    "turns": [
+      {
+        "prompt": "The provider is still pending. There is a known weak issue in this repo. Use the wait.",
+        "expected": {
+          "continuation": "continue",
+          "humanInput": "none",
+          "responseContainsAny": [
+            "known",
+            "harden",
+            "evidence",
+            "issue"
+          ]
+        }
+      },
+      {
+        "prompt": "That issue is now well-supported, but the provider is still pending.",
+        "expected": {
+          "continuation": "continue",
+          "humanInput": "none",
+          "responseContainsAny": [
+            "same repository",
+            "repository-wide",
+            "audit",
+            "nearby"
+          ]
+        }
+      },
+      {
+        "prompt": "The repository-wide pass is saturated and the provider is still pending. An adjacent repo shares this release workflow.",
+        "expected": {
+          "continuation": "continue",
+          "humanInput": "none",
+          "responseContainsAny": [
+            "adjacent",
+            "repository",
+            "bounded",
+            "read-only"
+          ]
+        }
+      },
+      {
+        "prompt": "The primary provider is ready now.",
+        "expected": {
+          "continuation": "continue",
+          "humanInput": "none",
+          "objectiveContains": [
+            "release"
+          ],
+          "responseContainsAny": [
+            "resume",
+            "primary",
+            "release"
+          ],
+          "responseNotContains": [
+            "keep auditing unrelated repositories"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "trajectory-guided-human-action-resumes-from-authority",
+    "title": "Human manual action is taught, then provider truth is re-read before continuation",
+    "kind": "trajectory",
+    "objective": "Complete a provider-gated development operation without making the human the orchestrator.",
+    "context": "The agent can do all development work except one interactive provider permission step that requires the account owner.",
+    "turns": [
+      {
+        "prompt": "It says I have to do something manually. Tell me exactly what to do.",
+        "expected": {
+          "continuation": "handoff",
+          "humanInput": "required",
+          "responseContainsAny": [
+            "where",
+            "expected",
+            "if the UI",
+            "if the interface"
+          ]
+        }
+      },
+      {
+        "prompt": "Done.",
+        "expected": {
+          "continuation": "continue",
+          "humanInput": "none",
+          "responseContainsAny": [
+            "re-read",
+            "verify",
+            "provider",
+            "authoritative"
+          ],
+          "responseNotContains": [
+            "assume it worked"
+          ]
+        }
+      },
+      {
+        "prompt": "continue",
+        "expected": {
+          "continuation": "continue",
+          "humanInput": "none",
+          "objectiveContains": [
+            "provider-gated development operation"
+          ],
+          "responseNotContains": [
+            "repeat the manual instructions"
+          ]
+        }
+      }
+    ]
+  }
+]

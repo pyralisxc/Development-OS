@@ -1,6 +1,6 @@
 ---
 name: specialist-reasoning
-description: "Automatically use when professional perspective or materially different representations could improve software/product work. Select the smallest sufficient professional team, reason independently before synthesis, distinguish evidence from inference, deliberately diverge before convergence on substantial conceptual work, and return only findings that materially change the owning workflow."
+description: "Use with Development OS when professional perspective or materially different representations could improve software/product work. Development OS must remain active as the session kernel; Specialist Reasoning selects the smallest sufficient professional team, reasons independently before synthesis, and returns only findings that materially change the owning workflow."
 ---
 
 # Specialist Reasoning
@@ -25,7 +25,9 @@ Real project/domain evidence outranks simulated expertise.
 
 ## Activation
 
-Activate when perspective could materially change value, mental model, architecture, reliability, security/privacy, operations, economics, adoption, acceptance, or domain correctness.
+Specialist Reasoning is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+
+Use with Development OS when perspective could materially change value, mental model, architecture, reliability, security/privacy, operations, economics, adoption, acceptance, or domain correctness.
 
 Routine bounded fixes usually need no virtual team.
 

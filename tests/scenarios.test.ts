@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios, validateBehaviorScenario } from '../src/harness/scenarios.js';
+import { loadActivationScenarios, loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios, validateBehaviorScenario } from '../src/harness/scenarios.js';
 
 test('development scenarios are unique and include one-shot plus trajectory regressions', async () => {
   const all = await loadDevelopmentScenarios();
@@ -22,6 +22,14 @@ test('development scenarios are unique and include one-shot plus trajectory regr
   assert.ok(trajectory.some(item => item.id === 'trajectory-discovery-reconciles-founder-interpretation'));
 });
 
+test('activation-routing scenarios cover kernel co-activation and non-development restraint', async () => {
+  const scenarios = await loadActivationScenarios();
+  assert.ok(scenarios.length >= 7);
+  assert.ok(scenarios.some(item => item.id === 'activation-direct-implementation-keeps-kernel'));
+  assert.ok(scenarios.some(item => item.id === 'activation-terse-reentry-restores-kernel'));
+  assert.ok(scenarios.some(item => item.id === 'activation-nondevelopment-does-not-fire'));
+});
+
 test('productive eval is a real enabled scenario with an explicit usefulness rubric', async () => {
   const scenarios = await loadProductiveScenarios();
   assert.equal(scenarios.length, 1);
@@ -32,9 +40,11 @@ test('productive eval is a real enabled scenario with an explicit usefulness rub
 
 test('host acceptance scenarios require real capabilities and include a multi-turn intent case', async () => {
   const scenarios = await loadHostScenarios();
-  assert.equal(scenarios.length, 3);
+  assert.ok(scenarios.length >= 5);
   assert.ok(scenarios.every(item => item.requiredCapabilities.includes('shell')));
   assert.ok(scenarios.some(item => item.turns.length > 1));
+  assert.ok(scenarios.some(item => item.id === 'host-fresh-development-activates-kernel'));
+  assert.ok(scenarios.some(item => item.id === 'host-long-session-reentry-preserves-kernel'));
 });
 
 test('scenario validation fails closed on unknown expectation fields', async () => {
