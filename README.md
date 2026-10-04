@@ -10,13 +10,13 @@ Development OS is a public, portable development reasoning system for software a
 - **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
 - **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
 
-## v4.2.0
+## v4.1.9
 
-v4.2.0 is an **activation, liveness, and autonomy-resilience release** built from the accepted Wait Stewardship / owner-gate Preview work.
+v4.1.9 is an **activation, liveness, and autonomy-resilience field-validation bridge** built from the accepted Wait Stewardship / owner-gate Preview work. It intentionally carries the emerging 4.2 architecture under a 4.1.x version so real host usage can harden activation and re-entry behavior before the 4.2.0 stabilization release.
 
 It preserves the five-skill architecture while making **Development OS the explicit development-session kernel**. Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, and Lean Repository Execution are subordinate specialists that co-activate when material rather than competing as independent front doors.
 
-First-class 4.2.0 behavior includes:
+First-class 4.1.9 behavior includes:
 
 - **Activation resilience** — fresh development prompts, terse continuation, provider wake/re-entry, and specialist routing retain Development OS session ownership.
 - **Activation-routing evals** — a separate scenario lane evaluates skill selection from name/description metadata without preloading the skill bodies; post-activation behavior remains a different proof layer.
@@ -32,13 +32,13 @@ First-class 4.2.0 behavior includes:
 
 Repository CI proves deterministic TypeScript build/tests, fail-closed scenario/schema validation, compatibility, manifest/version parity, and release packaging.
 
-Optional live activation/behavior/trajectory/productive evals provide diagnostic model evidence. They do not substitute for installed-host acceptance.
+Optional live activation/behavior/trajectory/productive evals provide diagnostic model evidence. They do not substitute for installed-host evidence.
 
-Before Main/publication, a maintainer should run the host journeys in `evals/scenarios/host/`, including fresh natural development activation and long-session wait/re-entry behavior, because only the real host can prove installed-plugin skill selection.
+**4.1.9 publication is itself the bounded field-validation step.** Repository CI and maintainer review establish that this bridge is safe to publish; subsequent real Development OS sessions should exercise the host journeys in `evals/scenarios/host/`, especially fresh natural activation and long-session wait/re-entry behavior. Those observations become evidence for hardening and naming the stabilized 4.2.0 release.
 
 ### Compatibility guarantee
 
-v4.2.0 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and all established v4.x runtime guarantees. New scenarios protect activation routing, self-answerable frontier ownership, provider-neutral liveness, progressive Wait Stewardship, guided human handoff, and native-capability discovery/restraint.
+v4.1.9 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and all established v4.x runtime guarantees. New scenarios protect activation routing, self-answerable frontier ownership, provider-neutral liveness, progressive Wait Stewardship, guided human handoff, and native-capability discovery/restraint.
 
 ## Design principles
 

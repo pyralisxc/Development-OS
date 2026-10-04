@@ -70,11 +70,11 @@ export async function validateRepository(): Promise<{ version: string; activatio
   }
 
   const osDescription = frontmatterField(skillTexts.get('development-os') ?? '', 'description') ?? '';
-  if (!osDescription.includes('session kernel')) throw new Error('Development OS v4.2.0 description must identify the session kernel');
+  if (!osDescription.includes('session kernel')) throw new Error('Development OS v4.1.9 description must identify the session kernel');
   for (const child of ['founder-to-feature', 'specialist-reasoning', 'evidence-stewardship', 'lean-repository-execution']) {
     const description = frontmatterField(skillTexts.get(child) ?? '', 'description') ?? '';
-    if (!description.startsWith('Use with Development OS')) throw new Error(`${child}: v4.2.0 child description must route through Development OS`);
-    if (!description.includes('session kernel')) throw new Error(`${child}: v4.2.0 child description must preserve Development OS session ownership`);
+    if (!description.startsWith('Use with Development OS')) throw new Error(`${child}: v4.1.9 child description must route through Development OS`);
+    if (!description.includes('session kernel')) throw new Error(`${child}: v4.1.9 child description must preserve Development OS session ownership`);
   }
 
   const founder = skillTexts.get('founder-to-feature') ?? '';
@@ -86,10 +86,10 @@ export async function validateRepository(): Promise<{ version: string; activatio
     if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
   }
   for (const required of ['## Activation resilience', '## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Wait stewardship', '### Provider-neutral wait contract', '### Progressive stewardship radius', '### Owner-gate presentation', '### Guided human handoff', '### Founder-burden gate', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.2.0 must contain ${required}`);
+    if (!os.includes(required)) throw new Error(`Development OS v4.1.9 must contain ${required}`);
   }
   for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Development OS owns the session; specialists deepen the work.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Known obligation hardening', 'Wider portfolio', 'Assume no familiarity with the exact interface without assuming low intelligence.', 'native-capability check', 'Bound **exploration cost and interference**, not discovery yield.', 'Durable routing authorization', 'next safe atomic', 'Exact action', 'Protected concern', 'Non-authorization', 'After approval', 'Natural-language approval in chat applies only to the exact gate']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.2.0 runtime kernel must contain ${required}`);
+    if (!os.includes(required)) throw new Error(`Development OS v4.1.9 runtime kernel must contain ${required}`);
   }
 
   const specialist = skillTexts.get('specialist-reasoning') ?? '';

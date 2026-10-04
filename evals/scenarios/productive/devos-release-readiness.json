@@ -1,11 +1,11 @@
 {
   "id": "productive-devos-release-readiness",
-  "title": "Decision-ready Development OS 4.2.0 release assessment",
+  "title": "Decision-ready Development OS 4.1.9 field-validation release assessment",
   "kind": "productive",
   "enabled": true,
-  "target": "Development OS v4.2.0 release decision",
-  "valueIntent": "Produce a concise acceptance brief that decides whether activation resilience, provider-neutral liveness, progressive Wait Stewardship, guided human handoff, founder-burden reduction, and native-capability discovery are ready for publication.",
-  "prompt": "You are reviewing the real Development OS v4.2.0 release candidate. Repository facts: the five-skill architecture is preserved; Development OS is the session kernel and child skills are subordinate specialists; activation-routing scenarios evaluate skill selection from name/description metadata without preloading skill bodies; behavior/trajectory regressions cover founder-questionnaire avoidance, provider-neutral waits, progressive Wait Stewardship, guided human handoff, and native-capability discovery/restraint; host journeys cover fresh natural activation and long-session re-entry; static build/tests/validation/packaging may be green, but real installed-host selection must still be accepted by a maintainer. Produce a decision-ready release acceptance brief. Separate established facts from inference, identify the smallest remaining proof that could change the release decision, distinguish routing/activation proof from post-activation methodology proof, and recommend release or hold with explicit reasoning. Do not invent provider or host results.",
+  "target": "Development OS v4.1.9 field-validation publication decision",
+  "valueIntent": "Decide whether the activation/liveness/autonomy-resilience candidate is safe to publish as the 4.1.9 field-validation bridge while preserving real installed-host activation evidence as input to 4.2.0 hardening.",
+  "prompt": "You are reviewing the real Development OS v4.1.9 field-validation release candidate. Repository facts: the five-skill architecture is preserved; Development OS is the session kernel and child skills are subordinate specialists; activation-routing scenarios evaluate skill selection from name/description metadata without preloading skill bodies; behavior/trajectory regressions cover founder-questionnaire avoidance, provider-neutral waits, progressive Wait Stewardship, guided human handoff, and native-capability discovery/restraint; host journeys cover fresh natural activation and long-session re-entry. The release is intentionally being published so real installed-host use can produce activation evidence before the 4.2.0 stabilization release. Produce a decision-ready publish-or-hold brief. Separate deterministic repository evidence from field evidence still to be gathered, and do not invent host results.",
   "sourcePolicy": "read-only",
   "rubric": [
     {
