@@ -1,6 +1,6 @@
 ---
 name: evidence-stewardship
-description: "Automatically use whenever development work depends on proof, uncertainty, tests, runtime/provider evidence, documentation authority, regressions, acceptance, or deciding what evidence deserves permanence. Manage the transition from uncertainty to justified confidence and preserve durable guarantees without turning every probe into infrastructure."
+description: "Use with Development OS whenever development work materially depends on proof, uncertainty, tests, runtime/provider evidence, documentation authority, regressions, acceptance, or deciding what evidence deserves permanence. Development OS must remain active as the session kernel; Evidence Stewardship manages the transition from uncertainty to justified confidence."
 ---
 
 # Evidence Stewardship
@@ -20,6 +20,12 @@ It is not a mandatory phase and does not own product meaning.
 - Specialist Reasoning owns perspective.
 - Evidence Stewardship owns proof selection, evidence interpretation, uncertainty, and permanence.
 - Lean owns verification cadence and execution mechanics.
+
+## Activation
+
+Evidence Stewardship is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+
+Use with Development OS when evidence quality, uncertainty, proof level, runtime/provider observation, acceptance, or evidence permanence can materially change the decision or confidence. Routine facts that are already authoritative do not need a separate proof lane.
 
 ## Evidence is not authority
 

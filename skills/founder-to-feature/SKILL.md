@@ -1,6 +1,6 @@
 ---
 name: founder-to-feature
-description: "Automatically use when development work contains unresolved product meaning: substantial feature ideas, architecture-affecting behavior, workflow redesign, or audit findings that require deciding what should become true. Own Explore → Resolve → Crystallize → Ready for the semantic referent; do not own session state, proof permanence, or implementation mechanics."
+description: "Use with Development OS when development work contains unresolved product meaning: substantial feature ideas, architecture-affecting behavior, workflow redesign, or audit findings that require deciding what should become true. Development OS must remain active as the session kernel; Founder-to-Feature owns Explore → Resolve → Crystallize → Ready for the semantic referent."
 ---
 
 # Founder to Feature
@@ -23,9 +23,11 @@ Translate natural creator input into implementation-ready meaning without requir
 
 ## Activation
 
-Activate when a materially unresolved decision can change user expectation, product philosophy, ownership, identity, permissions, lifecycle, placement/mental model, ecosystem ownership, or another durable rule.
+Founder-to-Feature is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
 
-Do not take over generic observation, known bugs with established behavior, or routine implementation.
+Use with Development OS when a materially unresolved decision can change user expectation, product philosophy, ownership, identity, permissions, lifecycle, placement/mental model, ecosystem ownership, or another durable rule.
+
+Generic observation, known bugs with established behavior, and routine implementation remain with their owning lanes.
 
 ## Semantic stages
 
