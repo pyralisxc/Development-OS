@@ -18,12 +18,15 @@
     "com.openai": {
       "interface": {
         "displayName": "Development OS",
-        "shortDescription": "Reason, inspect, build, verify, and govern software work.",
-        "longDescription": "Development OS provides an activation-resilient session kernel and four subordinate specialists for software and digital-product work while remaining independent of any specific repository, provider, or connected tool.",
+        "shortDescription": "Development reasoning system",
+        "longDescription": "Development OS is a skills-only development reasoning system for software and digital-product work. It keeps one session kernel active while composing specialist skills for product meaning, professional perspective, evidence, and execution.",
         "developerName": "Development OS",
-        "category": "Productivity",
+        "category": "Developer Tools",
         "capabilities": [
-          "Read"
+          "Development workflow",
+          "Product reasoning",
+          "Evidence verification",
+          "Execution guidance"
         ],
         "brandColor": "#0F172A",
         "composerIcon": "./assets/composer-icon.svg",
@@ -32,8 +35,13 @@
           "Use Development OS to inspect this software project.",
           "Use Development OS to shape this feature before implementation.",
           "Use Development OS to audit and improve this codebase."
-        ]
+        ],
+        "websiteURL": "https://github.com/pyralisxc/Development-OS",
+        "supportURL": "https://github.com/pyralisxc/Development-OS/blob/8c118d521f2b24a7463952fe0ae2a9fc07731bcc/SUPPORT.md",
+        "privacyPolicyURL": "https://github.com/pyralisxc/Development-OS/blob/8c118d521f2b24a7463952fe0ae2a9fc07731bcc/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/pyralisxc/Development-OS/blob/8c118d521f2b24a7463952fe0ae2a9fc07731bcc/TERMS.md"
       }
     }
-  }
+  },
+  "homepage": "https://github.com/pyralisxc/Development-OS"
 }
