@@ -1,7 +1,29 @@
-import type { BehaviorScenario, ProductiveScenario, TrajectoryScenario } from '../types.js';
+import type { ActivationScenario, BehaviorScenario, ProductiveScenario, TrajectoryScenario } from '../types.js';
 
 export const EVAL_START = '<DEVOS_EVAL>';
 export const EVAL_END = '</DEVOS_EVAL>';
+export const ACTIVATION_START = '<DEVOS_ACTIVATION>';
+export const ACTIVATION_END = '</DEVOS_ACTIVATION>';
+
+export function activationInstructions(catalog: string): string {
+  return [
+    'You are evaluating installed-skill routing before any skill body has been loaded.',
+    'Choose the smallest correct skill set using only the skill names/descriptions in the catalog below and the user request/context.',
+    'Return exactly one JSON block between ' + ACTIVATION_START + ' and ' + ACTIVATION_END + ' with this shape: {"activate":["skill-slug"],"reason":"brief reason"}.',
+    'Use only skill slugs shown in square brackets. An empty activate array is valid when the request is not development work. Return no other prose.',
+    '',
+    'Installed skill catalog:',
+    catalog,
+  ].join('\n');
+}
+
+export function activationInput(scenario: ActivationScenario): string {
+  return [
+    'Routing scenario: ' + scenario.title,
+    scenario.context ? 'Context:\n' + scenario.context : '',
+    'User prompt:\n' + scenario.prompt,
+  ].filter(Boolean).join('\n\n');
+}
 
 export function behaviorInstructions(skills: string): string {
   return `You are being evaluated for compliance with Development OS. Apply the supplied skills as governing methodology. Do not claim to mutate tools or repositories that are not actually available.\n\n${skills}\n\nAfter your normal response, append exactly one machine-readable block between ${EVAL_START} and ${EVAL_END}. The block must be valid JSON with only these optional fields: stage, mode, objective, ambition, exploreEntry, evidenceAppetite, stageBasis, buildAuthorized, authorizationReferent, authorizationScope, humanInput, continuation, boundary, activeFrontier, protectedRetiredMeaning, activeCapabilities, specialistRoles, evidenceLabels, materialAssumptions, summary. Use canonical capability names where possible: Development OS, Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, Lean Repository Execution. humanInput is \"none\" or \"required\". continuation is \"continue\" or \"handoff\". exploreEntry is \"directed\" or \"discovery\" when Explore entry is material. evidenceAppetite is \"representative\", \"targeted\", or \"exhaustive\" for nontrivial work. authorizationScope, activeFrontier, protectedRetiredMeaning, activeCapabilities, specialistRoles, evidenceLabels, and materialAssumptions are arrays of strings. The telemetry should describe the state you actually established, not aspirational process language. This block is evaluation telemetry, not user-facing methodology doctrine.`;

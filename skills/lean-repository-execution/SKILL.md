@@ -1,6 +1,6 @@
 ---
 name: lean-repository-execution
-description: "Automatically use for authorized implementation, debugging, refactoring, repository/provider operations, verification, and delivery. Own orientation, canonical-owner changes, mutation integrity, execution cadence, verification cadence, recovery, provider operations, and completion while relying on Development OS for intent/authorization and Evidence Stewardship for proof permanence."
+description: "Use with Development OS for authorized implementation, debugging, refactoring, repository/provider operations, verification, and delivery. Development OS must remain active as the session kernel; Lean Repository Execution owns orientation, canonical-owner changes, mutation integrity, execution cadence, recovery, provider operations, and completion."
 ---
 
 # Lean Repository Execution
@@ -22,6 +22,12 @@ It is project-neutral. Project-local source, instructions, provider rules, branc
 - Lean owns execution mechanics, mutation integrity, verification cadence, and delivery.
 
 > **Deliver the approved outcome with the least process that protects correctness and the actual risk boundary.**
+
+## Activation
+
+Lean Repository Execution is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+
+Use with Development OS when the current referent is authorized for implementation, debugging, refactoring, repository/provider operation, verification, recovery, or delivery. Lean never converts capability or provider permission into session intent or authorization.
 
 ## Startup
 
@@ -81,16 +87,18 @@ When changing behavior:
 
 Capability growth should not require concept-count growth at the same rate.
 
-## Native-first external boundaries
+## Native-capability check at external boundaries
 
-When touching external providers/frameworks:
+When workflow friction or implementation touches an external provider/framework:
 
-1. inspect current official/native behavior when needed;
-2. identify the concrete project need native behavior cannot satisfy;
-3. prefer native capability where it satisfies the requirement;
-4. add custom abstraction only for a real product/operational boundary.
+1. identify the concrete project need or repeated human/manual burden;
+2. inspect current official/native behavior when materially relevant;
+3. compare the smallest native primitive against the current/custom representation;
+4. prefer the native capability when it satisfies the requirement without weakening a stronger project guarantee;
+5. add custom abstraction only for a real product/operational boundary;
+6. explain the useful native concept just in time when the human must interact with it.
 
-Do not recreate provider functionality merely for control.
+Native-first is not provider worship: do not add dashboards, fields, projects, or provider lock-in merely because a feature exists.
 
 ## Cohesive implementation
 

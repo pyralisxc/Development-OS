@@ -1,4 +1,4 @@
-import { runBehavior, runProductive, runTrajectory } from './harness/run.js';
+import { runActivation, runBehavior, runProductive, runTrajectory } from './harness/run.js';
 import { validateRepository } from './validate.js';
 import { assertReleaseTag } from './version.js';
 
@@ -20,6 +20,12 @@ async function main() {
     console.log(JSON.stringify({ ok: true, ...result }, null, 2));
     return;
   }
+  if (command === 'run' && kind === 'activation') {
+    const result = await runActivation(arg('--provider') ?? 'openai', arg('--scenario'));
+    console.log(JSON.stringify({ passed: result.passed, total: result.results.length, directory: result.directory }, null, 2));
+    process.exitCode = result.passed ? 0 : 1;
+    return;
+  }
   if (command === 'run' && kind === 'behavior') {
     const result = await runBehavior(arg('--provider') ?? 'openai', arg('--scenario'));
     console.log(JSON.stringify({ passed: result.passed, total: result.results.length, directory: result.directory }, null, 2));
@@ -37,7 +43,7 @@ async function main() {
     console.log(JSON.stringify(result, null, 2));
     return;
   }
-  throw new Error('usage: devos <validate [--release --tag vX.Y.Z] | run behavior|trajectory|productive [--provider openai] [--scenario id]>');
+  throw new Error('usage: devos <validate [--release --tag vX.Y.Z] | run activation|behavior|trajectory|productive [--provider openai] [--scenario id]>');
 }
 
 main().catch(error => {

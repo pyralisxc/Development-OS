@@ -5,7 +5,11 @@
     "kind": "host",
     "objective": "Inspect a repository deeply enough to establish its release state without mutating it or handing back a self-answerable tool queue.",
     "workspace": "read-only-repository",
-    "requiredCapabilities": ["filesystem", "git", "shell"],
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
     "turns": [
       {
         "prompt": "Inspect this repository and give me an evidence-backed release-readiness assessment. Do not edit anything. Continue through the checks you can perform yourself and distinguish local verification from product-level proof.",
@@ -29,7 +33,11 @@
     "kind": "host",
     "objective": "Repair one explicit release-version defect in an isolated fixture and verify it without consuming adjacent roadmap work.",
     "workspace": "isolated-fixture",
-    "requiredCapabilities": ["filesystem", "git", "shell"],
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
     "turns": [
       {
         "prompt": "The fixture's package manifest says 4.1.0, but its release script still names 4.0 artifacts. Make package.json the single version authority, add durable proof for that guarantee, and verify the repair. Do not implement the unrelated TODO about deployment automation.",
@@ -53,7 +61,11 @@
     "kind": "host",
     "objective": "Preserve a broader authorized hardening objective while obeying a later message that temporarily narrows present action intent.",
     "workspace": "isolated-fixture",
-    "requiredCapabilities": ["filesystem", "git", "shell"],
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
     "turns": [
       {
         "prompt": "Harden this fixture through the listed release-readiness defects. You may make ordinary reversible fixes and run its checks without asking again. Complete and verify only the first listed defect now, then stop at a checkpoint before the remaining fixes.",
@@ -77,6 +89,104 @@
           "Continues implementing the remaining hardening roadmap",
           "Erases the broader objective as though it never existed",
           "Mutates files during the narrowed read-only turn"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "host-fresh-development-activates-kernel",
+    "title": "Fresh natural development prompt activates the Development OS kernel",
+    "kind": "host",
+    "objective": "Prove that an installed plugin enters a normal repository task through Development OS rather than a child skill acting alone.",
+    "workspace": "isolated-fixture",
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
+    "turns": [
+      {
+        "prompt": "Fix the failing release-version check in this fixture and verify the repair.",
+        "requiredActivatedSkills": [
+          "Development OS",
+          "Lean Repository Execution"
+        ],
+        "forbiddenActivatedSkills": [
+          "Founder-to-Feature"
+        ],
+        "requiredObservations": [
+          "Development OS is active as session owner before or with Lean execution",
+          "The agent inspects the repository before mutation",
+          "The bounded repair remains inside the requested referent",
+          "Verification is run after mutation"
+        ],
+        "forbiddenOutcomes": [
+          "Lean Repository Execution acts as the only development-session owner",
+          "The agent asks the user to run self-answerable checks",
+          "The agent consumes unrelated roadmap work"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "host-long-session-reentry-preserves-kernel",
+    "title": "Long-session wait and terse re-entry preserve Development OS ownership",
+    "kind": "host",
+    "objective": "Prove activation resilience across audit, external-wait reasoning, guided human boundary, and terse continuation.",
+    "workspace": "read-only-repository",
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
+    "turns": [
+      {
+        "prompt": "Audit this repository's release readiness and keep the work observational.",
+        "requiredActivatedSkills": [
+          "Development OS",
+          "Evidence Stewardship"
+        ],
+        "requiredObservations": [
+          "Development OS owns the session while evidence work is composed underneath it"
+        ],
+        "forbiddenOutcomes": [
+          "Evidence Stewardship becomes an independent session owner"
+        ]
+      },
+      {
+        "prompt": "Assume the external deployment provider is still building. Use the wait productively.",
+        "requiredActivatedSkills": [
+          "Development OS"
+        ],
+        "requiredObservations": [
+          "The primary referent remains live and stewardship stays bounded/read-only"
+        ],
+        "forbiddenOutcomes": [
+          "The wait becomes a new persistent objective"
+        ]
+      },
+      {
+        "prompt": "The provider now requires a manual owner-only UI permission step. Explain what the human must do.",
+        "requiredActivatedSkills": [
+          "Development OS"
+        ],
+        "requiredObservations": [
+          "The handoff teaches why, where, action, expected signal, guardrails, and return evidence without requesting secrets"
+        ],
+        "forbiddenOutcomes": [
+          "The agent gives only a vague permission-required message"
+        ]
+      },
+      {
+        "prompt": "Done. Continue.",
+        "requiredActivatedSkills": [
+          "Development OS"
+        ],
+        "requiredObservations": [
+          "The agent treats the user report as a wake hint, re-establishes authoritative state where available, and restores the original primary referent"
+        ],
+        "forbiddenOutcomes": [
+          "The most recent stewardship or instruction lane becomes the new objective"
         ]
       }
     ]
