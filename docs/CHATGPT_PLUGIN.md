@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4.2.0 plugin boundary.
+That is the entire v4.1.9 plugin boundary.
 
 ## Connected apps stay independent
 
@@ -76,7 +76,7 @@ A fresh supported host session with the Development OS plugin installed should:
 7. never claim a connected capability exists without checking current tool reality;
 8. preserve the ownership boundaries above.
 
-The activation-routing eval lane tests name/description selection without preloading skill bodies. Real installed-host acceptance remains required before publication because only the host can prove its actual skill router.
+The activation-routing eval lane tests name/description selection without preloading skill bodies. v4.1.9 is intentionally the **field-validation bridge into v4.2.0**: repository verification is sufficient to publish this bridge, while real installed-host use supplies the activation/re-entry evidence that will be hardened before the 4.2.0 stabilization release.
 
 Release acceptance also includes bounded Codex host journeys with real filesystem, Git, and shell use. These journeys verify tool-time authorization, liveness, and fresh-intent behavior that API text evals cannot prove.
 
