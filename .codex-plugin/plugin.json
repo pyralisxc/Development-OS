@@ -1,7 +1,7 @@
 {
   "name": "development-os",
-  "version": "4.1.6",
-  "description": "One Development OS front door for development reasoning and workflow.",
+  "version": "4.2.0",
+  "description": "One activation-resilient Development OS session kernel for development reasoning and workflow.",
   "author": {
     "name": "Development OS"
   },
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "Development OS",
     "shortDescription": "Reason, inspect, build, verify, and govern software work.",
-    "longDescription": "Development OS provides five coordinated reasoning skills for software and digital-product work while remaining independent of any specific repository, provider, or connected tool.",
+    "longDescription": "Development OS provides an activation-resilient session kernel and four subordinate specialists for software and digital-product work while remaining independent of any specific repository, provider, or connected tool.",
     "developerName": "Development OS",
     "category": "Productivity",
     "capabilities": [

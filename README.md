@@ -10,41 +10,47 @@ Development OS is a public, portable development reasoning system for software a
 - **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
 - **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
 
-## v4.1.6
+## v4.2.0
 
-v4.1.6 is a **Wait Stewardship and owner-gate hardening patch** built on the 4.1.5 discovery/battle-testing release.
+v4.2.0 is an **activation, liveness, and autonomy-resilience release** built from the accepted Wait Stewardship / owner-gate Preview work.
 
-It preserves the five-skill architecture and the established v3.5/v4.0/4.1/4.1.5 compatibility surface while making durable-routing authority and safe primary restoration explicit.
+It preserves the five-skill architecture while making **Development OS the explicit development-session kernel**. Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, and Lean Repository Execution are subordinate specialists that co-activate when material rather than competing as independent front doors.
 
-First-class 4.1.6 behavior includes:
+First-class 4.2.0 behavior includes:
 
-- **Fresh intent, continuous state** — every new user message establishes present action intent; prior plans remain context rather than automatic permission to execute later steps.
-- **Referent-scoped liveness** — continue all material self-answerable work inside the current referent, but do not consume the rest of a known roadmap.
-- **Exact visible position** — opening position is a runtime invariant; closing position is emitted only at a genuine handoff.
-- **Earned authority** — repository artifacts are evidence until their authority is established; degraded repositories recover truth before structure.
-- **Minimum grounding** — infer mechanics but never invent mission when product purpose or intended behavior is genuinely non-derivable.
-- **Tool-independent composition** — Development OS requires no external specialist system while exploiting the strongest available capabilities when useful.
-- **Routing without takeover** — creating/routing durable work neither changes the active objective nor authorizes executing sibling work.
-- **See wider than you act** — observational scope may exceed execution scope so material problems do not require the founder to know the right question first.
-- **Native artifacts + selective persistence** — every warranted distinct unresolved obligation may route to the project's native work system; accepted durable meaning reconciles into natural living owners.
-- **Wait stewardship** — an explicit external wait may open an optional bounded non-conflicting review/audit lane; the original primary referent remains primary, secondary mutation still needs its own authorization, and the primary resumes at the next safe atomic lane boundary.
-- **Self-describing owner gates** — consequential approval requests explain the exact action, protected concern, exact authorization, non-authorization, established evidence, and next step instead of presenting unexplained permission prompts.
-- **Routing authorization isolation** — creating/classifying native work is a distinct bounded mutation from implementing the destination; routing never implies source/PR/deployment authority.
-- **Host-aware resumption + tool liveness** — provider events may wake/reconcile, but Dev OS re-establishes authoritative state, avoids open-ended interactive polling, reconciles ambiguous writes before replay, and never invents asynchronous session re-entry that the host cannot provide.
-- **Layered battle testing** — substantial candidates are attacked across material consequence layers before Ready and again before high-consequence acceptance.
-- **Professional floor + generative divergence** — professional specialist reasoning is preserved while substantial conceptual work deliberately generates materially different representations before convergence.
-- **Scope elasticity** — leave the current frame when necessary to discover a better representation or real systemic cause, but remain anchored to the accepted objective.
-- **Architectural runway** — prepare cheap neutral seams for probable expensive future migrations without prematurely implementing future systems.
-- **Repository recovery** — messy/no-doc/over-documented projects can reconstruct a trustworthy canonical spine without a new Recovery skill or mandatory documentation suite.
-- **Lower human burden** — restatement burden plus founder-representation, founder-discovery, and founder-completeness rescue are explicit R&D quality signals.
+- **Activation resilience** — fresh development prompts, terse continuation, provider wake/re-entry, and specialist routing retain Development OS session ownership.
+- **Activation-routing evals** — a separate scenario lane evaluates skill selection from name/description metadata without preloading the skill bodies; post-activation behavior remains a different proof layer.
+- **Provider-neutral liveness** — waits are modeled by authoritative source, blocked condition, resume condition, cheapest authoritative recheck, and stewardship eligibility rather than by a GitHub-specific state.
+- **Progressive Wait Stewardship** — use primary work first, then harden known obligations, then widen through same-repository, repository-wide, adjacent-repository, and wider-portfolio read-only stewardship only as nearer work saturates.
+- **Guided human handoff** — genuinely manual provider/interface actions are taught as executable lessons: why, where, exact action, expected signal, guardrails, return evidence, and UI-drift recovery, without asking for secrets.
+- **Founder-burden gate** — self-answerable engineering consequences and reachable evidence gaps stay with the agent; only non-derivable product choices, authorization, unavailable evidence, or irreducibly human acceptance return to the user.
+- **Native-capability discovery** — systemic manual friction triggers a bounded provider-native capability check before custom infrastructure; restraint is equally required when a native feature adds ceremony without value.
+- **Positive operating invariants** — the runtime emphasizes the shape of excellent continuation while keeping hard safety/authority prohibitions where they are actually needed.
+- **Compatibility preservation** — v3.5 and established v4.x authorization, stage reversal, audit neutrality, liveness, fresh-context reconstruction, and human-agency guarantees remain protected.
+
+### Proof model
+
+Repository CI proves deterministic TypeScript build/tests, fail-closed scenario/schema validation, compatibility, manifest/version parity, and release packaging.
+
+Optional live activation/behavior/trajectory/productive evals provide diagnostic model evidence. They do not substitute for installed-host acceptance.
+
+Before Main/publication, a maintainer should run the host journeys in `evals/scenarios/host/`, including fresh natural development activation and long-session wait/re-entry behavior, because only the real host can prove installed-plugin skill selection.
 
 ### Compatibility guarantee
 
-v4.1.6 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and the 4.1/4.1.5 runtime kernel. New scenarios protect route-only authorization, safe primary restoration, terse post-wait continuation, host-aware wake boundaries, and the absence of persistent wait-stewardship session state.
+v4.2.0 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and all established v4.x runtime guarantees. New scenarios protect activation routing, self-answerable frontier ownership, provider-neutral liveness, progressive Wait Stewardship, guided human handoff, and native-capability discovery/restraint.
 
 ## Design principles
 
+> **Development OS owns the session; specialists deepen the work.**
+
 > **State is sticky. Intent is fresh.**
+
+> **Stay with self-answerable work until a real boundary.**
+
+> **Wait nearby before wandering far.**
+
+> **Teach the human only what the human must do.**
 
 > **Methodology stands alone; capability composes opportunistically.**
 
@@ -66,7 +72,8 @@ v4.1.6 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and 
 
 The repository contains:
 
-- behavioral evals for single-turn methodology guarantees;
+- activation-routing evals for pre-body skill selection from name/description metadata;
+- behavioral evals for single-turn post-activation methodology guarantees;
 - trajectory evals for context, authorization, and liveness across turns;
 - a real productive eval whose output is reviewed separately for methodology compliance and practical usefulness;
 - host acceptance journeys that exercise filesystem, Git, and shell behavior in an installed Codex plugin;
@@ -84,12 +91,13 @@ Optional live evals require an OpenAI API key/model:
 ```bash
 export OPENAI_API_KEY=...
 export DEVOS_OPENAI_MODEL=...
+npm run eval:activation
 npm run eval:behavior
 npm run eval:trajectory
 npm run eval:productive
 ```
 
-Behavioral, trajectory, productive, and host scenarios are optional review aids. They help a maintainer inspect methodology behavior, usefulness, and real host behavior, but automated model runs are not a release requirement. Release acceptance comes from the maintainer's hands-on review of the candidate; creating a version tag records that explicit sign-off.
+Activation, behavioral, trajectory, productive, and host scenarios are optional review aids. They help a maintainer inspect methodology behavior, usefulness, and real host behavior, but automated model runs are not a release requirement. Release acceptance comes from the maintainer's hands-on review of the candidate; creating a version tag records that explicit sign-off.
 
 A release tag requires `npm run verify`, tag/package version parity, and a packaged candidate whose manifest versions match `package.json`.
 

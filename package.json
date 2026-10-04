@@ -1,6 +1,6 @@
 {
   "name": "development-os",
-  "version": "4.1.6",
+  "version": "4.2.0",
   "private": true,
   "type": "module",
   "description": "Canonical source and evaluation harness for Development OS skills.",
@@ -16,7 +16,8 @@
     "eval:behavior": "node dist/src/cli.js run behavior --provider openai",
     "eval:trajectory": "node dist/src/cli.js run trajectory --provider openai",
     "eval:productive": "node dist/src/cli.js run productive --provider openai",
-    "package:release": "node dist/scripts/package-release.js"
+    "package:release": "node dist/scripts/package-release.js",
+    "eval:activation": "node dist/src/cli.js run activation --provider openai"
   },
   "devDependencies": {
     "typescript": "5.8.3"
