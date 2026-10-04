@@ -381,7 +381,7 @@ Use useful wait capacity from nearest to farthest. Widen only after the nearer r
 
 Development Intelligence, provider-native audit surfaces, or equivalent read-only capabilities are especially suitable when available, but none is required by the methodology.
 
-After every bounded lane, recheck the primary resume condition when the authoritative evidence is available. If the primary becomes actionable, finish only the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent before selecting more stewardship work.
+After every bounded lane, recheck the primary resume condition when the authoritative evidence is available. If the primary becomes actionable, finish only the smallest already-started atomic read/routing operation that should not be abandoned midway, then restore the primary referent at the **next safe atomic boundary** before selecting more stewardship work.
 
 Wait Stewardship is **read-only by default**. Durable routing of a supported finding requires separate routing authorization; implementing that finding requires separate development authorization. Do not mutate unrelated implementation merely to fill time.
 
