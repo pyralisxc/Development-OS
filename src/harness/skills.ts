@@ -41,17 +41,21 @@ export async function loadSkillCatalogText(): Promise<string> {
   return (await loadSkillCatalog()).map(item => '- [' + item.name + '] ' + item.description).join('\n');
 }
 
-export async function loadSkillInstructions(includeSpecialistReferences = true): Promise<string> {
+// Intentionally preloaded regression input, not installed-host selector evidence.
+export async function loadSkillInstructions(includeReferences = true): Promise<string> {
   const parts: string[] = [];
   for (const skill of CORE_SKILLS) {
     const file = path.join(skillsRoot, skill, 'SKILL.md');
     parts.push(`\n===== SKILL: ${skill} =====\n${await fs.readFile(file, 'utf8')}`);
-  }
-  if (includeSpecialistReferences) {
-    const references = path.join(skillsRoot, 'specialist-reasoning', 'references');
-    const names = (await fs.readdir(references)).filter((name: string) => name.endsWith('.md')).sort();
-    for (const name of names) {
-      parts.push(`\n===== SPECIALIST REFERENCE: ${name} =====\n${await fs.readFile(path.join(references, name), 'utf8')}`);
+    if (includeReferences) {
+      const references = path.join(skillsRoot, skill, 'references');
+      const names = await fs.readdir(references).catch((error: { code?: string }) => {
+        if (error.code === 'ENOENT') return [];
+        throw error;
+      });
+      for (const name of names.filter((name: string) => name.endsWith('.md')).sort()) {
+        parts.push(`\n===== REFERENCE: ${skill}/${name} =====\n${await fs.readFile(path.join(references, name), 'utf8')}`);
+      }
     }
   }
   return parts.join('\n');

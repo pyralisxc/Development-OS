@@ -637,13 +637,13 @@
         "Development OS",
         "Lean Repository Execution"
       ],
-      "responseContains": [
-        "Development position —",
-        "Development position at close —"
-      ],
       "responseNotContains": [
         "implement the Development Intelligence repair",
         "start repairing Development Intelligence"
+      ],
+      "responseContainsAny": [
+        "work item",
+        "work-item"
       ]
     }
   },
@@ -673,11 +673,8 @@
       "mustNotActivate": [
         "Lean Repository Execution"
       ],
-      "responseContains": [
-        "Development position —"
-      ],
-      "responseNotContains": [
-        "Development position at close —"
+      "objectiveContains": [
+        "architecture"
       ]
     }
   },
@@ -705,9 +702,10 @@
         "Founder-to-Feature",
         "Evidence Stewardship"
       ],
-      "responseContains": [
-        "Development position —",
-        "Development position at close —"
+      "responseContainsAny": [
+        "purpose",
+        "intended",
+        "product"
       ]
     }
   },
@@ -733,9 +731,6 @@
       ],
       "materialAssumptionsContains": [
         "status"
-      ],
-      "responseContains": [
-        "Development position —"
       ],
       "responseContainsAny": [
         "remove",

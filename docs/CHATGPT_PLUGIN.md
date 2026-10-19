@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4.1.9 plugin boundary.
+That is the entire v4.2.0 plugin boundary.
 
 ## Connected apps stay independent
 
@@ -52,35 +52,37 @@ Directory submission requires both `interface.composerIcon` and `interface.logo`
 
 ## Runtime relationship
 
-Development OS is the development-session kernel. Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, and Lean Repository Execution are subordinate specialist skills: their applicability adds them to Development OS rather than replacing the session owner.
+Development OS is a methodology session kernel, not an execution runtime. The four companion roles deepen meaning, perspective, proof and execution while the kernel preserves cross-cutting intent/scope continuity. Read only the bodies/references that materially help; where native host rules permit, a current project-owned specialization can satisfy a companion role without stacking duplicate routines.
 
-In an account where the apps are connected, the intended conceptual ownership remains:
-
-- **Development OS** — reasoning, stages, authorization, Ambition, Evidence Appetite, routing, and liveness.
-- **Development Intelligence** — evidence-backed project reality.
-- **Conductor** — capability discovery and execution/orchestration.
-- **AI Systems Control** — owner-facing governance and control-plane state.
-
-The plugin does not need to declare those relationships as hard dependencies for the methodology to use available capabilities appropriately.
+Native host rules retain task/delegation routing, scheduling, execution lifecycle, cancellation, authentication, tool registration/discovery and permission enforcement. Connected apps retain their own authority and independent setup; the plugin neither replaces them nor requires any named provider. Future control-plane/runtime ambitions remain outside this package.
 
 ## Acceptance
 
-A fresh supported host session with the Development OS plugin installed should:
+Use the existing journeys in `evals/scenarios/host/` in a fresh supported session with the candidate plugin installed. Observe the actual host trace rather than asking the agent to assert activation. Exercise filesystem, Git and shell on disposable fixtures; use only permitted read-only connected-provider operations or supplied disposable/retained fixture evidence. Do not create external product mutations or public canaries merely to test a skill.
 
-1. activate Development OS as the session kernel for ordinary development prompts;
-2. co-activate only the subordinate specialist skills that materially help;
-3. restore Development OS ownership after terse continuation, interruption, or provider wake/re-entry;
-4. avoid Development OS activation for clearly non-development requests;
-5. use connected specialist apps when they are available and relevant;
-6. remain functional when one or more external apps are absent;
-7. never claim a connected capability exists without checking current tool reality;
-8. preserve the ownership boundaries above.
+A useful acceptance pass establishes:
 
-The activation-routing eval lane tests name/description selection without preloading skill bodies. v4.1.9 is intentionally the **field-validation bridge into v4.2.0**: repository verification is sufficient to publish this bridge, while real installed-host use supplies the activation/re-entry evidence that will be hardened before the 4.2.0 stabilization release.
+1. metadata selection and actual skill-body retrieval, recording resolved source/package revision when available;
+2. only relevant companions, including project-local composition with required native routing preserved;
+3. live relevant tool discovery and permitted execution, without assuming a catalog is current;
+4. collection of buffered/yielded terminal results, distinguishing a completed read from a still-running external process;
+5. uncertain-write reconciliation, partial-effect reporting and durable artifact resumption without blind replay;
+6. fresh intent and exact approval continuity across terse re-entry, including a verified new approval missed by a stale checkpoint;
+7. proof at the claim boundary, including final native/visual artifact inspection when CI cannot establish appearance;
+8. a compact owner-openable actual-used receipt linked from the existing checkpoint, with source/version/time/native provenance where available, explicit gaps and no private reasoning, secrets or raw payloads;
+9. non-development and routine administrative negative controls, plus provider-independent/cross-provider composition.
 
-Release acceptance also includes bounded Codex host journeys with real filesystem, Git, and shell use. These journeys verify tool-time authorization, liveness, and fresh-intent behavior that API text evals cannot prove.
+Use [the receipt guidance](../skills/development-os/references/execution-receipts.md) for the existing checkpoint artifact. Record the exact candidate, host/model when available, observation time, each journey's passed/failed/blocked/not-run status, current result and remaining limit. A native trace/export can independently support invocation; an agent-authored receipt alone is a bounded execution report, not independent attestation. Historical unknowns stay unknown. Verify that the owner can open the linked evidence.
 
-These journeys are maintainer-reviewed. Automated provider evals are optional diagnostic tools, not a publication requirement.
+### Proof boundaries
+
+- Metadata-only activation evals do not prove subsequent body retrieval.
+- Behavior/trajectory/productive evals intentionally preload all five bodies and conditional references. They test post-activation behavior, not selective reading or installed selection; their summaries identify the proof layer.
+- Deterministic repository tests validate schemas, grading contracts, compatibility and packaging, not whether a model followed each scenario.
+- Manual current-candidate source reads, local fixtures and safe native tools support bounded review but do not establish automatic installed activation.
+- A candidate ZIP may be prepared with any unrun connected/installed-host journey plainly disclosed. Do not label it installed-selector accepted, tag a release, install/update the live plugin or claim maintainer acceptance without the corresponding authority and evidence.
+
+Journeys are maintainer-reviewed; paid provider evals are optional diagnostics, not a publication requirement. Native observability or connected tools may be unavailable: report the specific gap instead of fabricating telemetry or making a provider a hard dependency.
 
 ## Public distribution
 

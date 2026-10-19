@@ -82,6 +82,7 @@ export async function runActivation(provider: string, scenarioId?: string): Prom
   }
 
   const summary = {
+    proofLayer: 'metadata-routing',
     skillVersion: version,
     provider: runner.name,
     model: process.env.DEVOS_OPENAI_MODEL ?? null,
@@ -128,6 +129,7 @@ export async function runBehavior(provider: string, scenarioId?: string): Promis
   }
 
   const summary = {
+    proofLayer: 'preloaded-methodology-regression',
     skillVersion: version,
     provider: runner.name,
     model: process.env.DEVOS_OPENAI_MODEL ?? null,
@@ -192,6 +194,7 @@ export async function runTrajectory(provider: string, scenarioId?: string): Prom
   }
 
   const summary = {
+    proofLayer: 'preloaded-methodology-regression',
     skillVersion: version,
     provider: runner.name,
     model: process.env.DEVOS_OPENAI_MODEL ?? null,
@@ -220,6 +223,7 @@ export async function runProductive(provider: string, scenarioId?: string): Prom
     });
     await fs.writeFile(path.join(directory, `${scenario.id}.json`), JSON.stringify({
       scenario,
+      proofLayer: 'preloaded-productive-output',
       skillVersion: version,
       provider: runner.name,
       model: process.env.DEVOS_OPENAI_MODEL ?? null,
