@@ -1,6 +1,6 @@
 ---
 name: lean-repository-execution
-description: "Use with Development OS for authorized implementation, debugging, refactoring, repository/provider operations, verification, and delivery. Development OS must remain active as the session kernel; Lean Repository Execution owns orientation, canonical-owner changes, mutation integrity, execution cadence, recovery, provider operations, and completion."
+description: "Use with Development OS for authorized implementation, established-bug repair, refactoring, repository/provider mutation, recovery, verification, or delivery. Not to turn audits or unresolved product choices into permission to act."
 ---
 
 # Lean Repository Execution
@@ -25,7 +25,7 @@ It is project-neutral. Project-local source, instructions, provider rules, branc
 
 ## Activation
 
-Lean Repository Execution is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+Lean Repository Execution is a subordinate Development OS specialist. Development OS preserves cross-cutting intent/scope continuity for development use. Its kernel composition contract permits a current project-local specialization to fulfill this role without duplicating the routine; native host routing and permission rules still govern execution.
 
 Use with Development OS when the current referent is authorized for implementation, debugging, refactoring, repository/provider operation, verification, recovery, or delivery. Lean never converts capability or provider permission into session intent or authorization.
 
@@ -118,7 +118,7 @@ For substantial multi-step mutation:
 - avoid replaying destructive/non-idempotent operations blindly;
 - preserve recoverable authored work before cleanup/reset.
 
-Tool failure is not product failure when project truth remains clear.
+Tool failure is not product failure when project truth remains clear. For example, collect an already-buffered success before reporting a stalled read. If a multi-effect write loses its reply, reconcile each observed effect and terminal status before any replay: one deleted source with a rolled-back finalizer is partial, not zero effects or complete success. Use the existing checkpoint receipt for this distinction, not a new recovery ledger.
 
 ### Repository recovery execution
 
@@ -143,7 +143,7 @@ A broad refactor/hardening authorization does not automatically authorize new ow
 
 ## Agent and worker use
 
-Do not fan out by default.
+Follow required native host delegation. Where the host leaves a choice, do not fan out by default.
 
 Use independent workers for independent investigation, specialist review, materially cross-owner review, or isolated implementation lanes after semantic freeze.
 
@@ -159,7 +159,7 @@ Rerun checks only after relevant change or changed external state. Prefer one co
 
 ## Evidence permanence
 
-Apply Evidence Stewardship automatically. Temporary proof normally disappears; stable high-value guarantees may earn durable protection.
+Apply the Evidence Stewardship proof/permanence principle; load its body only when evidence uncertainty or permanence judgment is material. Temporary proof normally disappears; stable high-value guarantees may earn durable protection.
 
 Do not create permanent tests/docs merely because they helped implementation.
 
@@ -229,7 +229,7 @@ Follow the project's actual PR/review/preview/release process. Do not invent gen
 
 Report only meaningful finding, blocker, founder decision, approval boundary, material scope/risk change, or completion.
 
-Development OS owns the process-position surface. Lean returns execution facts into it rather than inventing a parallel status format.
+Development OS owns compact progress visibility and the existing checkpoint receipt. Lean returns latest collected execution/readback facts and material limits, not a parallel status format or capability inventory.
 
 ## Anti-patterns
 

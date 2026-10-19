@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadActivationScenarios, loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios, validateBehaviorScenario } from '../src/harness/scenarios.js';
+import { loadActivationScenarios, loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios, validateBehaviorScenario, validateHostScenario } from '../src/harness/scenarios.js';
 
 test('development scenarios are unique and include one-shot plus trajectory regressions', async () => {
   const all = await loadDevelopmentScenarios();
@@ -58,4 +58,15 @@ test('scenario validation fails closed on unknown expectation fields', async () 
     }),
     /additional properties/,
   );
+});
+
+test('host acceptance covers connected collection, local composition and honest receipt provenance', async () => {
+  const scenarios = await loadHostScenarios();
+  for (const id of ['host-project-local-companion-composition', 'host-connected-result-collection-and-reentry', 'host-owner-auditable-receipt-provenance']) {
+    assert.ok(scenarios.some(item => item.id === id), id);
+  }
+  const connected = scenarios.find(item => item.id === 'host-connected-result-collection-and-reentry')!;
+  assert.ok(connected.requiredCapabilities.includes('connected-read-only-tool'));
+  assert.ok(connected.turns.some(turn => turn.forbiddenActivatedSkills?.includes('Development OS')));
+  await assert.rejects(validateHostScenario({ ...connected, implicitPass: true }), /additional properties/);
 });

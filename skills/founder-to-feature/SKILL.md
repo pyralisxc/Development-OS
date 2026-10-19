@@ -1,6 +1,6 @@
 ---
 name: founder-to-feature
-description: "Use with Development OS when development work contains unresolved product meaning: substantial feature ideas, architecture-affecting behavior, workflow redesign, or audit findings that require deciding what should become true. Development OS must remain active as the session kernel; Founder-to-Feature owns Explore → Resolve → Crystallize → Ready for the semantic referent."
+description: "Use with Development OS when unresolved product meaning can change user expectations, ownership, identity, permissions, lifecycle, or another durable rule. Not for established bugs, ordinary inspection, or routine implementation."
 ---
 
 # Founder to Feature
@@ -23,7 +23,7 @@ Translate natural creator input into implementation-ready meaning without requir
 
 ## Activation
 
-Founder-to-Feature is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+Founder-to-Feature is a subordinate Development OS specialist. Development OS preserves cross-cutting intent/scope continuity for development use. Its kernel composition contract permits a current project-local specialization to fulfill this role without duplicating the routine; native host routing and permission rules still govern execution.
 
 Use with Development OS when a materially unresolved decision can change user expectation, product philosophy, ownership, identity, permissions, lifecycle, placement/mental model, ecosystem ownership, or another durable rule.
 
@@ -123,7 +123,7 @@ The goal is not novelty for novelty's sake. Serious alternatives must return to 
 
 ## The crystal
 
-When Crystallization passes, compress the referent into:
+When Crystallization passes, compress the material decisions, not a twelve-field form. Include only dimensions that could change implementation or acceptance; a routine established repair needs no crystal. Possible dimensions are:
 
 - **Outcome**
 - **Ambition** when material

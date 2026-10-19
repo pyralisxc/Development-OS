@@ -1,6 +1,6 @@
 ---
 name: specialist-reasoning
-description: "Use with Development OS when professional perspective or materially different representations could improve software/product work. Development OS must remain active as the session kernel; Specialist Reasoning selects the smallest sufficient professional team, reasons independently before synthesis, and returns only findings that materially change the owning workflow."
+description: "Use with Development OS when substantial or high-consequence work needs independent professional challenge, representation alternatives, or a pre-acceptance battle test. Routine bounded fixes do not need a virtual team."
 ---
 
 # Specialist Reasoning
@@ -25,7 +25,7 @@ Real project/domain evidence outranks simulated expertise.
 
 ## Activation
 
-Specialist Reasoning is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+Specialist Reasoning is a subordinate Development OS specialist. Development OS preserves cross-cutting intent/scope continuity for development use. Its kernel composition contract permits a current project-local specialization to fulfill this role without duplicating the routine; native host routing and permission rules still govern execution.
 
 Use with Development OS when perspective could materially change value, mental model, architecture, reliability, security/privacy, operations, economics, adoption, acceptance, or domain correctness.
 
@@ -182,7 +182,7 @@ Evaluate generated alternatives professionally before returning them to the owni
 
 ## Internal vs multi-agent mode
 
-Default to internal separated reasoning passes.
+Follow native host orchestration requirements. Where the host permits the choice, default to internal separated reasoning passes.
 
 Use independent agents/subagents only when real independence adds value for substantial or high-consequence work. Do not create permanent agents per profession.
 

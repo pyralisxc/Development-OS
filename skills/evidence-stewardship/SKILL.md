@@ -1,6 +1,6 @@
 ---
 name: evidence-stewardship
-description: "Use with Development OS whenever development work materially depends on proof, uncertainty, tests, runtime/provider evidence, documentation authority, regressions, acceptance, or deciding what evidence deserves permanence. Development OS must remain active as the session kernel; Evidence Stewardship manages the transition from uncertainty to justified confidence."
+description: "Use with Development OS when missing, stale, conflicting, or insufficient evidence can materially change a development decision, acceptance claim, or proof permanence. Not for already-authoritative routine facts."
 ---
 
 # Evidence Stewardship
@@ -23,7 +23,7 @@ It is not a mandatory phase and does not own product meaning.
 
 ## Activation
 
-Evidence Stewardship is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+Evidence Stewardship is a subordinate Development OS specialist. Development OS preserves cross-cutting intent/scope continuity for development use. Its kernel composition contract permits a current project-local specialization to fulfill this role without duplicating the routine; native host routing and permission rules still govern execution.
 
 Use with Development OS when evidence quality, uncertainty, proof level, runtime/provider observation, acceptance, or evidence permanence can materially change the decision or confidence. Routine facts that are already authoritative do not need a separate proof lane.
 

@@ -8,7 +8,7 @@ Development OS improves agent reasoning and development workflow. It is not proj
 
 The five runtime skills are orthogonal:
 
-1. Development OS — orchestration and human authorization.
+1. Development OS — methodological intent/scope continuity and human authorization.
 2. Founder-to-Feature — product meaning and convergence.
 3. Specialist Reasoning — professional perspective and generative divergence.
 4. Evidence Stewardship — uncertainty, proof, and permanence.
@@ -47,7 +47,7 @@ Productive evals must separate methodology compliance from output usefulness/eco
 
 Productive eval outputs belong to their target project/content surface, not this repository.
 
-Host acceptance must exercise the installed plugin through real filesystem, Git, and shell capabilities. Text-only provider evals cannot satisfy that proof layer.
+Host acceptance must exercise the installed plugin through actual body reads, real filesystem/Git/shell, relevant connected tools, result collection and re-entry. Text-only or manually preloaded candidate evals cannot satisfy installed-selector claims. Use the existing host journeys and checkpoint receipts; disclose unrun layers rather than blocking an honestly labeled candidate ZIP.
 
 Scenario JSON is validated fail-closed. Unknown fields are errors rather than silently ignored intent.
 
@@ -70,7 +70,7 @@ Do not bind, proxy, copy, or reimplement specialist apps merely to make the plug
 
 Development OS is distributed as a lightweight plugin that packages only canonical skills. External apps authenticate/connect independently through the host environment.
 
-Development OS is the activation/session kernel for development work. Child skills are subordinate specialists: selection of Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, or Lean Repository Execution must preserve Development OS session ownership rather than creating competing front doors.
+Development OS is the activation/session kernel for development work. Companion skills preserve cross-cutting Development OS intent/scope ownership rather than competing front doors. Native host rules own actual orchestration, execution and permissions. Where those rules permit, a current project-local specialization can fulfill a companion role without requiring an overlapping global routine.
 
 Activation routing is a compatibility surface. Test metadata-only routing separately from post-activation behavior, and reserve real installed-host acceptance for claims about the host's actual skill selector.
 

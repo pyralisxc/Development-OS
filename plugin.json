@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "development-os",
-  "version": "4.1.9",
-  "description": "Development OS packages an activation-resilient development session kernel plus coordinated meaning, perspective, proof, and execution specialists.",
+  "version": "4.2.0",
+  "description": "Portable development workflow guidance: intent, meaning, perspective, proof, and execution, within native host rules.",
   "author": {
     "name": "Development OS"
   },
@@ -19,7 +19,7 @@
       "interface": {
         "displayName": "Development OS",
         "shortDescription": "Reason, inspect, build, verify, and govern software work.",
-        "longDescription": "Development OS provides an activation-resilient session kernel and four subordinate specialists for software and digital-product work while remaining independent of any specific repository, provider, or connected tool.",
+        "longDescription": "Development OS provides a methodology session kernel and four complementary skills for software and digital-product work. Native hosts own execution, routing and permissions; project-local companions and independently connected tools compose when useful.",
         "developerName": "Development OS",
         "category": "Productivity",
         "capabilities": [
