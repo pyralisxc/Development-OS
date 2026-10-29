@@ -292,18 +292,21 @@
       {
         "prompt": "Separately, read this ordinary channel description and tell me whether it is empty; do not modify it.",
         "forbiddenActivatedSkills": [
-          "Development OS",
           "Founder-to-Feature",
           "Specialist Reasoning",
           "Evidence Stewardship",
           "Lean Repository Execution"
         ],
         "requiredObservations": [
-          "Treats routine administration as a non-development referent and does not start a DevOS workflow",
+          "Uses the lightweight Development OS intent lens while keeping the request ordinary and read-only",
           "Reports only actual relevant native reads, not the full available catalog"
         ],
         "forbiddenOutcomes": [
-          "Applies all five development skills to the administrative negative control"
+          "Invokes a complete development workflow or all specialist bodies for routine administration",
+          "Claims DevOS was automatically loaded without host evidence"
+        ],
+        "requiredActivatedSkills": [
+          "Development OS"
         ]
       }
     ]
@@ -344,7 +347,7 @@
           "Labels retained execution summaries as bounded reports when owner-openable native evidence is absent"
         ],
         "forbiddenOutcomes": [
-          "Uses today\u2019s package version as an at-use historical version",
+          "Uses today’s package version as an at-use historical version",
           "Converts unobserved into never used"
         ]
       },
@@ -358,6 +361,104 @@
         "forbiddenOutcomes": [
           "Misses verified approval by relying on a stale checkpoint",
           "Treats the receipt itself as approval or bypasses host enforcement"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "host-ordinary-reply-root-kernel",
+    "title": "Ordinary requests use the lightweight kernel without ceremony",
+    "kind": "host",
+    "objective": "Verify installed-host default interpretation on a mundane request without explicit skill naming or developing a feature.",
+    "workspace": "read-only-repository",
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
+    "turns": [
+      {
+        "prompt": "Summarize in two sentences why backups are useful. No project work is requested.",
+        "requiredActivatedSkills": [
+          "Development OS"
+        ],
+        "forbiddenActivatedSkills": [
+          "Founder-to-Feature",
+          "Specialist Reasoning",
+          "Evidence Stewardship",
+          "Lean Repository Execution"
+        ],
+        "requiredObservations": [
+          "The installed host records actual Development OS metadata selection and root-body retrieval when supported",
+          "The reply answers the ordinary question directly without a development stage or unnecessary artifact"
+        ],
+        "forbiddenOutcomes": [
+          "A forced Explore, Build or approval gate",
+          "Claims invocation from formatted prose alone"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "host-founder-idea-reaches-ready-boundary",
+    "title": "Founder idea reaches a challenged crystal without implementing it",
+    "kind": "host",
+    "objective": "Check the distinction between default interpretation and deep meaning on a new product idea.",
+    "workspace": "read-only-repository",
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
+    "turns": [
+      {
+        "prompt": "I want a better mobile editor for a software product. Explore materially different approaches, challenge the best one, and crystallize what should become true. Do not implement.",
+        "requiredActivatedSkills": [
+          "Development OS",
+          "Founder-to-Feature",
+          "Specialist Reasoning"
+        ],
+        "requiredObservations": [
+          "Establishes the owner's outcome and explores meaningful alternatives",
+          "Challenges material design, lifecycle and ownership consequences before a coherent Ready candidate",
+          "Does not treat Ready as authorization to Build"
+        ],
+        "forbiddenOutcomes": [
+          "Mutates the repository",
+          "Asks the owner to decide self-answerable implementation details",
+          "Labels a summary Ready while major product meaning remains unresolved"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "host-project-wake-recovers-objective",
+    "title": "Project re-entry restores existing authority and available next action",
+    "kind": "host",
+    "objective": "Check a simulated wake's methodology and decision contract; this is not proof of actual ChatGPT cross-thread continuation.",
+    "workspace": "read-only-repository",
+    "requiredCapabilities": [
+      "filesystem",
+      "git",
+      "shell"
+    ],
+    "turns": [
+      {
+        "prompt": "A scheduled project check resumed after an interrupted but already-authorized bounded source repair. You have its issue, task reference and current exact Git head. In this read-only test, identify how you would re-enter the owning project conversation where the host supports it, verify the task's last operation and classify the next eligible action. Do not mutate anything.",
+        "requiredActivatedSkills": [
+          "Development OS",
+          "Evidence Stewardship"
+        ],
+        "requiredObservations": [
+          "Preserves owning project-thread and execution-task identity, using available native reads",
+          "Distinguishes historical uncertainty from a verified competing-writer or host-permission block",
+          "Reports the exact action that could be continued and does not mistake Slack status for completion",
+          "Does not claim to have posted to an inaccessible project conversation"
+        ],
+        "forbiddenOutcomes": [
+          "Blindly replays an uncertain mutation",
+          "Creates a new task or claims a cross-thread action without evidence",
+          "Declares a blanket owner gate merely because historical attribution is incomplete"
         ]
       }
     ]

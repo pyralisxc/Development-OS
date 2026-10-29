@@ -32,3 +32,12 @@ test('progressive-disclosure local reference links resolve inside their packaged
     }
   }
 });
+
+test('universal root kernel carries lightweight intent interpretation while companions remain conditional', async () => {
+  const catalog = await loadSkillCatalogText();
+  const instructions = await loadSkillInstructions(false);
+  assert.match(catalog, /default session kernel when Development OS is enabled/);
+  assert.match(instructions, /## Everyday operating baseline/);
+  assert.match(instructions, /Founder-to-Feature intent lens/);
+  assert.match(instructions, /Ordinary conversation, creative writing/);
+});

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "universal-kernel-ordinary-conversation",
+    "title": "Normal conversation is natural, proportionate and complete",
+    "kind": "behavior",
+    "prompt": "What's a good short way to say thanks for the update?",
+    "expected": {
+      "buildAuthorized": false,
+      "humanInput": "none",
+      "continuation": "handoff",
+      "boundary": [
+        "complete",
+        "saturation"
+      ],
+      "mustActivate": [
+        "Development OS"
+      ],
+      "mustNotActivate": [
+        "Lean Repository Execution",
+        "Specialist Reasoning"
+      ]
+    }
+  },
+  {
+    "id": "founder-idea-default-interpretation",
+    "title": "A product idea is explored through the root and full meaning specialist",
+    "kind": "behavior",
+    "prompt": "I wish our mobile editor made touching and moving artwork easier. Think through what that could mean before implementation.",
+    "expected": {
+      "stage": [
+        "Explore",
+        "Resolve",
+        "Crystallize"
+      ],
+      "buildAuthorized": false,
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Founder-to-Feature"
+      ],
+      "mustNotActivate": [
+        "Lean Repository Execution"
+      ]
+    }
+  },
+  {
+    "id": "wake-status-is-not-objective-completion",
+    "title": "An authorized recovery continues instead of stopping at a status post",
+    "kind": "behavior",
+    "context": "An ongoing Build objective has an existing sole-writer task, a preserved local patch, a known exact source head and authorization for a safe guarded continuation. A scheduled wake successfully reread GitHub and posted a Slack status, but no external approval or live competing writer has been established.",
+    "prompt": "What should the coordinator do next?",
+    "expected": {
+      "stage": [
+        "Build"
+      ],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution"
+      ]
+    }
+  },
+  {
+    "id": "ready-still-needs-build-authorization-v421",
+    "title": "Crystallization can complete without authorizing implementation",
+    "kind": "behavior",
+    "context": "The material representation alternatives and design risks have been resolved, and the founder only approved a final conceptual review. The exact product contract is coherent but no Build approval was granted.",
+    "prompt": "Give me the final review outcome and next boundary.",
+    "expected": {
+      "stage": [
+        "Ready"
+      ],
+      "buildAuthorized": false,
+      "humanInput": "required",
+      "continuation": "handoff",
+      "mustActivate": [
+        "Development OS",
+        "Founder-to-Feature"
+      ],
+      "mustNotActivate": [
+        "Lean Repository Execution"
+      ]
+    }
+  }
+]

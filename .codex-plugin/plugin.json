@@ -1,15 +1,15 @@
 {
   "name": "development-os",
-  "version": "4.2.0",
-  "description": "Portable development workflow guidance: intent, meaning, perspective, proof, and execution, within native host rules.",
+  "version": "4.2.1",
+  "description": "Development OS provides an enabled agent's baseline conversational operating methodology: intent, continuity, meaning, perspective, evidence and execution.",
   "author": {
     "name": "Development OS"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Development OS",
-    "shortDescription": "Reason, inspect, build, verify, and govern software work.",
-    "longDescription": "Development OS provides a methodology session kernel and four complementary skills for software and digital-product work. Native hosts own execution, routing and permissions; project-local companions and independently connected tools compose when useful.",
+    "shortDescription": "Thoughtful intent, reasoning and workflow guidance for everyday agent responses.",
+    "longDescription": "Development OS is a default conversational operating kernel when enabled, with lightweight Founder-to-Feature interpretation and four deeper specialist skills for consequential work. Native hosts retain actual skill selection, execution and permission control.",
     "developerName": "Development OS",
     "category": "Productivity",
     "capabilities": [
@@ -19,9 +19,9 @@
     "composerIcon": "./assets/composer-icon.svg",
     "logo": "./assets/logo.svg",
     "defaultPrompt": [
-      "Use Development OS to inspect this software project.",
-      "Use Development OS to shape this feature before implementation.",
-      "Use Development OS to audit and improve this codebase."
+      "Use Development OS to help me think through this idea.",
+      "Use Development OS to answer this question thoughtfully.",
+      "Use Development OS to continue our current project objective."
     ]
   }
 }

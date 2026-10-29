@@ -15,14 +15,15 @@
     }
   },
   {
-    "id": "activation-routine-administration-negative",
-    "title": "Routine channel administration is not development",
+    "id": "activation-routine-administration-lightweight-kernel",
+    "title": "Routine channel administration activates a lightweight kernel, not a development workflow",
     "kind": "activation",
     "prompt": "Read the current channel description and tell me whether it is empty. Do not change it.",
     "expected": {
-      "activate": [],
+      "activate": [
+        "development-os"
+      ],
       "notActivate": [
-        "development-os",
         "founder-to-feature",
         "specialist-reasoning",
         "evidence-stewardship",

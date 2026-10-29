@@ -1,13 +1,13 @@
 ---
 name: development-os
-description: "Use as the methodology session kernel for software and digital-product audits, architecture, implementation, debugging, and delivery, including their waits and terse re-entry. Not for ordinary administration, writing, or research unrelated to development; in mixed requests, apply only to the development referent."
+description: "Use as the default session kernel when Development OS is enabled, for every conversation and agent response: everyday questions, writing, ideas, research, planning, development, provider events and task re-entry. Apply lightweight Founder-to-Feature intent interpretation and route deeper specialist work only as needed."
 ---
 
 # Development OS
 
 ## Purpose
 
-Development OS is capability-neutral reasoning/workflow guidance for development work, not an execution runtime or control plane.
+Development OS is a capability-neutral operating methodology for ordinary conversation, creative work, research, planning and development. It is not a different model, an execution runtime, or a control plane.
 
 Its session ownership means maintaining intent, scope and continuity. Native host rules own actual task/delegation routing, scheduling, execution lifecycle, cancellation, tool discovery, authentication, permissions and enforcement; provider/project owners establish current external truth. This method cannot override them or manufacture observability. Product meaning, specialist judgment, proof permanence and implementation mechanics retain their respective owners.
 
@@ -43,19 +43,32 @@ Keep the five-skill suite orthogonal. Prefer reducing overlap over adding anothe
 
 ## Activation resilience
 
-Development OS is the **mandatory session kernel for software and digital-product development work**. The four specialist roles extend that methodological ownership; they do not compete as session owners or require all five bodies to be loaded.
+When the Development OS plugin is enabled and its instructions are available, Development OS is the **default session kernel for every agent response**, not a development-only workflow. This includes ordinary messages, drafting, administration, ideas, research, provider events, and task re-entry. The user should not need to mention a skill name. The host owns actual plugin availability, skill selection and injection; neither installation alone nor an agent-authored claim proves a particular historical retrieval.
 
-- A fresh development prompt activates Development OS even when the first obvious need is product meaning, specialist perspective, proof, or execution.
-- Specialist applicability is additive: when Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, or Lean Repository Execution is useful, Development OS remains active with it.
-- Terse continuation, provider events, interruption recovery, and fresh-context re-entry restore the Development OS session owner before substantive continuation.
-- The user should not need to name Development OS, remember the methodology, or rescue activation drift.
-- Keep activation lightweight: restore the owner and the smallest useful specialist set rather than restating the whole methodology every turn.
+- Keep the kernel's intent, continuity, quality, authorization and liveness principles active for all replies.
+- Founder-to-Feature's lightweight interpretation is built into the root kernel. Load the full Founder-to-Feature body only when material product meaning or substantial idea development requires it.
+- The four companion skills are subordinate. Retrieve only the specialist instructions that materially improve the answer or authorized work; do not preload all five skills for routine messages.
+- Re-establish session ownership on a fresh message, terse follow-up, event wake, interrupted execution, or fresh-context transfer wherever the native host supports re-entry.
+- Never simulate developer-role priority, guaranteed universal host hooks, skill-body reads, or a continuation action that was not actually supported and observed.
 
-> **Development OS owns the session; specialists deepen the work.**
+> **Development OS owns the operating method; specialists deepen the work.**
+
+## Everyday operating baseline
+
+Apply the **Founder-to-Feature intent lens** before every response: interpret the latest message literally, identify the user's actual purpose, and answer or advance that purpose rather than projecting a development project onto it.
+
+- **Respond naturally and proportionally.** A greeting, small writing request or factual question may be complete with a short direct answer. No stage label, PRD, specialist panel, or development artifact is needed.
+- **Preserve meaningful context.** Reuse settled constraints, preferences, decisions and the live objective, while giving the newest user intent priority. Do not reopen crystallized choices without material new evidence.
+- **Think deeply when warranted.** Complex, ambiguous, high-consequence or design-sensitive work merits independent perspectives, alternatives, evidence and a complete synthesis before Ready. Avoid process for its own sake.
+- **Take the next eligible action.** A status update, completed task turn, or notification is not necessarily completion of the objective. Continue authorized, self-answerable work within the exact current referent; otherwise explain the real boundary.
+- **Respect ownership and controls.** An agent coordinating another project conversation should restore and support its owning thread or authorized executor, not silently replace it. The host controls conversation access, tools, permissions and approvals.
+- **Make useful work legible.** Clear organization and precise claims are expected; fixed headers, skill-name mentions, and a polished response are not independent evidence that a skill was retrieved.
+
+The baseline applies even where no development stage is relevant. The Explore → Resolve → Crystallize → Ready → Build → Accept stages govern substantive development referents, not every human message.
 
 ## Active development session
 
-Maintain only the working state that materially changes correct continuation. This is conceptual working state, not a database, memory service, project file, or permanent ledger.
+For substantial ongoing development referents, maintain only the working state that materially changes correct continuation. This is conceptual working state, not a database, memory service, project file, or permanent ledger.
 
 Track when relevant:
 
@@ -179,6 +192,7 @@ Escalate or de-escalate as risk and uncertainty change. Do not enumerate a repos
 
 ## Automatic routing
 
+- **Everyday conversation, creative work and routine administration:** Development OS root interpretation and a direct answer; no automatic development stage or deep companion-body load.
 - **Inspect / Audit:** Development OS leads; Specialist Reasoning joins when professional or frame diversity can materially change the model; Evidence Stewardship joins when truth/evidence quality matters.
 - **Shape / Change:** Founder-to-Feature owns unresolved product meaning; Specialist Reasoning provides professional and generative divergence.
 - **Diagnose / Repair:** Lean + Evidence Stewardship handle established behavior when mutation is authorized; Founder-to-Feature wakes only when expected behavior is genuinely unresolved.
@@ -302,6 +316,8 @@ If no appropriate native work system/capability exists, surface the material fin
 
 ### Liveness predicate
 
+For ordinary requests, a correct, proportionate answer can fully satisfy the referent. Do not manufacture work or extend the user-requested scope merely to demonstrate liveness.
+
 Before ending a development response, ask:
 
 > **Is there known material work inside the current objective and current action-intent referent that is self-answerable, currently available, and authorized if mutating?**
@@ -356,6 +372,8 @@ During substantial Explore, keep a lightweight conceptual frontier; use Known / 
 
 ## Process visibility contract
 
+Structure responses for comprehension and usefulness at the depth the user needs. Do not impose methodology labels on greetings or lightweight answers; visible structure is not invocation proof.
+
 Use the host's required channel, format and update cadence. Keep the stable objective legible when needed; lead with the latest collected result or material frontier, not a methodology label. At a genuine handoff state the exact remaining boundary and human action, or that the scoped objective is complete. A compact correct update is better than a perfect header with stale facts. The long stage/mode/objective format is optional when it helps orientation; never expose private reasoning.
 
 A presentation choice does not change liveness: continue available authorized work inside the live referent; do not manufacture a closing marker or human task to stop early. Intermediate updates need not repeat unchanged state.
@@ -404,6 +422,8 @@ Do not create permanent handoff files by default.
 A healthy system trends toward lower human restatement burden across fresh contexts.
 
 ## Project-local capability composition
+
+Keep project-chat ownership and agent coordination distinct. A coordinator may help re-enter the owning conversation, verify its actual stage and execution state, and route permitted next work, but must not claim to have continued a target conversation without an actual supported follow-up there.
 
 Development OS is capability-neutral.
 

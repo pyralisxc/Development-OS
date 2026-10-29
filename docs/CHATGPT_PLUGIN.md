@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Development OS is the lightweight ChatGPT-facing methodology package.
+Development OS is the lightweight ChatGPT-facing operating methodology package. In v4.2.1 the root kernel is intended for every response when the plugin is enabled, with a lightweight Founder-to-Feature intent lens even for routine conversations.
 
 It packages the five canonical Development OS skills:
 
@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4.2.0 plugin boundary.
+That is the entire v4.2.1 plugin boundary.
 
 ## Connected apps stay independent
 
@@ -52,13 +52,13 @@ Directory submission requires both `interface.composerIcon` and `interface.logo`
 
 ## Runtime relationship
 
-Development OS is a methodology session kernel, not an execution runtime. The four companion roles deepen meaning, perspective, proof and execution while the kernel preserves cross-cutting intent/scope continuity. Read only the bodies/references that materially help; where native host rules permit, a current project-owned specialization can satisfy a companion role without stacking duplicate routines.
+Development OS is the default conversational operating kernel when enabled, not an execution runtime. It applies proportional intent interpretation to ordinary replies; the four companion roles deepen meaning, perspective, proof and execution when necessary while the kernel preserves cross-cutting intent/scope continuity. Read only the bodies/references that materially help; where native host rules permit, a current project-owned specialization can satisfy a companion role without stacking duplicate routines.
 
 Native host rules retain task/delegation routing, scheduling, execution lifecycle, cancellation, authentication, tool registration/discovery and permission enforcement. Connected apps retain their own authority and independent setup; the plugin neither replaces them nor requires any named provider. Future control-plane/runtime ambitions remain outside this package.
 
 ## Acceptance
 
-Use the existing journeys in `evals/scenarios/host/` in a fresh supported session with the candidate plugin installed. Observe the actual host trace rather than asking the agent to assert activation. Exercise filesystem, Git and shell on disposable fixtures; use only permitted read-only connected-provider operations or supplied disposable/retained fixture evidence. Do not create external product mutations or public canaries merely to test a skill.
+Use the existing journeys in `evals/scenarios/host/` in a fresh supported session with the candidate plugin installed. Test ordinary prompts without explicit skill invocation, and separately compare behavior after pausing it in Plugin Settings; these are observations of host behavior, not a claim that a manifest can assign developer-role priority. Observe the actual host trace rather than asking the agent to assert activation. Exercise filesystem, Git and shell on disposable fixtures; use only permitted read-only connected-provider operations or supplied disposable/retained fixture evidence. Do not create external product mutations or public canaries merely to test a skill.
 
 A useful acceptance pass establishes:
 
@@ -70,7 +70,7 @@ A useful acceptance pass establishes:
 6. fresh intent and exact approval continuity across terse re-entry, including a verified new approval missed by a stale checkpoint;
 7. proof at the claim boundary, including final native/visual artifact inspection when CI cannot establish appearance;
 8. a compact owner-openable actual-used receipt linked from the existing checkpoint, with source/version/time/native provenance where available, explicit gaps and no private reasoning, secrets or raw payloads;
-9. non-development and routine administrative negative controls, plus provider-independent/cross-provider composition.
+9. ordinary non-development and routine administration with the lightweight kernel active but no unnecessary full specialist, plus provider-independent/cross-provider composition; separately check paused-plugin behavior in a supported real host.
 
 Use [the receipt guidance](../skills/development-os/references/execution-receipts.md) for the existing checkpoint artifact. Record the exact candidate, host/model when available, observation time, each journey's passed/failed/blocked/not-run status, current result and remaining limit. A native trace/export can independently support invocation; an agent-authored receipt alone is a bounded execution report, not independent attestation. Historical unknowns stay unknown. Verify that the owner can open the linked evidence.
 

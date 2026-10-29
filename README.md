@@ -1,14 +1,20 @@
 # Development OS
 
-Development OS is a public, portable development reasoning system for software and digital-product agents. It is designed to improve reasoning, continuity, human control, and development quality without becoming project truth or requiring a particular tool stack.
+Development OS is a public, portable operating methodology for agents' everyday conversations, ideas, research and development workflows. It is designed to improve thoughtful interpretation, continuity, human control and delivery quality without becoming project truth or requiring a particular tool stack.
 
 ## Runtime skills
 
-- **Development OS — Orchestration:** present intent, stable objective/constraints, stage/mode, authority, authorization, referent-scoped liveness, capability routing, stewardship, and handoff.
-- **Founder-to-Feature — Meaning:** what should become true and whether the product contract is coherent enough to become Ready.
+- **Development OS — Operating kernel:** everyday intent interpretation, continuity, proportionate responses, and—for substantive work—stage/mode, authority, authorization, liveness, capability routing, stewardship and handoff.
+- **Founder-to-Feature — Meaning:** a lightweight intent lens lives in the root for every response; the full skill resolves material product meaning through Crystallization and Ready.
 - **Specialist Reasoning — Perspective:** professional rigor plus deliberate generative divergence and representation challenge.
 - **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
 - **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
+
+## v4.2.1
+
+v4.2.1 makes the enabled Development OS plugin's **root skill the intended baseline for every agent reply**, rather than limiting it to development-shaped prompts. The root embeds a lightweight Founder-to-Feature intent lens; substantial design-sensitive work still activates the full specialist and reaches a battle-tested, human-verifiable crystal before Ready. Ordinary questions, drafting and administration receive natural, proportionate answers without forced stages, specialist panels or invented implementation intent.
+
+This release updates both manifests, the canonical root and Founder-to-Feature skill, activation/host/behavior scenarios, and observable compatibility checks. It does **not** add API billing, another runtime, session ledger, permission bypass or a second toggle. Plugin Settings remain the existing enable/pause control; the native host retains actual skill selection and tool permissions. Host acceptance distinguishes loaded instructions from agent-authored claims, and must not infer universal invocation solely from package metadata or response formatting.
 
 ## v4.2.0
 

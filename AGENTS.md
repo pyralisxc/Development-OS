@@ -4,7 +4,7 @@ This repository owns the Development OS methodology and its evaluation harness.
 
 ## Product boundary
 
-Development OS improves agent reasoning and development workflow. It is not project truth, a memory database, code-intelligence engine, deployment platform, control plane, or project-management ledger.
+Development OS supplies a lightweight operating methodology for an enabled agent's ordinary conversation, ideas, research and development work. It is not project truth, a memory database, code-intelligence engine, deployment platform, control plane, or project-management ledger.
 
 The five runtime skills are orthogonal:
 
@@ -41,7 +41,7 @@ Methodology releases treat proven behavior as a compatibility surface.
 
 Harness tests may be tiny and disposable.
 
-Activation-routing evals test pre-body skill selection from skill metadata. Behavioral/trajectory evals test Development OS behavior after methodology activation.
+Activation-routing evals test pre-body skill selection from skill metadata, including ordinary conversation. Behavioral/trajectory evals test Development OS behavior after methodology activation. An enabled plugin is not itself proof that an exact host turn retrieved a skill body.
 
 Productive evals must separate methodology compliance from output usefulness/economic value. A commercially useful output does not excuse a methodology violation.
 
@@ -70,7 +70,7 @@ Do not bind, proxy, copy, or reimplement specialist apps merely to make the plug
 
 Development OS is distributed as a lightweight plugin that packages only canonical skills. External apps authenticate/connect independently through the host environment.
 
-Development OS is the activation/session kernel for development work. Companion skills preserve cross-cutting Development OS intent/scope ownership rather than competing front doors. Native host rules own actual orchestration, execution and permissions. Where those rules permit, a current project-local specialization can fulfill a companion role without requiring an overlapping global routine.
+Development OS is the intended default operating kernel for every response while enabled; its root body includes lightweight Founder-to-Feature intent interpretation. Companion skills provide deeper meaning, perspective, evidence and execution without competing front doors or burdening routine conversation. Native host rules own actual orchestration, execution and permissions. Where those rules permit, a current project-local specialization can fulfill a companion role without requiring an overlapping global routine.
 
 Activation routing is a compatibility surface. Test metadata-only routing separately from post-activation behavior, and reserve real installed-host acceptance for claims about the host's actual skill selector.
 

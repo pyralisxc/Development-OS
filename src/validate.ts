@@ -71,6 +71,7 @@ export async function validateRepository(): Promise<{ version: string; activatio
 
   const osDescription = frontmatterField(skillTexts.get('development-os') ?? '', 'description') ?? '';
   if (!osDescription.includes('session kernel')) throw new Error('Development OS description must identify the session kernel');
+  if (!osDescription.includes('every conversation')) throw new Error('Development OS must advertise universal conversational scope');
   for (const child of ['founder-to-feature', 'specialist-reasoning', 'evidence-stewardship', 'lean-repository-execution']) {
     const description = frontmatterField(skillTexts.get(child) ?? '', 'description') ?? '';
     if (!description.startsWith('Use with Development OS')) throw new Error(`${child}: child description must route through Development OS`);
@@ -82,7 +83,8 @@ export async function validateRepository(): Promise<{ version: string; activatio
   if (!founder.includes('## Authorization reconciliation')) throw new Error('Founder-to-Feature compatibility contract must reconcile changed semantic referents with Development OS authorization');
 
   const os = skillTexts.get('development-os') ?? '';
-  for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
+  if (!os.includes('Founder-to-Feature intent lens')) throw new Error('Development OS root must include the lightweight intent lens');
+  for (const required of ['## Everyday operating baseline', '## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
     if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
   }
   for (const required of ['## Activation resilience', '## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Wait stewardship', '### Provider-neutral wait contract', '### Progressive stewardship radius', '### Owner-gate presentation', '### Guided human handoff', '### Founder-burden gate', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
