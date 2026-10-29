@@ -21,12 +21,16 @@
     "com.openai": {
       "interface": {
         "displayName": "Development OS",
-        "shortDescription": "Thoughtful intent, reasoning and workflow guidance for everyday agent responses.",
+        "shortDescription": "Agent operating methodology",
         "longDescription": "Development OS is a default conversational operating kernel when enabled, with lightweight Founder-to-Feature interpretation and four deeper specialist skills for consequential work. Native hosts retain actual skill selection, execution and permission control.",
         "developerName": "Development OS",
-        "category": "Productivity",
+        "category": "Developer Tools",
         "capabilities": [
-          "Read"
+          "Development workflow",
+          "Conversational reasoning",
+          "Product reasoning",
+          "Evidence verification",
+          "Execution guidance"
         ],
         "brandColor": "#0F172A",
         "composerIcon": "./assets/composer-icon.svg",
@@ -35,8 +39,13 @@
           "Use Development OS to help me think through this idea.",
           "Use Development OS to answer this question thoughtfully.",
           "Use Development OS to continue our current project objective."
-        ]
+        ],
+        "websiteURL": "https://github.com/pyralisxc/Development-OS",
+        "supportURL": "https://github.com/pyralisxc/Development-OS/blob/preview/SUPPORT.md",
+        "privacyPolicyURL": "https://github.com/pyralisxc/Development-OS/blob/preview/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/pyralisxc/Development-OS/blob/preview/TERMS.md"
       }
     }
-  }
+  },
+  "homepage": "https://github.com/pyralisxc/Development-OS"
 }

@@ -129,6 +129,13 @@ export async function validateRepository(): Promise<{ version: string; activatio
         interface?: {
           composerIcon?: string;
           logo?: string;
+          shortDescription?: string;
+          category?: string;
+          capabilities?: string[];
+          websiteURL?: string;
+          supportURL?: string;
+          privacyPolicyURL?: string;
+          termsOfServiceURL?: string;
         };
       };
     };
@@ -138,6 +145,23 @@ export async function validateRepository(): Promise<{ version: string; activatio
   const openAiInterface = portablePlugin.extensions?.['com.openai']?.interface;
   await validateSquareBrandAsset(openAiInterface?.composerIcon, 'plugin.json extensions.com.openai.interface.composerIcon');
   await validateSquareBrandAsset(openAiInterface?.logo, 'plugin.json extensions.com.openai.interface.logo');
+  if (!openAiInterface?.shortDescription || openAiInterface.shortDescription.length > 30) {
+    throw new Error('OpenAI shortDescription must be 30 characters or fewer');
+  }
+  if (openAiInterface.category !== 'Developer Tools') {
+    throw new Error('Development OS submission category must be Developer Tools');
+  }
+  if (!openAiInterface.capabilities?.includes('Development workflow')) {
+    throw new Error('Development OS listing must include its development workflow capability');
+  }
+  for (const field of ['websiteURL', 'supportURL', 'privacyPolicyURL', 'termsOfServiceURL'] as const) {
+    const value = openAiInterface[field];
+    if (!value || !value.startsWith('https://')) throw new Error(`OpenAI listing ${field} must be a public HTTPS URL`);
+  }
+  for (const policyFile of ['PRIVACY.md', 'TERMS.md', 'SUPPORT.md']) {
+    const stat = await fs.stat(path.join(repoRoot, policyFile)).catch(() => null);
+    if (!stat?.isFile()) throw new Error(`${policyFile} must exist for submission packaging`);
+  }
 
   const codexPlugin = JSON.parse(await fs.readFile(path.join(repoRoot, '.codex-plugin', 'plugin.json'), 'utf8')) as {
     name?: string;
@@ -148,6 +172,13 @@ export async function validateRepository(): Promise<{ version: string; activatio
     interface?: {
       composerIcon?: string;
       logo?: string;
+      shortDescription?: string;
+      category?: string;
+      capabilities?: string[];
+      websiteURL?: string;
+      supportURL?: string;
+      privacyPolicyURL?: string;
+      termsOfServiceURL?: string;
     };
   };
   if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');
@@ -157,6 +188,11 @@ export async function validateRepository(): Promise<{ version: string; activatio
   if (codexPlugin.mcpServers) throw new Error('Development OS v4 plugin must not embed MCP server declarations');
   if (codexPlugin.interface?.composerIcon !== openAiInterface?.composerIcon || codexPlugin.interface?.logo !== openAiInterface?.logo) {
     throw new Error('OpenAI branding asset paths must match between portable and compatibility manifests');
+  }
+  for (const field of ['shortDescription', 'category', 'websiteURL', 'supportURL', 'privacyPolicyURL', 'termsOfServiceURL'] as const) {
+    if (codexPlugin.interface?.[field] !== openAiInterface?.[field]) {
+      throw new Error(`OpenAI interface field ${field} must match between portable and compatibility manifests`);
+    }
   }
 
   for (const filename of ['.app.json', 'mcp.json', '.mcp.json']) {
