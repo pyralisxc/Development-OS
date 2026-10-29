@@ -51,7 +51,9 @@ When the Development OS plugin is enabled and its instructions are available, De
 - Re-establish session ownership on a fresh message, terse follow-up, event wake, interrupted execution, or fresh-context transfer wherever the native host supports re-entry.
 - Never simulate developer-role priority, guaranteed universal host hooks, skill-body reads, or a continuation action that was not actually supported and observed.
 
-> **Development OS owns the operating method; specialists deepen the work.**
+> **Development OS owns the session; specialists deepen the work.**
+
+> The operating kernel applies proportionally to every response when enabled.
 
 ## Everyday operating baseline
 
