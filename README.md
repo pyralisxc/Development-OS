@@ -1,44 +1,44 @@
 # Development OS
 
-Development OS is a public, portable development reasoning system for software and digital-product agents. It is designed to improve reasoning, continuity, human control, and development quality without becoming project truth or requiring a particular tool stack.
+Development OS is a public, portable operating methodology for agents' everyday conversations, ideas, research and development workflows. It is designed to improve thoughtful interpretation, continuity, human control and delivery quality without becoming project truth or requiring a particular tool stack.
 
 ## Runtime skills
 
-- **Development OS — Orchestration:** present intent, stable objective/constraints, stage/mode, authority, authorization, referent-scoped liveness, capability routing, stewardship, and handoff.
-- **Founder-to-Feature — Meaning:** what should become true and whether the product contract is coherent enough to become Ready.
+- **Development OS — Operating kernel:** everyday intent interpretation, continuity, proportionate responses, and—for substantive work—stage/mode, authority, authorization, liveness, capability routing, stewardship and handoff.
+- **Founder-to-Feature — Meaning:** a lightweight intent lens lives in the root for every response; the full skill resolves material product meaning through Crystallization and Ready.
 - **Specialist Reasoning — Perspective:** professional rigor plus deliberate generative divergence and representation challenge.
 - **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
 - **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
 
-## v4.1.9
+## v4.2.1
 
-v4.1.9 is an **activation, liveness, and autonomy-resilience field-validation bridge** built from the accepted Wait Stewardship / owner-gate Preview work. It intentionally carries the emerging 4.2 architecture under a 4.1.x version so real host usage can harden activation and re-entry behavior before the 4.2.0 stabilization release.
+v4.2.1 makes the enabled Development OS plugin's **root skill the intended baseline for every agent reply**, rather than limiting it to development-shaped prompts. The root embeds a lightweight Founder-to-Feature intent lens; substantial design-sensitive work still activates the full specialist and reaches a battle-tested, human-verifiable crystal before Ready. Ordinary questions, drafting and administration receive natural, proportionate answers without forced stages, specialist panels or invented implementation intent.
 
-It preserves the five-skill architecture while making **Development OS the explicit development-session kernel**. Founder-to-Feature, Specialist Reasoning, Evidence Stewardship, and Lean Repository Execution are subordinate specialists that co-activate when material rather than competing as independent front doors.
+This release updates both manifests, the canonical root and Founder-to-Feature skill, activation/host/behavior scenarios, and observable compatibility checks. It does **not** add API billing, another runtime, session ledger, permission bypass or a second toggle. Plugin Settings remain the existing enable/pause control; the native host retains actual skill selection and tool permissions. Host acceptance distinguishes loaded instructions from agent-authored claims, and must not infer universal invocation solely from package metadata or response formatting.
 
-First-class 4.1.9 behavior includes:
+## v4.2.0
 
-- **Activation resilience** — fresh development prompts, terse continuation, provider wake/re-entry, and specialist routing retain Development OS session ownership.
-- **Activation-routing evals** — a separate scenario lane evaluates skill selection from name/description metadata without preloading the skill bodies; post-activation behavior remains a different proof layer.
-- **Provider-neutral liveness** — waits are modeled by authoritative source, blocked condition, resume condition, cheapest authoritative recheck, and stewardship eligibility rather than by a GitHub-specific state.
-- **Progressive Wait Stewardship** — use primary work first, then harden known obligations, then widen through same-repository, repository-wide, adjacent-repository, and wider-portfolio read-only stewardship only as nearer work saturates.
-- **Guided human handoff** — genuinely manual provider/interface actions are taught as executable lessons: why, where, exact action, expected signal, guardrails, return evidence, and UI-drift recovery, without asking for secrets.
-- **Founder-burden gate** — self-answerable engineering consequences and reachable evidence gaps stay with the agent; only non-derivable product choices, authorization, unavailable evidence, or irreducibly human acceptance return to the user.
-- **Native-capability discovery** — systemic manual friction triggers a bounded provider-native capability check before custom infrastructure; restraint is equally required when a native feature adds ceremony without value.
-- **Positive operating invariants** — the runtime emphasizes the shape of excellent continuation while keeping hard safety/authority prohibitions where they are actually needed.
-- **Compatibility preservation** — v3.5 and established v4.x authorization, stage reversal, audit neutrality, liveness, fresh-context reconstruction, and human-agency guarantees remain protected.
+v4.2.0 is a bounded host-aware evolution of the five-skill method, not a new runtime. It preserves exact-candidate authorization, fresh intent/re-entry, referent-scoped liveness, audit neutrality, idempotent recovery, human acceptance and the v3.5 compatibility floor.
 
-### Proof model
+- **Truthful compact visibility:** report the latest result, remaining boundary and necessary human action in the host's format. Long position headers are optional, not compliance proof.
+- **Native ownership and local composition:** the method maintains intent/scope continuity; the host owns routing, scheduling, execution, authentication, tool discovery and enforcement. A current project-local specialization can satisfy a companion role without a second full routine where host rules permit.
+- **Selective detail:** distinctive material triggers select the smallest relevant bodies/references. Conditional gate, handoff, wider wait stewardship and meta-audit detail loads when needed; waiting alone does not create portfolio work. Crystal dimensions are decision aids, not a mandatory form.
+- **Observable acceptance:** installed-host journeys cover actual body reads, connected discovery, buffered-result collection, uncertain outcomes and re-entry. Generic fixtures exercise existing scope, identity, partial-effect, artifact and freshness safeguards rather than adding a rule per incident.
+- **Owner-auditable actual use:** one compact receipt at the existing checkpoint distinguishes catalog availability, body retrieval, observed application and independently supported results, with available source/version/time/native references and explicit gaps. It is not a tracker, per-call diary or self-attestation service.
 
-Repository CI proves deterministic TypeScript build/tests, fail-closed scenario/schema validation, compatibility, manifest/version parity, and release packaging.
+### Proof model and candidate acceptance
 
-Optional live activation/behavior/trajectory/productive evals provide diagnostic model evidence. They do not substitute for installed-host evidence.
+Repository CI proves deterministic build/tests, fail-closed schemas, compatibility, manifest/version parity and release packaging. It does not run or certify qualitative model behavior.
 
-**4.1.9 publication is itself the bounded field-validation step.** Repository CI and maintainer review establish that this bridge is safe to publish; subsequent real Development OS sessions should exercise the host journeys in `evals/scenarios/host/`, especially fresh natural activation and long-session wait/re-entry behavior. Those observations become evidence for hardening and naming the stabilized 4.2.0 release.
+Optional activation evals test metadata-only routing. Behavior, trajectory and productive evals intentionally preload all five bodies and their references as regression input, not proof of selective host loading. Their existing result summaries identify that proof layer. No paid model eval is required.
+
+Installed-host selection claims require the real journeys in `evals/scenarios/host/`: metadata selection → actual body retrieval → relevant tools → permitted action → collected result/readback → accurate checkpoint. Manual source reads and local fixtures can support candidate review but cannot certify automatic activation of a newly packaged plugin. Record run/skip/blocked status and provenance through the [plugin acceptance guidance](docs/CHATGPT_PLUGIN.md#acceptance); do not infer a pass merely because a scenario exists.
+
+A correctly labeled candidate ZIP can be prepared before live plugin installation or refresh. Packaging is not installation, release sign-off or a selector acceptance claim. Maintainer hands-on review remains the qualitative acceptance authority; do not tag until required verification and real-host candidate review support explicit sign-off.
 
 ### Compatibility guarantee
 
-v4.1.9 preserves the v3.5 scenario floor in `evals/compatibility/v3.5.json` and all established v4.x runtime guarantees. New scenarios protect activation routing, self-answerable frontier ownership, provider-neutral liveness, progressive Wait Stewardship, guided human handoff, and native-capability discovery/restraint.
+The v3.5 scenario floor in `evals/compatibility/v3.5.json` and all established v4.x guarantees remain. Development OS remains provider-independent; OMS/DI or other control-plane/runtime ambitions are not part of this release.
 
 ## Design principles
 
@@ -76,7 +76,7 @@ The repository contains:
 - behavioral evals for single-turn post-activation methodology guarantees;
 - trajectory evals for context, authorization, and liveness across turns;
 - a real productive eval whose output is reviewed separately for methodology compliance and practical usefulness;
-- host acceptance journeys that exercise filesystem, Git, and shell behavior in an installed Codex plugin;
+- host acceptance journeys that exercise installed skill reads, filesystem/Git/shell, connected read-only tools and current result collection;
 - compatibility validation preserving proven older behavior.
 
 Run:

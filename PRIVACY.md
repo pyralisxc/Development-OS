@@ -2,7 +2,7 @@
 
 **Effective date:** October 4, 2026
 
-Development OS is a skills-only software-development methodology plugin distributed from the public `pyralisxc/Development-OS` repository. The plugin package does not include an MCP server, remote service, app ID, analytics service, or developer-operated data store.
+Development OS is a skills-only conversational and development operating-methodology plugin distributed from the public `pyralisxc/Development-OS` repository. The plugin package does not include an MCP server, remote service, app ID, analytics service, or developer-operated data store.
 
 ## Data collected by the Development OS publisher
 
@@ -10,7 +10,7 @@ Development OS does not collect or receive personal data through the plugin itse
 
 ## How data is used
 
-The Development OS skills provide instructions that the host can apply to software-development work. The publisher does not separately process user data for advertising, profiling, sale, or unrelated analytics.
+The Development OS skills provide instructions that the host can apply to ordinary conversations, ideas, research, product decisions, and software-development work. The publisher does not separately process user data for advertising, profiling, sale, or unrelated analytics.
 
 ## Host and connected-service processing
 

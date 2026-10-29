@@ -1,0 +1,34 @@
+[
+  {
+    "id": "activation-mixed-administration-development",
+    "title": "Mixed request activates only the bounded development workflow",
+    "kind": "activation",
+    "prompt": "Explain how channel descriptions work, then inspect the release-version regression in this repository. Do not edit either system.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "evidence-stewardship"
+      ],
+      "notActivate": [
+        "founder-to-feature"
+      ]
+    }
+  },
+  {
+    "id": "activation-routine-administration-lightweight-kernel",
+    "title": "Routine channel administration activates a lightweight kernel, not a development workflow",
+    "kind": "activation",
+    "prompt": "Read the current channel description and tell me whether it is empty. Do not change it.",
+    "expected": {
+      "activate": [
+        "development-os"
+      ],
+      "notActivate": [
+        "founder-to-feature",
+        "specialist-reasoning",
+        "evidence-stewardship",
+        "lean-repository-execution"
+      ]
+    }
+  }
+]

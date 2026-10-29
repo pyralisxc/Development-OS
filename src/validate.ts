@@ -70,11 +70,12 @@ export async function validateRepository(): Promise<{ version: string; activatio
   }
 
   const osDescription = frontmatterField(skillTexts.get('development-os') ?? '', 'description') ?? '';
-  if (!osDescription.includes('session kernel')) throw new Error('Development OS v4.1.9 description must identify the session kernel');
+  if (!osDescription.includes('session kernel')) throw new Error('Development OS description must identify the session kernel');
+  if (!osDescription.includes('every conversation')) throw new Error('Development OS must advertise universal conversational scope');
   for (const child of ['founder-to-feature', 'specialist-reasoning', 'evidence-stewardship', 'lean-repository-execution']) {
     const description = frontmatterField(skillTexts.get(child) ?? '', 'description') ?? '';
-    if (!description.startsWith('Use with Development OS')) throw new Error(`${child}: v4.1.9 child description must route through Development OS`);
-    if (!description.includes('session kernel')) throw new Error(`${child}: v4.1.9 child description must preserve Development OS session ownership`);
+    if (!description.startsWith('Use with Development OS')) throw new Error(`${child}: child description must route through Development OS`);
+    if (!(skillTexts.get(child) ?? '').includes('Development OS preserves cross-cutting intent/scope continuity')) throw new Error(`${child}: body must preserve Development OS composition ownership`);
   }
 
   const founder = skillTexts.get('founder-to-feature') ?? '';
@@ -82,14 +83,17 @@ export async function validateRepository(): Promise<{ version: string; activatio
   if (!founder.includes('## Authorization reconciliation')) throw new Error('Founder-to-Feature compatibility contract must reconcile changed semantic referents with Development OS authorization');
 
   const os = skillTexts.get('development-os') ?? '';
-  for (const required of ['## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
+  if (!os.includes('Founder-to-Feature intent lens')) throw new Error('Development OS root must include the lightweight intent lens');
+  for (const required of ['## Everyday operating baseline', '## Active development session', '## Scoped authorization', '### Liveness predicate', '## Visible working synthesis', '## Fresh-context transfer']) {
     if (!os.includes(required)) throw new Error(`Development OS compatibility contract must contain ${required}`);
   }
   for (const required of ['## Activation resilience', '## Explore entry modes', '## Evidence appetite', '### Progress sensitivity', '### Wait stewardship', '### Provider-neutral wait contract', '### Progressive stewardship radius', '### Owner-gate presentation', '### Guided human handoff', '### Founder-burden gate', '### Peripheral discovery and durable routing', '## Independent meta-audit', '### Degraded authority and recovery', '## Stewardship and native artifacts']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.1.9 must contain ${required}`);
+    if (!os.includes(required)) throw new Error(`Development OS must contain ${required}`);
   }
+  const conditionalGuidance = await fs.readFile(path.join(skillsRoot, 'development-os', 'references', 'operating-boundaries.md'), 'utf8');
+  const osWithConditionalGuidance = `${os}\n${conditionalGuidance}`;
   for (const required of ['Fresh intent, continuous state.', 'Continue only the live referent.', 'Development OS owns the session; specialists deepen the work.', 'Methodology stands alone; capability composes opportunistically.', 'See wider than you act.', 'Known obligation hardening', 'Wider portfolio', 'Assume no familiarity with the exact interface without assuming low intelligence.', 'native-capability check', 'Bound **exploration cost and interference**, not discovery yield.', 'Durable routing authorization', 'next safe atomic', 'Exact action', 'Protected concern', 'Non-authorization', 'After approval', 'Natural-language approval in chat applies only to the exact gate']) {
-    if (!os.includes(required)) throw new Error(`Development OS v4.1.9 runtime kernel must contain ${required}`);
+    if (!osWithConditionalGuidance.includes(required)) throw new Error(`Development OS must preserve ${required} in root or triggered operating guidance`);
   }
 
   const specialist = skillTexts.get('specialist-reasoning') ?? '';
@@ -123,6 +127,8 @@ export async function validateRepository(): Promise<{ version: string; activatio
     extensions?: {
       'com.openai'?: {
         interface?: {
+          composerIcon?: string;
+          logo?: string;
           shortDescription?: string;
           category?: string;
           capabilities?: string[];
@@ -130,8 +136,6 @@ export async function validateRepository(): Promise<{ version: string; activatio
           supportURL?: string;
           privacyPolicyURL?: string;
           termsOfServiceURL?: string;
-          composerIcon?: string;
-          logo?: string;
         };
       };
     };
@@ -139,14 +143,16 @@ export async function validateRepository(): Promise<{ version: string; activatio
   if (portablePlugin.name !== 'development-os') throw new Error('portable plugin name must be development-os');
   if (portablePlugin.version !== version) throw new Error('portable plugin version must match package version');
   const openAiInterface = portablePlugin.extensions?.['com.openai']?.interface;
+  await validateSquareBrandAsset(openAiInterface?.composerIcon, 'plugin.json extensions.com.openai.interface.composerIcon');
+  await validateSquareBrandAsset(openAiInterface?.logo, 'plugin.json extensions.com.openai.interface.logo');
   if (!openAiInterface?.shortDescription || openAiInterface.shortDescription.length > 30) {
-    throw new Error('OpenAI subtitle/shortDescription must be present and 30 characters or fewer');
+    throw new Error('OpenAI shortDescription must be 30 characters or fewer');
   }
   if (openAiInterface.category !== 'Developer Tools') {
     throw new Error('Development OS submission category must be Developer Tools');
   }
   if (!openAiInterface.capabilities?.includes('Development workflow')) {
-    throw new Error('Development OS listing capabilities must describe its development workflow purpose');
+    throw new Error('Development OS listing must include its development workflow capability');
   }
   for (const field of ['websiteURL', 'supportURL', 'privacyPolicyURL', 'termsOfServiceURL'] as const) {
     const value = openAiInterface[field];
@@ -156,8 +162,6 @@ export async function validateRepository(): Promise<{ version: string; activatio
     const stat = await fs.stat(path.join(repoRoot, policyFile)).catch(() => null);
     if (!stat?.isFile()) throw new Error(`${policyFile} must exist for submission packaging`);
   }
-  await validateSquareBrandAsset(openAiInterface?.composerIcon, 'plugin.json extensions.com.openai.interface.composerIcon');
-  await validateSquareBrandAsset(openAiInterface?.logo, 'plugin.json extensions.com.openai.interface.logo');
 
   const codexPlugin = JSON.parse(await fs.readFile(path.join(repoRoot, '.codex-plugin', 'plugin.json'), 'utf8')) as {
     name?: string;
@@ -166,6 +170,8 @@ export async function validateRepository(): Promise<{ version: string; activatio
     apps?: string;
     mcpServers?: string;
     interface?: {
+      composerIcon?: string;
+      logo?: string;
       shortDescription?: string;
       category?: string;
       capabilities?: string[];
@@ -173,8 +179,6 @@ export async function validateRepository(): Promise<{ version: string; activatio
       supportURL?: string;
       privacyPolicyURL?: string;
       termsOfServiceURL?: string;
-      composerIcon?: string;
-      logo?: string;
     };
   };
   if (codexPlugin.name !== 'development-os') throw new Error('ChatGPT/Codex plugin name must be development-os');

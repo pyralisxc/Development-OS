@@ -76,14 +76,15 @@
     }
   },
   {
-    "id": "activation-nondevelopment-does-not-fire",
-    "title": "Ordinary non-development writing does not activate Development OS",
+    "id": "activation-nondevelopment-lightweight-kernel",
+    "title": "Ordinary creative request activates only the lightweight Development OS kernel",
     "kind": "activation",
     "prompt": "Write a short birthday poem about autumn.",
     "expected": {
-      "activate": [],
+      "activate": [
+        "development-os"
+      ],
       "notActivate": [
-        "development-os",
         "founder-to-feature",
         "specialist-reasoning",
         "evidence-stewardship",

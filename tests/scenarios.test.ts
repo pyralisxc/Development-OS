@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadActivationScenarios, loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios, validateBehaviorScenario } from '../src/harness/scenarios.js';
+import { loadActivationScenarios, loadBehaviorScenarios, loadDevelopmentScenarios, loadHostScenarios, loadProductiveScenarios, loadTrajectoryScenarios, validateBehaviorScenario, validateHostScenario } from '../src/harness/scenarios.js';
 
 test('development scenarios are unique and include one-shot plus trajectory regressions', async () => {
   const all = await loadDevelopmentScenarios();
@@ -22,12 +22,15 @@ test('development scenarios are unique and include one-shot plus trajectory regr
   assert.ok(trajectory.some(item => item.id === 'trajectory-discovery-reconciles-founder-interpretation'));
 });
 
-test('activation-routing scenarios cover kernel co-activation and non-development restraint', async () => {
+test('activation-routing scenarios cover universal kernel and proportional specialist restraint', async () => {
   const scenarios = await loadActivationScenarios();
   assert.ok(scenarios.length >= 7);
   assert.ok(scenarios.some(item => item.id === 'activation-direct-implementation-keeps-kernel'));
   assert.ok(scenarios.some(item => item.id === 'activation-terse-reentry-restores-kernel'));
-  assert.ok(scenarios.some(item => item.id === 'activation-nondevelopment-does-not-fire'));
+  assert.ok(scenarios.some(item => item.id === 'activation-nondevelopment-lightweight-kernel'));
+  assert.ok(scenarios.some(item => item.id === 'activation-everyday-greeting-kernel'));
+  assert.ok(scenarios.some(item => item.id === 'activation-event-reentry-preserves-kernel'));
+  assert.ok(scenarios.every(item => !item.expected.notActivate?.includes('development-os')));
 });
 
 test('productive eval is a real enabled scenario with an explicit usefulness rubric', async () => {
@@ -58,4 +61,18 @@ test('scenario validation fails closed on unknown expectation fields', async () 
     }),
     /additional properties/,
   );
+});
+
+test('host acceptance covers connected collection, local composition and honest receipt provenance', async () => {
+  const scenarios = await loadHostScenarios();
+  for (const id of ['host-project-local-companion-composition', 'host-connected-result-collection-and-reentry', 'host-owner-auditable-receipt-provenance']) {
+    assert.ok(scenarios.some(item => item.id === id), id);
+  }
+  const connected = scenarios.find(item => item.id === 'host-connected-result-collection-and-reentry')!;
+  assert.ok(connected.requiredCapabilities.includes('connected-read-only-tool'));
+  assert.ok(connected.turns.some(turn => turn.prompt.includes('ordinary channel description') && turn.requiredActivatedSkills?.includes('Development OS')));
+  for (const id of ['host-ordinary-reply-root-kernel','host-founder-idea-reaches-ready-boundary','host-project-wake-recovers-objective']) {
+    assert.ok(scenarios.some(item => item.id === id), id);
+  }
+  await assert.rejects(validateHostScenario({ ...connected, implicitPass: true }), /additional properties/);
 });

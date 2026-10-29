@@ -1,6 +1,6 @@
 ---
 name: founder-to-feature
-description: "Use with Development OS when development work contains unresolved product meaning: substantial feature ideas, architecture-affecting behavior, workflow redesign, or audit findings that require deciding what should become true. Development OS must remain active as the session kernel; Founder-to-Feature owns Explore → Resolve → Crystallize → Ready for the semantic referent."
+description: "Use with Development OS for substantial founder ideas, product meaning, user expectations, ownership, identity, permissions, lifecycle or other consequential design decisions. A lightweight Founder-to-Feature intent lens already runs through the Development OS root for every message; this full specialist body supplies deeper Explore, Resolve and Crystallize work only when warranted."
 ---
 
 # Founder to Feature
@@ -11,7 +11,7 @@ Founder-to-Feature owns **product meaning**:
 
 > **What should become true?**
 
-Translate natural creator input into implementation-ready meaning without requiring the user to write a PRD or technical contract.
+Translate natural creator input into useful meaning without requiring the user to write a PRD or technical contract. The DevOS root carries the minimum intent lens for every reply; this full specialist turns materially unresolved ideas into coherent, implementation-ready product meaning.
 
 ## Ownership boundaries
 
@@ -23,13 +23,15 @@ Translate natural creator input into implementation-ready meaning without requir
 
 ## Activation
 
-Founder-to-Feature is a subordinate Development OS specialist. Development OS must already be active or be co-activated for development use.
+Founder-to-Feature is a subordinate Development OS specialist. Development OS preserves cross-cutting intent/scope continuity for development use. Its kernel composition contract permits a current project-local specialization to fulfill this role without duplicating the routine; native host routing and permission rules still govern execution.
 
-Use with Development OS when a materially unresolved decision can change user expectation, product philosophy, ownership, identity, permissions, lifecycle, placement/mental model, ecosystem ownership, or another durable rule.
+Every Development OS response uses its lightweight Founder-to-Feature intent lens from the root kernel: understand the user's purpose and respond to that purpose. Select this full specialist body when a materially unresolved decision can change product expectations, philosophy, identity, permissions, lifecycle, placement, or another durable rule.
 
-Generic observation, known bugs with established behavior, and routine implementation remain with their owning lanes.
+Ordinary conversation, creative writing, known bugs with established behavior and routine administration do not require the full Explore/Crystallize method merely because the intent lens applies.
 
 ## Semantic stages
+
+These stages are for meaningful product/feature development, not an obligation to label every ordinary conversation.
 
 ### Explore
 
@@ -123,7 +125,7 @@ The goal is not novelty for novelty's sake. Serious alternatives must return to 
 
 ## The crystal
 
-When Crystallization passes, compress the referent into:
+When Crystallization passes, compress the material decisions, not a twelve-field form. Include only dimensions that could change implementation or acceptance; a routine established repair needs no crystal. Possible dimensions are:
 
 - **Outcome**
 - **Ambition** when material

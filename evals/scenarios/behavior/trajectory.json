@@ -436,10 +436,6 @@
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "handoff",
-          "responseContains": [
-            "Development position —",
-            "Development position at close —"
-          ],
           "responseNotContains": [
             "I fixed",
             "I changed",
@@ -458,12 +454,6 @@
           "continuation": "continue",
           "mustActivate": [
             "Lean Repository Execution"
-          ],
-          "responseContains": [
-            "Development position —"
-          ],
-          "responseNotContains": [
-            "Development position at close —"
           ]
         }
       }
@@ -515,9 +505,6 @@
           "mustActivate": [
             "Development OS"
           ],
-          "responseContains": [
-            "Development position —"
-          ],
           "responseNotContains": [
             "implement the DI repair"
           ]
@@ -527,7 +514,7 @@
   },
   {
     "id": "trajectory-process-position-survives-saturation",
-    "title": "Visible process position survives a long continuing objective and closes only at a real boundary",
+    "title": "Compact current synthesis preserves continuity and stops only at a genuine boundary",
     "kind": "trajectory",
     "objective": "Resolve a substantial architecture change through professional and generative review, then stop at the Build authorization boundary.",
     "context": "No Build authorization exists. Several self-answerable conceptual passes remain before Ready.",
@@ -540,13 +527,7 @@
             "Resolve"
           ],
           "humanInput": "none",
-          "continuation": "continue",
-          "responseContains": [
-            "Development position —"
-          ],
-          "responseNotContains": [
-            "Development position at close —"
-          ]
+          "continuation": "continue"
         }
       },
       {
@@ -560,12 +541,6 @@
           "continuation": "continue",
           "mustActivate": [
             "Specialist Reasoning"
-          ],
-          "responseContains": [
-            "Development position —"
-          ],
-          "responseNotContains": [
-            "Development position at close —"
           ]
         }
       },
@@ -579,9 +554,10 @@
           "buildAuthorized": false,
           "humanInput": "required",
           "continuation": "handoff",
-          "responseContains": [
-            "Development position —",
-            "Development position at close —"
+          "boundary": [
+            "authorization",
+            "implementation",
+            "Build"
           ]
         }
       }
@@ -618,9 +594,6 @@
           "buildAuthorized": true,
           "humanInput": "none",
           "continuation": "continue",
-          "responseContains": [
-            "Development position —"
-          ],
           "responseNotContains": [
             "clean the entire repository",
             "rewrite all documentation",

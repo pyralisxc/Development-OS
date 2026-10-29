@@ -1,0 +1,61 @@
+[
+  {
+    "id": "activation-everyday-greeting-kernel",
+    "title": "A casual greeting selects the root kernel without deep specialist work",
+    "kind": "activation",
+    "prompt": "Hey, how's it going?",
+    "expected": {
+      "activate": [
+        "development-os"
+      ],
+      "notActivate": [
+        "founder-to-feature",
+        "specialist-reasoning",
+        "evidence-stewardship",
+        "lean-repository-execution"
+      ]
+    }
+  },
+  {
+    "id": "activation-routine-writing-kernel",
+    "title": "Ordinary writing uses the root intent lens without product theater",
+    "kind": "activation",
+    "prompt": "Rewrite this one-sentence note to be clearer: The shipment reached the office.",
+    "expected": {
+      "activate": [
+        "development-os"
+      ],
+      "notActivate": [
+        "founder-to-feature",
+        "specialist-reasoning",
+        "evidence-stewardship",
+        "lean-repository-execution"
+      ]
+    }
+  },
+  {
+    "id": "activation-founder-idea-deepens-meaning",
+    "title": "A new product idea routes to full Founder-to-Feature beneath the kernel",
+    "kind": "activation",
+    "prompt": "I want our website editor to feel more like a canvas but remain accessible. Explore the experience and resolve product choices before we build.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "founder-to-feature"
+      ]
+    }
+  },
+  {
+    "id": "activation-event-reentry-preserves-kernel",
+    "title": "An interrupted authorized task returns through the root and execution specialist",
+    "kind": "activation",
+    "context": "The project thread already has an authorized, bounded source repair and an existing execution task; the latest provider update confirms the exact source head.",
+    "prompt": "This is a scheduled project wake. Continue the current authorized repair from its latest result, without restarting product exploration.",
+    "expected": {
+      "activate": [
+        "development-os",
+        "lean-repository-execution"
+      ]
+    }
+  }
+]

@@ -6,7 +6,7 @@ These terms apply to the Development OS skills-only plugin distributed from the 
 
 ## What Development OS provides
 
-Development OS provides software-development reasoning and workflow instructions for use inside a compatible agent host. It is methodology, not a hosted development service, code repository, deployment provider, credential manager, or system of record.
+Development OS provides conversational interpretation, reasoning and development-workflow instructions for use inside a compatible agent host. It is methodology, not a hosted development service, code repository, deployment provider, credential manager, or system of record.
 
 ## No bundled remote service
 
