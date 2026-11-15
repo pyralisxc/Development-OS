@@ -39,6 +39,18 @@ When evidence conflicts, identify what guarantee each artifact claims to protect
 
 Evidence Stewardship is most valuable when evidence is missing, stale, contradictory, or poor.
 
+Uncertainty is a state to resolve and scope, not a virtue to preserve.
+
+For each material claim:
+1. identify the exact claim and consequence;
+2. distinguish observed, derived, inferred, contradicted, and unknown facts;
+3. establish the proof threshold appropriate to that consequence;
+4. gather only evidence capable of changing the decision or confidence;
+5. once the threshold is met, use the established fact with corresponding confidence;
+6. keep remaining unknowns scoped to the claims they actually affect.
+
+Do not convert “not exhaustive” into “unsafe to proceed.” A current fact can be valid and useful while remaining revisable if stronger contradictory evidence appears later.
+
 Ask:
 
 1. What claim are we trying to establish?
@@ -110,7 +122,7 @@ Mocks can establish internal logic. They cannot prove external reality.
 
 ## Degraded evidence and documentation
 
-When a repository has no good evidence, create the smallest temporary probe needed to distinguish plausible stories.
+When a repository has no good evidence, create a direct temporary probe that can distinguish the plausible stories without creating unrelated evidence machinery.
 
 When documentation is absent, do not manufacture documentation merely to create evidence.
 
@@ -124,6 +136,25 @@ When documentation conflicts:
 For many documents, build only a temporary authority map needed for the active objective. Do not maintain everything by default.
 
 Documentation earns permanence under the same rule as tests: it must carry durable meaning that cannot be cheaply/reliably derived elsewhere.
+
+## Understanding before tests
+
+Do not add a test merely because executable proof is available.
+
+Prefer, in order:
+1. current source/code investigation for ownership, call paths, invariants, and shared patterns;
+2. trusted project intelligence such as Development Intelligence or maintained project knowledge;
+3. authoritative provider/runtime reads;
+4. real product use and acceptance;
+5. a test only when the remaining claim is specifically about execution and cannot be established reliably enough by the stronger sources above.
+
+A passing test proves only the path it actually exercised. Mocks prove mocked/internal behavior, not external reality. A child test does not prove parent composition unless the parent path actually ran.
+
+Permanent tests should be rare. When one is justified, prefer a stable parent execution contract, integration boundary, provider connection, lifecycle transition, or independent invariant that remains meaningful across child refactors. Do not add page-by-page, selector-by-selector, value-by-value, or bug-manifestation tests when source/DI can establish adherence to one canonical parent pattern.
+
+A failing test is evidence to investigate, not automatic authority over current implementation. If its protected guarantee moved, changed, became redundant, or is now established more strongly elsewhere, retire or rewrite the test.
+
+As source understanding and DI improve, redundant tests should disappear.
 
 ## Proof follows uncertainty
 
@@ -196,7 +227,9 @@ Prioritize evidence debt by consequence, not coverage percentage.
 
 ## Completion
 
-Evidence work is complete when the objective-level claim has enough justified proof, material contradictions/unknowns are explicit, and temporary evidence has been removed or deliberately promoted.
+Evidence work is complete when the objective-level claim has enough justified proof, material contradictions/unknowns are scoped explicitly, and temporary evidence has been removed or deliberately promoted.
+
+If tests, probes, fixtures, review gates, or other proof infrastructure no longer protect a unique durable guarantee, remove or consolidate them before calling the evidence lane complete.
 
 Green CI alone is not product acceptance.
 
@@ -211,6 +244,9 @@ Do not:
 - add tests for coverage theater;
 - require TDD universally;
 - add a permanent regression for every bug;
+- add child-level tests when source/DI/parent execution already establishes the durable guarantee;
+- treat green CI as higher authority than current product/source/provider truth when a check itself is obsolete;
+- preserve uncertainty after claim-relevant evidence is already sufficient;
 - treat tests or docs as unquestionable authority;
 - claim external reality from mocks;
 - keep probes forever;
