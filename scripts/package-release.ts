@@ -54,7 +54,7 @@ async function main() {
   for (const policyFile of ['PRIVACY.md', 'TERMS.md', 'SUPPORT.md']) {
     await fs.copyFile(path.join(repoRoot, policyFile), path.join(pluginRoot, policyFile));
   }
-  await zipDirectory(pluginRoot, path.join(output, `development-os-plugin-v${version}.zip`), path.basename(pluginRoot));
+  await zipDirectory(pluginRoot, path.join(output, `development-os-plugin-v${version}.zip`), '');
 
   console.log(output);
 }
