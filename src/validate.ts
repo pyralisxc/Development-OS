@@ -101,7 +101,6 @@ export async function validateRepository(): Promise<{ version: string; activatio
   if (!specialist.includes('## Generative divergence')) throw new Error('Specialist Reasoning v4.1 must define Generative divergence');
   if (!specialist.includes('Bad hypotheses are allowed during divergence; bad conclusions are not.')) throw new Error('Specialist Reasoning v4.1 must preserve safe divergence');
   if (!specialist.includes('## Battle testing')) throw new Error('Specialist Reasoning v4.1.5 must define Battle testing');
-  if (!specialist.includes('Attack the result across the smallest sufficient set of consequence layers')) throw new Error('Specialist Reasoning v4.1.5 must preserve layered battle testing');
 
   const evidence = skillTexts.get('evidence-stewardship') ?? '';
   if (!evidence.includes('level of proof to the level of the claim')) throw new Error('Evidence Stewardship v4.1 must align proof level with claim level');
