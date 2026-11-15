@@ -99,11 +99,19 @@ npm run eval:productive
 
 Activation, behavioral, trajectory, productive, and host scenarios are optional review aids. They help a maintainer inspect methodology behavior, usefulness, and real host behavior, but automated model runs are not a release requirement. Release acceptance comes from the maintainer's hands-on review of the candidate; creating a version tag records that explicit sign-off.
 
-A release tag requires `npm run verify`, tag/package version parity, and a packaged candidate whose manifest versions match `package.json`.
+A release tag requires `npm run verify`, tag/package version parity, and a consumer-appropriate packaged candidate whose manifest version matches `package.json`. For packaged distribution, verify the final archive root against the actual importer rather than assuming repository layout equals upload layout.
 
 ## Distribution
 
-Development OS is packaged as a lightweight plugin containing the canonical skills. Connected tools/apps remain independent and are discovered/configured by the host environment.
+Development OS is packaged from one canonical source tree, but **package shape depends on the consumer**. Connected tools/apps remain independent and are discovered/configured by the host environment.
+
+Do not treat the repository root as one universal upload archive:
+
+- **GitHub/Codex marketplace** uses repository marketplace metadata, including `.agents/plugins/marketplace.json` and compatibility manifests;
+- **ChatGPT private plugin upload** expects one plugin identity and should contain the root `plugin.json`, canonical `skills/`, and only the supporting files needed by that plugin—do not carry the repository marketplace index or a competing secondary plugin manifest into that archive;
+- **Plugins Directory submission** is a separate reviewed distribution surface with its own current provider contract.
+
+Before delivery, inspect the final archive bytes and validate them against the actual consumer/importer. Source validation or a successful packaging script does not by itself prove that a consumer-specific ZIP is acceptable.
 
 ### Install from GitHub
 
