@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Development OS is the lightweight ChatGPT-facing operating methodology package. In v4.2.1 the root kernel is intended for every response when the plugin is enabled, with a lightweight Founder-to-Feature intent lens even for routine conversations.
+Development OS is the lightweight ChatGPT-facing operating methodology package. In v4.2.2 the root kernel is intended for every response when the plugin is enabled, with a lightweight Founder-to-Feature intent lens even for routine conversations.
 
 It packages the five canonical Development OS skills:
 
@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4.2.1 plugin boundary.
+That is the entire v4.2.2 plugin boundary.
 
 ## Connected apps stay independent
 
@@ -31,24 +31,52 @@ A ChatGPT account may have all of them enabled at the same time. Development OS 
 
 ## Packaging
 
-The repository root is the plugin package.
+Development OS has **one canonical source tree but more than one consumer-specific package contract**. Do not treat the repository root as one universal upload archive.
 
-- `plugin.json` is the portable Agent Plugins manifest and canonical OpenAI-specific interface metadata source.
-- `.codex-plugin/plugin.json` is the ChatGPT/Codex compatibility manifest.
-- `assets/` contains required square OpenAI directory branding assets.
-- `skills/` is the canonical skill source and is packaged directly.
-- `.agents/plugins/marketplace.json` lets a workspace import/sync this repository as a plugin marketplace.
+### Repository / marketplace source layout
 
-The active package intentionally has:
+The repository root contains all distribution metadata needed by supported repository-driven consumers:
 
-- no `.app.json`;
-- no app IDs;
-- no `mcp.json`;
-- no `.mcp.json`.
+- `plugin.json` — portable Agent Plugins manifest and canonical OpenAI-specific interface metadata source;
+- `.codex-plugin/plugin.json` — Codex compatibility manifest;
+- `.agents/plugins/marketplace.json` — repository marketplace metadata;
+- `assets/` — canonical branding assets;
+- `skills/` — canonical skill source.
 
-The plugin can therefore evolve independently of whichever apps are connected to a particular ChatGPT account.
+These files may coexist in the repository because they serve different consumers. Their coexistence does **not** mean every packaged ZIP should contain all of them.
 
-Directory submission requires both `interface.composerIcon` and `interface.logo` to reference readable square images. Repository validation protects those fields and the release packager includes the canonical assets.
+### ChatGPT private-plugin upload layout
+
+A private ChatGPT upload is a **single-plugin archive**, not a repository marketplace snapshot.
+
+For the 4.2.2 private-plugin install, the successful package used:
+
+- exactly one plugin identity;
+- root `plugin.json`;
+- root `skills/*/SKILL.md`;
+- supporting assets/docs/policy files as needed;
+- **no** `.agents/plugins/marketplace.json`;
+- **no competing secondary plugin manifest** such as `.codex-plugin/plugin.json`.
+
+The importer rejected the broader repository-style package and accepted the archive after the marketplace index and competing manifest were removed.
+
+Treat that as provider-boundary evidence, not a timeless assumption. At packaging time, refresh the current provider/importer contract and verify the **actual final archive bytes** against the consumer that will ingest them.
+
+### Packaging invariant
+
+> **Package for the consumer, not for the repository.**
+
+Before delivery:
+
+1. identify the exact consumer: repository marketplace, private ChatGPT upload, directory submission, or another host;
+2. include only the metadata and content that consumer recognizes;
+3. ensure the final archive contains exactly one plugin identity when the consumer expects one plugin;
+4. inspect the final ZIP root, not only the staging directory or packaging script;
+5. test the archive through the real importer before calling packaging accepted.
+
+The active methodology package intentionally has no `.app.json`, app IDs, `mcp.json`, or `.mcp.json`; connected apps remain independent.
+
+Directory submission requires both `interface.composerIcon` and `interface.logo` to reference readable square images. Repository validation protects those source fields, but successful source validation alone does not prove a consumer-specific archive is acceptable.
 
 ## Runtime relationship
 
@@ -84,11 +112,21 @@ Use [the receipt guidance](../skills/development-os/references/execution-receipt
 
 Journeys are maintainer-reviewed; paid provider evals are optional diagnostics, not a publication requirement. Native observability or connected tools may be unavailable: report the specific gap instead of fabricating telemetry or making a provider a hard dependency.
 
-## Public distribution
+## Distribution surfaces
 
-The GitHub repository is a public Codex marketplace source. Users can register `pyralisxc/Development-OS` at the `main` ref and refresh that marketplace to receive the latest plugin files from `main`.
+### GitHub / Codex marketplace
 
-The universal ChatGPT/Codex Plugins Directory is separate. Directory-published skills are reviewed snapshots and require a new submitted version for updates; they do not follow GitHub `main` live.
+The GitHub repository is a public Codex marketplace source. Users can register `pyralisxc/Development-OS` at the `main` ref and refresh that marketplace to receive the latest plugin files from `main`. This path uses repository/marketplace metadata such as `.agents/plugins/marketplace.json`.
+
+### ChatGPT private plugin
+
+Private ChatGPT upload is a separate consumer path. Supply one private-plugin archive containing one plugin identity; do not upload the repository marketplace bundle unchanged.
+
+### Plugins Directory
+
+The universal ChatGPT/Codex Plugins Directory is separate again. Directory-published skills are reviewed snapshots and require a new submitted version for updates; they do not follow GitHub `main` live.
+
+Do not infer that package shape accepted by one distribution surface is accepted by another. Reconfirm the current provider contract at delivery time.
 
 ## Mobile boundary
 
