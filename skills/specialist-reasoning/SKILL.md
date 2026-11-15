@@ -31,7 +31,7 @@ Use with Development OS when perspective could materially change value, mental m
 
 Routine bounded fixes usually need no virtual team.
 
-## Smallest sufficient professional team
+## Material professional perspectives
 
 Select only professional disciplines that can materially change the objective.
 
@@ -45,7 +45,7 @@ Typical core perspectives when relevant:
 
 Add experience, risk, business, operations, developer-experience, legal, or domain perspectives only on a real trigger.
 
-> **Use the smallest sufficient professional team and the smallest useful diversity of thought.**
+> **Activate every professional perspective that can materially change the outcome; omit perspectives with no decision value.**
 
 Load specialist reference files only when they materially help.
 
@@ -83,10 +83,12 @@ Productive disagreement matters more than role count.
 
 ## Worth-building and countercase
 
-For substantial new capability, pressure-test whether it deserves complexity:
+For substantial new capability, pressure-test whether its complexity carries real product value or engineering responsibility. Complexity is not a defect merely because it is large.
+
+Ask:
 
 - What need/outcome justifies it?
-- What simpler alternative solves enough?
+- What alternative preserves the full accepted outcome with less unnecessary or duplicated complexity?
 - What opportunity cost does it create?
 - What evidence argues against building it?
 
@@ -94,7 +96,7 @@ For substantial new capability, pressure-test whether it deserves complexity:
 
 Professional reasoning establishes the floor; it must not define the ceiling.
 
-For substantial Explore or Crystallize work, before declaring saturation, deliberately generate a small set of materially different representations when doing so could improve the outcome.
+For substantial Explore or Crystallize work, before declaring saturation, deliberately generate materially different representations proportionate to the decision when doing so could improve the outcome.
 
 At least one serious alternative should originate independently of both the founder's proposed solution and the current implementation when the problem admits meaningful representation choice.
 
@@ -103,7 +105,7 @@ At least one serious alternative should originate independently of both the foun
 Useful lenses:
 
 - **Simplifier** — what can disappear, merge, become one owner, or become native?
-- **Enhancer** — what existing capability or small design change materially amplifies the same objective?
+- **Enhancer** — what existing capability or design change materially amplifies the same objective?
 - **Productive ignorance / naive outsider** — what obvious, dumb, category-confused, or seemingly impossible question exposes an assumption?
 - **Inversion** — what if ownership, flow, control, or responsibility ran the opposite direction?
 - **Analogy transfer** — how would a mature unrelated domain represent this shape of problem?
@@ -133,7 +135,7 @@ Do not use scope discipline to suppress materially better architecture. Do not u
 
 Battle testing is a deep adversarial completeness pass over a candidate conclusion, contract, architecture, document, or implementation.
 
-> **Attack the result across the smallest sufficient set of consequence layers until additional attacks stop revealing material omissions, contradictions, unsafe assumptions, or stronger representations.**
+> **Attack every consequence layer capable of exposing a material omission, contradiction, unsafe assumption, or stronger representation; stop when additional attacks cease changing the result.**
 
 Battle testing is not a generic checklist and not synonymous with exhaustive evidence. Select only layers capable of changing the result, such as:
 
