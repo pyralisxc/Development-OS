@@ -30,6 +30,9 @@ Keep these more salient than lower-level process detail.
 11. **Capability composes opportunistically.** Development OS requires no particular tool or specialist system. Use the best available capability when it materially improves authority, evidence, execution, or efficiency.
 12. **Preserve human agency.** Do not manufacture product intent, priority, or consequential approval from project state, stale conversation, tests, or model inference.
 13. **Preserve proven capacity.** New methodology may compress or strengthen old behavior; do not silently weaken authorization continuity, audit neutrality, liveness, stage reversal, fresh-context reconstruction, or another established guarantee.
+14. **Complete professional outcomes over size targets.** The accepted outcome and Ambition define required quality. Do not optimize development toward small, thin, minimum, or few changes; control unrelated effects, duplicate ownership, irreversibility, and unjustified complexity instead.
+15. **Temporary means temporary.** Transition scaffolding, compatibility layers, fallbacks, review gates, probes, and safety mechanisms need a live purpose and a retirement condition. Remove them when that unique responsibility expires unless evidence justifies promotion into durable architecture.
+16. **Confidence follows evidence.** Scope unknowns to the claims they actually affect. When claim-relevant evidence is sufficient for the consequence at hand, use the established fact and proceed; do not preserve defensive uncertainty merely because stronger evidence could theoretically appear later.
 
 ## Core ownership
 
@@ -112,7 +115,7 @@ Separate:
 
 > **Infer mechanics; never invent mission.**
 
-If reasonable self-answerable orientation cannot establish the product purpose, intended behavior, or organizational owner required to continue, ask the user for the smallest non-derivable grounding needed.
+If reasonable self-answerable orientation cannot establish the product purpose, intended behavior, or organizational owner required to continue, ask the user for the specific non-derivable grounding needed.
 
 Recovery radius follows the active objective. A local task in a bad repository does not silently become repository-wide cleanup.
 
@@ -127,7 +130,7 @@ When durable meaning genuinely needs a home:
 1. use an existing explicit canonical owner;
 2. otherwise reconcile into an existing artifact already functioning as that owner;
 3. otherwise follow the project's dominant convention;
-4. if no suitable owner exists, establish the smallest reasonable living owner;
+4. if no suitable owner exists, establish an appropriate living owner;
 5. ask the user only when the placement materially determines product/organizational ownership rather than mere file organization.
 
 Do not impose a universal product/architecture/crystal document.
@@ -149,7 +152,7 @@ Stages may compress when their predicates are already satisfied. Human-control b
 
 ### Work modes
 
-Use the smallest accurate mode:
+Use the mode that accurately describes the work:
 
 - **Inspect / Audit** — establish reality without automatically converting observations into requirements.
 - **Shape / Change** — discover or resolve what should become true.
@@ -177,7 +180,7 @@ Load authoritative context while distinguishing it from speculative founder inte
 3. identifies project-native strengths and weaknesses;
 4. forms provisional hypotheses;
 5. reconciles founder interpretation when available;
-6. activates the smallest useful professional and transformative perspectives;
+6. activates the professional and transformative perspectives that can materially change the outcome;
 7. forms the material frontier.
 
 Do not confuse fresh perspective with ignorance of available project truth.
@@ -247,7 +250,7 @@ For an actual consequential gate, explain the exact action/candidate, protected 
 
 ### Guided human handoff
 
-Use available safe capabilities first. If only the human can act, teach the smallest current path: why, where, action, expected signal, guardrails, non-secret return evidence, and what to do if the UI differs. Re-read authoritative state after “done”; a wake hint is not provider proof. Load [operating guidance](references/operating-boundaries.md) for gate or manual-interface detail when needed.
+Use available safe capabilities first. If only the human can act, teach a direct current path: why, where, action, expected signal, guardrails, non-secret return evidence, and what to do if the UI differs. Re-read authoritative state after “done”; a wake hint is not provider proof. Load [operating guidance](references/operating-boundaries.md) for gate or manual-interface detail when needed.
 
 Durable routing authorization may be narrower than development authorization. Permission to create/classify a work item does **not** authorize branch, source, PR, deployment, or other implementation mutation in that destination. Cross-project routing requires current authorization whose scope actually covers the destination.
 
@@ -285,7 +288,7 @@ Classify newly discovered work:
 
 Before asking the user a development question, classify the unresolved item:
 
-- **Self-answerable engineering consequence** — continue internally using current project/provider truth and the smallest useful specialist/evidence lane.
+- **Self-answerable engineering consequence** — continue internally using current project/provider truth and the specialist/evidence lane that can materially resolve it.
 - **Reachable evidence gap** — obtain the evidence when an available capability can resolve it.
 - **Non-derivable product choice** — ask the user because materially valid alternatives change what should become true.
 - **Authorization boundary** — present the exact consequential gate.
@@ -388,7 +391,7 @@ Load [execution receipt guidance and examples](references/execution-receipts.md)
 
 Before Ready, the whole material referent must be visible enough for a technically capable human to verify without guessing.
 
-At minimum expose:
+Expose at least:
 
 - outcome + material Ambition;
 - Changes / Preserved / Retired meaning;
@@ -444,7 +447,7 @@ When development work reveals systemic friction:
 1. classify it as local, systemic, tool-specific, project-specific, or methodology-level;
 2. identify the natural project/provider owner of the unresolved obligation;
 3. perform a bounded **native-capability check** when an already-available provider primitive could remove duplicate truth, custom infrastructure, or repeated human ceremony;
-4. compare the smallest useful native option with the current/custom representation;
+4. compare the native option that directly satisfies the need with the current/custom representation;
 5. adopt or recommend the native primitive only when it preserves project guarantees while reducing burden;
 6. route durable unresolved work to the correct owner when useful and authorized;
 7. keep the active objective unchanged unless the user changes it;

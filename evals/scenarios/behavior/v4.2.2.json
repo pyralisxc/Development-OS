@@ -1,0 +1,106 @@
+[
+  {
+    "id": "professional-completeness-over-minimalism",
+    "title": "Build preserves the full accepted professional outcome instead of shrinking to a minimal patch",
+    "kind": "behavior",
+    "context": "A feature has been Crystallized and Build-authorized. The accepted outcome requires an integrated production-quality implementation across the canonical owner, lifecycle handling, recovery behavior, and user-facing flow. A smaller partial patch would be easier to review but would intentionally omit accepted responsibilities.",
+    "prompt": "How should the implementation proceed?",
+    "expected": {
+      "stage": [
+        "Build"
+      ],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution"
+      ],
+      "responseContainsAny": [
+        "complete",
+        "professional",
+        "full",
+        "accepted outcome"
+      ]
+    }
+  },
+  {
+    "id": "temporary-infrastructure-retires",
+    "title": "Temporary transition infrastructure is removed when its unique responsibility expires",
+    "kind": "behavior",
+    "context": "A migration bridge and duplicate fallback path were introduced temporarily while a canonical provider integration was being proven. The canonical path now has equivalent live recovery evidence, all supported data is migrated, and the fallback owns no independent user-facing or safety guarantee.",
+    "prompt": "What should happen before this implementation is accepted?",
+    "expected": {
+      "stage": [
+        "Build",
+        "Accept"
+      ],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "remove",
+        "retire",
+        "delete",
+        "no longer needed"
+      ]
+    }
+  },
+  {
+    "id": "evidence-proportional-confidence",
+    "title": "Sufficient authoritative evidence permits confident continuation without defensive rechecking",
+    "kind": "behavior",
+    "context": "Current source and authoritative provider state independently establish the needed fact. An older transient failure is preserved in history, but no current contradictory evidence exists and another check cannot materially change the implementation decision.",
+    "prompt": "Should we keep checking or continue?",
+    "expected": {
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "continue",
+        "sufficient",
+        "established",
+        "confidence"
+      ]
+    }
+  },
+  {
+    "id": "understanding-before-regression-tests",
+    "title": "Shared structural coverage is established by source/DI and only irreducible execution is tested",
+    "kind": "behavior",
+    "context": "Every protected page is intended to route through one canonical Clerk authenticator. Source and Development Intelligence can establish which pages follow or bypass that pattern. One real integration check can establish that the authenticator actually connects to Clerk. A page UI refactor does not change the authentication contract.",
+    "prompt": "What proof should we add for the page change?",
+    "expected": {
+      "stage": [
+        "Build"
+      ],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "source",
+        "Development Intelligence",
+        "DI",
+        "authenticator"
+      ],
+      "responseNotContains": [
+        "per-page regression",
+        "test every page"
+      ]
+    }
+  }
+]

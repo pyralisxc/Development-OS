@@ -21,7 +21,7 @@ It is project-neutral. Project-local source, instructions, provider rules, branc
 - Evidence Stewardship owns proof choice and permanence.
 - Lean owns execution mechanics, mutation integrity, verification cadence, and delivery.
 
-> **Deliver the approved outcome with the least process that protects correctness and the actual risk boundary.**
+> **Deliver the complete approved outcome professionally through its canonical owners, with every retained piece of complexity carrying a clear responsibility.**
 
 ## Activation
 
@@ -45,7 +45,7 @@ Do not infer mutation authorization from an old roadmap or action verb alone.
 
 ## Orient once, re-anchor when reality changes
 
-Read the smallest trustworthy slice needed:
+Read enough authoritative context to understand the complete affected ownership and behavior:
 
 - project/agent instructions;
 - affected owners/interfaces;
@@ -93,7 +93,7 @@ When workflow friction or implementation touches an external provider/framework:
 
 1. identify the concrete project need or repeated human/manual burden;
 2. inspect current official/native behavior when materially relevant;
-3. compare the smallest native primitive against the current/custom representation;
+3. compare the native capability that directly satisfies the need against the current/custom representation;
 4. prefer the native capability when it satisfies the requirement without weakening a stronger project guarantee;
 5. add custom abstraction only for a real product/operational boundary;
 6. explain the useful native concept just in time when the human must interact with it.
@@ -102,7 +102,18 @@ Native-first is not provider worship: do not add dashboards, fields, projects, o
 
 ## Cohesive implementation
 
-Implement the complete current referent, not a succession of model-visible microtasks.
+Implement the complete current referent at the quality implied by accepted Ambition, not a deliberately reduced pilot and not a succession of model-visible microtasks.
+
+A complex product may require a complex implementation. Complexity is a defect only when it is unnecessary, duplicated, ownerless, transitional without an exit, or unsupported by the accepted product. Do not treat implementation breadth as risk by itself.
+
+Protect the real engineering boundaries:
+- **complete outcome fidelity** — implement every material accepted behavior, lifecycle, integration, recovery, usability, and operational responsibility;
+- **bounded unrelated scope** — do not mutate systems that are not required by the accepted outcome;
+- **single ownership** — avoid duplicate owners, compatibility shadows, redundant adapters, and parallel truth;
+- **controlled blast radius** — consequential effects reach only the systems that actually need to change;
+- **recoverability** — preserve authoritative state and rollback where consequence warrants it;
+- **coherent reviewability** — structure work so the complete design can be understood and verified without deliberately weakening it into micro-implementations;
+- **native capability reuse** — trust mature components at their supported boundaries rather than recreating their internals.
 
 Batch predictable mechanical work. Keep intermediate implementation freedom inside the accepted contract.
 
@@ -130,6 +141,21 @@ When repository recovery itself is authorized:
 - delete stale/duplicate implementation and docs only after their unique durable meaning is reconciled;
 - stop when the repository has a trustworthy canonical spine, not when every aesthetic imperfection is gone.
 
+## Temporary infrastructure lifecycle
+
+Temporary architecture is a transition state, not a neutral permanent design.
+
+When adding scaffolding, migration bridges, compatibility shims, fallback paths, duplicate adapters, review gates, safety mechanisms, temporary instrumentation, or similar transition structure:
+- state the live uncertainty, risk, migration, or recovery responsibility that justifies it;
+- identify the canonical owner/path it protects or transitions toward;
+- define the observable condition under which its unique responsibility expires;
+- prefer a shape that can be removed cleanly;
+- re-evaluate it when the underlying proof or transition completes;
+- remove it when its unique responsibility expires;
+- promote it to durable architecture only when evidence shows it protects an independent lasting guarantee.
+
+Do not preserve temporary structure merely because leaving it feels safer than deleting it. Active rollback, supported compatibility, security boundaries, and user-visible fallback behavior remain when they still own real responsibilities.
+
 ## New meaning during Build
 
 If implementation exposes a genuinely unresolved product question:
@@ -151,11 +177,26 @@ Do not parallelize workers that can invent conflicting shared abstractions or pr
 
 ## Verification budget
 
-Lean owns when/how often checks run; Evidence Stewardship owns what proof is appropriate and what survives.
+Lean owns when/how often execution checks run; Evidence Stewardship owns what proof is appropriate and what survives.
 
 Honor Development OS Evidence Appetite.
 
-Rerun checks only after relevant change or changed external state. Prefer one coherent final/full gate over repeated model-tool-model crossings.
+Prefer understanding before tests:
+1. current source/code ownership and call paths;
+2. trusted project intelligence such as Development Intelligence;
+3. provider/runtime truth;
+4. real product use;
+5. only then a test when the remaining claim is specifically an execution fact that the stronger evidence above cannot establish reliably enough.
+
+Tests are evidence of the exact executed path, not product or architecture authority. Do not add a regression test merely because a bug appeared, a refactor occurred, coverage is low, or the agent feels uncertain.
+
+A durable execution test should target a stable parent owner, integration boundary, external connection, lifecycle transition, or independent invariant that remains meaningful across ordinary child refactors. Child-specific tests are justified only when the child owns a durable guarantee that parent/source/DI/provider evidence cannot establish.
+
+Diagnostic and reproduction tests are temporary by default. Remove them once the question is answered unless deliberately promoted under the durable-guarantee rule.
+
+When a test fails after legitimate development, identify the guarantee it claims to protect. If the guarantee moved, changed, became redundant, or the test freezes obsolete implementation, retire or rewrite the test rather than bending correct architecture around it. Green CI does not outrank current product/source/provider truth when the failing check itself is obsolete.
+
+Rerun execution checks only after relevant change or changed external state. Prefer one coherent final proof pass over repeated model-tool-model crossings.
 
 ## Evidence permanence
 
@@ -167,13 +208,13 @@ Do not create permanent tests/docs merely because they helped implementation.
 
 Stop repeated checking when no relevant state changed or the next result cannot materially change the decision, implementation, proof, or confidence.
 
-Take the smallest available action that can answer the real unanswered question. Batch predictable operations.
+Take the most direct authoritative action that can answer the real unanswered question without creating unrelated effects. Batch predictable operations.
 
 ## Debugging
 
 For established bugs:
 
-1. reproduce at the smallest useful boundary;
+1. reproduce at a boundary that isolates the failure while preserving the interactions required to explain it;
 2. identify the violated accepted guarantee;
 3. localize the canonical owner;
 4. fix the owner;
@@ -188,7 +229,7 @@ For consequential external mutation:
 
 - establish current state;
 - identify the native operation;
-- make the minimum approved mutation;
+- make the complete approved change while avoiding unrelated mutation outside the affected owners;
 - verify once at the real boundary;
 - preserve rollback/recovery where relevant;
 - obey project-local approval/release gates.
@@ -215,7 +256,7 @@ Before calling execution complete:
 
 - the current authorized referent is implemented;
 - important behavior has appropriate proof;
-- temporary probes are removed or deliberately promoted;
+- temporary probes, tests, scaffolding, fallbacks, and transition layers are removed or deliberately promoted only when they still protect a durable responsibility;
 - obsolete evidence/paths are retired when required;
 - provider/production proof is complete where needed;
 - unresolved material risk is explicit;
@@ -246,9 +287,12 @@ Do not:
 - keep checking unchanged state;
 - use a live frontier to justify low-yield work;
 - equate tests with product authority;
+- add or preserve child-level tests when source/DI/parent execution already establishes the durable guarantee;
+- shrink the accepted outcome merely to reduce implementation size;
+- preserve temporary infrastructure after its unique responsibility expires;
 - reopen settled meaning without evidence.
 
 ## Governing maxim
 
-> **Execute the exact authorized referent coherently, change canonical owners rather than symptoms, and preserve authoritative state through interruption and delivery.**
+> **Implement the complete authorized outcome professionally through canonical owners, preserve authoritative state through interruption, and remove complexity that no longer carries a responsibility.**
 
