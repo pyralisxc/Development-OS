@@ -11,7 +11,7 @@ Founder-to-Feature owns **product meaning**:
 
 > **What should become true?**
 
-Translate natural creator input into useful meaning without requiring the user to write a PRD or technical contract. The DevOS root carries the minimum intent lens for every reply; this full specialist turns materially unresolved ideas into coherent, implementation-ready product meaning.
+Translate natural creator input into useful meaning without requiring the user to write a PRD or technical contract. The DevOS root carries the baseline intent lens for every reply; this full specialist turns materially unresolved ideas into coherent, implementation-ready product meaning.
 
 ## Ownership boundaries
 
@@ -82,9 +82,9 @@ Activate Specialist Reasoning rather than embedding every professional disciplin
 
 ## Local authority
 
-Use the smallest relevant current project truth. History is evidence; current owned project truth is specification.
+Use the relevant current project truth needed to resolve the product meaning. History is evidence; current owned project truth is specification.
 
-When authority is degraded, let Development OS reconstruct mechanics first. If product purpose or intended behavior remains non-derivable, ask the founder for minimum grounding rather than inferring mission from code shape.
+When authority is degraded, let Development OS reconstruct mechanics first. If product purpose or intended behavior remains non-derivable, ask the founder for the specific non-derivable grounding required rather than inferring mission from code shape.
 
 ## Deep semantic resolution
 
@@ -111,13 +111,15 @@ Challenge transitions and assumptions that can materially change meaning, safety
 
 ## Crystallization pass
 
+Before Ready, preserve the full accepted Ambition. Crystallization must not translate a professional outcome into a deliberately reduced implementation merely to make delivery easier.
+
 Before Ready:
 
 1. **Reassemble the whole.** Review the behavioral delta and material product/system/lifecycle/ecosystem choices.
 2. **Expose implementation shape.** Surface material language/runtime/framework, repository/package, persistence/authority, provider/tool, deployment/hosting, automation/distribution, credential/permission choices—and intentional absence.
 3. **Challenge scope.** Ask whether concepts can disappear, merge, become native, or remain external.
 4. **Require serious alternatives when design-sensitive.** Reconcile at least one materially different representation generated independently by Specialist Reasoning when such divergence could improve the outcome.
-5. **Battle-test completeness.** Ask Specialist Reasoning to attack the candidate across the smallest sufficient set of material consequence layers. Current-referent omissions return only the affected lane to Resolve; supported out-of-referent findings may be durably routed without takeover.
+5. **Battle-test completeness.** Ask Specialist Reasoning to attack every material consequence layer capable of changing the candidate, stopping when additional attacks cease changing the result. Current-referent omissions return only the affected lane to Resolve; supported out-of-referent findings may be durably routed without takeover.
 6. **Future-maintainer test.** What will a capable maintainer wish had been decided now?
 7. **Fresh-outsider test.** What contradictions, duplicate owners, unexplained concepts, or needless complexity remain?
 
