@@ -26,9 +26,11 @@ jobs:
         run: |
           version=$(node -p "require('./package.json').version")
           echo "version=$version" >> "$GITHUB_OUTPUT"
-      - uses: actions/upload-artifact@v4
+      - name: Upload installable plugin archive
+        uses: actions/upload-artifact@v4
         with:
-          name: development-os-v${{ steps.package-version.outputs.version }}-candidate
-          path: artifacts/release/*.zip
+          name: development-os-plugin-v${{ steps.package-version.outputs.version }}
+          path: artifacts/release/development-os-plugin-v${{ steps.package-version.outputs.version }}/
           if-no-files-found: error
+          include-hidden-files: true
           retention-days: 7
