@@ -16,7 +16,12 @@
         "Development OS",
         "Lean Repository Execution"
       ],
-      "mustNotActivate": []
+      "responseContainsAny": [
+        "complete",
+        "professional",
+        "full",
+        "accepted outcome"
+      ]
     }
   },
   {
@@ -37,6 +42,12 @@
         "Development OS",
         "Lean Repository Execution",
         "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "remove",
+        "retire",
+        "delete",
+        "no longer needed"
       ]
     }
   },
@@ -53,6 +64,12 @@
       "mustActivate": [
         "Development OS",
         "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "continue",
+        "sufficient",
+        "established",
+        "confidence"
       ]
     }
   },
@@ -73,6 +90,16 @@
         "Development OS",
         "Lean Repository Execution",
         "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "source",
+        "Development Intelligence",
+        "DI",
+        "authenticator"
+      ],
+      "responseNotContains": [
+        "per-page regression",
+        "test every page"
       ]
     }
   }
