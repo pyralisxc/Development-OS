@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "development-os",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Development OS provides an enabled agent's baseline conversational operating methodology: intent, continuity, meaning, perspective, evidence and execution.",
   "author": {
     "name": "Development OS"
