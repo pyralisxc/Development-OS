@@ -181,16 +181,13 @@ Lean owns when/how often execution checks run; Evidence Stewardship owns what pr
 
 Honor Development OS Evidence Appetite.
 
-Prefer understanding before tests:
-1. current source/code ownership and call paths;
-2. trusted project intelligence such as Development Intelligence;
-3. provider/runtime truth;
-4. real product use;
-5. only then a test when the remaining claim is specifically an execution fact that the stronger evidence above cannot establish reliably enough.
+After understanding the intended behavior and affected owner, choose feedback early enough to guide implementation. Use the cheapest reliable evidence for the actual uncertainty: an existing test, temporary reproduction, source or project-intelligence investigation, real product use, provider/runtime read, or another direct check. Iterate in coherent increments when useful, then verify the integrated outcome at the appropriate boundary.
+
+An intentional failing reproduction can be especially useful for an established bug; first establish that it fails for the intended reason. Test-first, a red-green cycle for every behavior, a new test per slice, and repeated full gates are not universal requirements. Preserve the complete accepted outcome and follow project-local verification rules.
 
 Tests are evidence of the exact executed path, not product or architecture authority. Do not add a regression test merely because a bug appeared, a refactor occurred, coverage is low, or the agent feels uncertain.
 
-A durable execution test should target a stable parent owner, integration boundary, external connection, lifecycle transition, or independent invariant that remains meaningful across ordinary child refactors. Child-specific tests are justified only when the child owns a durable guarantee that parent/source/DI/provider evidence cannot establish.
+A durable execution test should target a stable parent owner, integration boundary, external connection, lifecycle transition, or independent invariant that remains meaningful across ordinary child refactors. Retain child-specific protection when it covers an independent guarantee or failure that parent or other evidence does not establish; source delegation alone does not prove execution or composition.
 
 Diagnostic and reproduction tests are temporary by default. Remove them once the question is answered unless deliberately promoted under the durable-guarantee rule.
 

@@ -137,20 +137,17 @@ For many documents, build only a temporary authority map needed for the active o
 
 Documentation earns permanence under the same rule as tests: it must carry durable meaning that cannot be cheaply/reliably derived elsewhere.
 
-## Understanding before tests
+## Choose evidence for the uncertainty
 
 Do not add a test merely because executable proof is available.
 
-Prefer, in order:
-1. current source/code investigation for ownership, call paths, invariants, and shared patterns;
-2. trusted project intelligence such as Development Intelligence or maintained project knowledge;
-3. authoritative provider/runtime reads;
-4. real product use and acceptance;
-5. a test only when the remaining claim is specifically about execution and cannot be established reliably enough by the stronger sources above.
+Choose the cheapest reliable evidence capable of resolving the actual uncertainty. Source and trusted project intelligence can establish ownership, call paths, and shared patterns; execution, real product use, and provider/runtime observation establish only what their actual boundaries exercise. They answer different questions rather than forming a universal ranking.
+
+An existing test or temporary probe may provide the fastest useful feedback before or during implementation. A failing reproduction should fail for the intended reason. Use test-first where it helps; do not require a new test or red-green cycle for every change.
 
 A passing test proves only the path it actually exercised. Mocks prove mocked/internal behavior, not external reality. A child test does not prove parent composition unless the parent path actually ran.
 
-Permanent tests should be rare. When one is justified, prefer a stable parent execution contract, integration boundary, provider connection, lifecycle transition, or independent invariant that remains meaningful across child refactors. Do not add page-by-page, selector-by-selector, value-by-value, or bug-manifestation tests when source/DI can establish adherence to one canonical parent pattern.
+Retain permanent tests when their distinct durable protection justifies their continuing cost. Prefer a stable parent execution contract, integration boundary, provider connection, lifecycle transition, or independent invariant that remains meaningful across child refactors. Avoid page-by-page, selector-by-selector, value-by-value, or bug-manifestation tests when existing evidence protects the same guarantee at the necessary boundary. Source/DI evidence of delegation alone does not prove execution, composition, or equivalent protection.
 
 A failing test is evidence to investigate, not automatic authority over current implementation. If its protected guarantee moved, changed, became redundant, or is now established more strongly elsewhere, retire or rewrite the test.
 
