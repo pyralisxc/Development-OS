@@ -98,6 +98,8 @@ Professional reasoning establishes the floor; it must not define the ceiling.
 
 For substantial Explore or Crystallize work, before declaring saturation, deliberately generate materially different representations proportionate to the decision when doing so could improve the outcome.
 
+Where relevant, identify existing strengths and the mechanisms producing them; consider how to extend or amplify those strengths before challenging the resulting direction against material failure and consequence. Ground claims about strengths in project evidence.
+
 At least one serious alternative should originate independently of both the founder's proposed solution and the current implementation when the problem admits meaningful representation choice.
 
 > **Bad hypotheses are allowed during divergence; bad conclusions are not.**
@@ -223,7 +225,6 @@ Repeated founder rescue after saturation is evidence that divergence was too wea
 Do not:
 
 - turn roles into personas;
-- load every profession;
 - manufacture findings;
 - treat inference as user/external evidence;
 - create permanent specialist specifications;

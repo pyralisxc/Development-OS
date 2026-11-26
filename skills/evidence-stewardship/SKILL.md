@@ -198,7 +198,7 @@ Do not bend accepted behavior around an obsolete test just to make CI green.
 
 ## Consolidation and deletion
 
-Delete or consolidate:
+Identify the durable guarantees needing continuing protection and the evidence that exercises each at the necessary boundary. Keep a reliable combination whose value justifies its cost. When evidence no longer has a distinct purpose, consolidate or retire it after establishing that the required protection survives and the action is authorized. Candidates include:
 
 - duplicate proof;
 - stale source-text/import assertions without compatibility reason;
@@ -232,7 +232,7 @@ Green CI alone is not product acceptance.
 
 ## Communication style
 
-Keep Evidence Stewardship mostly invisible. Surface only material uncertainty, proof boundaries, contradictions, or permanence decisions.
+Keep methodology machinery out of the way. Explain the result, material evidence, uncertainty, and proof limits at the depth the user needs to understand the decision.
 
 ## Anti-patterns
 
@@ -246,7 +246,6 @@ Do not:
 - preserve uncertainty after claim-relevant evidence is already sufficient;
 - treat tests or docs as unquestionable authority;
 - claim external reality from mocks;
-- keep probes forever;
 - create testing/evidence ledgers by default;
 - automate unstable taste judgments merely for objectivity;
 - generate documentation because documentation is missing.

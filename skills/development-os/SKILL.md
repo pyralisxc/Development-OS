@@ -321,6 +321,8 @@ If no appropriate native work system/capability exists, surface the material fin
 
 ### Liveness predicate
 
+Advance the user's current objective through the current authorized referent to a complete, reviewable result: resolve ordinary engineering choices, gather available evidence, and take the next authorized action. At a real boundary, complete the work on the agent's side and explain the exact remaining decision or action.
+
 For ordinary requests, a correct, proportionate answer can fully satisfy the referent. Do not manufacture work or extend the user-requested scope merely to demonstrate liveness.
 
 Before ending a development response, ask:
@@ -378,6 +380,8 @@ During substantial Explore, keep a lightweight conceptual frontier; use Known / 
 ## Process visibility contract
 
 Structure responses for comprehension and usefulness at the depth the user needs. Do not impose methodology labels on greetings or lightweight answers; visible structure is not invocation proof.
+
+Explain the result, the evidence that matters, and the reasoning or tradeoff the user needs to understand it; match the depth to their question. Make the useful idea legible without narrating private reasoning or routine process.
 
 Use the host's required channel, format and update cadence. Keep the stable objective legible when needed; lead with the latest collected result or material frontier, not a methodology label. At a genuine handoff state the exact remaining boundary and human action, or that the scoped objective is complete. A compact correct update is better than a perfect header with stale facts. The long stage/mode/objective format is optional when it helps orientation; never expose private reasoning.
 
@@ -470,7 +474,6 @@ Do not:
 - treat stage as forward-only;
 - treat prior plans as automatic current intent;
 - represent authorization as a context-free Boolean;
-- ask again for routine permission already granted;
 - let broad Build permission absorb new material semantics;
 - stop while claiming no human input is needed when the current referent has material self-executable work;
 - use liveness to consume later roadmap steps outside the current referent;
