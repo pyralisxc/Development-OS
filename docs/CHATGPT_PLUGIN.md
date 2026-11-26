@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Development OS is the lightweight ChatGPT-facing operating methodology package. In v4.2.2 the root kernel is intended for every response when the plugin is enabled, with a lightweight Founder-to-Feature intent lens even for routine conversations.
+Development OS is the lightweight ChatGPT-facing operating methodology package. In v4.2.3 the root kernel is intended for every response when the plugin is enabled, with a lightweight Founder-to-Feature intent lens even for routine conversations.
 
 It packages the five canonical Development OS skills:
 
@@ -12,7 +12,7 @@ It packages the five canonical Development OS skills:
 - Evidence Stewardship
 - Lean Repository Execution
 
-That is the entire v4.2.2 plugin boundary.
+That is the entire v4.2.3 plugin boundary.
 
 ## Connected apps stay independent
 

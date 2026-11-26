@@ -10,6 +10,12 @@ Development OS is a public, portable operating methodology for agents' everyday 
 - **Evidence Stewardship — Proof:** how uncertainty becomes justified confidence and what evidence deserves permanence.
 - **Lean Repository Execution — Execute:** how the exact authorized referent is implemented, verified, recovered, and delivered.
 
+## v4.2.3 candidate
+
+Preview brings useful feedback earlier in development without requiring test-first work or a permanent test for each change. It selects evidence for the uncertainty, retains distinct durable protection, and leads methodology guidance with constructive outcomes while preserving authorization, evidence and recovery safeguards.
+
+This is a candidate for maintainer review. Packaging and repository verification do not establish installed-host selection, real-host acceptance, or release sign-off.
+
 ## v4.2.1
 
 v4.2.1 makes the enabled Development OS plugin's **root skill the intended baseline for every agent reply**, rather than limiting it to development-shaped prompts. The root embeds a lightweight Founder-to-Feature intent lens; substantial design-sensitive work still activates the full specialist and reaches a battle-tested, human-verifiable crystal before Ready. Ordinary questions, drafting and administration receive natural, proportionate answers without forced stages, specialist panels or invented implementation intent.
