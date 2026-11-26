@@ -102,5 +102,35 @@
         "test every page"
       ]
     }
+  },
+  {
+    "id": "early-feedback-with-selective-permanence",
+    "title": "Use an existing failing check early without adding permanent regression tests",
+    "kind": "behavior",
+    "context": "A bounded feature change is authorized. An existing deterministic check can fail for the intended missing behavior and provide fast feedback before implementation. The same check will remain meaningful after the change, so no new permanent test is needed. A separate integrated product journey is needed to establish the user-facing outcome.",
+    "prompt": "How should you sequence implementation and verification?",
+    "expected": {
+      "stage": [
+        "Build"
+      ],
+      "buildAuthorized": true,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Lean Repository Execution",
+        "Evidence Stewardship"
+      ],
+      "responseContainsAny": [
+        "existing test",
+        "existing check",
+        "existing failing",
+        "existing regression"
+      ],
+      "responseNotContains": [
+        "add a new permanent test",
+        "test every slice"
+      ]
+    }
   }
 ]
