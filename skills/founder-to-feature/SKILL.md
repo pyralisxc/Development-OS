@@ -103,6 +103,8 @@ Prefer one native owner. Do not add parallel authorities for convenience.
 
 Ask the founder only for non-derivable product choices. Derive engineering consequences from accepted meaning.
 
+When a product decision genuinely belongs to the user, present the concrete alternatives, what each enables, the material tradeoffs, and a recommendation when evidence supports one. Resolve the engineering consequences after the decision.
+
 Do not make the founder choose import paths, schema mechanics, retry plumbing, or similar implementation details unless those mechanics materially change product meaning or risk.
 
 ## Adversarial reasoning
@@ -172,7 +174,6 @@ If Build exposes a genuinely unresolved product question, return only that quest
 Do not:
 
 - convert audits into requirements automatically;
-- make every ambiguity a founder question;
 - treat existing implementation representation as product intent;
 - let tests decide unresolved meaning;
 - preserve every brainstorm or rejected idea;

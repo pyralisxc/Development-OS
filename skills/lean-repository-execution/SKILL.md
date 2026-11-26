@@ -281,7 +281,6 @@ Do not:
 - silently widen the referent;
 - treat intermediate artifacts as publication;
 - blindly retry ambiguous provider operations;
-- keep checking unchanged state;
 - use a live frontier to justify low-yield work;
 - equate tests with product authority;
 - add or preserve child-level tests when source/DI/parent execution already establishes the durable guarantee;

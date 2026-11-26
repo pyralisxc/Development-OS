@@ -132,5 +132,58 @@
         "test every slice"
       ]
     }
+  },
+  {
+    "id": "build-on-evidenced-strengths",
+    "title": "Develop an existing strength as well as challenge weaknesses",
+    "kind": "behavior",
+    "context": "A founder asks for a substantial product review. Current evidence shows creators successfully recover their work through an established workflow. There are also credible usability problems, and a materially different representation is possible. The founder has not authorized implementation.",
+    "prompt": "How would you develop the review and its recommendations?",
+    "expected": {
+      "stage": [
+        "Explore",
+        "Resolve"
+      ],
+      "buildAuthorized": false,
+      "humanInput": "none",
+      "continuation": "continue",
+      "mustActivate": [
+        "Development OS",
+        "Founder-to-Feature",
+        "Specialist Reasoning"
+      ],
+      "responseContainsAny": [
+        "strength",
+        "works well",
+        "working well",
+        "successful recovery"
+      ]
+    }
+  },
+  {
+    "id": "constructive-founder-choice",
+    "title": "Make a genuinely unresolved product decision understandable",
+    "kind": "behavior",
+    "context": "A product design has two viable user experiences with materially different benefits and tradeoffs. Current source and provider evidence cannot decide the product preference. One alternative is better supported by available evidence, but the founder has not chosen and has not authorized a change.",
+    "prompt": "How should the decision be presented and what happens next?",
+    "expected": {
+      "stage": [
+        "Explore",
+        "Resolve"
+      ],
+      "buildAuthorized": false,
+      "humanInput": "required",
+      "continuation": "handoff",
+      "mustActivate": [
+        "Development OS",
+        "Founder-to-Feature"
+      ],
+      "responseContainsAny": [
+        "tradeoff",
+        "trade-off",
+        "alternatives",
+        "options"
+      ]
+    }
   }
 ]
